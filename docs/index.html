@@ -3,6 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      // The site is static, so the reader's language can only be honoured in the
+      // browser. This runs on the English root only: a reader who asked for /fr/
+      // explicitly is never sent back, and a stored choice always beats the
+      // browser setting.
+      (function () {
+        try {
+          var stored = localStorage.getItem('olb-lang');
+          if (stored) {
+            if (stored !== 'en') location.replace('/' + stored + '/');
+            return;
+          }
+          var preferred = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          if (preferred.toLowerCase().indexOf('fr') === 0) location.replace('/fr/');
+        } catch (error) {
+          /* Private mode or a blocked storage API leaves the reader on English. */
+        }
+      })();
+    </script>
     <title>OnyLab | Applications and Integrations for Local Stores</title>
     <meta name="description" content="OnyLab builds the applications and integrations local restaurants and shops use to get found, take more orders, and bring customers back.">
     <meta name="keywords" content="OnyLab, local store application, restaurant application, SaaS">
@@ -13,6 +32,8 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="OnyLab">
     <meta property="og:url" content="https://onylab.com/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
     <meta property="og:image" content="https://onylab.com/og.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
@@ -24,73 +45,88 @@
     <meta name="twitter:title" content="OnyLab | Applications and Integrations for Local Stores">
     <meta name="twitter:description" content="OnyLab builds the applications and integrations local restaurants and shops use to get found, take more orders, and bring customers back.">
     <link rel="canonical" href="https://onylab.com/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/">
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
-    <link rel="preload" href="fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="style.css?v=15" rel="stylesheet">
-    <script type="application/ld+json">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=16" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://onylab.com/#organization",
-          "name": "OnyLab",
-          "url": "https://onylab.com/",
-          "email": "hello@onylab.com",
-          "foundingDate": "2020",
-          "description": "OnyLab is a software company that builds applications and integrations for independent local stores: restaurants, cafes, bakeries, food trucks, and neighbourhood shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves, and who designed the applications from that experience. Its applications cover three steps of a store's business: being found on search engines, maps, review sites, and AI assistants; taking orders from the counter, the table, the phone, the website, and delivery marketplaces into one queue that feeds the store's existing point of sale; and bringing customers back with email and SMS built from the ordering data. Everything plugs into what the store runs today rather than replacing it. Work usually begins with the one step costing the most, and the other two follow once the first pays for itself. OnyLab can be reached at hello@onylab.com.",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
-            "caption": "OnyLab"
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "FR"
-          },
-          "knowsAbout": [
-            "Local store software",
-            "Restaurant ordering systems",
-            "Point-of-sale integrations",
-            "Delivery marketplace integrations",
-            "Local search and maps visibility",
-            "Customer loyalty for local businesses"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "hello@onylab.com",
-            "contactType": "sales",
-            "availableLanguage": ["en", "fr"]
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://onylab.com/#website",
-          "url": "https://onylab.com/",
-          "name": "OnyLab",
-          "inLanguage": "en",
-          "publisher": { "@id": "https://onylab.com/#organization" }
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://onylab.com/#webpage",
-          "url": "https://onylab.com/",
-          "name": "OnyLab | Applications and Integrations for Local Stores",
-          "isPartOf": { "@id": "https://onylab.com/#website" },
-          "about": { "@id": "https://onylab.com/#organization" },
-          "mainEntity": { "@id": "https://onylab.com/#organization" },
-          "description": "OnyLab builds the applications and integrations local restaurants and shops use to get found, take more orders, and bring customers back.",
-          "inLanguage": "en",
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["#about p"]
-          }
-        }
-      ]
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab is a software company that builds applications and integrations for independent local stores: restaurants, cafes, bakeries, food trucks, and neighbourhood shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves, and who designed the applications from that experience. Its applications cover three steps of a store's business: being found on search engines, maps, review sites, and AI assistants; taking orders from the counter, the table, the phone, the website, and delivery marketplaces into one queue that feeds the store's existing point of sale; and bringing customers back with email and SMS built from the ordering data. Everything plugs into what the store runs today rather than replacing it. Work usually begins with the one step costing the most, and the other two follow once the first pays for itself. OnyLab can be reached at hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Local store software",
+        "Restaurant ordering systems",
+        "Point-of-sale integrations",
+        "Delivery marketplace integrations",
+        "Local search and maps visibility",
+        "Customer loyalty for local businesses"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/#webpage",
+      "url": "https://onylab.com/",
+      "name": "OnyLab | Applications and Integrations for Local Stores",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "OnyLab builds the applications and integrations local restaurants and shops use to get found, take more orders, and bring customers back.",
+      "inLanguage": "en",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "#about p"
+        ]
+      }
     }
-    </script>
-</head>
+  ]
+}</script></head>
 <body class="olb-page">
 <div class="olb-shell">
 
@@ -107,6 +143,20 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="olb-custom-lang">
+                    <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
+                        <span class="olb-custom-lang-name" aria-hidden="true">English</span>
+                        <span class="olb-custom-lang-code" aria-hidden="true">EN</span>
+                        <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="olb-custom-lang-menu" id="langMenu">
+                        <li>
+                            <a href="/" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a>
+                        </li><li>
+                            <a href="/fr/" lang="fr" hreflang="fr" data-lang="fr">Français</a>
+                        </li>
+                    </ul>
+                </div>
                 <a href="#contact" class="olb-button olb-button-compact">Email us</a>
                 <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
                     <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
@@ -116,8 +166,7 @@
         </div>
     </header>
     
-
-    <main id="main">
+<main id="main">
 
         <section class="olb-section olb-opening">
             <div class="olb-custom-opening-copy">
@@ -136,15 +185,13 @@
                             <p class="olb-custom-journey-title">Get found</p>
                             <p class="olb-caption">On search engines, maps, review sites, and AI assistants.</p>
                         </div>
-                    </li>
-                    <li>
+                    </li><li>
                         <span class="olb-custom-journey-index" aria-hidden="true">2</span>
                         <div class="olb-custom-journey-body">
                             <p class="olb-custom-journey-title">Take the order</p>
                             <p class="olb-caption">Every channel lands in one queue, nothing typed twice.</p>
                         </div>
-                    </li>
-                    <li>
+                    </li><li>
                         <span class="olb-custom-journey-index" aria-hidden="true">3</span>
                         <div class="olb-custom-journey-body">
                             <p class="olb-custom-journey-title">Bring them back</p>
@@ -169,34 +216,25 @@
                     <p class="olb-custom-sequence-index"><span aria-hidden="true">1</span><span class="olb-visually-hidden">Step 1</span></p>
                     <div class="olb-custom-sequence-body">
                         <h3 class="olb-heading-20">Get found where customers already look</h3>
-                        <p>Your store's presence on the surfaces people check before they walk in or order: search engines, AI assistants, and the maps and review sites that answer "somewhere near me".</p>
+                        <p>Your store&#39;s presence on the surfaces people check before they walk in or order: search engines, AI assistants, and the maps and review sites that answer &quot;somewhere near me&quot;.</p>
                         <p class="olb-caption">Search engines including Google and Bing. AI assistants including ChatGPT and Claude. Specialized sites including TripAdvisor, Google Maps, and Apple Maps.</p>
                     </div>
                     <figure class="olb-custom-diagram">
                         <div class="olb-custom-flow">
-                            <p class="olb-custom-flow-node">Your store</p>
-                            <div class="olb-custom-flow-group">
+                            <p class="olb-custom-flow-node">Your store</p><div class="olb-custom-flow-group">
                                 <p class="olb-label">Where it appears</p>
                                 <ul>
-                                    <li>Google</li>
-                                    <li>Bing</li>
-                                    <li>ChatGPT</li>
-                                    <li>Claude</li>
-                                    <li>TripAdvisor</li>
-                                    <li>Google Maps</li>
-                                    <li>Apple Maps</li>
+                                    <li>Google</li><li>Bing</li><li>ChatGPT</li><li>Claude</li><li>TripAdvisor</li><li>Google Maps</li><li>Apple Maps</li>
                                 </ul>
                             </div>
                         </div>
                         <figcaption class="olb-caption">One presence, kept current on each of the surfaces named on this page.</figcaption>
                     </figure>
-                </li>
-                <li>
+                </li><li>
                     <p class="olb-custom-sequence-index"><span aria-hidden="true">2</span><span class="olb-visually-hidden">Step 2</span></p>
                     <div class="olb-custom-sequence-body">
                         <h3 class="olb-heading-20">Take more orders, faster and easier</h3>
-                        <p>Ordering that holds up during service. More orders taken in the same shift, with fewer steps for the staff actually taking them.</p>
-                        <p>Orders placed at the counter, at the table, by phone, on your own website, and through delivery marketplaces arrive in one queue instead of five screens. Each order lands in your point of sale and on the payment terminal, so nothing is typed twice.</p>
+                        <p>Ordering that holds up during service. More orders taken in the same shift, with fewer steps for the staff actually taking them.</p><p>Orders placed at the counter, at the table, by phone, on your own website, and through delivery marketplaces arrive in one queue instead of five screens. Each order lands in your point of sale and on the payment terminal, so nothing is typed twice.</p>
                         <p class="olb-caption">Works with the payment terminal, kitchen and counter displays, and the delivery platforms your store lists on.</p>
                     </div>
                     <figure class="olb-custom-diagram">
@@ -204,33 +242,22 @@
                             <div class="olb-custom-flow-group">
                                 <p class="olb-label">Orders come from</p>
                                 <ul>
-                                    <li>Counter</li>
-                                    <li>Table</li>
-                                    <li>Phone</li>
-                                    <li>Your website</li>
-                                    <li>Delivery platforms</li>
+                                    <li>Counter</li><li>Table</li><li>Phone</li><li>Your website</li><li>Delivery platforms</li>
                                 </ul>
-                            </div>
-                            <p class="olb-custom-flow-node">One order queue</p>
-                            <div class="olb-custom-flow-group">
+                            </div><p class="olb-custom-flow-node">One order queue</p><div class="olb-custom-flow-group">
                                 <p class="olb-label">Pushed to</p>
                                 <ul>
-                                    <li>Point of sale</li>
-                                    <li>Payment terminal</li>
-                                    <li>Kitchen display</li>
-                                    <li>Counter display</li>
+                                    <li>Point of sale</li><li>Payment terminal</li><li>Kitchen display</li><li>Counter display</li>
                                 </ul>
                             </div>
                         </div>
                         <figcaption class="olb-caption">Five channels, one queue, and the same screens the staff know.</figcaption>
                     </figure>
-                </li>
-                <li>
+                </li><li>
                     <p class="olb-custom-sequence-index"><span aria-hidden="true">3</span><span class="olb-visually-hidden">Step 3</span></p>
                     <div class="olb-custom-sequence-body">
                         <h3 class="olb-heading-20">Build loyalty and bring customers back</h3>
-                        <p>Communicate with your customers and keep them engaged, so a first visit is not the only one.</p>
-                        <p>Customer records are built from the orders themselves rather than from a separate sign-up form. Messages go out by email and SMS at the moments that matter: a new menu, a quiet weekday, an anniversary, a review request after a good visit. You then see how many of those customers actually came back.</p>
+                        <p>Communicate with your customers and keep them engaged, so a first visit is not the only one.</p><p>Customer records are built from the orders themselves rather than from a separate sign-up form. Messages go out by email and SMS at the moments that matter: a new menu, a quiet weekday, an anniversary, a review request after a good visit. You then see how many of those customers actually came back.</p>
                         <p class="olb-caption">Works with email and SMS channels and review sites, and reuses the ordering data from step 2, so a returning customer is recognised without asking.</p>
                     </div>
                     <figure class="olb-custom-diagram">
@@ -238,18 +265,12 @@
                             <div class="olb-custom-flow-group">
                                 <p class="olb-label">Built from</p>
                                 <ul>
-                                    <li>Step 2 orders</li>
-                                    <li>Review sites</li>
+                                    <li>Step 2 orders</li><li>Review sites</li>
                                 </ul>
-                            </div>
-                            <p class="olb-custom-flow-node">Customer records</p>
-                            <div class="olb-custom-flow-group">
+                            </div><p class="olb-custom-flow-node">Customer records</p><div class="olb-custom-flow-group">
                                 <p class="olb-label">Email or SMS for</p>
                                 <ul>
-                                    <li>A new menu</li>
-                                    <li>A quiet weekday</li>
-                                    <li>An anniversary</li>
-                                    <li>A review request</li>
+                                    <li>A new menu</li><li>A quiet weekday</li><li>An anniversary</li><li>A review request</li>
                                 </ul>
                             </div>
                         </div>
@@ -266,18 +287,13 @@
             <div class="olb-grid olb-custom-foundations">
                 <div>
                     <h3 class="olb-heading-16">Analytics and reporting</h3>
-                    <p>Customized dashboards and analysis tools to track performance and optimize conversions in real time.</p>
-                    <p>One view of searches, orders, and returning customers, so you can tell which of the three steps is losing money this month.</p>
-                </div>
-                <div>
+                    <p>Customized dashboards and analysis tools to track performance and optimize conversions in real time.</p><p>One view of searches, orders, and returning customers, so you can tell which of the three steps is losing money this month.</p>
+                </div><div>
                     <h3 class="olb-heading-16">Integrations</h3>
-                    <p>Connections to the tools your store runs on today, so everything fits your existing setup instead of replacing it.</p>
-                    <p>Search engines, maps and review sites, AI assistants, point-of-sale and payment systems, delivery marketplaces, and email and SMS channels.</p>
-                </div>
-                <div>
+                    <p>Connections to the tools your store runs on today, so everything fits your existing setup instead of replacing it.</p><p>Search engines, maps and review sites, AI assistants, point-of-sale and payment systems, delivery marketplaces, and email and SMS channels.</p>
+                </div><div>
                     <h3 class="olb-heading-16">Reliability</h3>
-                    <p>Robust solutions built for continuity, so the software keeps running and keeps evolving.</p>
-                    <p>A store cannot pause service while software restarts. Support is covered every day of the week, including the weekends when most orders happen.</p>
+                    <p>Robust solutions built for continuity, so the software keeps running and keeps evolving.</p><p>A store cannot pause service while software restarts. Support is covered every day of the week, including the weekends when most orders happen.</p>
                 </div>
             </div>
         </section>
@@ -286,15 +302,12 @@
             <div class="olb-grid olb-custom-two-up">
                 <section class="olb-reading" id="stores" aria-labelledby="stores-heading">
                     <h2 class="olb-heading-24" id="stores-heading">Built for independent stores, not for chains</h2>
-                    <p>OnyLab works with independent restaurants, cafes, bakeries, food trucks, and neighbourhood shops: stores with one location, or small groups with a few. These businesses share the same constraint. The owner is also the manager, and often also behind the counter, so any tool has to pay for itself without a project team to run it.</p>
-                    <p>That is why the tools fit the register, payment provider, and delivery partners a store has today, and why each one can be set up without a project team.</p>
+                    <p>OnyLab works with independent restaurants, cafes, bakeries, food trucks, and neighbourhood shops: stores with one location, or small groups with a few. These businesses share the same constraint. The owner is also the manager, and often also behind the counter, so any tool has to pay for itself without a project team to run it.</p><p>That is why the tools fit the register, payment provider, and delivery partners a store has today, and why each one can be set up without a project team.</p>
                 </section>
 
                 <section class="olb-reading" id="about" aria-labelledby="about-heading">
                     <h2 class="olb-heading-24" id="about-heading">We ran local businesses before we built software for them</h2>
-                    <p>OnyLab is a software company that builds applications and integrations for independent local stores: restaurants, cafes, bakeries, food trucks, and neighbourhood shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves, and who designed the applications from that experience.</p>
-                    <p>Its applications cover three steps of a store's business: being found on search engines, maps, review sites, and AI assistants; taking orders from the counter, the table, the phone, the website, and delivery marketplaces into one queue that feeds the store's existing point of sale; and bringing customers back with email and SMS built from the ordering data.</p>
-                    <p>Everything plugs into what the store runs today rather than replacing it. Work usually begins with the one step costing the most, and the other two follow once the first pays for itself. OnyLab can be reached at hello@onylab.com.</p>
+                    <p>OnyLab is a software company that builds applications and integrations for independent local stores: restaurants, cafes, bakeries, food trucks, and neighbourhood shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves, and who designed the applications from that experience.</p><p>Its applications cover three steps of a store&#39;s business: being found on search engines, maps, review sites, and AI assistants; taking orders from the counter, the table, the phone, the website, and delivery marketplaces into one queue that feeds the store&#39;s existing point of sale; and bringing customers back with email and SMS built from the ordering data.</p><p>Everything plugs into what the store runs today rather than replacing it. Work usually begins with the one step costing the most, and the other two follow once the first pays for itself. OnyLab can be reached at hello@onylab.com.</p>
                 </section>
             </div>
 
@@ -303,18 +316,15 @@
                     <p class="olb-stat-label">Applications</p>
                     <p class="olb-stat-value">5+</p>
                     <p class="olb-stat-detail">One per step, plus analytics and the integration layer</p>
-                </div>
-                <div class="olb-stat">
+                </div><div class="olb-stat">
                     <p class="olb-stat-label">Integrations</p>
                     <p class="olb-stat-value">60+</p>
                     <p class="olb-stat-detail">Distinct third-party systems, from search engines to delivery platforms</p>
-                </div>
-                <div class="olb-stat">
+                </div><div class="olb-stat">
                     <p class="olb-stat-label">Experience</p>
                     <p class="olb-stat-value">20+ years</p>
                     <p class="olb-stat-detail">Running local restaurants and shops, then building software for them</p>
-                </div>
-                <div class="olb-stat">
+                </div><div class="olb-stat">
                     <p class="olb-stat-label">Support</p>
                     <p class="olb-stat-value">7 days</p>
                     <p class="olb-stat-detail">Covered every day of the week</p>
@@ -344,7 +354,6 @@
 
     </main>
 
-
     <footer class="olb-footer">
         <div class="olb-custom-footer-brand">
             <a class="olb-identity" href="/" aria-label="OnyLab home">
@@ -357,12 +366,7 @@
         <nav class="olb-custom-footer-nav" aria-label="Footer">
             <h2 class="olb-label">Sections</h2>
             <ul>
-                <li><a href="#steps">What we do</a></li>
-                <li><a href="#foundations">What holds it together</a></li>
-                <li><a href="#stores">Who it is for</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#automation">Task automation</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#steps">What we do</a></li><li><a href="#foundations">What holds it together</a></li><li><a href="#stores">Who it is for</a></li><li><a href="#about">About</a></li><li><a href="#automation">Task automation</a></li><li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
@@ -372,11 +376,11 @@
         </div>
 
         <div class="olb-custom-footer-legal">
-            <p class="olb-meta">&copy; 2026 OnyLab. All rights reserved.</p>
+            <p class="olb-meta">© 2026 OnyLab. All rights reserved.</p>
             <p class="olb-meta">Made with <span role="img" aria-label="love">❤️</span> in Canada &amp; France</p>
         </div>
     </footer>
 
 </div>
-<script src="script.js?v=7" type="text/javascript"></script></body>
+<script src="/script.js?v=8" type="text/javascript"></script></body>
 </html>

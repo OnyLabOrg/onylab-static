@@ -35,3 +35,41 @@ if (navToggle && navMenu) {
     navToggle.focus();
   });
 }
+
+// Language switcher. A disclosure button over a short list of links. Picking a
+// language stores the choice, so the English root stops guessing from the
+// browser setting on the next visit.
+const langToggle = document.getElementById('langToggle');
+const langMenu = document.getElementById('langMenu');
+
+if (langToggle && langMenu) {
+  const setLangOpen = (open) => {
+    langMenu.classList.toggle('is-open', open);
+    langToggle.setAttribute('aria-expanded', String(open));
+  };
+
+  langToggle.addEventListener('click', () => {
+    setLangOpen(!langMenu.classList.contains('is-open'));
+  });
+
+  langMenu.addEventListener('click', (e) => {
+    const link = e.target.closest('a[data-lang]');
+    if (!link) return;
+    try {
+      localStorage.setItem('olb-lang', link.dataset.lang);
+    } catch (error) {
+      /* Without storage the root page keeps following the browser setting. */
+    }
+    setLangOpen(false);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!langMenu.contains(e.target) && !langToggle.contains(e.target)) setLangOpen(false);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || !langMenu.classList.contains('is-open')) return;
+    setLangOpen(false);
+    langToggle.focus();
+  });
+}

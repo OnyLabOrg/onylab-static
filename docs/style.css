@@ -262,6 +262,65 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .olb-nav-toggle { display: none; }
 
+/* Language switcher: a disclosure button over the locales the site is written
+   in. Links, not commands, so it stays a plain list rather than an ARIA menu. */
+.olb-custom-lang { position: relative; flex: none; }
+
+.olb-custom-lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--olb-space-2);
+  font-size: var(--olb-type-label);
+  color: var(--olb-text-secondary);
+  transition: color var(--olb-transition);
+}
+.olb-custom-lang-toggle:hover { color: var(--olb-text-primary); }
+
+.olb-custom-lang-code { display: none; }
+
+.olb-custom-lang-caret {
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform var(--olb-transition);
+}
+.olb-custom-lang-toggle[aria-expanded="true"] .olb-custom-lang-caret {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+.olb-custom-lang-menu {
+  position: absolute;
+  top: calc(100% + var(--olb-space-3));
+  right: 0;
+  z-index: 60;
+  display: none;
+  min-width: 9rem;
+  padding-block: var(--olb-space-2);
+  background: var(--olb-canvas);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius-small);
+  font-size: var(--olb-type-label);
+  text-align: left;
+}
+.olb-custom-lang-menu.is-open { display: block; }
+.olb-custom-lang-menu a {
+  display: block;
+  padding: var(--olb-space-2) var(--olb-space-4);
+  color: var(--olb-text-secondary);
+  transition: color var(--olb-transition), background-color var(--olb-transition);
+}
+.olb-custom-lang-menu a:hover {
+  color: var(--olb-text-primary);
+  background: var(--olb-surface-secondary);
+}
+/* The current language is marked by weight and ink, never by colour alone. */
+.olb-custom-lang-menu a[aria-current] {
+  color: var(--olb-text-primary);
+  font-weight: var(--olb-weight-medium);
+}
+
 /* ── Type roles ──────────────────────────────────────────────────────────── */
 
 .olb-display,
@@ -868,6 +927,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     display: block;
     padding-block: var(--olb-space-3);
     color: var(--olb-text-primary);
+  }
+
+  .olb-custom-lang-name { display: none; }
+  .olb-custom-lang-code { display: inline; }
+  /* The code is only two characters, so the control needs padding of its own to
+     reach a comfortable touch target. */
+  .olb-custom-lang-toggle {
+    min-height: 44px;
+    padding-inline: var(--olb-space-2);
+    margin-inline: calc(var(--olb-space-2) * -1);
   }
 
   .olb-nav-toggle {

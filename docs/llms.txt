@@ -6,6 +6,8 @@ OnyLab connects to the systems a store already runs on (point of sale, payment t
 
 Contact: hello@onylab.com
 
+Languages: this site is published in English at https://onylab.com/ and in French at https://onylab.com/fr/. Both versions carry the same content, and the English version is the source.
+
 ## What OnyLab does
 
 - [Get found where customers already look](https://onylab.com/#steps): presence on search engines (Google, Bing), AI assistants (ChatGPT, Claude), and maps and review sites (Google Maps, Apple Maps, TripAdvisor).
