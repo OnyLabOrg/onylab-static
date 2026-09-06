@@ -1,0 +1,963 @@
+/* ==========================================================================
+   OnyLab foundation
+   Implements the olb-* API documented in
+   .claude/skills/onylab-brand-guidelines/SKILL.md
+
+   Grounds, in scroll order: canvas, contrast, secondary, contrast, canvas,
+   then the dark footer. The header shares the opening's light ground.
+   No gradients, shadows, or blur anywhere.
+   ========================================================================== */
+
+/* Self-hosted variable fonts (latin subset, served from /fonts/).
+   Both files are preloaded from index.html; swap keeps text visible while
+   they load instead of blocking first render on a third-party stylesheet. */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('fonts/syne-latin-wght.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url('fonts/dm-sans-latin-opsz-wght.woff2') format('woff2');
+}
+
+:root {
+  /* Legacy short names. Previous generation of the same constants; kept while
+     older pages still read them. New CSS uses the --olb-* names below. */
+  --flame:    #f34605;
+  --flame-dk: #c93a04;
+  --ink:      #0c0c0e;
+  --muted:    #666c78;
+  --soft:     #f4f3f0;
+  --white:    #fefefe;
+  --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Brand */
+  --olb-flame:      var(--flame);
+  --olb-flame-dark: var(--flame-dk);
+
+  /* Surfaces and text */
+  --olb-canvas:                     var(--white);
+  --olb-surface-secondary:          var(--soft);
+  --olb-surface-contrast:           var(--ink);
+  --olb-text-primary:               var(--ink);
+  --olb-text-secondary:             var(--muted);
+  --olb-text-on-contrast:           #f4f4f2;
+  --olb-text-on-contrast-secondary: #a1a1a6;
+
+  /* Borders and state */
+  --olb-border-subtle:      rgba(12, 12, 14, 0.09);
+  --olb-border-default:     rgba(12, 12, 14, 0.16);
+  --olb-border-strong:      rgba(12, 12, 14, 0.34);
+  --olb-border-on-contrast: rgba(255, 255, 255, 0.16);
+  --olb-focus:              var(--olb-flame);
+  --olb-color-info:         #1c5ec4;
+  --olb-color-success:      #10693c;
+  --olb-color-warning:      #8a5300;
+  --olb-color-error:        #b02020;
+
+  /* Data */
+  --olb-chart-1: var(--ink);
+  --olb-chart-2: #52525b;
+  --olb-chart-3: #8e8e96;
+  --olb-chart-4: #c2c2c8;
+  --olb-chart-5: var(--flame-dk);
+  --olb-chart-6: var(--flame);
+
+  /* Rhythm and shape */
+  --olb-space-1:  4px;
+  --olb-space-2:  8px;
+  --olb-space-3:  12px;
+  --olb-space-4:  16px;
+  --olb-space-5:  24px;
+  --olb-space-6:  32px;
+  --olb-space-8:  48px;
+  --olb-space-10: 64px;
+  --olb-space-12: 96px;
+  --olb-space-16: 144px;
+  --olb-radius-small: 4px;
+  --olb-radius:       8px;
+
+  /* Type family */
+  --olb-font-display: 'Syne', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --olb-font-sans:    'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --olb-font-mono:    ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Type size */
+  --olb-type-display:    clamp(3rem, 7.6vw, 6.5rem);
+  --olb-type-page-title: clamp(2.25rem, 4.6vw, 3.75rem);
+  --olb-type-title:      clamp(1.875rem, 3.6vw, 2.75rem);
+  --olb-type-section:    clamp(1.625rem, 2.6vw, 2.25rem);
+  --olb-type-subsection: 1.3125rem;
+  --olb-type-lede:       clamp(1.125rem, 1.5vw, 1.375rem);
+  --olb-type-body:       1.0625rem;
+  --olb-type-compact:    0.9375rem;
+  --olb-type-label:      0.875rem;
+  --olb-type-metadata:   0.8125rem;
+
+  /* Type weight and leading */
+  --olb-weight-regular:  400;
+  --olb-weight-medium:   500;
+  --olb-weight-semibold: 600;
+  --olb-weight-heading:  700;
+  --olb-weight-display:  800;
+  --olb-leading-body:       1.6;
+  --olb-leading-compact:    1.45;
+  --olb-leading-caption:    1.5;
+  --olb-leading-display:    0.95;
+  --olb-leading-page-title: 1.05;
+  --olb-leading-title:      1.1;
+  --olb-leading-section:    1.18;
+  --olb-leading-subsection: 1.3;
+  --olb-leading-lede:       1.5;
+
+  /* Motion */
+  --olb-transition: var(--transition);
+
+  /* Inline inset that keeps every ground full bleed while its content stays
+     on the shared 1200px grid. */
+  --olb-inset: max(var(--olb-space-6), (100% - 1200px) / 2);
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+.olb-page {
+  background: var(--olb-canvas);
+  color: var(--olb-text-primary);
+  font-family: var(--olb-font-sans);
+  font-size: var(--olb-type-body);
+  font-weight: var(--olb-weight-regular);
+  line-height: var(--olb-leading-body);
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+img, svg { display: block; max-width: 100%; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+:focus-visible {
+  outline: 2px solid var(--olb-focus);
+  outline-offset: 2px;
+  border-radius: var(--olb-radius-small);
+}
+
+/* ── Shell, grounds, and grid ────────────────────────────────────────────── */
+
+.olb-shell { width: 100%; }
+
+.olb-header,
+.olb-section,
+.olb-band,
+.olb-footer { padding-inline: var(--olb-inset); }
+
+.olb-skip-link {
+  position: fixed;
+  left: var(--olb-space-6);
+  top: var(--olb-space-2);
+  z-index: 100;
+  transform: translateY(-200%);
+  background: var(--olb-canvas);
+  color: var(--olb-text-primary);
+  padding: var(--olb-space-3) var(--olb-space-4);
+  border-radius: var(--olb-radius-small);
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+}
+/* Any focus must reveal it, not only the focus-visible heuristic. */
+.olb-skip-link:focus { transform: translateY(0); }
+
+.olb-section { padding-block: var(--olb-space-12); }
+.olb-section + .olb-section { padding-top: 0; }
+
+/* A ground change owns its own vertical breathing on both sides. */
+.olb-band { padding-block: var(--olb-space-12); }
+
+.olb-band[data-tone="contrast"] {
+  background: var(--olb-surface-contrast);
+  color: var(--olb-text-on-contrast);
+}
+.olb-band[data-tone="secondary"] {
+  background: var(--olb-surface-secondary);
+  color: var(--olb-text-primary);
+}
+
+.olb-section,
+.olb-band { scroll-margin-top: var(--olb-space-10); }
+
+.olb-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--olb-space-8) var(--olb-space-6);
+}
+.olb-grid > * { min-width: 0; }
+
+/* Reading measure: 6 desktop columns, 60 to 68 characters. */
+.olb-reading { max-width: 34rem; }
+.olb-reading > * + * { margin-top: var(--olb-space-4); }
+.olb-reading > .olb-heading-24 + p,
+.olb-reading > .olb-heading-20 + p,
+.olb-reading > .olb-heading-16 + p { margin-top: var(--olb-space-3); }
+
+.olb-flow > * + * { margin-top: var(--olb-space-4); }
+.olb-stack > * + * { margin-top: var(--olb-space-6); }
+.olb-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--olb-space-4);
+}
+
+/* ── Header, on the opening's light ground ───────────────────────────────── */
+
+.olb-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--olb-canvas);
+  color: var(--olb-text-primary);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--olb-transition);
+}
+.olb-header.is-scrolled { border-bottom-color: var(--olb-border-subtle); }
+
+.olb-masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--olb-space-6);
+  padding-block: var(--olb-space-5);
+}
+
+.olb-identity { display: block; flex: none; }
+.olb-wordmark { height: 30px; width: auto; }
+
+.olb-document-meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--olb-space-6);
+}
+
+.olb-nav {
+  display: flex;
+  align-items: baseline;
+  gap: var(--olb-space-6);
+  font-size: var(--olb-type-label);
+}
+.olb-nav a {
+  color: var(--olb-text-secondary);
+  transition: color var(--olb-transition);
+}
+.olb-nav a:hover { color: var(--olb-text-primary); }
+
+.olb-nav-toggle { display: none; }
+
+/* ── Type roles ──────────────────────────────────────────────────────────── */
+
+.olb-display,
+.olb-title,
+.olb-heading-24,
+.olb-heading-20,
+.olb-heading-16 {
+  font-family: var(--olb-font-display);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.olb-display {
+  font-size: var(--olb-type-display);
+  font-weight: var(--olb-weight-display);
+  line-height: var(--olb-leading-display);
+}
+.olb-title {
+  font-size: var(--olb-type-title);
+  font-weight: var(--olb-weight-heading);
+  line-height: var(--olb-leading-title);
+}
+.olb-heading-24 {
+  font-size: var(--olb-type-section);
+  font-weight: var(--olb-weight-heading);
+  line-height: var(--olb-leading-section);
+}
+.olb-heading-20 {
+  font-size: var(--olb-type-subsection);
+  font-weight: var(--olb-weight-semibold);
+  line-height: var(--olb-leading-subsection);
+  letter-spacing: -0.018em;
+}
+.olb-heading-16 {
+  font-size: 1.0625rem;
+  font-weight: var(--olb-weight-semibold);
+  line-height: var(--olb-leading-subsection);
+  letter-spacing: -0.012em;
+}
+
+.olb-lede {
+  font-size: var(--olb-type-lede);
+  line-height: var(--olb-leading-lede);
+  color: var(--olb-text-secondary);
+}
+.olb-label {
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+  line-height: var(--olb-leading-compact);
+}
+.olb-caption {
+  font-size: var(--olb-type-compact);
+  line-height: var(--olb-leading-caption);
+  color: var(--olb-text-secondary);
+}
+.olb-meta {
+  font-size: var(--olb-type-metadata);
+  line-height: var(--olb-leading-caption);
+  color: var(--olb-text-secondary);
+}
+.olb-mono { font-family: var(--olb-font-mono); font-size: 0.9em; }
+.olb-numeric { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Subordinate text keeps its contrast when the ground inverts. */
+.olb-band[data-tone="contrast"] .olb-lede,
+.olb-band[data-tone="contrast"] .olb-caption,
+.olb-band[data-tone="contrast"] .olb-meta,
+.olb-band[data-tone="contrast"] .olb-label,
+.olb-footer .olb-caption,
+.olb-footer .olb-meta,
+.olb-footer .olb-label { color: var(--olb-text-on-contrast-secondary); }
+
+.olb-band[data-tone="contrast"] :focus-visible,
+.olb-footer :focus-visible { outline-color: var(--olb-flame); }
+
+.olb-visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Button ──────────────────────────────────────────────────────────────── */
+
+.olb-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: var(--olb-space-3) var(--olb-space-6);
+  background: var(--olb-flame-dark);
+  color: #fff;
+  border-radius: var(--olb-radius-small);
+  font-size: var(--olb-type-body);
+  font-weight: var(--olb-weight-medium);
+  line-height: 1;
+  transition: background-color var(--olb-transition), color var(--olb-transition);
+}
+.olb-button:hover { background: var(--olb-text-primary); }
+
+.olb-button-compact {
+  min-height: 38px;
+  padding: var(--olb-space-2) var(--olb-space-4);
+  font-size: var(--olb-type-label);
+}
+
+/* On an inverted ground the label cannot darken, so the control lightens. */
+.olb-band[data-tone="contrast"] .olb-button:hover {
+  background: var(--olb-canvas);
+  color: var(--olb-text-primary);
+}
+
+.olb-button-on-contrast {
+  background: var(--olb-canvas);
+  color: var(--olb-text-primary);
+}
+.olb-button-on-contrast:hover { background: var(--olb-surface-secondary); }
+
+/* ── Opening: the claim beside the customer's path through a store ───────── */
+
+.olb-opening {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--olb-space-6);
+  align-items: start;
+  padding-block: var(--olb-space-12);
+}
+.olb-opening > * { min-width: 0; }
+
+.olb-custom-opening-copy { grid-column: 1 / span 6; }
+
+/* The claim shares the first viewport with the journey, so it steps down
+   from the display role to the page-title role. */
+.olb-opening-claim {
+  max-width: 14ch;
+  font-size: var(--olb-type-page-title);
+  line-height: var(--olb-leading-page-title);
+}
+.olb-opening-proof {
+  max-width: 30rem;
+  margin-top: var(--olb-space-6);
+}
+.olb-opening-context { margin-top: var(--olb-space-8); }
+
+/* Three fixed-height rows so the connectors between the numbered marks and
+   the return loop can be drawn from known geometry. */
+.olb-custom-journey {
+  grid-column: 8 / span 5;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--olb-space-5) auto;
+  grid-auto-rows: 104px;
+  align-items: center;
+  padding-top: var(--olb-space-2);
+}
+.olb-custom-journey-steps { display: contents; }
+.olb-custom-journey-steps > li {
+  grid-column: 1;
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  column-gap: var(--olb-space-4);
+  align-items: center;
+  height: 104px;
+}
+/* Connector from the bottom of one mark to the top of the next. */
+.olb-custom-journey-steps > li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 19.5px;
+  top: calc(50% + 20px);
+  width: 1px;
+  height: 64px;
+  background: var(--olb-border-default);
+}
+.olb-custom-journey-index {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--olb-border-strong);
+  border-radius: var(--olb-radius-small);
+  background: var(--olb-canvas);
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+}
+.olb-custom-journey-body { min-width: 0; }
+.olb-custom-journey-title {
+  font-weight: var(--olb-weight-medium);
+  line-height: var(--olb-leading-compact);
+}
+.olb-custom-journey-body .olb-caption { margin-top: var(--olb-space-1); }
+
+/* The return loop: out of step 3, up, and back into step 2. It is the one
+   flame mark of the opening, carrying the "repeat order" of the claim. */
+.olb-custom-journey-loop {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  align-self: stretch;
+  position: relative;
+  margin-block: 52px;
+  border: 1.5px solid var(--olb-flame-dark);
+  border-left: 0;
+  border-radius: 0 var(--olb-radius) var(--olb-radius) 0;
+}
+.olb-custom-journey-loop::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: -4.5px;
+  width: 7px;
+  height: 7px;
+  border-left: 1.5px solid var(--olb-flame-dark);
+  border-bottom: 1.5px solid var(--olb-flame-dark);
+  transform: rotate(45deg);
+}
+.olb-custom-journey-loop-label {
+  grid-column: 3;
+  grid-row: 2 / 4;
+  padding-left: var(--olb-space-2);
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+  line-height: var(--olb-leading-compact);
+  color: var(--olb-flame-dark);
+}
+
+/* ── Sequence: the three steps ───────────────────────────────────────────── */
+
+.olb-custom-sequence { margin-top: var(--olb-space-10); }
+
+.olb-custom-sequence > li {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 24rem) minmax(0, 1fr);
+  gap: var(--olb-space-8) var(--olb-space-6);
+  align-items: start;
+  padding-block: var(--olb-space-8);
+  border-top: 1px solid var(--olb-border-subtle);
+}
+.olb-custom-sequence > li:last-child { border-bottom: 1px solid var(--olb-border-subtle); }
+
+.olb-custom-sequence-index {
+  font-family: var(--olb-font-display);
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: var(--olb-weight-heading);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--olb-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.olb-band[data-tone="contrast"] .olb-custom-sequence > li,
+.olb-band[data-tone="contrast"] .olb-custom-sequence > li:last-child {
+  border-color: var(--olb-border-on-contrast);
+}
+.olb-band[data-tone="contrast"] .olb-custom-sequence-index {
+  color: var(--olb-text-on-contrast-secondary);
+}
+
+.olb-custom-sequence-body { min-width: 0; }
+.olb-custom-sequence-body > * + * { margin-top: var(--olb-space-3); }
+.olb-custom-sequence-body > .olb-caption { margin-top: var(--olb-space-4); }
+
+/* ── Flow diagram: inputs, the OnyLab application, outputs ───────────────
+   One grammar for all three steps. Grey boxes are systems the store already
+   has; the flame-bordered node is what OnyLab runs. Item rows are 40px tall
+   so the bus line can start and end at the first and last item centres. */
+
+.olb-custom-diagram {
+  min-width: 0;
+  align-self: center;
+}
+.olb-custom-diagram > figcaption { margin-top: var(--olb-space-5); }
+
+/* Groups stretch so their labels share one top line; each list then
+   centres itself on the node. */
+.olb-custom-flow {
+  display: flex;
+  align-items: stretch;
+}
+.olb-custom-flow > * { min-width: 0; }
+.olb-custom-flow-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  max-width: 22rem;
+}
+.olb-custom-flow-group > ul { margin-block: auto; }
+
+.olb-custom-flow-group > .olb-label {
+  margin-bottom: var(--olb-space-3);
+  color: var(--olb-text-secondary);
+}
+.olb-custom-flow-group > ul {
+  position: relative;
+  display: grid;
+  gap: var(--olb-space-2);
+}
+.olb-custom-flow-group > ul > li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: var(--olb-space-2) var(--olb-space-3);
+  border: 1px solid var(--olb-border-default);
+  text-wrap: nowrap;
+  border-radius: var(--olb-radius-small);
+  font-size: var(--olb-type-compact);
+  line-height: var(--olb-leading-compact);
+}
+
+/* Connectors: each item runs a short line to a vertical bus, and the bus
+   runs one line into the node. Left groups connect on their right edge,
+   right groups on their left edge. */
+.olb-custom-flow-group:has(+ .olb-custom-flow-node) > ul { padding-right: var(--olb-space-5); }
+.olb-custom-flow-group:has(+ .olb-custom-flow-node) > ul > li::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: calc(-1 * var(--olb-space-5));
+  width: var(--olb-space-5);
+  height: 1px;
+  background: var(--olb-border-default);
+}
+.olb-custom-flow-group:has(+ .olb-custom-flow-node) > ul::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  right: 0;
+  width: 1px;
+  background: var(--olb-border-default);
+}
+
+.olb-custom-flow-node + .olb-custom-flow-group > ul { padding-left: var(--olb-space-5); }
+.olb-custom-flow-node + .olb-custom-flow-group > ul > li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(-1 * var(--olb-space-5));
+  width: var(--olb-space-5);
+  height: 1px;
+  background: var(--olb-border-default);
+}
+.olb-custom-flow-node + .olb-custom-flow-group > ul::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 0;
+  width: 1px;
+  background: var(--olb-border-default);
+}
+
+.olb-custom-flow-node {
+  position: relative;
+  flex: 0 0 auto;
+  align-self: center;
+  max-width: 11rem;
+  padding: var(--olb-space-3) var(--olb-space-4);
+  border: 1.5px solid var(--olb-flame);
+  border-radius: var(--olb-radius-small);
+  font-weight: var(--olb-weight-medium);
+  line-height: var(--olb-leading-compact);
+  text-align: center;
+  text-wrap: balance;
+}
+.olb-custom-flow-group + .olb-custom-flow-node { margin-left: var(--olb-space-5); }
+.olb-custom-flow-group + .olb-custom-flow-node::before {
+  content: '';
+  position: absolute;
+  background: var(--olb-border-default);
+  top: 50%;
+  left: calc(-1 * var(--olb-space-5) - 1.5px);
+  width: var(--olb-space-5);
+  height: 1px;
+}
+.olb-custom-flow-node:has(+ .olb-custom-flow-group) { margin-right: var(--olb-space-5); }
+.olb-custom-flow-node:has(+ .olb-custom-flow-group)::after {
+  content: '';
+  position: absolute;
+  background: var(--olb-border-default);
+  top: 50%;
+  right: calc(-1 * var(--olb-space-5) - 1.5px);
+  width: var(--olb-space-5);
+  height: 1px;
+}
+/* On the ink ground every line, label, and box is re-checked. */
+.olb-band[data-tone="contrast"] .olb-custom-flow-group > .olb-label { color: var(--olb-text-on-contrast-secondary); }
+.olb-band[data-tone="contrast"] .olb-custom-flow-group > ul > li { border-color: var(--olb-border-on-contrast); }
+.olb-band[data-tone="contrast"] .olb-custom-flow-group > ul::before,
+.olb-band[data-tone="contrast"] .olb-custom-flow-group > ul::after,
+.olb-band[data-tone="contrast"] .olb-custom-flow-group > ul > li::before,
+.olb-band[data-tone="contrast"] .olb-custom-flow-group > ul > li::after,
+.olb-band[data-tone="contrast"] .olb-custom-flow-node::before,
+.olb-band[data-tone="contrast"] .olb-custom-flow-node::after { background: var(--olb-text-on-contrast-secondary); }
+
+/* ── Foundations, on the secondary ground ────────────────────────────────── */
+
+.olb-custom-foundations { margin-top: var(--olb-space-8); }
+.olb-custom-foundations > * { grid-column: span 4; }
+.olb-custom-foundations > * > * + * { margin-top: var(--olb-space-3); }
+
+/* ── Stores and about: two columns on the ink ground ─────────────────────── */
+
+.olb-custom-two-up > * { grid-column: span 6; }
+
+.olb-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--olb-space-8) var(--olb-space-6);
+  margin-top: var(--olb-space-10);
+  padding-top: var(--olb-space-8);
+  border-top: 1px solid var(--olb-border-subtle);
+}
+.olb-stat { min-width: 0; }
+.olb-stat-label {
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+  line-height: var(--olb-leading-compact);
+}
+.olb-stat-value {
+  margin-top: var(--olb-space-2);
+  font-size: clamp(2.25rem, 3.4vw, 3.25rem);
+  font-weight: var(--olb-weight-medium);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+}
+.olb-stat-detail {
+  margin-top: var(--olb-space-3);
+  font-size: var(--olb-type-compact);
+  line-height: var(--olb-leading-caption);
+  color: var(--olb-text-secondary);
+}
+.olb-band[data-tone="contrast"] .olb-stat-strip { border-top-color: var(--olb-border-on-contrast); }
+.olb-band[data-tone="contrast"] .olb-stat-detail { color: var(--olb-text-on-contrast-secondary); }
+
+/* ── Closing, back on the canvas before the dark footer ──────────────────── */
+
+.olb-custom-closing-band { padding-block: var(--olb-space-16); }
+.olb-custom-closing { max-width: 34rem; }
+.olb-custom-closing > * + * { margin-top: var(--olb-space-5); }
+.olb-custom-closing > p:last-child { margin-top: var(--olb-space-10); }
+
+.olb-custom-closing-address {
+  display: flex;
+  flex-direction: column;
+  gap: var(--olb-space-1);
+}
+.olb-custom-email {
+  color: var(--olb-flame-dark);
+  font-size: var(--olb-type-lede);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--olb-transition);
+}
+.olb-custom-email:hover { color: var(--olb-text-primary); }
+
+/* In-prose link out of the page. flame-dark is the accent that still clears
+   4.5:1 at body size on the canvas and on the quiet ground. */
+.olb-custom-link {
+  color: var(--olb-flame-dark);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--olb-transition);
+}
+.olb-custom-link:hover { color: var(--olb-text-primary); }
+
+/* ── Footer, on its own dark ground ──────────────────────────────────────── */
+
+.olb-footer {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--olb-space-8) var(--olb-space-6);
+  padding-block: var(--olb-space-10) var(--olb-space-8);
+  background: var(--olb-surface-contrast);
+  color: var(--olb-text-on-contrast);
+  border-top: 1px solid var(--olb-border-on-contrast);
+}
+.olb-footer > * { min-width: 0; }
+
+.olb-custom-footer-brand { grid-column: span 5; }
+.olb-custom-footer-brand .olb-caption {
+  margin-top: var(--olb-space-4);
+  max-width: 26rem;
+}
+.olb-custom-footer-brand .olb-caption a {
+  color: var(--olb-flame);
+  transition: color var(--olb-transition);
+}
+.olb-custom-footer-brand .olb-caption a:hover { color: var(--olb-text-on-contrast); }
+.olb-logo { height: 26px; width: auto; }
+
+.olb-custom-footer-nav { grid-column: 7 / span 3; }
+.olb-custom-footer-contact { grid-column: 10 / span 3; }
+
+.olb-custom-footer-nav ul { margin-top: var(--olb-space-4); }
+.olb-custom-footer-nav li + li { margin-top: var(--olb-space-2); }
+.olb-custom-footer-nav a {
+  font-size: var(--olb-type-compact);
+  color: var(--olb-text-on-contrast-secondary);
+  transition: color var(--olb-transition);
+}
+.olb-custom-footer-nav a:hover { color: var(--olb-text-on-contrast); }
+
+.olb-custom-footer-contact p { margin-top: var(--olb-space-4); }
+.olb-custom-footer-contact a {
+  font-size: var(--olb-type-compact);
+  color: var(--olb-flame);
+  transition: color var(--olb-transition);
+}
+.olb-custom-footer-contact a:hover { color: var(--olb-text-on-contrast); }
+
+.olb-custom-footer-legal {
+  grid-column: span 12;
+  padding-top: var(--olb-space-6);
+  border-top: 1px solid var(--olb-border-on-contrast);
+}
+
+/* ── Tablet: 6 columns ───────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .olb-grid,
+  .olb-footer { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+
+  /* Three peers stack rather than leave an orphan in a two-up row. */
+  .olb-custom-foundations > * { grid-column: span 6; }
+  .olb-custom-two-up > * { grid-column: span 6; }
+  .olb-custom-foundations > * + * {
+    padding-top: var(--olb-space-6);
+    border-top: 1px solid var(--olb-border-subtle);
+  }
+
+  .olb-stat-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .olb-custom-footer-brand { grid-column: span 6; }
+  .olb-custom-footer-nav { grid-column: span 3; }
+  .olb-custom-footer-contact { grid-column: span 3; }
+  .olb-custom-footer-legal { grid-column: span 6; }
+
+  .olb-custom-closing-band { padding-block: var(--olb-space-12); }
+
+  /* Claim first, journey beneath it on the same grid. */
+  .olb-opening { row-gap: var(--olb-space-10); }
+  .olb-custom-opening-copy,
+  .olb-custom-journey { grid-column: 1 / -1; }
+  .olb-custom-journey { max-width: 36rem; padding-top: 0; }
+
+  /* Each step keeps its number beside the text; the diagram follows the text
+     in the same column. */
+  .olb-custom-sequence > li { grid-template-columns: 5rem minmax(0, 1fr); }
+  .olb-custom-sequence-body { max-width: 34rem; }
+  .olb-custom-diagram { grid-column: 1 / -1; align-self: start; }
+}
+
+/* ── Mobile: 4 columns, collapsed navigation ─────────────────────────────── */
+
+@media (max-width: 720px) {
+  :root { --olb-inset: var(--olb-space-5); }
+
+  .olb-section,
+  .olb-band,
+  .olb-opening,
+  .olb-custom-closing-band { padding-block: var(--olb-space-10); }
+  .olb-section + .olb-section { padding-top: 0; }
+
+  .olb-grid,
+  .olb-footer { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  .olb-custom-foundations > * { grid-column: span 4; }
+  .olb-custom-two-up > * { grid-column: span 4; }
+  .olb-custom-footer-brand,
+  .olb-custom-footer-legal { grid-column: span 4; }
+  .olb-custom-footer-nav { grid-column: span 2; }
+  .olb-custom-footer-contact { grid-column: span 2; }
+
+  .olb-masthead { align-items: center; }
+  .olb-document-meta { gap: var(--olb-space-4); }
+  .olb-button-compact { min-height: 44px; }
+
+  .olb-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--olb-space-2) var(--olb-inset) var(--olb-space-4);
+    background: var(--olb-canvas);
+    border-bottom: 1px solid var(--olb-border-subtle);
+    font-size: var(--olb-type-body);
+  }
+  .olb-nav.is-open { display: flex; }
+  .olb-nav a {
+    display: block;
+    padding-block: var(--olb-space-3);
+    color: var(--olb-text-primary);
+  }
+
+  .olb-nav-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-right: calc(var(--olb-space-3) * -1);
+  }
+  .olb-nav-toggle-bar,
+  .olb-nav-toggle-bar::before,
+  .olb-nav-toggle-bar::after {
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: var(--olb-text-primary);
+  }
+  .olb-nav-toggle-bar { position: relative; }
+  .olb-nav-toggle-bar::before,
+  .olb-nav-toggle-bar::after { content: ''; position: absolute; left: 0; }
+  .olb-nav-toggle-bar::before { top: -6px; }
+  .olb-nav-toggle-bar::after  { top: 6px; }
+
+  /* One column: with twelve tracks the gaps alone (11 x 32px) exceed the
+     327px content box and push the journey figure past the viewport. */
+  .olb-opening {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+    row-gap: var(--olb-space-8);
+  }
+  .olb-opening-claim { max-width: none; }
+
+  /* The loop label turns along the loop so the step text keeps its width. */
+  .olb-custom-journey-loop-label {
+    writing-mode: vertical-rl;
+    padding-left: var(--olb-space-1);
+  }
+
+  .olb-custom-sequence > li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--olb-space-2);
+    padding-block: var(--olb-space-6);
+  }
+  .olb-custom-diagram {
+    grid-column: 1;
+    margin-top: var(--olb-space-6);
+  }
+
+  /* The flow stacks: inputs, the node, outputs, joined by vertical lines. */
+  .olb-custom-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .olb-custom-flow-group { flex: none; }
+  .olb-custom-flow-group > ul > li { text-wrap: wrap; }
+  .olb-custom-flow-group > ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 !important;
+  }
+  /* Same specificity as the desktop connector rules, so this wins by order. */
+  .olb-custom-diagram .olb-custom-flow .olb-custom-flow-group > ul::before,
+  .olb-custom-diagram .olb-custom-flow .olb-custom-flow-group > ul::after,
+  .olb-custom-diagram .olb-custom-flow .olb-custom-flow-group > ul > li::before,
+  .olb-custom-diagram .olb-custom-flow .olb-custom-flow-group > ul > li::after { content: none; }
+
+  .olb-custom-flow-node {
+    align-self: center;
+    min-width: 12rem;
+    margin: var(--olb-space-5) 0 !important;
+  }
+  .olb-custom-flow-group + .olb-custom-flow-node::before,
+  .olb-custom-flow-node:has(+ .olb-custom-flow-group)::after {
+    left: 50%;
+    right: auto;
+    width: 1px;
+    height: var(--olb-space-5);
+  }
+  .olb-custom-flow-group + .olb-custom-flow-node::before { top: auto; bottom: 100%; margin-bottom: 1.5px; }
+  .olb-custom-flow-node:has(+ .olb-custom-flow-group)::after { top: 100%; margin-top: 1.5px; }
+
+  .olb-stat-strip {
+    gap: var(--olb-space-6) var(--olb-space-5);
+    margin-top: var(--olb-space-8);
+  }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
