@@ -1,8 +1,8 @@
 # OnyLab
 
-> OnyLab is a software company that builds applications and integrations for independent local stores: restaurants, cafes, bakeries, food trucks, and neighbourhood shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves, and who designed the applications from that experience. Its applications cover three steps of a store's business: being found on search engines, maps, review sites, and AI assistants; taking orders from the counter, the table, the phone, the website, and delivery marketplaces into one queue that feeds the store's existing point of sale; and bringing customers back with email and SMS built from the ordering data. Everything plugs into what the store runs today rather than replacing it. Work usually begins with the one step costing the most, and the other two follow once the first pays for itself. OnyLab can be reached at hello@onylab.com.
+> OnyLab is a software company that builds applications and integrations for independent local stores: restaurants, cafes, bakeries, food trucks, and neighbourhood shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves, and who designed the applications from that experience. Its applications cover 3 steps of a store's business: being found on search engines, maps, review sites, and AI assistants; taking orders from the counter, the table, the phone, the website, and delivery marketplaces into 1 queue that feeds the store's existing point of sale; and bringing customers back with email and SMS built from the ordering data. Everything plugs into what the store runs today rather than replacing it. Work usually begins with the 1 step costing the most, and the other 2 follow once the first pays for itself. OnyLab can be reached at hello@onylab.com.
 
-OnyLab connects to the systems a store already runs on (point of sale, payment terminal, delivery marketplaces, email and SMS channels) rather than replacing them. A first project usually starts with the single step that is costing the store the most, and the other two are added once the first one is earning.
+OnyLab connects to the systems a store already runs on (point of sale, payment terminal, delivery marketplaces, email and SMS channels) rather than replacing them. A first project usually starts with the single step that is costing the store the most, and the other 2 are added once the first one is earning.
 
 Contact: hello@onylab.com
 
@@ -11,21 +11,21 @@ Languages: this site is published in English at https://onylab.com/ and in Frenc
 ## What OnyLab does
 
 - [Get found where customers already look](https://onylab.com/#steps): presence on search engines (Google, Bing), AI assistants (ChatGPT, Claude), and maps and review sites (Google Maps, Apple Maps, TripAdvisor).
-- [Take more orders, faster and easier](https://onylab.com/#steps): orders from the counter, the table, the phone, the store's website, and delivery marketplaces arrive in one queue and are pushed to the existing point-of-sale system and payment terminal.
+- [Take more orders, faster and easier](https://onylab.com/#steps): orders from the counter, the table, the phone, the store's website, and delivery marketplaces arrive in 1 queue and are pushed to the existing point-of-sale system and payment terminal.
 - [Build loyalty and bring customers back](https://onylab.com/#steps): customer records built from the orders themselves, email and SMS messages at the moments that matter, review requests, and a view of how many customers actually came back.
-- [What holds the three steps together](https://onylab.com/#foundations): analytics and reporting, integrations with the tools the store already uses, and reliability with support covered seven days a week.
+- [What holds the 3 steps together](https://onylab.com/#foundations): analytics and reporting, integrations with the tools the store already uses, and reliability with support covered 7 days a week.
 
 ## Who it is for
 
-- [Built for independent stores, not for chains](https://onylab.com/#stores): independent restaurants, cafes, bakeries, food trucks, and neighbourhood shops, with one location or a small group of a few. The owner is usually also the manager, so the tools have to pay for themselves without a project team.
+- [Built for independent stores, not for chains](https://onylab.com/#stores): independent restaurants, cafes, bakeries, food trucks, and neighbourhood shops, with 1 location or a small group of a few. The owner is usually also the manager, so the tools have to pay for themselves without a project team.
 
 ## About
 
-- [We ran local businesses before we built software for them](https://onylab.com/#about): the founders operated local restaurants and businesses before building the applications. Figures stated on the page: 5+ applications (one per step plus analytics and the integration layer), 60+ distinct third-party integrations, 20+ years of experience, support 7 days a week. The page explains what each figure counts.
+- [We ran local businesses before we built software for them](https://onylab.com/#about): the founders operated local restaurants and businesses before building the applications. Figures stated on the page: 5+ applications (1 per step plus analytics and the integration layer), 60+ distinct third-party integrations, 20+ years of experience, support 7 days a week. The page explains what each figure counts.
 
 ## Also from the same team
 
-- [Agentium Lab](https://agentiumlab.com/): AI task automation for local businesses, run by the same team as OnyLab. Where OnyLab covers the customer-facing steps, Agentium Lab takes on the repetitive internal tasks an owner still does by hand. You name one task, they watch it done once with the exceptions included, then they build the automation and run it on their side, so the owner gets an AI employee handling the task rather than more software to learn.
+- [Agentium Lab](https://agentiumlab.com/): AI task automation for local businesses, run by the same team as OnyLab. Where OnyLab covers the customer-facing steps, Agentium Lab takes on the repetitive internal tasks an owner still does by hand. You name 1 task, they watch it done once with the exceptions included, then they build the automation and run it on their side, so the owner gets an AI employee handling the task rather than more software to learn.
 
 ## Contact
 
