@@ -33,8 +33,8 @@ Languages: this site is published in English at https://onylab.com/ and in Frenc
 
 ## Legal
 
-- [Privacy Policy](https://onylab.com/privacy/): how OnyLab handles personal information under PIPEDA and Quebec privacy law. English only.
-- [Terms of Use](https://onylab.com/terms/): the terms for the website and applications, governed by the laws of Quebec and Canada. English only.
+- [Privacy Policy](https://onylab.com/privacy/): how OnyLab handles personal information under PIPEDA and Quebec privacy law. In French at https://onylab.com/fr/confidentialite/.
+- [Terms of Use](https://onylab.com/terms/): the terms for the website and applications, governed by the laws of Quebec and Canada. In French at https://onylab.com/fr/conditions/.
 
 ## Optional
 
