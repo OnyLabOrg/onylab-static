@@ -31,6 +31,11 @@ Languages: this site is published in English at https://onylab.com/ and in Frenc
 
 - [Tell us what your store needs](https://onylab.com/#contact): write to hello@onylab.com with the part of the operation that is costing the most.
 
+## Legal
+
+- [Privacy Policy](https://onylab.com/privacy/): how OnyLab handles personal information under PIPEDA and Quebec privacy law. English only.
+- [Terms of Use](https://onylab.com/terms/): the terms for the website and applications, governed by the laws of Quebec and Canada. English only.
+
 ## Optional
 
 - [Sitemap](https://onylab.com/sitemap.xml)

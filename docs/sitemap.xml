@@ -6,7 +6,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/"/>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,8 +15,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/"/>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/privacy/"/>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/terms/"/>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

@@ -793,6 +793,55 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .olb-custom-link:hover { color: var(--olb-text-primary); }
 
+/* ── Legal pages: one reading column, contents in the right rail ────────── */
+
+.olb-custom-legal {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--olb-space-10) var(--olb-space-6);
+  align-items: start;
+}
+.olb-custom-legal > * { min-width: 0; }
+
+.olb-custom-legal-head,
+.olb-custom-legal-body {
+  grid-column: 1 / span 7;
+  max-width: 36rem;
+}
+.olb-custom-legal-head > * + * { margin-top: var(--olb-space-4); }
+.olb-custom-legal-head > .olb-meta { margin-top: var(--olb-space-3); }
+.olb-custom-legal-head > .olb-meta + p { margin-top: var(--olb-space-6); }
+
+.olb-custom-legal-contents {
+  grid-column: 9 / span 4;
+  grid-row: 2;
+  position: sticky;
+  top: var(--olb-space-12);
+}
+.olb-custom-legal-contents ol {
+  margin-top: var(--olb-space-3);
+  padding-left: 1.5em;
+  list-style: decimal;
+  font-size: var(--olb-type-compact);
+  line-height: var(--olb-leading-compact);
+  color: var(--olb-text-secondary);
+}
+.olb-custom-legal-contents li + li { margin-top: var(--olb-space-2); }
+.olb-custom-legal-contents a { transition: color var(--olb-transition); }
+.olb-custom-legal-contents a:hover { color: var(--olb-text-primary); }
+
+.olb-custom-legal-body { grid-row: 2; }
+.olb-custom-legal-body > section { scroll-margin-top: var(--olb-space-12); }
+.olb-custom-legal-body > section + section { margin-top: var(--olb-space-8); }
+.olb-custom-legal-body > section > * + * { margin-top: var(--olb-space-4); }
+.olb-custom-legal-body > section > h2 + * { margin-top: var(--olb-space-3); }
+.olb-custom-legal-body ul {
+  padding-left: 1.25em;
+  list-style: disc;
+}
+.olb-custom-legal-body li + li { margin-top: var(--olb-space-2); }
+.olb-custom-legal-index { color: var(--olb-text-secondary); }
+
 /* ── Footer, on its own dark ground ──────────────────────────────────────── */
 
 .olb-footer {
@@ -847,6 +896,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding-top: var(--olb-space-6);
   border-top: 1px solid var(--olb-border-on-contrast);
 }
+.olb-custom-footer-legal-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--olb-space-2) var(--olb-space-5);
+}
+.olb-custom-footer-legal-nav a { transition: color var(--olb-transition); }
+.olb-custom-footer-legal-nav a:hover { color: var(--olb-text-on-contrast); }
 
 /* ── Tablet: 6 columns ───────────────────────────────────────────────────── */
 
@@ -870,6 +926,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .olb-custom-footer-legal { grid-column: span 6; }
 
   .olb-custom-closing-band { padding-block: var(--olb-space-12); }
+
+  /* The contents list moves above the text it indexes. */
+  .olb-custom-legal { grid-template-columns: minmax(0, 1fr); row-gap: var(--olb-space-8); }
+  .olb-custom-legal-head,
+  .olb-custom-legal-contents,
+  .olb-custom-legal-body { grid-column: 1; grid-row: auto; }
+  .olb-custom-legal-contents { position: static; }
 
   /* Claim first, journey beneath it on the same grid. */
   .olb-opening { row-gap: var(--olb-space-10); }

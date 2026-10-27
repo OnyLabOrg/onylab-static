@@ -6,8 +6,8 @@
     <script>
       // The site is static, so the reader's language can only be honoured in the
       // browser. This runs on the English root only: a reader who asked for /fr/
-      // explicitly is never sent back, and a stored choice always beats the
-      // browser setting.
+      // or for any other page explicitly is never sent elsewhere, and a stored
+      // choice always beats the browser setting.
       (function () {
         try {
           var stored = localStorage.getItem('olb-lang');
@@ -50,7 +50,7 @@
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/style.css?v=16" rel="stylesheet">
+    <link href="/style.css?v=17" rel="stylesheet">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -113,11 +113,11 @@
       "about": {
         "@id": "https://onylab.com/#organization"
       },
+      "description": "OnyLab builds the applications and integrations local restaurants and shops use to get found, take more orders, and bring customers back.",
+      "inLanguage": "en",
       "mainEntity": {
         "@id": "https://onylab.com/#organization"
       },
-      "description": "OnyLab builds the applications and integrations local restaurants and shops use to get found, take more orders, and bring customers back.",
-      "inLanguage": "en",
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
@@ -377,6 +377,11 @@
 
         <div class="olb-custom-footer-legal">
             <p class="olb-meta">© 2026 OnyLab. All rights reserved.</p>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Legal">
+                <ul>
+                    <li><a class="olb-meta" href="/privacy/" hreflang="en">Privacy Policy</a></li><li><a class="olb-meta" href="/terms/" hreflang="en">Terms of Use</a></li>
+                </ul>
+            </nav>
             <p class="olb-meta">Made with <span role="img" aria-label="love">❤️</span> in Canada &amp; France</p>
         </div>
     </footer>
