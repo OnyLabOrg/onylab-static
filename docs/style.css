@@ -517,7 +517,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .olb-custom-journey-body .olb-caption { margin-top: var(--olb-space-1); }
 
 /* The return loop: out of step 3, up, and back into step 2. It is the one
-   flame mark of the opening, carrying the "repeat order" of the claim. */
+   flame mark of the opening, carrying the "ordered again" of the claim. */
 .olb-custom-journey-loop {
   grid-column: 2;
   grid-row: 2 / 4;
