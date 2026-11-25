@@ -8,7 +8,9 @@
     <meta name="description" content="Comment OnyLab recueille, utilise, communique et protège les renseignements personnels sur son site et dans ses applications, en vertu des lois canadiennes et québécoises sur la protection des renseignements personnels.">
     
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#fefefe">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
     <meta property="og:title" content="Politique de confidentialité | OnyLab">
     <meta property="og:description" content="Comment OnyLab recueille, utilise, communique et protège les renseignements personnels sur son site et dans ses applications, en vertu des lois canadiennes et québécoises sur la protection des renseignements personnels.">
     <meta property="og:type" content="website">
@@ -20,10 +22,10 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="OnyLab. Trouvé, commandé, recommandé.">
+    <meta property="og:image:alt" content="OnyLab. Chaque commande prise. Chaque client qui revient.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://onylab.com/og.png">
-    <meta name="twitter:image:alt" content="OnyLab. Trouvé, commandé, recommandé.">
+    <meta name="twitter:image:alt" content="OnyLab. Chaque commande prise. Chaque client qui revient.">
     <meta name="twitter:title" content="Politique de confidentialité | OnyLab">
     <meta name="twitter:description" content="Comment OnyLab recueille, utilise, communique et protège les renseignements personnels sur son site et dans ses applications, en vertu des lois canadiennes et québécoises sur la protection des renseignements personnels.">
     <link rel="canonical" href="https://onylab.com/fr/confidentialite/">
@@ -32,7 +34,7 @@
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/style.css?v=17" rel="stylesheet">
+    <link href="/style.css?v=19" rel="stylesheet">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -43,7 +45,7 @@
       "url": "https://onylab.com/privacy/",
       "email": "hello@onylab.com",
       "foundingDate": "2020",
-      "description": "OnyLab est une entreprise logicielle qui conçoit des applications et des intégrations pour les commerces de proximité indépendants : restaurants, cafés, boulangeries, food trucks et commerces de quartier. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité, et qui ont conçu les applications à partir de cette expérience. Ses applications couvrent 3 étapes de l'activité d'un commerce : être trouvé sur les moteurs de recherche, les cartes, les sites d'avis et les assistants IA ; prendre les commandes du comptoir, de la table, du téléphone, du site web et des plateformes de livraison dans 1 seule file qui alimente le point de vente existant du commerce ; et faire revenir les clients par e-mail et SMS à partir des données de commande. Tout se branche sur ce que le commerce utilise aujourd'hui plutôt que de le remplacer. Le travail commence en général par l'étape qui coûte le plus cher, et les 2 autres suivent une fois que la première s'est payée. OnyLab est joignable à hello@onylab.com.",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et en ligne (Order&Pay), organisent leur préparation (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
@@ -54,12 +56,12 @@
         "addressCountry": "FR"
       },
       "knowsAbout": [
-        "Logiciels pour commerces de proximité",
-        "Systèmes de prise de commande pour restaurants",
-        "Intégrations de point de vente",
-        "Intégrations de plateformes de livraison",
-        "Visibilité sur la recherche locale et les cartes",
-        "Fidélisation client pour les commerces de proximité"
+        "Prise de commande par téléphone pour restaurants",
+        "Commande et paiement en ligne",
+        "Préparation des commandes",
+        "Segmentation clients pour les campagnes e-mail et SMS",
+        "Intégrations HubRise",
+        "Intégrations de caisse"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -108,33 +110,41 @@
     <header class="olb-header" id="header">
         <div class="olb-masthead">
             <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
-                <img class="olb-wordmark" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="90" height="30">
+                <picture>
+                    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg">
+                    <img class="olb-wordmark" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                </picture>
             </a>
-            <nav class="olb-document-meta" aria-label="Principale">
+            <nav class="olb-document-meta" aria-label="Navigation principale">
                 <ul class="olb-nav" id="navMenu">
-                    <li><a href="/fr/#steps">Ce que nous faisons</a></li>
-                    <li><a href="/fr/#about">À propos</a></li>
-                    <li><a href="/fr/#contact">Contact</a></li>
+                    <li><a href="/fr/#apps">Applications</a></li>
+                    <li><a href="/fr/#ecosystem">Comment ça marche</a></li>
+                    <li><a href="/fr/#connections">Votre caisse</a></li>
+                    <li><a href="/fr/#faq">Questions</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Connexion</a></li>
                 </ul>
-                <div class="olb-custom-lang">
-                    <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Langue: Français">
-                        <span class="olb-custom-lang-name" aria-hidden="true">Français</span>
-                        <span class="olb-custom-lang-code" aria-hidden="true">FR</span>
-                        <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                <div class="olb-custom-header-tools">
+                    <a class="olb-custom-signin" href="https://apps.onylab.com/">Connexion</a>
+                    <div class="olb-custom-lang">
+                        <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Langue: Français">
+                            <span class="olb-custom-lang-name" aria-hidden="true">Français</span>
+                            <span class="olb-custom-lang-code" aria-hidden="true">FR</span>
+                            <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                        </button>
+                        <ul class="olb-custom-lang-menu" id="langMenu">
+                            <li>
+                                <a href="/privacy/" lang="en" hreflang="en" data-lang="en">English</a>
+                            </li><li>
+                                <a href="/fr/confidentialite/" lang="fr" hreflang="fr" data-lang="fr" aria-current="true">Français</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact">Nous écrire</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
                     </button>
-                    <ul class="olb-custom-lang-menu" id="langMenu">
-                        <li>
-                            <a href="/privacy/" lang="en" hreflang="en" data-lang="en">English</a>
-                        </li><li>
-                            <a href="/fr/confidentialite/" lang="fr" hreflang="fr" data-lang="fr" aria-current="true">Français</a>
-                        </li>
-                    </ul>
                 </div>
-                <a href="/fr/#contact" class="olb-button olb-button-compact">Écrivez-nous</a>
-                <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
-                    <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
-                    <span class="olb-visually-hidden">Menu</span>
-                </button>
             </nav>
         </div>
     </header>
@@ -206,35 +216,53 @@
     <footer class="olb-footer">
         <div class="olb-custom-footer-brand">
             <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
-                <img class="olb-logo" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26">
+                <picture>
+                    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg">
+                    <img class="olb-logo" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26">
+                </picture>
             </a>
-            <p class="olb-caption">Des applications pour que les commerces de proximité grandissent plus vite, plus intelligemment et plus solidement. OnyLab conçoit des outils SaaS qui transforment les interactions clients de tous les jours en croissance.</p>
-            <p class="olb-caption">Aussi de la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, automatisation de tâches par IA pour les commerces de proximité.</p>
+            <p class="olb-caption">Des applications pour que les restaurants et les commerces prennent chaque commande et fassent revenir leurs clients, branchées sur la caisse qu&#39;ils utilisent déjà.</p>
+            <p class="olb-caption">De la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, l'automatisation des tâches pour les commerces de proximité.</p>
         </div>
 
-        <nav class="olb-custom-footer-nav" aria-label="Pied de page">
-            <h2 class="olb-label">Sections</h2>
+        <nav class="olb-custom-footer-col" aria-label="Prendre les commandes">
+            <h2 class="olb-label">Prendre les commandes</h2>
             <ul>
-                <li><a href="/fr/#steps">Ce que nous faisons</a></li><li><a href="/fr/#foundations">Ce qui tient l&#39;ensemble</a></li><li><a href="/fr/#stores">Pour qui c&#39;est fait</a></li><li><a href="/fr/#automation">Automatisation des tâches</a></li><li><a href="/fr/#contact">Contact</a></li><li><a href="/fr/#about">À propos</a></li>
+                <li><a href="/fr/#tour-orderpad">OrderPad</a></li><li><a href="/fr/#tour-orderpay">Order&amp;Pay</a></li><li><a href="/fr/#tour-orderpicker">OrderPicker</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Faire revenir les clients">
+            <h2 class="olb-label">Faire revenir les clients</h2>
+            <ul>
+                <li><a href="/fr/#tour-brevo">Brevo Bridge</a></li><li><a href="/fr/#tour-smsmode">SMSMode Bridge</a></li>
             </ul>
         </nav>
 
-        <div class="olb-custom-footer-contact">
+        <nav class="olb-custom-footer-col" aria-label="Pied de page">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Votre caisse</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
             <h2 class="olb-label">Contact</h2>
-            <p><a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+                <li><a href="mailto:support@onylab.com">support@onylab.com</a></li>
+            </ul>
         </div>
 
         <div class="olb-custom-footer-legal">
             <p class="olb-meta">© 2026 OnyLab. Tous droits réservés.</p>
-            <nav class="olb-custom-footer-legal-nav" aria-label="Informations juridiques">
+            <nav class="olb-custom-footer-legal-nav" aria-label="Mentions légales">
                 <ul>
                     <li><a class="olb-meta" href="/fr/confidentialite/">Politique de confidentialité</a></li><li><a class="olb-meta" href="/fr/conditions/">Conditions d&#39;utilisation</a></li>
                 </ul>
             </nav>
-            <p class="olb-meta">Fait avec <span role="img" aria-label="amour">❤️</span> au Canada et en France</p>
+            <p class="olb-meta">Fait avec amour au Canada et en France</p>
         </div>
     </footer>
 
 </div>
-<script src="/script.js?v=8" type="text/javascript"></script></body>
+<script src="/script.js?v=9" type="text/javascript"></script></body>
 </html>

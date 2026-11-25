@@ -1,35 +1,37 @@
 # OnyLab
 
-> OnyLab is a software company that builds applications and integrations for independent local stores: restaurants, cafes, bakeries, food trucks, and neighbourhood shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves, and who designed the applications from that experience. Its applications cover 3 steps of a store's business: being found on search engines, maps, review sites, and AI assistants; taking orders from the counter, the table, the phone, the website, and delivery marketplaces into 1 queue that feeds the store's existing point of sale; and bringing customers back with email and SMS built from the ordering data. Everything plugs into what the store runs today rather than replacing it. Work usually begins with the 1 step costing the most, and the other 2 follow once the first pays for itself. OnyLab can be reached at hello@onylab.com.
+> OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone and online, organise their preparation, and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns. They connect to the till and the delivery platforms a store already uses through HubRise.
 
-OnyLab connects to the systems a store already runs on (point of sale, payment terminal, delivery marketplaces, email and SMS channels) rather than replacing them. A first project usually starts with the single step that is costing the store the most, and the other 2 are added once the first one is earning.
+Every app reads from or writes to the store's HubRise account, where the till and the delivery platforms already send their orders. A store keeps its till, its payment terminal and its delivery accounts, and can start with 1 app and add the others later.
 
-Contact: hello@onylab.com
+Contact: hello@onylab.com. Support: support@onylab.com. Customers sign in to their apps at https://apps.onylab.com/.
 
 Languages: this site is published in English at https://onylab.com/ and in French at https://onylab.com/fr/. Both versions carry the same content, and the English version is the source.
 
-## What OnyLab does
+## Take orders
 
-- [Get found where customers already look](https://onylab.com/#steps): presence on search engines (Google, Bing), AI assistants (ChatGPT, Claude), and maps and review sites (Google Maps, Apple Maps, TripAdvisor).
-- [Take more orders, faster and easier](https://onylab.com/#steps): orders from the counter, the table, the phone, the store's website, and delivery marketplaces arrive in 1 queue and are pushed to the existing point-of-sale system and payment terminal.
-- [Build loyalty and bring customers back](https://onylab.com/#steps): customer records built from the orders themselves, email and SMS messages at the moments that matter, review requests, and a view of how many customers actually came back.
-- [What holds the 3 steps together](https://onylab.com/#foundations): analytics and reporting, integrations with the tools the store already uses, and reliability with support covered 7 days a week.
+- [OrderPad](https://onylab.com/#tour-orderpad): phone order taking on a tablet or a computer. The caller's customer profile comes up from HubRise, the order is built from the HubRise menu with options, comments and the service mode, and it is sent to the till through HubRise.
+- [Order&Pay](https://onylab.com/#tour-orderpay): online ordering. Customers pay in 1 tap, with no app to install and no account to create.
+- [OrderPicker](https://onylab.com/#tour-orderpicker): order preparation, with a step-by-step workflow that catches mistakes and speeds up each preparation.
 
-## Who it is for
+## Bring customers back
 
-- [Built for independent stores, not for chains](https://onylab.com/#stores): independent restaurants, cafes, bakeries, food trucks, and neighbourhood shops, with 1 location or a small group of a few. The owner is usually also the manager, so the tools have to pay for themselves without a project team.
+- [Brevo Bridge](https://onylab.com/#tour-brevo): copies HubRise customers and orders into the store's Brevo account and sorts them by visits, average basket and last order, for email and SMS campaigns.
+- [SMSMode Bridge](https://onylab.com/#tour-smsmode): copies the same customers and orders into the store's smsmode account, for SMS and WhatsApp campaigns.
+
+## How it fits
+
+- [How the apps share data](https://onylab.com/#ecosystem): the apps sit around the store's menu, orders and customers, kept in its HubRise account. OrderPad, Brevo Bridge and SMSMode Bridge are listed in HubRise's app directory (checked on 24 November 2026).
+- [Your till](https://onylab.com/#connections): tills connected to HubRise, and the delivery platforms Deliveroo, Uber Eats and Just Eat, connected to HubRise (checked on 24 November 2026).
+- [Questions](https://onylab.com/#faq): changing the till, what HubRise is, using 1 app only, customer data, delivery platforms, support, and signing in.
 
 ## About
 
-- [We ran local businesses before we built software for them](https://onylab.com/#about): the founders operated local restaurants and businesses before building the applications. Figures stated on the page: 5+ applications (1 per step plus analytics and the integration layer), 60+ distinct third-party integrations, 20+ years of experience, support 7 days a week. The page explains what each figure counts.
+- [Who we are](https://onylab.com/#about): founded in 2020 in France by people who had run local restaurants and shops. Figures stated on the page: 5 apps live on apps.onylab.com on 24 November 2026, 20+ years running local restaurants and shops then building software for them, support 7 days a week.
 
 ## Also from the same team
 
-- [Agentium Lab](https://agentiumlab.com/): AI task automation for local businesses, run by the same team as OnyLab. Where OnyLab covers the customer-facing steps, Agentium Lab takes on the repetitive internal tasks an owner still does by hand. You name 1 task, they watch it done once with the exceptions included, then they build the automation and run it on their side, so the owner gets an AI employee handling the task rather than more software to learn.
-
-## Contact
-
-- [Tell us what your store needs](https://onylab.com/#contact): write to hello@onylab.com with the part of the operation that is costing the most.
+- [Agentium Lab](https://agentiumlab.com/): task automation for local businesses, run by the same team as OnyLab. You name 1 task you never want to do again, and they automate it.
 
 ## Legal
 

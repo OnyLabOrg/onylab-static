@@ -73,3 +73,63 @@ if (langToggle && langMenu) {
     langToggle.focus();
   });
 }
+
+// Product tour. Without script every app panel shows, one under the other.
+// With it, the panels become tabs, and any link to an app's panel (the map,
+// the app cards, the footer) opens that tab instead of jumping down the list.
+const tour = document.querySelector('.olb-custom-tour');
+
+if (tour) {
+  const tablist = tour.querySelector('[role="tablist"]');
+  const tabs = Array.from(tour.querySelectorAll('[role="tab"]'));
+  const panels = Array.from(tour.querySelectorAll('[role="tabpanel"]'));
+
+  const select = (app, focus) => {
+    const tab = tabs.find((t) => t.dataset.app === app);
+    if (!tab) return false;
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+    });
+    panels.forEach((p) => { p.hidden = p.id !== `tour-${app}`; });
+    // Keep the chosen tab visible when the strip scrolls sideways on a phone.
+    if (tablist.scrollWidth > tablist.clientWidth) {
+      tablist.scrollTo({ left: tab.offsetLeft - tablist.offsetLeft - 16 });
+    }
+    if (focus) tab.focus();
+    return true;
+  };
+
+  tablist.hidden = false;
+  tour.classList.add('is-enhanced');
+  const fromHash = location.hash.startsWith('#tour-') ? location.hash.slice(6) : '';
+  if (!select(fromHash) && tabs[0]) select(tabs[0].dataset.app);
+
+  tablist.addEventListener('click', (e) => {
+    const tab = e.target.closest('[role="tab"]');
+    if (tab) select(tab.dataset.app);
+  });
+
+  tablist.addEventListener('keydown', (e) => {
+    const index = tabs.indexOf(document.activeElement);
+    if (index < 0) return;
+    const keys = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: tabs.length - 1 };
+    if (!(e.key in keys)) return;
+    e.preventDefault();
+    const next = (keys[e.key] + tabs.length) % tabs.length;
+    select(tabs[next].dataset.app, true);
+  });
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href*="#tour-"]');
+    if (!link) return;
+    const url = new URL(link.href, location.href);
+    if (url.pathname !== location.pathname) return;
+    const app = url.hash.slice(6);
+    if (!select(app)) return;
+    e.preventDefault();
+    history.replaceState(null, '', url.hash);
+    tour.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+}

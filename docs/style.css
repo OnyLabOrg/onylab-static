@@ -3,13 +3,17 @@
    Implements the olb-* API documented in
    .claude/skills/onylab-brand-guidelines/SKILL.md
 
-   Grounds, in scroll order: canvas, contrast, secondary, contrast, canvas,
-   then the dark footer. The header shares the opening's light ground.
-   No gradients, shadows, or blur anywhere.
+   Light by default, dark when the reader's system asks for it: the
+   tokens below are the light values, and the prefers-color-scheme block
+   after them swaps them for the dark ones. There is no switcher.
+   3 grounds: the canvas, the secondary ground 1 step off it, and the
+   inversion (data-tone="contrast"), ink in light mode and paper in dark
+   mode. No gradients and no glows. Backdrop blur appears only on the
+   sticky header, and a soft shadow only on the product frame.
    ========================================================================== */
 
 /* Self-hosted variable fonts (latin subset, served from /fonts/).
-   Both files are preloaded from index.html; swap keeps text visible while
+   Both files are preloaded from the layout; swap keeps text visible while
    they load instead of blocking first render on a third-party stylesheet. */
 @font-face {
   font-family: 'Syne';
@@ -27,47 +31,50 @@
 }
 
 :root {
-  /* Legacy short names. Previous generation of the same constants; kept while
-     older pages still read them. New CSS uses the --olb-* names below. */
-  --flame:    #f34605;
-  --flame-dk: #c93a04;
-  --ink:      #0c0c0e;
-  --muted:    #666c78;
-  --soft:     #f4f3f0;
-  --white:    #fefefe;
-  --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: light dark;
 
-  /* Brand */
-  --olb-flame:      var(--flame);
-  --olb-flame-dark: var(--flame-dk);
+  /* Grounds */
+  --olb-canvas:            #fefefe;
+  --olb-surface-secondary: #f4f3f0;
+  --olb-surface-contrast:  #0c0c0e;
 
-  /* Surfaces and text */
-  --olb-canvas:                     var(--white);
-  --olb-surface-secondary:          var(--soft);
-  --olb-surface-contrast:           var(--ink);
-  --olb-text-primary:               var(--ink);
-  --olb-text-secondary:             var(--muted);
+  /* Text */
+  --olb-text-primary:               #0c0c0e;
+  --olb-text-secondary:             #666c78;
   --olb-text-on-contrast:           #f4f4f2;
   --olb-text-on-contrast-secondary: #a1a1a6;
 
-  /* Borders and state */
+  /* Brand. The flame fills the primary action on every ground, with an ink
+     label. As text it needs the darker flame on light grounds, so the 2
+     accent tokens name the right one for the canvas and for the inversion. */
+  --olb-flame:              #f34605;
+  --olb-flame-dark:         #c93a04;
+  --olb-on-flame:           #0c0c0e;
+  --olb-accent:             var(--olb-flame-dark);
+  --olb-accent-on-contrast: var(--olb-flame);
+
+  /* Borders and states */
   --olb-border-subtle:      rgba(12, 12, 14, 0.09);
   --olb-border-default:     rgba(12, 12, 14, 0.16);
   --olb-border-strong:      rgba(12, 12, 14, 0.34);
   --olb-border-on-contrast: rgba(255, 255, 255, 0.16);
   --olb-focus:              var(--olb-flame);
-  --olb-color-info:         #1c5ec4;
   --olb-color-success:      #10693c;
   --olb-color-warning:      #8a5300;
   --olb-color-error:        #b02020;
+  --olb-color-info:         #1c5ec4;
+
+  /* Surfaces that carry an opacity or a shadow. */
+  --olb-header-ground: rgba(254, 254, 254, 0.85);
+  --olb-frame-shadow:  0 24px 60px -28px rgba(12, 12, 14, 0.22);
 
   /* Data */
-  --olb-chart-1: var(--ink);
+  --olb-chart-1: #0c0c0e;
   --olb-chart-2: #52525b;
   --olb-chart-3: #8e8e96;
   --olb-chart-4: #c2c2c8;
-  --olb-chart-5: var(--flame-dk);
-  --olb-chart-6: var(--flame);
+  --olb-chart-5: #c93a04;
+  --olb-chart-6: #f34605;
 
   /* Rhythm and shape */
   --olb-space-1:  4px;
@@ -82,6 +89,8 @@
   --olb-space-16: 144px;
   --olb-radius-small: 4px;
   --olb-radius:       8px;
+  --olb-radius-large: 16px;
+  --olb-radius-pill:  999px;
 
   /* Type family */
   --olb-font-display: 'Syne', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -89,16 +98,18 @@
   --olb-font-mono:    ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Type size */
-  --olb-type-display:    clamp(3rem, 7.6vw, 6.5rem);
+  --olb-type-display:    clamp(2.75rem, 6vw, 4.5rem);
   --olb-type-page-title: clamp(2.25rem, 4.6vw, 3.75rem);
-  --olb-type-title:      clamp(1.875rem, 3.6vw, 2.75rem);
-  --olb-type-section:    clamp(1.625rem, 2.6vw, 2.25rem);
+  --olb-type-title:      clamp(1.875rem, 3.4vw, 2.75rem);
+  --olb-type-section:    clamp(1.5rem, 2.4vw, 1.875rem);
   --olb-type-subsection: 1.3125rem;
-  --olb-type-lede:       clamp(1.125rem, 1.5vw, 1.375rem);
+  --olb-type-lede:       clamp(1.125rem, 1.5vw, 1.3125rem);
   --olb-type-body:       1.0625rem;
   --olb-type-compact:    0.9375rem;
   --olb-type-label:      0.875rem;
   --olb-type-metadata:   0.8125rem;
+  --olb-tracking-display: -0.035em;
+  --olb-tracking-title:   -0.025em;
 
   /* Type weight and leading */
   --olb-weight-regular:  400;
@@ -106,22 +117,57 @@
   --olb-weight-semibold: 600;
   --olb-weight-heading:  700;
   --olb-weight-display:  800;
-  --olb-leading-body:       1.6;
-  --olb-leading-compact:    1.45;
+  --olb-leading-body:       1.65;
+  --olb-leading-compact:    1.4;
   --olb-leading-caption:    1.5;
-  --olb-leading-display:    0.95;
+  --olb-leading-display:    1.02;
   --olb-leading-page-title: 1.05;
   --olb-leading-title:      1.1;
   --olb-leading-section:    1.18;
-  --olb-leading-subsection: 1.3;
-  --olb-leading-lede:       1.5;
+  --olb-leading-subsection: 1.25;
+  --olb-leading-lede:       1.55;
 
   /* Motion */
-  --olb-transition: var(--transition);
+  --olb-transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Inline inset that keeps every ground full bleed while its content stays
      on the shared 1200px grid. */
   --olb-inset: max(var(--olb-space-6), (100% - 1200px) / 2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --olb-canvas:            #0c0c0e;
+    --olb-surface-secondary: #161618;
+    --olb-surface-contrast:  #f4f3f0;
+
+    --olb-text-primary:               #f4f4f2;
+    --olb-text-secondary:             #a1a1a6;
+    --olb-text-on-contrast:           #0c0c0e;
+    --olb-text-on-contrast-secondary: #666c78;
+
+    --olb-accent:             var(--olb-flame);
+    --olb-accent-on-contrast: var(--olb-flame-dark);
+
+    --olb-border-subtle:      rgba(255, 255, 255, 0.08);
+    --olb-border-default:     rgba(255, 255, 255, 0.14);
+    --olb-border-strong:      rgba(255, 255, 255, 0.28);
+    --olb-border-on-contrast: rgba(12, 12, 14, 0.12);
+    --olb-color-success:      #4cc38a;
+    --olb-color-warning:      #f5b544;
+    --olb-color-error:        #ff7a6b;
+    --olb-color-info:         #7cb1ff;
+
+    --olb-header-ground: rgba(12, 12, 14, 0.85);
+    --olb-frame-shadow:  0 24px 60px -24px rgba(0, 0, 0, 0.7);
+
+    --olb-chart-1: #f4f4f2;
+    --olb-chart-2: #a1a1a6;
+    --olb-chart-3: #66666e;
+    --olb-chart-4: #ffa07a;
+    --olb-chart-5: #f34605;
+    --olb-chart-6: #7cb1ff;
+  }
 }
 
 /* ── Reset ───────────────────────────────────────────────────────────────── */
@@ -138,17 +184,18 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   font-weight: var(--olb-weight-regular);
   line-height: var(--olb-leading-body);
   -webkit-font-smoothing: antialiased;
-  font-variant-numeric: tabular-nums;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img, svg { display: block; max-width: 100%; }
 ul, ol { list-style: none; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+table { border-collapse: collapse; }
 
 :focus-visible {
   outline: 2px solid var(--olb-focus);
-  outline-offset: 2px;
+  outline-offset: 3px;
   border-radius: var(--olb-radius-small);
 }
 
@@ -167,29 +214,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   top: var(--olb-space-2);
   z-index: 100;
   transform: translateY(-200%);
-  background: var(--olb-canvas);
-  color: var(--olb-text-primary);
+  background: var(--olb-text-primary);
+  color: var(--olb-canvas);
   padding: var(--olb-space-3) var(--olb-space-4);
-  border-radius: var(--olb-radius-small);
+  border-radius: var(--olb-radius);
   font-size: var(--olb-type-label);
   font-weight: var(--olb-weight-medium);
 }
-/* Any focus must reveal it, not only the focus-visible heuristic. */
 .olb-skip-link:focus { transform: translateY(0); }
 
 .olb-section { padding-block: var(--olb-space-12); }
-.olb-section + .olb-section { padding-top: 0; }
-
-/* A ground change owns its own vertical breathing on both sides. */
 .olb-band { padding-block: var(--olb-space-12); }
 
+.olb-band[data-tone="secondary"] {
+  background: var(--olb-surface-secondary);
+}
 .olb-band[data-tone="contrast"] {
   background: var(--olb-surface-contrast);
   color: var(--olb-text-on-contrast);
-}
-.olb-band[data-tone="secondary"] {
-  background: var(--olb-surface-secondary);
-  color: var(--olb-text-primary);
 }
 
 .olb-section,
@@ -202,12 +244,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .olb-grid > * { min-width: 0; }
 
-/* Reading measure: 6 desktop columns, 60 to 68 characters. */
-.olb-reading { max-width: 34rem; }
+.olb-reading { max-width: 36rem; }
 .olb-reading > * + * { margin-top: var(--olb-space-4); }
-.olb-reading > .olb-heading-24 + p,
-.olb-reading > .olb-heading-20 + p,
-.olb-reading > .olb-heading-16 + p { margin-top: var(--olb-space-3); }
 
 .olb-flow > * + * { margin-top: var(--olb-space-4); }
 .olb-stack > * + * { margin-top: var(--olb-space-6); }
@@ -218,14 +256,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: var(--olb-space-4);
 }
 
-/* ── Header, on the opening's light ground ───────────────────────────────── */
+/* A centred section introduction: optional label, heading, lede. */
+.olb-custom-intro {
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+.olb-custom-intro > * + * { margin-top: var(--olb-space-4); }
+.olb-custom-intro > .olb-label + * { margin-top: var(--olb-space-3); }
+.olb-custom-intro + * { margin-top: var(--olb-space-10); }
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
 
 .olb-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--olb-canvas);
-  color: var(--olb-text-primary);
+  background: var(--olb-header-ground);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
   transition: border-color var(--olb-transition);
 }
@@ -233,24 +282,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .olb-masthead {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: var(--olb-space-6);
-  padding-block: var(--olb-space-5);
+  min-height: 68px;
 }
 
 .olb-identity { display: block; flex: none; }
-.olb-wordmark { height: 30px; width: auto; }
+.olb-wordmark { height: 28px; width: auto; }
 
 .olb-document-meta {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--olb-space-6);
 }
 
 .olb-nav {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--olb-space-6);
   font-size: var(--olb-type-label);
 }
@@ -258,9 +307,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--olb-text-secondary);
   transition: color var(--olb-transition);
 }
-.olb-nav a:hover { color: var(--olb-text-primary); }
+.olb-nav a:hover,
+.olb-nav a:focus-visible { color: var(--olb-text-primary); }
 
 .olb-nav-toggle { display: none; }
+
+.olb-custom-header-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--olb-space-5);
+}
+
+.olb-custom-signin {
+  font-size: var(--olb-type-label);
+  color: var(--olb-text-secondary);
+  transition: color var(--olb-transition);
+}
+.olb-custom-signin:hover { color: var(--olb-text-primary); }
+.olb-nav .olb-custom-signin-item { display: none; }
 
 /* Language switcher: a disclosure button over the locales the site is written
    in. Links, not commands, so it stays a plain list rather than an ARIA menu. */
@@ -270,12 +334,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: inline-flex;
   align-items: center;
   gap: var(--olb-space-2);
+  min-height: 40px;
   font-size: var(--olb-type-label);
   color: var(--olb-text-secondary);
   transition: color var(--olb-transition);
 }
 .olb-custom-lang-toggle:hover { color: var(--olb-text-primary); }
-
 .olb-custom-lang-code { display: none; }
 
 .olb-custom-lang-caret {
@@ -292,28 +356,28 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .olb-custom-lang-menu {
   position: absolute;
-  top: calc(100% + var(--olb-space-3));
+  top: calc(100% + var(--olb-space-2));
   right: 0;
   z-index: 60;
   display: none;
   min-width: 9rem;
-  padding-block: var(--olb-space-2);
-  background: var(--olb-canvas);
-  border: 1px solid var(--olb-border-subtle);
-  border-radius: var(--olb-radius-small);
+  padding: var(--olb-space-2);
+  background: var(--olb-surface-secondary);
+  border: 1px solid var(--olb-border-default);
+  border-radius: var(--olb-radius);
   font-size: var(--olb-type-label);
-  text-align: left;
 }
 .olb-custom-lang-menu.is-open { display: block; }
 .olb-custom-lang-menu a {
   display: block;
-  padding: var(--olb-space-2) var(--olb-space-4);
+  padding: var(--olb-space-2) var(--olb-space-3);
+  border-radius: var(--olb-radius-small);
   color: var(--olb-text-secondary);
   transition: color var(--olb-transition), background-color var(--olb-transition);
 }
 .olb-custom-lang-menu a:hover {
   color: var(--olb-text-primary);
-  background: var(--olb-surface-secondary);
+  background: var(--olb-canvas);
 }
 /* The current language is marked by weight and ink, never by colour alone. */
 .olb-custom-lang-menu a[aria-current] {
@@ -329,36 +393,42 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .olb-heading-20,
 .olb-heading-16 {
   font-family: var(--olb-font-display);
-  letter-spacing: -0.03em;
+  color: var(--olb-text-primary);
   text-wrap: balance;
+}
+.olb-band[data-tone="contrast"] :is(.olb-display, .olb-title, .olb-heading-24, .olb-heading-20, .olb-heading-16) {
+  color: var(--olb-text-on-contrast);
 }
 
 .olb-display {
   font-size: var(--olb-type-display);
   font-weight: var(--olb-weight-display);
   line-height: var(--olb-leading-display);
+  letter-spacing: var(--olb-tracking-display);
 }
 .olb-title {
   font-size: var(--olb-type-title);
   font-weight: var(--olb-weight-heading);
   line-height: var(--olb-leading-title);
+  letter-spacing: var(--olb-tracking-title);
 }
 .olb-heading-24 {
   font-size: var(--olb-type-section);
   font-weight: var(--olb-weight-heading);
   line-height: var(--olb-leading-section);
+  letter-spacing: -0.02em;
 }
 .olb-heading-20 {
   font-size: var(--olb-type-subsection);
   font-weight: var(--olb-weight-semibold);
   line-height: var(--olb-leading-subsection);
-  letter-spacing: -0.018em;
+  letter-spacing: -0.01em;
 }
 .olb-heading-16 {
   font-size: 1.0625rem;
   font-weight: var(--olb-weight-semibold);
   line-height: var(--olb-leading-subsection);
-  letter-spacing: -0.012em;
+  letter-spacing: -0.005em;
 }
 
 .olb-lede {
@@ -370,6 +440,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-size: var(--olb-type-label);
   font-weight: var(--olb-weight-medium);
   line-height: var(--olb-leading-compact);
+  color: var(--olb-text-secondary);
 }
 .olb-caption {
   font-size: var(--olb-type-compact);
@@ -381,20 +452,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   line-height: var(--olb-leading-caption);
   color: var(--olb-text-secondary);
 }
-.olb-mono { font-family: var(--olb-font-mono); font-size: 0.9em; }
+.olb-mono { font-family: var(--olb-font-mono); font-size: 0.875em; }
 .olb-numeric { text-align: right; font-variant-numeric: tabular-nums; }
 
-/* Subordinate text keeps its contrast when the ground inverts. */
-.olb-band[data-tone="contrast"] .olb-lede,
-.olb-band[data-tone="contrast"] .olb-caption,
-.olb-band[data-tone="contrast"] .olb-meta,
-.olb-band[data-tone="contrast"] .olb-label,
-.olb-footer .olb-caption,
-.olb-footer .olb-meta,
-.olb-footer .olb-label { color: var(--olb-text-on-contrast-secondary); }
+p, li, td, th { color: inherit; }
+.olb-section p,
+.olb-band p { color: var(--olb-text-secondary); }
 
-.olb-band[data-tone="contrast"] :focus-visible,
-.olb-footer :focus-visible { outline-color: var(--olb-flame); }
+/* Each ground uses its own secondary grey, never the other one. */
+.olb-band[data-tone="contrast"] :is(p, .olb-lede, .olb-label, .olb-caption, .olb-meta) {
+  color: var(--olb-text-on-contrast-secondary);
+}
+.olb-band[data-tone="contrast"] :focus-visible { outline-color: var(--olb-accent-on-contrast); }
 
 .olb-visually-hidden {
   position: absolute;
@@ -406,394 +475,927 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border: 0;
 }
 
-/* ── Button ──────────────────────────────────────────────────────────────── */
-
-.olb-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: var(--olb-space-3) var(--olb-space-6);
-  background: var(--olb-flame-dark);
-  color: #fff;
-  border-radius: var(--olb-radius-small);
-  font-size: var(--olb-type-body);
-  font-weight: var(--olb-weight-medium);
-  line-height: 1;
-  transition: background-color var(--olb-transition), color var(--olb-transition);
-}
-.olb-button:hover { background: var(--olb-text-primary); }
-
-.olb-button-compact {
-  min-height: 38px;
-  padding: var(--olb-space-2) var(--olb-space-4);
-  font-size: var(--olb-type-label);
-}
-
-/* On an inverted ground the label cannot darken, so the control lightens. */
-.olb-band[data-tone="contrast"] .olb-button:hover {
-  background: var(--olb-canvas);
-  color: var(--olb-text-primary);
-}
-
-.olb-button-on-contrast {
-  background: var(--olb-canvas);
-  color: var(--olb-text-primary);
-}
-.olb-button-on-contrast:hover { background: var(--olb-surface-secondary); }
-
-/* ── Opening: the claim beside the customer's path through a store ───────── */
-
-.olb-opening {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: var(--olb-space-6);
-  align-items: start;
-  padding-block: var(--olb-space-12);
-}
-.olb-opening > * { min-width: 0; }
-
-.olb-custom-opening-copy { grid-column: 1 / span 6; }
-
-/* The claim shares the first viewport with the journey, so it steps down
-   from the display role to the page-title role. */
-.olb-opening-claim {
-  max-width: 14ch;
-  font-size: var(--olb-type-page-title);
-  line-height: var(--olb-leading-page-title);
-}
-.olb-opening-proof {
-  max-width: 30rem;
-  margin-top: var(--olb-space-6);
-}
-.olb-opening-context { margin-top: var(--olb-space-8); }
-
-/* Three fixed-height rows so the connectors between the numbered marks and
-   the return loop can be drawn from known geometry. */
-.olb-custom-journey {
-  grid-column: 8 / span 5;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) var(--olb-space-5) auto;
-  grid-auto-rows: 104px;
-  align-items: center;
-  padding-top: var(--olb-space-2);
-}
-.olb-custom-journey-steps { display: contents; }
-.olb-custom-journey-steps > li {
-  grid-column: 1;
-  position: relative;
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  column-gap: var(--olb-space-4);
-  align-items: center;
-  height: 104px;
-}
-/* Connector from the bottom of one mark to the top of the next. */
-.olb-custom-journey-steps > li:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  left: 19.5px;
-  top: calc(50% + 20px);
-  width: 1px;
-  height: 64px;
-  background: var(--olb-border-default);
-}
-.olb-custom-journey-index {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--olb-border-strong);
-  border-radius: var(--olb-radius-small);
-  background: var(--olb-canvas);
-  font-size: var(--olb-type-label);
-  font-weight: var(--olb-weight-medium);
-}
-.olb-custom-journey-body { min-width: 0; }
-.olb-custom-journey-title {
-  font-weight: var(--olb-weight-medium);
-  line-height: var(--olb-leading-compact);
-}
-.olb-custom-journey-body .olb-caption { margin-top: var(--olb-space-1); }
-
-/* The return loop: out of step 3, up, and back into step 2. It is the one
-   flame mark of the opening, carrying the "ordered again" of the claim. */
-.olb-custom-journey-loop {
-  grid-column: 2;
-  grid-row: 2 / 4;
-  align-self: stretch;
-  position: relative;
-  margin-block: 52px;
-  border: 1.5px solid var(--olb-flame-dark);
-  border-left: 0;
-  border-radius: 0 var(--olb-radius) var(--olb-radius) 0;
-}
-.olb-custom-journey-loop::before {
-  content: '';
-  position: absolute;
-  left: -1px;
-  top: -4.5px;
-  width: 7px;
-  height: 7px;
-  border-left: 1.5px solid var(--olb-flame-dark);
-  border-bottom: 1.5px solid var(--olb-flame-dark);
-  transform: rotate(45deg);
-}
-.olb-custom-journey-loop-label {
-  grid-column: 3;
-  grid-row: 2 / 4;
-  padding-left: var(--olb-space-2);
-  font-size: var(--olb-type-label);
-  font-weight: var(--olb-weight-medium);
-  line-height: var(--olb-leading-compact);
-  color: var(--olb-flame-dark);
-}
-
-/* ── Sequence: the three steps ───────────────────────────────────────────── */
-
-.olb-custom-sequence { margin-top: var(--olb-space-10); }
-
-.olb-custom-sequence > li {
-  display: grid;
-  grid-template-columns: 5rem minmax(0, 24rem) minmax(0, 1fr);
-  gap: var(--olb-space-8) var(--olb-space-6);
-  align-items: start;
-  padding-block: var(--olb-space-8);
-  border-top: 1px solid var(--olb-border-subtle);
-}
-.olb-custom-sequence > li:last-child { border-bottom: 1px solid var(--olb-border-subtle); }
-
-.olb-custom-sequence-index {
-  font-family: var(--olb-font-display);
-  font-size: clamp(2rem, 3.4vw, 3rem);
-  font-weight: var(--olb-weight-heading);
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-  color: var(--olb-text-secondary);
-  font-variant-numeric: tabular-nums;
-}
-
-.olb-band[data-tone="contrast"] .olb-custom-sequence > li,
-.olb-band[data-tone="contrast"] .olb-custom-sequence > li:last-child {
-  border-color: var(--olb-border-on-contrast);
-}
-.olb-band[data-tone="contrast"] .olb-custom-sequence-index {
-  color: var(--olb-text-on-contrast-secondary);
-}
-
-.olb-custom-sequence-body { min-width: 0; }
-.olb-custom-sequence-body > * + * { margin-top: var(--olb-space-3); }
-.olb-custom-sequence-body > .olb-caption { margin-top: var(--olb-space-4); }
-
-/* ── Flow diagram: inputs, the OnyLab application, outputs ───────────────
-   One grammar for all three steps. Grey boxes are systems the store already
-   has; the flame-bordered node is what OnyLab runs. Item rows are 40px tall
-   so the bus line can start and end at the first and last item centres. */
-
-.olb-custom-diagram {
-  min-width: 0;
-  align-self: center;
-}
-.olb-custom-diagram > figcaption { margin-top: var(--olb-space-5); }
-
-/* Groups stretch so their labels share one top line; each list then
-   centres itself on the node. */
-.olb-custom-flow {
-  display: flex;
-  align-items: stretch;
-}
-.olb-custom-flow > * { min-width: 0; }
-.olb-custom-flow-group {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 0;
-  max-width: 22rem;
-}
-.olb-custom-flow-group > ul { margin-block: auto; }
-
-.olb-custom-flow-group > .olb-label {
-  margin-bottom: var(--olb-space-3);
-  color: var(--olb-text-secondary);
-}
-.olb-custom-flow-group > ul {
-  position: relative;
-  display: grid;
-  gap: var(--olb-space-2);
-}
-.olb-custom-flow-group > ul > li {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 40px;
-  padding: var(--olb-space-2) var(--olb-space-3);
-  border: 1px solid var(--olb-border-default);
-  text-wrap: nowrap;
-  border-radius: var(--olb-radius-small);
-  font-size: var(--olb-type-compact);
-  line-height: var(--olb-leading-compact);
-}
-
-/* Connectors: each item runs a short line to a vertical bus, and the bus
-   runs one line into the node. Left groups connect on their right edge,
-   right groups on their left edge. */
-.olb-custom-flow-group:has(+ .olb-custom-flow-node) > ul { padding-right: var(--olb-space-5); }
-.olb-custom-flow-group:has(+ .olb-custom-flow-node) > ul > li::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: calc(-1 * var(--olb-space-5));
-  width: var(--olb-space-5);
-  height: 1px;
-  background: var(--olb-border-default);
-}
-.olb-custom-flow-group:has(+ .olb-custom-flow-node) > ul::after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  bottom: 20px;
-  right: 0;
-  width: 1px;
-  background: var(--olb-border-default);
-}
-
-.olb-custom-flow-node + .olb-custom-flow-group > ul { padding-left: var(--olb-space-5); }
-.olb-custom-flow-node + .olb-custom-flow-group > ul > li::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: calc(-1 * var(--olb-space-5));
-  width: var(--olb-space-5);
-  height: 1px;
-  background: var(--olb-border-default);
-}
-.olb-custom-flow-node + .olb-custom-flow-group > ul::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  bottom: 20px;
-  left: 0;
-  width: 1px;
-  background: var(--olb-border-default);
-}
-
-.olb-custom-flow-node {
-  position: relative;
-  flex: 0 0 auto;
-  align-self: center;
-  max-width: 11rem;
-  padding: var(--olb-space-3) var(--olb-space-4);
-  border: 1.5px solid var(--olb-flame);
-  border-radius: var(--olb-radius-small);
-  font-weight: var(--olb-weight-medium);
-  line-height: var(--olb-leading-compact);
-  text-align: center;
-  text-wrap: balance;
-}
-.olb-custom-flow-group + .olb-custom-flow-node { margin-left: var(--olb-space-5); }
-.olb-custom-flow-group + .olb-custom-flow-node::before {
-  content: '';
-  position: absolute;
-  background: var(--olb-border-default);
-  top: 50%;
-  left: calc(-1 * var(--olb-space-5) - 1.5px);
-  width: var(--olb-space-5);
-  height: 1px;
-}
-.olb-custom-flow-node:has(+ .olb-custom-flow-group) { margin-right: var(--olb-space-5); }
-.olb-custom-flow-node:has(+ .olb-custom-flow-group)::after {
-  content: '';
-  position: absolute;
-  background: var(--olb-border-default);
-  top: 50%;
-  right: calc(-1 * var(--olb-space-5) - 1.5px);
-  width: var(--olb-space-5);
-  height: 1px;
-}
-/* On the ink ground every line, label, and box is re-checked. */
-.olb-band[data-tone="contrast"] .olb-custom-flow-group > .olb-label { color: var(--olb-text-on-contrast-secondary); }
-.olb-band[data-tone="contrast"] .olb-custom-flow-group > ul > li { border-color: var(--olb-border-on-contrast); }
-.olb-band[data-tone="contrast"] .olb-custom-flow-group > ul::before,
-.olb-band[data-tone="contrast"] .olb-custom-flow-group > ul::after,
-.olb-band[data-tone="contrast"] .olb-custom-flow-group > ul > li::before,
-.olb-band[data-tone="contrast"] .olb-custom-flow-group > ul > li::after,
-.olb-band[data-tone="contrast"] .olb-custom-flow-node::before,
-.olb-band[data-tone="contrast"] .olb-custom-flow-node::after { background: var(--olb-text-on-contrast-secondary); }
-
-/* ── Foundations, on the secondary ground ────────────────────────────────── */
-
-.olb-custom-foundations { margin-top: var(--olb-space-8); }
-.olb-custom-foundations > * { grid-column: span 4; }
-.olb-custom-foundations > * > * + * { margin-top: var(--olb-space-3); }
-
-/* ── Stores and about: two columns on the ink ground ─────────────────────── */
-
-.olb-custom-two-up > * { grid-column: span 6; }
-
-.olb-stat-strip {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--olb-space-8) var(--olb-space-6);
-  margin-top: var(--olb-space-10);
-  padding-top: var(--olb-space-8);
-  border-top: 1px solid var(--olb-border-subtle);
-}
-.olb-stat { min-width: 0; }
-.olb-stat-label {
-  font-size: var(--olb-type-label);
-  font-weight: var(--olb-weight-medium);
-  line-height: var(--olb-leading-compact);
-}
-.olb-stat-value {
-  margin-top: var(--olb-space-2);
-  font-size: clamp(2.25rem, 3.4vw, 3.25rem);
-  font-weight: var(--olb-weight-medium);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
-  font-variant-numeric: tabular-nums;
-}
-.olb-stat-detail {
-  margin-top: var(--olb-space-3);
-  font-size: var(--olb-type-compact);
-  line-height: var(--olb-leading-caption);
-  color: var(--olb-text-secondary);
-}
-.olb-band[data-tone="contrast"] .olb-stat-strip { border-top-color: var(--olb-border-on-contrast); }
-.olb-band[data-tone="contrast"] .olb-stat-detail { color: var(--olb-text-on-contrast-secondary); }
-
-/* ── Closing, back on the canvas before the dark footer ──────────────────── */
-
-.olb-custom-closing-band { padding-block: var(--olb-space-16); }
-.olb-custom-closing { max-width: 34rem; }
-.olb-custom-closing > * + * { margin-top: var(--olb-space-5); }
-.olb-custom-closing > p:last-child { margin-top: var(--olb-space-10); }
-
-.olb-custom-closing-address {
-  display: flex;
-  flex-direction: column;
-  gap: var(--olb-space-1);
-}
-.olb-custom-email {
-  color: var(--olb-flame-dark);
-  font-size: var(--olb-type-lede);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  transition: color var(--olb-transition);
-}
-.olb-custom-email:hover { color: var(--olb-text-primary); }
-
-/* In-prose link out of the page. flame-dark is the accent that still clears
-   4.5:1 at body size on the canvas and on the quiet ground. */
+/* In-prose link, in the accent that clears 4.5:1 on its ground. */
 .olb-custom-link {
-  color: var(--olb-flame-dark);
+  color: var(--olb-accent);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: color var(--olb-transition);
 }
 .olb-custom-link:hover { color: var(--olb-text-primary); }
+.olb-band[data-tone="contrast"] .olb-custom-link { color: var(--olb-accent-on-contrast); }
 
-/* ── Legal pages: one reading column, contents in the right rail ────────── */
+/* ── Buttons and pills ───────────────────────────────────────────────────── */
+
+/* The primary action: flame fill with an ink label (5.29:1), on every ground. */
+.olb-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--olb-space-2);
+  min-height: 48px;
+  padding: var(--olb-space-3) var(--olb-space-5);
+  background: var(--olb-flame);
+  color: var(--olb-on-flame);
+  border-radius: var(--olb-radius);
+  font-size: var(--olb-type-compact);
+  font-weight: var(--olb-weight-medium);
+  line-height: 1.2;
+  text-align: center;
+  transition: background-color var(--olb-transition), color var(--olb-transition);
+}
+.olb-button:hover { background: var(--olb-text-primary); color: var(--olb-canvas); }
+.olb-band[data-tone="contrast"] .olb-button:hover { background: var(--olb-canvas); color: var(--olb-text-primary); }
+
+.olb-button-compact {
+  white-space: nowrap;
+  min-height: 40px;
+  padding: var(--olb-space-2) var(--olb-space-4);
+  font-size: var(--olb-type-label);
+}
+
+.olb-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--olb-space-2);
+  min-height: 48px;
+  padding: var(--olb-space-3) var(--olb-space-5);
+  border: 1px solid var(--olb-border-default);
+  border-radius: var(--olb-radius);
+  color: var(--olb-text-primary);
+  font-size: var(--olb-type-compact);
+  font-weight: var(--olb-weight-medium);
+  line-height: 1.2;
+  transition: border-color var(--olb-transition), background-color var(--olb-transition);
+}
+.olb-button-secondary:hover {
+  border-color: var(--olb-border-strong);
+  background: var(--olb-surface-secondary);
+}
+
+/* A down or right arrow drawn in CSS, sized to the text. */
+.olb-custom-arrow {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  flex: none;
+}
+.olb-custom-arrow[data-dir="down"] { transform: translateY(-2px) rotate(45deg); }
+
+.olb-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--olb-space-3);
+}
+
+.olb-risk {
+  font-size: var(--olb-type-metadata);
+  line-height: var(--olb-leading-caption);
+  color: var(--olb-text-secondary);
+}
+
+.olb-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--olb-space-2);
+  padding: var(--olb-space-1) var(--olb-space-3);
+  border: 1px solid var(--olb-border-default);
+  border-radius: var(--olb-radius-pill);
+  font-size: var(--olb-type-metadata);
+  font-weight: var(--olb-weight-medium);
+  line-height: 1.6;
+  color: var(--olb-text-secondary);
+}
+
+/* ── Opening ─────────────────────────────────────────────────────────────── */
+
+.olb-opening {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: var(--olb-space-12);
+  padding-bottom: var(--olb-space-10);
+}
+.olb-opening-pill {
+  transition: border-color var(--olb-transition), color var(--olb-transition);
+}
+.olb-opening-pill:hover { border-color: var(--olb-border-strong); color: var(--olb-text-primary); }
+.olb-opening-claim {
+  max-width: 15ch;
+  margin-top: var(--olb-space-6);
+}
+.olb-opening-proof {
+  max-width: 40rem;
+  margin-top: var(--olb-space-6);
+}
+.olb-opening .olb-action-row { margin-top: var(--olb-space-8); }
+.olb-opening .olb-risk { margin-top: var(--olb-space-4); max-width: 34rem; }
+
+/* ── Product tour ────────────────────────────────────────────────────────── */
+
+.olb-custom-tour { padding-top: 0; }
+
+.olb-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--olb-space-2);
+  margin-bottom: var(--olb-space-5);
+}
+.olb-tab {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-height: 52px;
+  padding: var(--olb-space-2) var(--olb-space-4);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius);
+  text-align: left;
+  transition: border-color var(--olb-transition), background-color var(--olb-transition);
+}
+.olb-tab:hover { border-color: var(--olb-border-default); }
+.olb-tab[aria-selected="true"] {
+  background: var(--olb-surface-secondary);
+  border-color: var(--olb-border-strong);
+}
+.olb-custom-tab-name {
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+  line-height: 1.3;
+}
+.olb-custom-tab-job {
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--olb-text-secondary);
+}
+
+.olb-product {
+  background: var(--olb-surface-secondary);
+  border: 1px solid var(--olb-border-default);
+  border-radius: var(--olb-radius-large);
+  box-shadow: var(--olb-frame-shadow);
+  overflow: hidden;
+}
+.olb-product-caption {
+  margin-top: var(--olb-space-4);
+  text-align: center;
+}
+
+.olb-custom-panel + .olb-custom-panel { border-top: 1px solid var(--olb-border-subtle); }
+.olb-custom-tour.is-enhanced .olb-custom-panel + .olb-custom-panel { border-top: 0; }
+.olb-custom-panel[hidden] { display: none; }
+
+.olb-product-chrome {
+  display: flex;
+  align-items: center;
+  gap: var(--olb-space-4);
+  padding: var(--olb-space-3) var(--olb-space-4);
+  border-bottom: 1px solid var(--olb-border-subtle);
+  font-size: var(--olb-type-metadata);
+  color: var(--olb-text-secondary);
+}
+.olb-custom-dots { display: flex; gap: 6px; }
+.olb-custom-dots > span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--olb-border-default);
+}
+.olb-custom-chrome-tag {
+  margin-left: auto;
+  padding: 2px var(--olb-space-2);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius-pill);
+  font-size: 0.75rem;
+}
+
+.olb-product-body {
+  padding: var(--olb-space-6);
+  background: var(--olb-canvas);
+  min-height: 360px;
+  font-size: var(--olb-type-compact);
+}
+
+/* Inner interface parts, shared by every app view so they read as 1 system. */
+.olb-custom-ui-tile {
+  min-width: 0;
+  padding: var(--olb-space-4);
+  background: var(--olb-surface-secondary);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius);
+}
+.olb-custom-ui-tile > * + * { margin-top: var(--olb-space-3); }
+.olb-product-body p,
+.olb-product-body li,
+.olb-product-body td,
+.olb-product-body th { color: var(--olb-text-primary); }
+.olb-product-body .olb-custom-ui-label,
+.olb-custom-ui-label {
+  font-size: 0.75rem;
+  font-weight: var(--olb-weight-medium);
+  line-height: 1.3;
+  color: var(--olb-text-secondary);
+}
+.olb-product-body .olb-custom-ui-muted { color: var(--olb-text-secondary); }
+.olb-custom-ui-strong { font-weight: var(--olb-weight-medium); }
+.olb-custom-ui-big {
+  font-family: var(--olb-font-display);
+  font-size: 1.5rem;
+  font-weight: var(--olb-weight-semibold);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.olb-custom-ui-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px var(--olb-space-2);
+  border: 1px solid var(--olb-border-default);
+  border-radius: var(--olb-radius-pill);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.olb-custom-ui-chip[data-on="true"] {
+  background: var(--olb-text-primary);
+  border-color: var(--olb-text-primary);
+  color: var(--olb-canvas);
+}
+.olb-custom-ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: var(--olb-space-2) var(--olb-space-4);
+  background: var(--olb-text-primary);
+  color: var(--olb-canvas);
+  border-radius: var(--olb-radius);
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+}
+.olb-product-body .olb-custom-ui-ok,
+.olb-custom-ui-ok {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--olb-color-success);
+}
+.olb-custom-ui-ok::before {
+  content: '';
+  width: 10px;
+  height: 6px;
+  border-left: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(-45deg);
+}
+.olb-custom-ui-rows > li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--olb-space-3);
+  padding-block: var(--olb-space-2);
+  border-top: 1px solid var(--olb-border-subtle);
+}
+.olb-custom-ui-rows > li:first-child { border-top: 0; }
+.olb-custom-ui-rows .olb-custom-ui-grow { flex: 1; min-width: 0; }
+.olb-custom-ui-rows .olb-numeric { margin-left: auto; }
+.olb-custom-ui-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--olb-space-3);
+  border-top: 1px solid var(--olb-border-default);
+  font-weight: var(--olb-weight-medium);
+}
+.olb-custom-ui-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--olb-space-3);
+}
+
+/* OrderPad: the caller on the left, the order on the right. */
+.olb-custom-pad {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--olb-space-4);
+}
+.olb-custom-call {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--olb-space-3);
+}
+.olb-custom-modes { display: flex; flex-wrap: wrap; gap: var(--olb-space-2); }
+
+/* Order&Pay: the customer's phone. */
+.olb-custom-pay {
+  display: grid;
+  place-items: center;
+}
+.olb-custom-phone {
+  width: 100%;
+  max-width: 300px;
+  padding: var(--olb-space-5) var(--olb-space-4);
+  background: var(--olb-surface-secondary);
+  border: 1px solid var(--olb-border-default);
+  border-radius: 28px;
+}
+.olb-custom-phone > * + * { margin-top: var(--olb-space-4); }
+.olb-custom-phone .olb-custom-ui-btn { width: 100%; min-height: 44px; }
+.olb-custom-phone-store {
+  font-family: var(--olb-font-display);
+  font-weight: var(--olb-weight-semibold);
+  font-size: 1.0625rem;
+  text-align: center;
+}
+.olb-product-body .olb-custom-phone-note {
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--olb-text-secondary);
+}
+
+/* OrderPicker: the queue on the left, the open order on the right. */
+.olb-custom-picker {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--olb-space-4);
+}
+.olb-custom-queue > li[data-active="true"] .olb-custom-ui-strong { color: var(--olb-text-primary); }
+.olb-custom-queue > li[data-active="true"] {
+  margin-inline: calc(var(--olb-space-2) * -1);
+  padding-inline: var(--olb-space-2);
+  background: var(--olb-canvas);
+  border-radius: var(--olb-radius-small);
+}
+.olb-custom-checklist > li {
+  display: flex;
+  align-items: center;
+  gap: var(--olb-space-3);
+  padding: var(--olb-space-3);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius);
+}
+.olb-custom-checklist > li + li { margin-top: var(--olb-space-2); }
+.olb-custom-box {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  flex: none;
+  border: 1.5px solid var(--olb-border-strong);
+  border-radius: var(--olb-radius-small);
+}
+.olb-custom-checklist > li[data-done="true"] .olb-custom-box {
+  border-color: var(--olb-color-success);
+  color: var(--olb-color-success);
+}
+.olb-custom-checklist > li[data-done="true"] .olb-custom-box::before {
+  content: '';
+  width: 9px;
+  height: 5px;
+  border-left: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-1px) rotate(-45deg);
+}
+.olb-custom-progress {
+  height: 4px;
+  background: var(--olb-border-default);
+  border-radius: var(--olb-radius-pill);
+  overflow: hidden;
+}
+.olb-custom-progress > span {
+  display: block;
+  height: 100%;
+  background: var(--olb-color-success);
+}
+
+/* Brevo Bridge: the synced customers. */
+.olb-custom-sync-table {
+  width: 100%;
+  font-size: var(--olb-type-label);
+  font-variant-numeric: tabular-nums;
+}
+.olb-custom-sync-table th {
+  padding: 0 var(--olb-space-3) var(--olb-space-2);
+  font-size: 0.75rem;
+  font-weight: var(--olb-weight-medium);
+  text-align: left;
+  color: var(--olb-text-secondary);
+}
+.olb-product-body .olb-custom-sync-table th { color: var(--olb-text-secondary); }
+.olb-custom-sync-table td {
+  padding: var(--olb-space-3);
+  border-top: 1px solid var(--olb-border-subtle);
+}
+.olb-custom-sync-table th:first-child,
+.olb-custom-sync-table td:first-child { padding-left: 0; }
+.olb-custom-sync-table .olb-numeric { text-align: right; }
+
+/* SMSMode Bridge: the synced segments. */
+.olb-custom-segments {
+  display: grid;
+  margin-top: var(--olb-space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--olb-space-4);
+}
+
+.olb-custom-panel-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--olb-space-3);
+  margin-top: var(--olb-space-5);
+}
+
+/* ── Problem ─────────────────────────────────────────────────────────────── */
+
+.olb-custom-problem { align-items: start; }
+.olb-custom-problem > :first-child { grid-column: 1 / span 5; }
+.olb-custom-problem > :first-child > * + * { margin-top: var(--olb-space-3); }
+.olb-custom-problem > ul { grid-column: 7 / span 6; }
+.olb-custom-problem li {
+  position: relative;
+  padding: var(--olb-space-4) 0 var(--olb-space-4) var(--olb-space-6);
+  border-top: 1px solid var(--olb-border-subtle);
+  color: var(--olb-text-primary);
+  font-size: var(--olb-type-lede);
+  line-height: var(--olb-leading-lede);
+}
+.olb-custom-problem li:last-child { border-bottom: 1px solid var(--olb-border-subtle); }
+/* A small cross: these are the things that go wrong today. */
+.olb-custom-problem li::before,
+.olb-custom-problem li::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: calc(var(--olb-space-4) + 0.8em);
+  width: 12px;
+  height: 1.5px;
+  background: var(--olb-text-secondary);
+  transform: rotate(45deg);
+}
+.olb-custom-problem li::after { transform: rotate(-45deg); }
+
+/* ── Ecosystem map ───────────────────────────────────────────────────────── */
+
+.olb-ecosystem { max-width: 1040px; margin-inline: auto; }
+
+.olb-custom-eco-steps {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--olb-space-5);
+}
+.olb-ecosystem-step {
+  min-width: 0;
+  padding: var(--olb-space-5);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius-large);
+  background: var(--olb-surface-secondary);
+}
+.olb-ecosystem-step > ul {
+  display: grid;
+  grid-template-columns: repeat(var(--olb-custom-count, 3), minmax(0, 1fr));
+  gap: var(--olb-space-3);
+  margin-top: var(--olb-space-4);
+}
+.olb-ecosystem-node {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  height: 100%;
+  padding: var(--olb-space-3) var(--olb-space-4);
+  background: var(--olb-canvas);
+  border: 1px solid var(--olb-border-default);
+  border-radius: var(--olb-radius);
+  transition: border-color var(--olb-transition);
+}
+.olb-ecosystem-node:hover { border-color: var(--olb-border-strong); }
+.olb-custom-node-name {
+  font-weight: var(--olb-weight-medium);
+  line-height: 1.3;
+  color: var(--olb-text-primary);
+}
+.olb-custom-node-job {
+  font-size: var(--olb-type-metadata);
+  line-height: 1.35;
+  color: var(--olb-text-secondary);
+}
+
+/* The vertical link between 2 layers of the map, with an optional label. */
+.olb-custom-eco-link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: var(--olb-space-8);
+}
+.olb-custom-eco-link::before {
+  content: '';
+  width: 1.5px;
+  height: 100%;
+  background: var(--olb-border-strong);
+}
+/* Desktop: each step drops a line onto a bus, and the bus feeds the core. */
+.olb-ecosystem-step { position: relative; }
+.olb-ecosystem-step::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 1.5px;
+  height: var(--olb-space-5);
+  background: var(--olb-border-strong);
+}
+.olb-custom-eco-link[data-bus] { height: calc(var(--olb-space-5) + var(--olb-space-8)); }
+.olb-custom-eco-link[data-bus]::before {
+  margin-top: var(--olb-space-5);
+  height: var(--olb-space-8);
+}
+.olb-custom-eco-link[data-bus]::after {
+  content: '';
+  position: absolute;
+  top: var(--olb-space-5);
+  left: calc((100% - var(--olb-space-5)) * 0.3);
+  right: calc((100% - var(--olb-space-5)) * 0.2);
+  height: 1.5px;
+  background: var(--olb-border-strong);
+}
+
+.olb-custom-eco-link > span {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + var(--olb-space-3));
+  transform: translateY(-50%);
+  font-size: var(--olb-type-metadata);
+  font-weight: var(--olb-weight-medium);
+  color: var(--olb-text-secondary);
+  white-space: nowrap;
+}
+
+/* The core is the 1 flame mark of the section. */
+.olb-ecosystem-core {
+  max-width: 34rem;
+  margin-inline: auto;
+  padding: var(--olb-space-5);
+  border: 1.5px solid var(--olb-flame);
+  border-radius: var(--olb-radius-large);
+  text-align: center;
+}
+.olb-ecosystem-core > p:first-child {
+  font-family: var(--olb-font-display);
+  font-size: var(--olb-type-subsection);
+  font-weight: var(--olb-weight-semibold);
+  color: var(--olb-text-primary);
+}
+.olb-ecosystem-core > p + p { margin-top: var(--olb-space-1); font-size: var(--olb-type-compact); }
+
+.olb-ecosystem-connections {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--olb-space-3);
+}
+.olb-ecosystem-connections > li {
+  min-width: 0;
+  padding: var(--olb-space-4);
+  border: 1px dashed var(--olb-border-default);
+  border-radius: var(--olb-radius);
+}
+.olb-ecosystem-connections > li > ul {
+  margin-top: var(--olb-space-2);
+  color: var(--olb-text-primary);
+  font-size: var(--olb-type-compact);
+}
+.olb-ecosystem > figcaption {
+  max-width: 44rem;
+  margin: var(--olb-space-6) auto 0;
+  text-align: center;
+}
+
+/* ── App cards ───────────────────────────────────────────────────────────── */
+
+.olb-custom-app-group + .olb-custom-app-group { margin-top: var(--olb-space-10); }
+.olb-custom-app-group-head {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--olb-space-3) var(--olb-space-6);
+  align-items: baseline;
+  margin-bottom: var(--olb-space-5);
+}
+
+.olb-card-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--olb-custom-count, 3), minmax(0, 1fr));
+  gap: var(--olb-space-4);
+}
+.olb-card-grid > * { min-width: 0; }
+
+.olb-card,
+.olb-app-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--olb-space-6);
+  background: var(--olb-canvas);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius-large);
+  transition: border-color var(--olb-transition);
+}
+.olb-band:not([data-tone]) .olb-card { background: var(--olb-surface-secondary); }
+.olb-section .olb-card { background: var(--olb-surface-secondary); }
+.olb-app-card:hover { border-color: var(--olb-border-default); }
+.olb-card > * + *,
+.olb-app-card > * + * { margin-top: var(--olb-space-3); }
+
+.olb-custom-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--olb-space-3);
+}
+.olb-app-step {
+  font-size: var(--olb-type-metadata);
+  font-weight: var(--olb-weight-medium);
+  color: var(--olb-text-secondary);
+}
+.olb-app-status {
+  padding: 2px var(--olb-space-2);
+  border: 1px solid var(--olb-border-default);
+  border-radius: var(--olb-radius-pill);
+  font-size: 0.75rem;
+  font-weight: var(--olb-weight-medium);
+  line-height: 1.5;
+  color: var(--olb-text-secondary);
+}
+
+/* A 3-beat piece of the app, in the same chips as the product views. */
+.olb-custom-snippet {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--olb-space-2);
+  padding: var(--olb-space-3);
+  background: var(--olb-surface-secondary);
+  border-radius: var(--olb-radius);
+}
+.olb-custom-snippet > li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--olb-space-2);
+  font-size: 0.8125rem;
+  color: var(--olb-text-primary);
+}
+.olb-custom-snippet > li + li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid var(--olb-text-secondary);
+  border-bottom: 1.5px solid var(--olb-text-secondary);
+  transform: rotate(-45deg);
+}
+.olb-custom-snippet > li:last-child { color: var(--olb-color-success); }
+
+.olb-app-links {
+  margin-top: auto !important;
+  padding-top: var(--olb-space-4);
+}
+.olb-custom-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--olb-space-2);
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+  color: var(--olb-text-primary);
+}
+.olb-custom-card-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.olb-custom-works {
+  font-size: var(--olb-type-metadata);
+  line-height: var(--olb-leading-caption);
+}
+.olb-custom-works > span { color: var(--olb-text-primary); font-weight: var(--olb-weight-medium); }
+
+/* ── Integrations ────────────────────────────────────────────────────────── */
+
+.olb-custom-connections { align-items: start; }
+.olb-custom-connections > :first-child { grid-column: 1 / span 5; }
+.olb-custom-connections > :first-child > * + * { margin-top: var(--olb-space-4); }
+.olb-integrations { grid-column: 7 / span 6; }
+.olb-integration-group {
+  padding: var(--olb-space-5);
+  background: var(--olb-surface-secondary);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius-large);
+}
+.olb-integration-group + .olb-integration-group { margin-top: var(--olb-space-3); }
+.olb-integration-group > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--olb-space-2);
+  margin-top: var(--olb-space-3);
+}
+.olb-integration {
+  padding: var(--olb-space-1) var(--olb-space-3);
+  border: 1px solid var(--olb-border-default);
+  border-radius: var(--olb-radius-pill);
+  font-size: var(--olb-type-label);
+  color: var(--olb-text-primary);
+}
+.olb-integration-group > p { margin-top: var(--olb-space-3); }
+.olb-integrations > .olb-meta { margin-top: var(--olb-space-4); }
+
+/* ── Steps ───────────────────────────────────────────────────────────────── */
+
+.olb-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--olb-space-4);
+  counter-reset: olb-step;
+}
+.olb-step { counter-increment: olb-step; }
+.olb-custom-step-index {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--olb-border-strong);
+  border-radius: 50%;
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+  color: var(--olb-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+.olb-custom-after {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--olb-space-4);
+  margin-top: var(--olb-space-8);
+  text-align: center;
+}
+
+/* ── Comparison, on the inversion ────────────────────────────────────────────────── */
+
+.olb-table-wrap { overflow-x: auto; }
+.olb-comparison {
+  width: 100%;
+  min-width: 640px;
+  text-align: left;
+  font-size: var(--olb-type-compact);
+}
+.olb-comparison caption {
+  caption-side: bottom;
+  padding-top: var(--olb-space-4);
+  text-align: left;
+  font-size: var(--olb-type-metadata);
+  color: var(--olb-text-on-contrast-secondary);
+}
+.olb-comparison th,
+.olb-comparison td {
+  padding: var(--olb-space-4);
+  vertical-align: baseline;
+  border-top: 1px solid var(--olb-border-on-contrast);
+}
+.olb-comparison thead th {
+  border-top: 0;
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+  color: var(--olb-text-on-contrast-secondary);
+}
+.olb-comparison th:first-child { padding-left: 0; width: 24%; }
+.olb-comparison tbody th { font-weight: var(--olb-weight-medium); color: var(--olb-text-on-contrast); }
+/* OnyLab's column is the 1 flame mark: a top rule on its header. */
+.olb-comparison thead th[data-onylab] {
+  color: var(--olb-text-on-contrast);
+  box-shadow: inset 0 3px 0 var(--olb-accent-on-contrast);
+}
+.olb-comparison td { color: var(--olb-text-on-contrast-secondary); }
+.olb-comparison td[data-onylab] { color: var(--olb-text-on-contrast); }
+.olb-custom-mark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--olb-space-2);
+}
+.olb-custom-mark::before {
+  content: '';
+  flex: none;
+  width: 10px;
+  height: 6px;
+  border-left: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* ── About ───────────────────────────────────────────────────────────────── */
+
+.olb-custom-about { align-items: start; }
+.olb-custom-about > :first-child { grid-column: 1 / span 6; }
+.olb-custom-about > :first-child > * + * { margin-top: var(--olb-space-4); }
+.olb-custom-about > .olb-stat-strip { grid-column: 8 / span 5; }
+
+.olb-stat-strip { display: grid; gap: var(--olb-space-3); }
+.olb-stat {
+  min-width: 0;
+  padding: var(--olb-space-5);
+  background: var(--olb-surface-secondary);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius-large);
+}
+.olb-section .olb-stat-label,
+.olb-stat-label {
+  font-size: var(--olb-type-label);
+  font-weight: var(--olb-weight-medium);
+  line-height: var(--olb-leading-compact);
+  color: var(--olb-text-secondary);
+}
+.olb-section .olb-stat-value,
+.olb-stat-value {
+  margin-top: var(--olb-space-1);
+  font-family: var(--olb-font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: var(--olb-weight-heading);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--olb-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+.olb-stat-detail {
+  margin-top: var(--olb-space-2);
+  font-size: var(--olb-type-metadata);
+  line-height: var(--olb-leading-caption);
+}
+
+/* ── FAQ ─────────────────────────────────────────────────────────────────── */
+
+.olb-faq {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+.olb-faq details {
+  border-top: 1px solid var(--olb-border-subtle);
+}
+.olb-faq details:last-child { border-bottom: 1px solid var(--olb-border-subtle); }
+.olb-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--olb-space-4);
+  min-height: 56px;
+  padding-block: var(--olb-space-4);
+  font-weight: var(--olb-weight-medium);
+  color: var(--olb-text-primary);
+  cursor: pointer;
+  list-style: none;
+}
+.olb-faq summary::-webkit-details-marker { display: none; }
+/* A plus that turns into a minus when the answer is open. */
+.olb-faq summary::after {
+  content: '';
+  flex: none;
+  width: 14px;
+  height: 14px;
+  background:
+    linear-gradient(currentColor, currentColor) center / 14px 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1.5px 14px no-repeat;
+  color: var(--olb-text-secondary);
+  transition: transform var(--olb-transition);
+}
+.olb-faq details[open] summary::after {
+  background: linear-gradient(currentColor, currentColor) center / 14px 1.5px no-repeat;
+}
+.olb-faq details > p {
+  max-width: 40rem;
+  padding-bottom: var(--olb-space-5);
+}
+
+/* ── Closing ─────────────────────────────────────────────────────────────── */
+
+.olb-closing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 48rem;
+  margin-inline: auto;
+  padding: var(--olb-space-10) var(--olb-space-6);
+  border: 1px solid var(--olb-border-default);
+  border-radius: var(--olb-radius-large);
+  background: var(--olb-surface-secondary);
+  text-align: center;
+}
+.olb-closing > .olb-lede { max-width: 34rem; margin-top: var(--olb-space-4); }
+.olb-closing > .olb-action-row { margin-top: var(--olb-space-8); }
+.olb-closing > .olb-risk { margin-top: var(--olb-space-4); }
+.olb-closing > .olb-meta { margin-top: var(--olb-space-5); }
+.olb-closing .olb-meta a { color: var(--olb-text-primary); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Legal pages: 1 reading column, contents in the right rail ───────────── */
 
 .olb-custom-legal {
   display: grid;
@@ -802,21 +1404,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   align-items: start;
 }
 .olb-custom-legal > * { min-width: 0; }
-
 .olb-custom-legal-head,
 .olb-custom-legal-body {
   grid-column: 1 / span 7;
-  max-width: 36rem;
+  max-width: 38rem;
 }
 .olb-custom-legal-head > * + * { margin-top: var(--olb-space-4); }
 .olb-custom-legal-head > .olb-meta { margin-top: var(--olb-space-3); }
 .olb-custom-legal-head > .olb-meta + p { margin-top: var(--olb-space-6); }
+.olb-custom-legal .olb-title { font-size: var(--olb-type-page-title); line-height: var(--olb-leading-page-title); }
 
 .olb-custom-legal-contents {
   grid-column: 9 / span 4;
   grid-row: 2;
   position: sticky;
   top: var(--olb-space-12);
+  padding: var(--olb-space-5);
+  background: var(--olb-surface-secondary);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius-large);
 }
 .olb-custom-legal-contents ol {
   margin-top: var(--olb-space-3);
@@ -838,63 +1444,50 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .olb-custom-legal-body ul {
   padding-left: 1.25em;
   list-style: disc;
+  color: var(--olb-text-secondary);
 }
 .olb-custom-legal-body li + li { margin-top: var(--olb-space-2); }
 .olb-custom-legal-index { color: var(--olb-text-secondary); }
 
-/* ── Footer, on its own dark ground ──────────────────────────────────────── */
+/* ── Footer ──────────────────────────────────────────────────────────────── */
 
 .olb-footer {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--olb-space-8) var(--olb-space-6);
   padding-block: var(--olb-space-10) var(--olb-space-8);
-  background: var(--olb-surface-contrast);
-  color: var(--olb-text-on-contrast);
-  border-top: 1px solid var(--olb-border-on-contrast);
+  border-top: 1px solid var(--olb-border-subtle);
 }
 .olb-footer > * { min-width: 0; }
 
-.olb-custom-footer-brand { grid-column: span 5; }
+.olb-custom-footer-brand { grid-column: span 4; }
 .olb-custom-footer-brand .olb-caption {
   margin-top: var(--olb-space-4);
-  max-width: 26rem;
+  max-width: 24rem;
 }
-.olb-custom-footer-brand .olb-caption a {
-  color: var(--olb-flame);
-  transition: color var(--olb-transition);
-}
-.olb-custom-footer-brand .olb-caption a:hover { color: var(--olb-text-on-contrast); }
+.olb-custom-footer-brand .olb-caption a { color: var(--olb-text-primary); text-decoration: underline; text-underline-offset: 3px; }
 .olb-logo { height: 26px; width: auto; }
 
-.olb-custom-footer-nav { grid-column: 7 / span 3; }
-.olb-custom-footer-contact { grid-column: 10 / span 3; }
-
-.olb-custom-footer-nav ul { margin-top: var(--olb-space-4); }
-.olb-custom-footer-nav li + li { margin-top: var(--olb-space-2); }
-.olb-custom-footer-nav a {
+.olb-custom-footer-col { grid-column: span 2; }
+.olb-custom-footer-col ul { margin-top: var(--olb-space-4); }
+.olb-custom-footer-col li + li { margin-top: var(--olb-space-2); }
+.olb-custom-footer-col a {
   font-size: var(--olb-type-compact);
-  color: var(--olb-text-on-contrast-secondary);
+  color: var(--olb-text-secondary);
   transition: color var(--olb-transition);
 }
-.olb-custom-footer-nav a:hover { color: var(--olb-text-on-contrast); }
-
-.olb-custom-footer-contact p { margin-top: var(--olb-space-4); }
-.olb-custom-footer-contact a {
-  font-size: var(--olb-type-compact);
-  color: var(--olb-flame);
-  transition: color var(--olb-transition);
-}
-.olb-custom-footer-contact a:hover { color: var(--olb-text-on-contrast); }
+.olb-custom-footer-col a:hover { color: var(--olb-text-primary); }
+.olb-custom-footer-col h2 { color: var(--olb-text-primary); }
 
 .olb-custom-footer-legal {
   grid-column: span 12;
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
   justify-content: space-between;
   gap: var(--olb-space-2) var(--olb-space-6);
   padding-top: var(--olb-space-6);
-  border-top: 1px solid var(--olb-border-on-contrast);
+  border-top: 1px solid var(--olb-border-subtle);
 }
 .olb-custom-footer-legal-nav ul {
   display: flex;
@@ -902,75 +1495,69 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: var(--olb-space-2) var(--olb-space-5);
 }
 .olb-custom-footer-legal-nav a { transition: color var(--olb-transition); }
-.olb-custom-footer-legal-nav a:hover { color: var(--olb-text-on-contrast); }
+.olb-custom-footer-legal-nav a:hover { color: var(--olb-text-primary); }
 
 /* ── Tablet: 6 columns ───────────────────────────────────────────────────── */
+
+@media (max-width: 1020px) {
+  .olb-nav { gap: var(--olb-space-5); }
+  .olb-custom-signin { display: none; }
+  .olb-nav .olb-custom-signin-item { display: list-item; }
+}
 
 @media (max-width: 900px) {
   .olb-grid,
   .olb-footer { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 
-  /* Three peers stack rather than leave an orphan in a two-up row. */
-  .olb-custom-foundations > * { grid-column: span 6; }
-  .olb-custom-two-up > * { grid-column: span 6; }
-  .olb-custom-foundations > * + * {
-    padding-top: var(--olb-space-6);
-    border-top: 1px solid var(--olb-border-subtle);
-  }
+  .olb-custom-problem > :first-child,
+  .olb-custom-problem > ul,
+  .olb-custom-connections > :first-child,
+  .olb-integrations,
+  .olb-custom-about > :first-child,
+  .olb-custom-about > .olb-stat-strip { grid-column: 1 / -1; }
 
-  .olb-stat-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .olb-custom-eco-steps { grid-template-columns: minmax(0, 1fr); }
+  .olb-ecosystem-step::after,
+  .olb-custom-eco-link[data-bus]::after { content: none; }
+  .olb-custom-eco-link[data-bus] { height: var(--olb-space-8); }
+  .olb-custom-eco-link[data-bus]::before { margin-top: 0; }
+  .olb-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .olb-steps { grid-template-columns: minmax(0, 1fr); }
+  .olb-custom-app-group-head { grid-template-columns: minmax(0, 1fr); }
+  .olb-custom-about > .olb-stat-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .olb-custom-pad,
+  .olb-custom-picker { grid-template-columns: minmax(0, 1fr); }
 
   .olb-custom-footer-brand { grid-column: span 6; }
-  .olb-custom-footer-nav { grid-column: span 3; }
-  .olb-custom-footer-contact { grid-column: span 3; }
+  .olb-custom-footer-col { grid-column: span 3; }
   .olb-custom-footer-legal { grid-column: span 6; }
 
-  .olb-custom-closing-band { padding-block: var(--olb-space-12); }
-
-  /* The contents list moves above the text it indexes. */
   .olb-custom-legal { grid-template-columns: minmax(0, 1fr); row-gap: var(--olb-space-8); }
   .olb-custom-legal-head,
   .olb-custom-legal-contents,
   .olb-custom-legal-body { grid-column: 1; grid-row: auto; }
   .olb-custom-legal-contents { position: static; }
-
-  /* Claim first, journey beneath it on the same grid. */
-  .olb-opening { row-gap: var(--olb-space-10); }
-  .olb-custom-opening-copy,
-  .olb-custom-journey { grid-column: 1 / -1; }
-  .olb-custom-journey { max-width: 36rem; padding-top: 0; }
-
-  /* Each step keeps its number beside the text; the diagram follows the text
-     in the same column. */
-  .olb-custom-sequence > li { grid-template-columns: 5rem minmax(0, 1fr); }
-  .olb-custom-sequence-body { max-width: 34rem; }
-  .olb-custom-diagram { grid-column: 1 / -1; align-self: start; }
 }
 
 /* ── Mobile: 4 columns, collapsed navigation ─────────────────────────────── */
 
 @media (max-width: 720px) {
-  :root { --olb-inset: var(--olb-space-5); }
+  :root { --olb-inset: var(--olb-space-4); }
 
   .olb-section,
-  .olb-band,
-  .olb-opening,
-  .olb-custom-closing-band { padding-block: var(--olb-space-10); }
-  .olb-section + .olb-section { padding-top: 0; }
+  .olb-band { padding-block: var(--olb-space-10); }
+  .olb-opening { padding-top: var(--olb-space-5); padding-bottom: var(--olb-space-8); }
+  .olb-custom-intro + * { margin-top: var(--olb-space-8); }
 
   .olb-grid,
   .olb-footer { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-  .olb-custom-foundations > * { grid-column: span 4; }
-  .olb-custom-two-up > * { grid-column: span 4; }
-  .olb-custom-footer-brand,
-  .olb-custom-footer-legal { grid-column: span 4; }
-  .olb-custom-footer-nav { grid-column: span 2; }
-  .olb-custom-footer-contact { grid-column: span 2; }
-
-  .olb-masthead { align-items: center; }
-  .olb-document-meta { gap: var(--olb-space-4); }
-  .olb-button-compact { min-height: 44px; }
+  .olb-masthead { min-height: 60px; gap: var(--olb-space-3); }
+  .olb-wordmark { height: 24px; }
+  .olb-document-meta { gap: var(--olb-space-2); }
+  .olb-custom-header-tools { gap: var(--olb-space-2); }
+  .olb-button-compact { min-height: 44px; padding-inline: var(--olb-space-3); }
 
   .olb-nav {
     position: absolute;
@@ -979,6 +1566,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     top: 100%;
     display: none;
     flex-direction: column;
+    align-items: stretch;
     gap: 0;
     padding: var(--olb-space-2) var(--olb-inset) var(--olb-space-4);
     background: var(--olb-canvas);
@@ -994,20 +1582,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
   .olb-custom-lang-name { display: none; }
   .olb-custom-lang-code { display: inline; }
-  /* The code is only two characters, so the control needs padding of its own to
-     reach a comfortable touch target. */
-  .olb-custom-lang-toggle {
-    min-height: 44px;
-    padding-inline: var(--olb-space-2);
-    margin-inline: calc(var(--olb-space-2) * -1);
-  }
+  .olb-custom-lang-toggle { min-height: 44px; padding-inline: var(--olb-space-2); }
 
   .olb-nav-toggle {
     display: grid;
     place-items: center;
     width: 44px;
     height: 44px;
-    margin-right: calc(var(--olb-space-3) * -1);
+    margin-right: calc(var(--olb-space-2) * -1);
   }
   .olb-nav-toggle-bar,
   .olb-nav-toggle-bar::before,
@@ -1023,68 +1605,59 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .olb-nav-toggle-bar::before { top: -6px; }
   .olb-nav-toggle-bar::after  { top: 6px; }
 
-  /* One column: with twelve tracks the gaps alone (11 x 32px) exceed the
-     327px content box and push the journey figure past the viewport. */
-  .olb-opening {
-    grid-template-columns: minmax(0, 1fr);
-    column-gap: 0;
-    row-gap: var(--olb-space-8);
-  }
-  .olb-opening-claim { max-width: none; }
+  .olb-opening-claim { margin-top: var(--olb-space-4); }
+  .olb-opening-proof { margin-top: var(--olb-space-4); font-size: 1.0625rem; line-height: 1.5; }
+  .olb-opening .olb-action-row { margin-top: var(--olb-space-5); flex-direction: column; align-self: stretch; gap: var(--olb-space-2); }
+  .olb-opening .olb-risk { margin-top: var(--olb-space-3); }
+  .olb-opening .olb-action-row > * { width: 100%; }
 
-  /* The loop label turns along the loop so the step text keeps its width. */
-  .olb-custom-journey-loop-label {
-    writing-mode: vertical-rl;
-    padding-left: var(--olb-space-1);
+  /* Tabs scroll sideways rather than wrap into a tall block. */
+  .olb-tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    margin-inline: calc(var(--olb-inset) * -1);
+    padding-inline: var(--olb-inset);
+    scrollbar-width: none;
   }
+  .olb-tab { flex: none; }
 
-  .olb-custom-sequence > li {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--olb-space-2);
-    padding-block: var(--olb-space-6);
-  }
-  .olb-custom-diagram {
-    grid-column: 1;
-    margin-top: var(--olb-space-6);
-  }
+  .olb-product-body { padding: var(--olb-space-4); min-height: 0; }
+  /* The dense views lose their secondary columns on a phone. */
+  .olb-custom-sync-table [data-wide] { display: none; }
+  .olb-custom-segments { grid-template-columns: minmax(0, 1fr); }
+  .olb-custom-queue > li:not([data-active="true"]) { display: none; }
 
-  /* The flow stacks: inputs, the node, outputs, joined by vertical lines. */
-  .olb-custom-flow {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .olb-custom-flow-group { flex: none; }
-  .olb-custom-flow-group > ul > li { text-wrap: wrap; }
-  .olb-custom-flow-group > ul {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 !important;
-  }
-  /* Same specificity as the desktop connector rules, so this wins by order. */
-  .olb-custom-diagram .olb-custom-flow .olb-custom-flow-group > ul::before,
-  .olb-custom-diagram .olb-custom-flow .olb-custom-flow-group > ul::after,
-  .olb-custom-diagram .olb-custom-flow .olb-custom-flow-group > ul > li::before,
-  .olb-custom-diagram .olb-custom-flow .olb-custom-flow-group > ul > li::after { content: none; }
+  .olb-card-grid { grid-template-columns: minmax(0, 1fr); }
+  .olb-card,
+  .olb-app-card,
+  .olb-ecosystem-step,
+  .olb-integration-group,
+  .olb-stat { padding: var(--olb-space-5); }
+  .olb-ecosystem-step > ul { grid-template-columns: minmax(0, 1fr); }
+  .olb-ecosystem-connections { grid-template-columns: minmax(0, 1fr); }
+  .olb-custom-eco-link > span { left: calc(50% + var(--olb-space-2)); }
 
-  .olb-custom-flow-node {
-    align-self: center;
-    min-width: 12rem;
-    margin: var(--olb-space-5) 0 !important;
-  }
-  .olb-custom-flow-group + .olb-custom-flow-node::before,
-  .olb-custom-flow-node:has(+ .olb-custom-flow-group)::after {
-    left: 50%;
-    right: auto;
-    width: 1px;
-    height: var(--olb-space-5);
-  }
-  .olb-custom-flow-group + .olb-custom-flow-node::before { top: auto; bottom: 100%; margin-bottom: 1.5px; }
-  .olb-custom-flow-node:has(+ .olb-custom-flow-group)::after { top: 100%; margin-top: 1.5px; }
+  .olb-custom-problem li { font-size: 1.0625rem; }
 
-  .olb-stat-strip {
-    gap: var(--olb-space-6) var(--olb-space-5);
-    margin-top: var(--olb-space-8);
-  }
+  .olb-custom-about > .olb-stat-strip { grid-template-columns: minmax(0, 1fr); }
+
+  .olb-closing { padding: var(--olb-space-8) var(--olb-space-5); }
+  .olb-closing > .olb-action-row { align-self: stretch; }
+  .olb-closing > .olb-action-row > * { width: 100%; }
+
+  .olb-custom-footer-brand,
+  .olb-custom-footer-legal { grid-column: span 4; }
+  .olb-custom-footer-col { grid-column: span 2; }
+  .olb-custom-footer-contact { grid-column: span 4; }
+}
+
+/* The narrowest phones: the hero headline steps down so its longest word
+   still fits, rather than breaking inside a word. */
+@media (max-width: 420px) {
+  .olb-display { font-size: clamp(1.875rem, 10vw, 2.75rem); }
+  .olb-title { font-size: clamp(1.625rem, 8vw, 1.875rem); }
+  .olb-custom-lang-toggle { padding-inline: var(--olb-space-1); }
 }
 
 /* ── Reduced motion ──────────────────────────────────────────────────────── */
