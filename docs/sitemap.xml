@@ -1142,95 +1142,203 @@
   </url>
   <!-- /Delivery platform pages -->
   <!-- App pages -->
-  <url>
-    <loc>https://onylab.com/apps/orderpad/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/orderpad/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/orderpad/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/orderpad/"/>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onylab.com/fr/applications/orderpad/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/orderpad/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/orderpad/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/orderpad/"/>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onylab.com/apps/order-and-pay/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/"/>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onylab.com/fr/applications/order-and-pay/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/"/>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onylab.com/apps/orderpicker/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/orderpicker/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/orderpicker/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/orderpicker/"/>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onylab.com/fr/applications/orderpicker/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/orderpicker/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/orderpicker/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/orderpicker/"/>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onylab.com/apps/brevo-bridge/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/brevo-bridge/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/brevo-bridge/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/brevo-bridge/"/>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onylab.com/fr/applications/brevo-bridge/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/brevo-bridge/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/brevo-bridge/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/brevo-bridge/"/>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onylab.com/apps/smsmode-bridge/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/smsmode-bridge/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/smsmode-bridge/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/smsmode-bridge/"/>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onylab.com/fr/applications/smsmode-bridge/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/smsmode-bridge/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/smsmode-bridge/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/smsmode-bridge/"/>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
   <!-- /App pages -->
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/dood/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/dood/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/dood/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/dood/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/dood/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/dood/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/dood/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/dood/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/eatself/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/eatself/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/eatself/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/eatself/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/eatself/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/eatself/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/eatself/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/eatself/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/gonnaorder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/gonnaorder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/gonnaorder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/gonnaorder/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/gonnaorder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/gonnaorder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/gonnaorder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/gonnaorder/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/mynober/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/mynober/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/mynober/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/mynober/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/mynober/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/mynober/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/mynober/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/mynober/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/obypay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/obypay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/obypay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/obypay/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/obypay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/obypay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/obypay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/obypay/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/servier-bar/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/servier-bar/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/servier-bar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/servier-bar/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/servier-bar/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/servier-bar/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/servier-bar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/servier-bar/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/smartresto/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/smartresto/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/smartresto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/smartresto/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/smartresto/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/smartresto/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/smartresto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/smartresto/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/smilein/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/smilein/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/smilein/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/smilein/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/smilein/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/smilein/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/smilein/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/smilein/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/sunday/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/sunday/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/sunday/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/sunday/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/sunday/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/sunday/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/sunday/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/sunday/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/tablati/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/tablati/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/tablati/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/tablati/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/tablati/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/tablati/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/tablati/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/tablati/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/apps/order-and-pay/vs/tastycloud/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/tastycloud/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/tastycloud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/tastycloud/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/applications/order-and-pay/vs/tastycloud/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/tastycloud/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/tastycloud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/tastycloud/"/>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

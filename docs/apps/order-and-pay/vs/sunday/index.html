@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){const localeRedirects = {"fr":"/fr/applications/order-and-pay/vs/sunday/"};
+const defaultLang = "en";
+
+      // The site is static, so the reader's language can only be honored in the
+      // browser. This runs on English pages only, which are the default: a
+      // reader who opened a translated URL is never sent elsewhere. A choice
+      // stored by the language switcher beats the browser setting; otherwise
+      // the first browser language the site speaks wins, and English stays
+      // when there is none.
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem('olb-lang');
+        } catch (error) {
+          /* Private mode or a blocked storage API falls back to the browser setting. */
+        }
+        var target = null;
+        if (stored === defaultLang) return;
+        if (stored && localeRedirects[stored]) {
+          target = localeRedirects[stored];
+        } else {
+          var preferred = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+          for (var i = 0; i < preferred.length; i++) {
+            var code = String(preferred[i]).toLowerCase().split('-')[0];
+            if (code === defaultLang) return;
+            if (localeRedirects[code]) {
+              target = localeRedirects[code];
+              break;
+            }
+          }
+        }
+        if (target) location.replace(target + location.search + location.hash);
+      })();
+    })();</script>
+    <script>
+      // A theme picked with the footer button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>Order&amp;Pay vs sunday: QR code ordering compared | OnyLab</title>
+    <meta name="description" content="sunday is a payment company with QR codes and card terminals. Order&amp;Pay is table and takeout ordering on your HubRise menu, paid into your own Stripe account. Compare.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="Order&amp;Pay vs sunday: QR code ordering compared | OnyLab">
+    <meta property="og:description" content="sunday is a payment company with QR codes and card terminals. Order&amp;Pay is table and takeout ordering on your HubRise menu, paid into your own Stripe account. Compare.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OnyLab">
+    <meta property="og:url" content="https://onylab.com/apps/order-and-pay/vs/sunday/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:image" content="https://onylab.com/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OnyLab. Take every order. Bring every customer back.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://onylab.com/og.png">
+    <meta name="twitter:image:alt" content="OnyLab. Take every order. Bring every customer back.">
+    <meta name="twitter:title" content="Order&amp;Pay vs sunday: QR code ordering compared | OnyLab">
+    <meta name="twitter:description" content="sunday is a payment company with QR codes and card terminals. Order&amp;Pay is table and takeout ordering on your HubRise menu, paid into your own Stripe account. Compare.">
+    <link rel="canonical" href="https://onylab.com/apps/order-and-pay/vs/sunday/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/sunday/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/sunday/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/sunday/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=27" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/apps/order-and-pay/vs/sunday/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and at the table or for takeout (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email and SMS campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Phone ordering for restaurants",
+        "Table and takeout ordering with payment",
+        "Order preparation",
+        "Kitchen display systems (KDS)",
+        "Retail order picking",
+        "Customer segmentation for email and SMS campaigns",
+        "HubRise integrations",
+        "Point-of-sale integrations"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/apps/order-and-pay/vs/sunday/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/apps/order-and-pay/vs/sunday/#webpage",
+      "url": "https://onylab.com/apps/order-and-pay/vs/sunday/",
+      "name": "Order&Pay vs sunday: QR code ordering compared | OnyLab",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "sunday is a payment company with QR codes and card terminals. Order&Pay is table and takeout ordering on your HubRise menu, paid into your own Stripe account. Compare.",
+      "inLanguage": "en",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Take every order. Bring every customer back."
+      },
+      "dateModified": "2026-11-26",
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Order&Pay",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "sunday",
+          "applicationCategory": "BusinessApplication",
+          "url": "https://sundayapp.com/fr/"
+        }
+      ],
+      "breadcrumb": {
+        "@id": "https://onylab.com/apps/order-and-pay/vs/sunday/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/apps/order-and-pay/vs/sunday/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Order&Pay",
+          "item": "https://onylab.com/apps/order-and-pay/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Order&Pay vs sunday"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onylab.com/apps/order-and-pay/vs/sunday/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need HubRise for Order&Pay but not for sunday?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. sunday connects to some POS systems directly. Order&Pay connects through HubRise, which also links your POS to delivery platforms and to the other OnyLab apps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who receives the payments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With Order&Pay, online payments go straight into your own Stripe account and OnyLab takes no fee on them. Stripe's own fees apply. sunday runs payments through its own products."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I switch from sunday to Order&Pay without changing my POS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if your POS receives orders from HubRise. Order&Pay connects to the HubRise account of your store, and your POS, your payment terminal and your delivery accounts stay as they are."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body class="olb-page">
+<div class="olb-shell">
+
+    <a class="olb-skip-link" href="#main">Skip to content</a>
+
+    <header class="olb-header" id="header">
+        <div class="olb-masthead">
+            <a class="olb-identity" href="/" aria-label="OnyLab home">
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
+            </a>
+            <nav class="olb-document-meta" aria-label="Primary">
+                <ul class="olb-nav" id="navMenu">
+                    <li><a href="/#apps">Apps</a></li>
+                    <li><a href="/#ecosystem">How it fits</a></li>
+                    <li><a href="/#connections">Integrations</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Sign in</a></li>
+                </ul>
+                <div class="olb-custom-header-tools">
+                    <a class="olb-button-secondary olb-button-compact olb-custom-signin" href="https://apps.onylab.com/">Sign in</a>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Chat with us</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+<main id="main">
+
+        <!-- 1. The choice the reader is making, and the action. -->
+        <section class="olb-section olb-opening olb-custom-pos-opening" aria-labelledby="compare-heading">
+            <nav class="olb-custom-crumbs" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/">OnyLab</a></li>
+                    <li><a href="/apps/order-and-pay/">Order&amp;Pay</a></li>
+                    <li aria-current="page">Order&amp;Pay vs sunday</li>
+                </ol>
+            </nav>
+            <!-- The name follows in the breadcrumb and the label, so the logo is decorative. -->
+            <span class="olb-custom-pos-logo">
+                <img src="https://cdn.onylab.com/image/apps/logo/orderpay.svg" alt="" width="512" height="512" decoding="async">
+            </span>
+            <p class="olb-pill olb-opening-pill">Order&amp;Pay vs sunday</p>
+            <h1 class="olb-display olb-opening-claim" id="compare-heading">Order&amp;Pay or sunday: start with the order, or with the bill?</h1>
+            <p class="olb-lede olb-opening-proof">sunday started with paying the bill and sells its own card terminal. Order&amp;Pay starts with the order: customers order and pay from their phone, at the table or for takeout, the order reaches your POS through HubRise, and the money lands in your own Stripe account.</p>
+            <div class="olb-action-row">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Chat with us about your store</a>
+                <a class="olb-button-secondary" href="#table">See the comparison <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
+            </div>
+            <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
+        </section>
+
+        <!-- 2. The 2 apps side by side, with the sources and the date checked. -->
+        <section class="olb-band" data-tone="contrast" id="table" aria-labelledby="table-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Side by side</p>
+                <h2 class="olb-title" id="table-heading">Order&amp;Pay and sunday, feature by feature</h2>
+            </div>
+            <div class="olb-table-wrap">
+                <table class="olb-comparison olb-custom-compare">
+                    <caption>sunday: from its website, checked on November 26, 2026. &quot;Not stated&quot; means the source does not say. Order&amp;Pay: from its own product specification.</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Feature</th>
+                            <th scope="col" data-onylab>Order&amp;Pay</th>
+                            <th scope="col">sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Table ordering from a QR code</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Yes</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M3 8.5l3 3 7-7"></path>
+                                    </svg>
+                                    <span>Yes</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Takeout ordering</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Yes</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M3 8.5l3 3 7-7"></path>
+                                    </svg>
+                                    <span>Yes</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">No app to install</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Yes</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="unknown">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M4 8h8"></path>
+                                    </svg>
+                                    <span>Not stated</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Payment on the customer&#39;s phone</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Yes</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M3 8.5l3 3 7-7"></path>
+                                    </svg>
+                                    <span>Yes</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Items added to the same order at the table</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Yes</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M3 8.5l3 3 7-7"></path>
+                                    </svg>
+                                    <span>Yes</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Online payments into your own Stripe account, with no fee taken by the app</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Yes</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="no">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M4 4l8 8M12 4l-8 8"></path>
+                                    </svg>
+                                    <span>No</span>
+                                </span>
+                                <span class="olb-custom-support-note">Payments run through sunday</span>
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Menu loaded from HubRise, so prices match your POS</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Yes</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="no">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M4 4l8 8M12 4l-8 8"></path>
+                                    </svg>
+                                    <span>No</span>
+                                </span>
+                                <span class="olb-custom-support-note">Connects to some POS systems directly</span>
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Orders sent to your POS through HubRise</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Yes</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="no">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M4 4l8 8M12 4l-8 8"></path>
+                                    </svg>
+                                    <span>No</span>
+                                </span>
+                                <span class="olb-custom-support-note">Connects to some POS systems directly</span>
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Customer details sent to HubRise with each order</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Yes</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="no">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M4 4l8 8M12 4l-8 8"></path>
+                                    </svg>
+                                    <span>No</span>
+                                </span>
+                                <span class="olb-custom-support-note">Not on HubRise</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="olb-caption olb-custom-compare-sources">
+                Sources:
+                
+                 <a class="olb-custom-link" href="https://sundayapp.com/fr/" rel="nofollow">sunday website</a>
+            </p>
+        </section>
+
+        <!-- 3. What Order&Pay gives the store, 1 card per advantage. -->
+        <section class="olb-section" id="why" aria-labelledby="why-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Why Order&amp;Pay</p>
+                <h2 class="olb-title" id="why-heading">What Order&amp;Pay gives your store</h2>
+            </div>
+            <ul class="olb-card-grid" style="--olb-custom-count: 3">
+                <li class="olb-card">
+                    <h3 class="olb-heading-20">1 menu for every channel</h3>
+                    <p>Order&amp;Pay loads your menu from HubRise, with its options, combos and price variants. Prices match your POS, and items marked out of stock show as out of stock.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Paid into your own Stripe account</h3>
+                    <p>Customers pay by card, Apple Pay or Google Pay. The money lands in your own Stripe account, and OnyLab takes no fee on your payments. Stripe&#39;s own fees apply.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">No app, no account</h3>
+                    <p>Customers scan the QR code on the table and order in their phone&#39;s browser. They never install an app or create an account.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">A second round on the same order</h3>
+                    <p>At the table, customers add a drink or a dessert to the order they already placed and pay for what they added. Your team sees 1 order, not 3.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Pickup times that hold</h3>
+                    <p>Set a preparation time, switch to rush mode to add minutes, or pause new orders. Customers see when their order will be ready.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Apps that work together</h3>
+                    <p>Order&amp;Pay orders go to OrderPicker to be prepared, and their customers to Brevo Bridge and SMSMode Bridge for your campaigns. OrderPad takes phone orders on the same menu.</p>
+                </li>
+            </ul>
+            <div class="olb-custom-after">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Chat with us about your store</a>
+                <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
+            </div>
+        </section>
+
+        <!-- 4. The other app in short, and where it may suit the store better. -->
+        <section class="olb-band" data-tone="secondary" id="fit" aria-labelledby="fit-heading">
+            <div class="olb-grid olb-custom-pos-facts">
+                <div>
+                    <p class="olb-label">Being fair</p>
+                    <h2 class="olb-title" id="fit-heading">Where sunday may suit you better</h2>
+                    <p class="olb-lede">Order&amp;Pay does 1 thing: ordering and paying from the customer&#39;s phone, at the table and for takeout. If one of these matters more to you, sunday is worth a look.</p>
+                </div>
+                <div class="olb-card">
+                    <h3 class="olb-heading-16">sunday in short</h3>
+                    <p>sunday sells QR code bill payment, a card terminal built for restaurants, QR code ordering, Click &amp; Collect, tips, Google reviews and loyalty. It connects to POS systems such as Zelty and Lightspeed directly, not through HubRise. Its pricing page lists plans from €29 to €199 per month.</p>
+                    <ul class="olb-custom-app-facts">
+                        <li>You want a card terminal for the table from the same company.</li><li>You want tips, Google review requests and loyalty built into payment.</li><li>Your POS is one sunday connects to directly, and you do not use HubRise.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. The questions of a store choosing between the 2, mirrored in FAQPage data. -->
+        <section class="olb-section" id="faq" aria-labelledby="faq-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Questions</p>
+                <h2 class="olb-title" id="faq-heading">Order&amp;Pay or sunday: your questions</h2>
+            </div>
+            <div class="olb-faq">
+                <details>
+                    <summary>Do I need HubRise for Order&amp;Pay but not for sunday?</summary>
+                    <p>Yes. sunday connects to some POS systems directly. Order&amp;Pay connects through HubRise, which also links your POS to delivery platforms and to the other OnyLab apps.</p>
+                </details><details>
+                    <summary>Who receives the payments?</summary>
+                    <p>With Order&amp;Pay, online payments go straight into your own Stripe account and OnyLab takes no fee on them. Stripe&#39;s own fees apply. sunday runs payments through its own products.</p>
+                </details><details>
+                    <summary>Can I switch from sunday to Order&amp;Pay without changing my POS?</summary>
+                    <p>Yes, if your POS receives orders from HubRise. Order&amp;Pay connects to the HubRise account of your store, and your POS, your payment terminal and your delivery accounts stay as they are.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 6. The other comparison pages, and the way back to Order&Pay. -->
+        <section class="olb-band" data-tone="secondary" id="related" aria-labelledby="related-heading">
+            <div class="olb-custom-intro">
+                <h2 class="olb-heading-24" id="related-heading">Order&amp;Pay compared with other apps</h2>
+            </div>
+            <ul class="olb-custom-pos-list" data-compact>
+                <li>
+                    <a href="/apps/order-and-pay/vs/dood/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs DOOD</span>
+                        <span class="olb-custom-pos-markets">Online ordering for food businesses in France, with Click &amp; Collect, delivery and table ordering.</span>
+                    </a>
+                </li><li>
+                    <a href="/apps/order-and-pay/vs/eatself/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs Eatself</span>
+                        <span class="olb-custom-pos-markets">Online ordering, kiosks, reservations and loyalty for restaurants in France and French-speaking countries.</span>
+                    </a>
+                </li><li>
+                    <a href="/apps/order-and-pay/vs/gonnaorder/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs GonnaOrder</span>
+                        <span class="olb-custom-pos-markets">Online ordering and payment for restaurants, with a branded website and iOS and Android apps.</span>
+                    </a>
+                </li><li>
+                    <a href="/apps/order-and-pay/vs/mynober/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs MynOber</span>
+                        <span class="olb-custom-pos-markets">Ordering, kiosks and a lightweight POS for hospitality businesses in Europe, not yet in France.</span>
+                    </a>
+                </li><li>
+                    <a href="/apps/order-and-pay/vs/obypay/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs Obypay</span>
+                        <span class="olb-custom-pos-markets">Table, Click &amp; Collect and delivery ordering for restaurants in France, plus kiosks and a hotel concierge app.</span>
+                    </a>
+                </li><li>
+                    <a href="/apps/order-and-pay/vs/servier-bar/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs servier.bar</span>
+                        <span class="olb-custom-pos-markets">A digital waiter for restaurants and hotels in Germany and Europe: table ordering, takeout and payment.</span>
+                    </a>
+                </li><li>
+                    <a href="/apps/order-and-pay/vs/smartresto/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs SmartResto.Net</span>
+                        <span class="olb-custom-pos-markets">Digital menus by QR code with table ordering and Click &amp; Collect, for restaurants and caterers in France.</span>
+                    </a>
+                </li><li>
+                    <a href="/apps/order-and-pay/vs/smilein/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs smilein</span>
+                        <span class="olb-custom-pos-markets">Mobile ordering and payment for hotels, restaurant chains and food courts, with multi-site management.</span>
+                    </a>
+                </li><li>
+                    <a href="/apps/order-and-pay/vs/tablati/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs Tablati</span>
+                        <span class="olb-custom-pos-markets">Table ordering and payment by QR code in Morocco, with bill splitting, tips, Google reviews and loyalty.</span>
+                    </a>
+                </li><li>
+                    <a href="/apps/order-and-pay/vs/tastycloud/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs TastyCloud</span>
+                        <span class="olb-custom-pos-markets">Digital menus, display screens and QR code ordering for restaurants and hotels in France.</span>
+                    </a>
+                </li>
+            </ul>
+            <p class="olb-custom-after"><a class="olb-custom-card-link" href="/apps/order-and-pay/">See what Order&amp;Pay does <span class="olb-custom-arrow" aria-hidden="true"></span></a></p>
+        </section>
+
+        <!-- 7. The promise again, with the same action. -->
+        <section class="olb-section" id="contact" aria-labelledby="contact-heading">
+            <div class="olb-closing">
+                <h2 class="olb-title" id="contact-heading">Try Order&amp;Pay on your own tables</h2>
+                <p class="olb-lede">Tell us how your tables and takeout work today, and which app you use. We will tell you how Order&amp;Pay fits your store, and whether your POS receives its orders.</p>
+                <div class="olb-action-row">
+                    <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Chat with us about your store</a>
+                </div>
+                <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
+                <p class="olb-meta">Write to <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="olb-footer">
+        <div class="olb-custom-footer-brand">
+            <a class="olb-identity" href="/" aria-label="OnyLab home">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+            </a>
+            <p class="olb-caption">Apps for restaurants and shops to take every order and bring customers back, connected to the POS they already run.</p>
+            <p class="olb-caption">Also from the same team: <a href="https://agentiumlab.com/">Agentium Lab</a>, task automation for local businesses.</p>
+        </div>
+
+        <nav class="olb-custom-footer-col" aria-label="Take orders">
+            <h2 class="olb-label">Take orders</h2>
+            <ul>
+                <li><a href="/apps/order-and-pay/">Order&amp;Pay</a></li><li><a href="/apps/orderpicker/">OrderPicker</a></li><li><a href="/apps/orderpad/">OrderPad</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Bring customers back">
+            <h2 class="olb-label">Bring customers back</h2>
+            <ul>
+                <li><a href="/apps/brevo-bridge/">Brevo Bridge</a></li><li><a href="/apps/smsmode-bridge/">SMSMode Bridge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="olb-custom-footer-col" aria-label="Footer">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/#ecosystem">How it fits</a></li><li><a href="/#connections">Integrations</a></li><li><a href="/pos/">POS integrations</a></li><li><a href="/delivery-platforms/">Delivery platforms</a></li><li><a href="/#start">Where to start</a></li><li><a href="/#about">Who we are</a></li><li><a href="/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Sign in to your apps</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
+            <h2 class="olb-label">Contact</h2>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+            </ul>
+        </div>
+
+        <div class="olb-custom-footer-legal">
+            <div class="olb-custom-footer-credit">
+                <p class="olb-meta">© 2026 OnyLab. All rights reserved.</p>
+                <p class="olb-meta">Made with love in Canada and France</p>
+            </div>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Legal">
+                <ul>
+                    <li><a class="olb-meta" href="/privacy/">Privacy Policy</a></li><li><a class="olb-meta" href="/terms/">Terms of Use</a></li>
+                </ul>
+            </nav>
+            <div class="olb-custom-footer-end">
+                <div class="olb-custom-lang">
+                    <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
+                        <span class="olb-custom-lang-name" aria-hidden="true">English</span>
+                        <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="olb-custom-lang-menu" id="langMenu">
+                        <li>
+                            <a href="/apps/order-and-pay/vs/sunday/" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a>
+                        </li><li>
+                            <a href="/fr/applications/order-and-pay/vs/sunday/" lang="fr" hreflang="fr" data-lang="fr">Français</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Theme: System" data-label-light="Theme: Light" data-label-dark="Theme: Dark" aria-label="Theme: System" title="Theme: System">
+                    <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                    <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="/script.js?v=11" type="text/javascript"></script><script>(function(){const crispLocale = "en";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  // Pin the chat button to the bottom right, whatever the dashboard says.
+  window.$crisp.push(['config', 'position:reverse', [false]]);
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
+</html>

@@ -1,6 +1,6 @@
 # OnyLab
 
-> OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone, at the table and for takeout, organize their preparation, and copy customers and orders into Brevo and smsmode for email and SMS campaigns. They connect to the POS and the delivery platforms a store already uses through HubRise.
+> OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and Canada and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone, at the table and for takeout, organize their preparation, and copy customers and orders into Brevo and smsmode for email and SMS campaigns. They connect to the POS and the delivery platforms a store already uses through HubRise.
 
 Every app reads from or writes to the store's HubRise account, where the POS and the delivery platforms already send their orders. A store keeps its POS, its payment terminal and its delivery accounts, and can start with 1 app and add the others later.
 
@@ -15,6 +15,22 @@ Each app below has its own page, with what it does, how it works and what it sha
 - [Order&Pay](https://onylab.com/apps/order-and-pay/): table and takeout ordering. Customers order at the table or for takeout and pay in 1 tap, with no app to install and no account to create.
 - [OrderPicker](https://onylab.com/apps/orderpicker/): OrderPicker is the kitchen display system (KDS) for restaurants and the order preparation screen for shops. A step-by-step workflow catches mistakes and speeds up each preparation.
 - [OrderPad](https://onylab.com/apps/orderpad/): phone order taking on a tablet or a computer. The caller's customer profile comes up from HubRise, the order is built from the HubRise menu with options, comments and the service mode, and it is sent to the POS through HubRise.
+
+## Order&Pay compared
+
+Each page compares Order&Pay with another table ordering app, feature by feature. The facts come from that app's page on hubrise.com and its website, checked on November 26, 2026, and each page says where the other app may suit a store better. The French pages are under https://onylab.com/fr/applications/order-and-pay/vs/.
+
+- [Order&Pay vs DOOD](https://onylab.com/apps/order-and-pay/vs/dood/): online ordering for food businesses in France, with Click & Collect, delivery and table ordering.
+- [Order&Pay vs Eatself](https://onylab.com/apps/order-and-pay/vs/eatself/): online ordering, kiosks, reservations and loyalty for restaurants in France and French-speaking countries.
+- [Order&Pay vs GonnaOrder](https://onylab.com/apps/order-and-pay/vs/gonnaorder/): online ordering and payment, with a branded website and iOS and Android apps. It does not load the menu from HubRise.
+- [Order&Pay vs MynOber](https://onylab.com/apps/order-and-pay/vs/mynober/): ordering, kiosks and a lightweight POS in Europe, not yet in France.
+- [Order&Pay vs Obypay](https://onylab.com/apps/order-and-pay/vs/obypay/): table, Click & Collect and delivery ordering in France. It does not load the menu from HubRise.
+- [Order&Pay vs servier.bar](https://onylab.com/apps/order-and-pay/vs/servier-bar/): table ordering, takeout and payment for restaurants and hotels in Germany and Europe.
+- [Order&Pay vs SmartResto.Net](https://onylab.com/apps/order-and-pay/vs/smartresto/): digital menus by QR code with table ordering and Click & Collect in France.
+- [Order&Pay vs smilein](https://onylab.com/apps/order-and-pay/vs/smilein/): mobile ordering and payment for hotels, restaurant chains and food courts.
+- [Order&Pay vs sunday](https://onylab.com/apps/order-and-pay/vs/sunday/): QR code payment and ordering with its own card terminal. It is not on HubRise.
+- [Order&Pay vs Tablati](https://onylab.com/apps/order-and-pay/vs/tablati/): table ordering and payment by QR code in Morocco, with bill splitting, tips and Google reviews.
+- [Order&Pay vs TastyCloud](https://onylab.com/apps/order-and-pay/vs/tastycloud/): digital menus, display screens and QR code ordering in France.
 
 ## Bring customers back
 
@@ -90,7 +106,7 @@ Each app below has its own page, with what it does, how it works and what it sha
 
 ## About
 
-- [Who we are](https://onylab.com/#about): founded in 2020 in France by people who had run local restaurants and shops. Figures stated on the page: 5 apps live on apps.onylab.com, 20+ years running local restaurants and shops then building software for them, support 7 days a week.
+- [Who we are](https://onylab.com/#about): based in France and Canada, founded in 2020 by people who had run local restaurants and shops. Figures stated on the page: 5 apps live on apps.onylab.com, 20+ years running local restaurants and shops then building software for them, support 7 days a week.
 
 ## Also from the same team
 

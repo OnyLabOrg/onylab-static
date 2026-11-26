@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+      // A theme picked with the footer button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>Order&amp;Pay ou Eatself : la commande à table comparée | OnyLab</title>
+    <meta name="description" content="Order&amp;Pay et Eatself prennent tous 2 les commandes à table par QR code et les envoient en caisse via HubRise. Comparez le paiement, le menu et les données clients.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="Order&amp;Pay ou Eatself : la commande à table comparée | OnyLab">
+    <meta property="og:description" content="Order&amp;Pay et Eatself prennent tous 2 les commandes à table par QR code et les envoient en caisse via HubRise. Comparez le paiement, le menu et les données clients.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OnyLab">
+    <meta property="og:url" content="https://onylab.com/fr/applications/order-and-pay/vs/eatself/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://onylab.com/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://onylab.com/og.png">
+    <meta name="twitter:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:title" content="Order&amp;Pay ou Eatself : la commande à table comparée | OnyLab">
+    <meta name="twitter:description" content="Order&amp;Pay et Eatself prennent tous 2 les commandes à table par QR code et les envoient en caisse via HubRise. Comparez le paiement, le menu et les données clients.">
+    <link rel="canonical" href="https://onylab.com/fr/applications/order-and-pay/vs/eatself/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/vs/eatself/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/vs/eatself/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/vs/eatself/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=27" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/apps/order-and-pay/vs/eatself/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et à table ou à emporter (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail et SMS (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Prise de commande par téléphone pour restaurants",
+        "Commande à table et à emporter avec paiement",
+        "Préparation des commandes",
+        "Écrans de cuisine (KDS)",
+        "Préparation de commandes en magasin",
+        "Segmentation clients pour les campagnes e-mail et SMS",
+        "Intégrations HubRise",
+        "Intégrations de caisse"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/apps/order-and-pay/vs/eatself/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/fr/applications/order-and-pay/vs/eatself/#webpage",
+      "url": "https://onylab.com/fr/applications/order-and-pay/vs/eatself/",
+      "name": "Order&Pay ou Eatself : la commande à table comparée | OnyLab",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "Order&Pay et Eatself prennent tous 2 les commandes à table par QR code et les envoient en caisse via HubRise. Comparez le paiement, le menu et les données clients.",
+      "inLanguage": "fr",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Prenez chaque commande. Faites revenir chaque client."
+      },
+      "dateModified": "2026-11-26",
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Order&Pay",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Eatself",
+          "applicationCategory": "BusinessApplication",
+          "url": "https://www.eatself.com"
+        }
+      ],
+      "breadcrumb": {
+        "@id": "https://onylab.com/fr/applications/order-and-pay/vs/eatself/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/fr/applications/order-and-pay/vs/eatself/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Order&Pay",
+          "item": "https://onylab.com/fr/applications/order-and-pay/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Order&Pay vs Eatself"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onylab.com/fr/applications/order-and-pay/vs/eatself/#faq",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Les commandes Eatself envoient-elles les infos client à HubRise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pas encore. HubRise indique que l'envoi des informations client sera bientôt possible pour Eatself. Order&Pay envoie avec chaque commande le nom, l'e-mail et le téléphone saisis par le client, pour que Brevo Bridge et SMSMode Bridge puissent les utiliser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Order&Pay propose-t-il des bornes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Order&Pay fonctionne sur le téléphone de vos clients. Si vous avez besoin de bornes dans votre établissement, Eatself en propose."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je passer de Eatself à Order&Pay sans changer de caisse ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, si votre caisse reçoit les commandes de HubRise. Order&Pay se connecte au compte HubRise de votre commerce, et votre caisse, votre terminal de paiement et vos comptes de livraison restent en place."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body class="olb-page">
+<div class="olb-shell">
+
+    <a class="olb-skip-link" href="#main">Aller au contenu</a>
+
+    <header class="olb-header" id="header">
+        <div class="olb-masthead">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
+            </a>
+            <nav class="olb-document-meta" aria-label="Navigation principale">
+                <ul class="olb-nav" id="navMenu">
+                    <li><a href="/fr/#apps">Applications</a></li>
+                    <li><a href="/fr/#ecosystem">Comment ça marche</a></li>
+                    <li><a href="/fr/#connections">Intégrations</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Connexion</a></li>
+                </ul>
+                <div class="olb-custom-header-tools">
+                    <a class="olb-button-secondary olb-button-compact olb-custom-signin" href="https://apps.onylab.com/">Connexion</a>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Discuter avec nous</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+<main id="main">
+
+        <!-- 1. The choice the reader is making, and the action. -->
+        <section class="olb-section olb-opening olb-custom-pos-opening" aria-labelledby="compare-heading">
+            <nav class="olb-custom-crumbs" aria-label="Fil d'Ariane">
+                <ol>
+                    <li><a href="/fr/">OnyLab</a></li>
+                    <li><a href="/fr/applications/order-and-pay/">Order&amp;Pay</a></li>
+                    <li aria-current="page">Order&amp;Pay vs Eatself</li>
+                </ol>
+            </nav>
+            <!-- The name follows in the breadcrumb and the label, so the logo is decorative. -->
+            <span class="olb-custom-pos-logo">
+                <img src="https://cdn.onylab.com/image/apps/logo/orderpay.svg" alt="" width="512" height="512" decoding="async">
+            </span>
+            <p class="olb-pill olb-opening-pill">Order&amp;Pay vs Eatself</p>
+            <h1 class="olb-display olb-opening-claim" id="compare-heading">Order&amp;Pay ou Eatself pour la commande à table ?</h1>
+            <p class="olb-lede olb-opening-proof">Eatself réunit commande, bornes, réservation et fidélité. Order&amp;Pay se concentre sur la commande à table et à emporter : vos clients paient sur votre propre compte Stripe, ajoutent une tournée à la même commande, et leurs coordonnées arrivent dans HubRise pour vos campagnes.</p>
+            <div class="olb-action-row">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                <a class="olb-button-secondary" href="#table">Voir la comparaison <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
+            </div>
+            <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+        </section>
+
+        <!-- 2. The 2 apps side by side, with the sources and the date checked. -->
+        <section class="olb-band" data-tone="contrast" id="table" aria-labelledby="table-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Côte à côte</p>
+                <h2 class="olb-title" id="table-heading">Order&amp;Pay et Eatself, fonction par fonction</h2>
+            </div>
+            <div class="olb-table-wrap">
+                <table class="olb-comparison olb-custom-compare">
+                    <caption>Eatself : d&#39;après sa page sur hubrise.com et son site, vérifiés le 26 novembre 2026. « Non précisé » signifie que la source ne le dit pas. Order&amp;Pay : d&#39;après sa propre spécification produit.</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Fonction</th>
+                            <th scope="col" data-onylab>Order&amp;Pay</th>
+                            <th scope="col">Eatself</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Commande à table par QR code</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Oui</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M3 8.5l3 3 7-7"></path>
+                                    </svg>
+                                    <span>Oui</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Commande à emporter</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Oui</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M3 8.5l3 3 7-7"></path>
+                                    </svg>
+                                    <span>Oui</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Aucune application à installer</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Oui</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="unknown">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M4 8h8"></path>
+                                    </svg>
+                                    <span>Non précisé</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Paiement sur le téléphone du client</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Oui</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M3 8.5l3 3 7-7"></path>
+                                    </svg>
+                                    <span>Oui</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Articles ajoutés à la même commande, à table</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Oui</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="unknown">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M4 8h8"></path>
+                                    </svg>
+                                    <span>Non précisé</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Paiements en ligne sur votre propre compte Stripe, sans frais prélevés par l&#39;application</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Oui</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="unknown">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M4 8h8"></path>
+                                    </svg>
+                                    <span>Non précisé</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Menu chargé depuis HubRise, aux prix de votre caisse</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Oui</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M3 8.5l3 3 7-7"></path>
+                                    </svg>
+                                    <span>Oui</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Commandes envoyées en caisse via HubRise</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Oui</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M3 8.5l3 3 7-7"></path>
+                                    </svg>
+                                    <span>Oui</span>
+                                </span>
+                                
+                            </td>
+                        </tr><tr>
+                            <th scope="row">Informations client envoyées à HubRise avec chaque commande</th>
+                            <td data-onylab>
+                                <span class="olb-custom-support" data-support="yes">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"></path></svg>
+                                    <span>Oui</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="olb-custom-support" data-support="no">
+                                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                        <path d="M4 4l8 8M12 4l-8 8"></path>
+                                    </svg>
+                                    <span>Non</span>
+                                </span>
+                                <span class="olb-custom-support-note">Bientôt disponible, selon HubRise</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="olb-caption olb-custom-compare-sources">
+                Sources :
+                 <a class="olb-custom-link" href="https://www.hubrise.com/apps/eatself" hreflang="en" rel="nofollow">Eatself sur hubrise.com</a>
+                 · <a class="olb-custom-link" href="https://www.eatself.com" rel="nofollow">Site de Eatself</a>
+            </p>
+        </section>
+
+        <!-- 3. What Order&Pay gives the store, 1 card per advantage. -->
+        <section class="olb-section" id="why" aria-labelledby="why-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Pourquoi Order&amp;Pay</p>
+                <h2 class="olb-title" id="why-heading">Ce qu&#39;Order&amp;Pay apporte à votre commerce</h2>
+            </div>
+            <ul class="olb-card-grid" style="--olb-custom-count: 3">
+                <li class="olb-card">
+                    <h3 class="olb-heading-20">1 seul menu pour tous les canaux</h3>
+                    <p>Order&amp;Pay charge votre menu depuis HubRise, avec ses options, ses formules et ses variantes de prix. Les prix correspondent à votre caisse, et les articles marqués épuisés s&#39;affichent comme épuisés.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Encaissé sur votre propre compte Stripe</h3>
+                    <p>Vos clients paient par carte, Apple Pay ou Google Pay. L&#39;argent arrive sur votre propre compte Stripe, et OnyLab ne prélève aucuns frais sur vos paiements. Les frais de Stripe s&#39;appliquent.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Ni application, ni compte</h3>
+                    <p>Vos clients scannent le QR code de la table et commandent dans le navigateur de leur téléphone. Ils n&#39;installent aucune application et ne créent aucun compte.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Une 2e tournée sur la même commande</h3>
+                    <p>À table, vos clients ajoutent une boisson ou un dessert à la commande déjà passée et paient ce qu&#39;ils ont ajouté. Votre équipe voit 1 commande, pas 3.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Des heures de retrait fiables</h3>
+                    <p>Fixez un temps de préparation, passez en mode affluence pour ajouter des minutes, ou mettez les nouvelles commandes en pause. Vos clients voient quand leur commande sera prête.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Des applications qui travaillent ensemble</h3>
+                    <p>Les commandes Order&amp;Pay partent vers OrderPicker pour être préparées, et leurs clients vers Brevo Bridge et SMSMode Bridge pour vos campagnes. OrderPad prend les commandes par téléphone sur le même menu.</p>
+                </li>
+            </ul>
+            <div class="olb-custom-after">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+            </div>
+        </section>
+
+        <!-- 4. The other app in short, and where it may suit the store better. -->
+        <section class="olb-band" data-tone="secondary" id="fit" aria-labelledby="fit-heading">
+            <div class="olb-grid olb-custom-pos-facts">
+                <div>
+                    <p class="olb-label">En toute honnêteté</p>
+                    <h2 class="olb-title" id="fit-heading">Quand Eatself peut mieux vous convenir</h2>
+                    <p class="olb-lede">Order&amp;Pay fait 1 chose : la commande et le paiement depuis le téléphone du client, à table et à emporter. Si l&#39;un de ces points compte davantage pour vous, Eatself mérite un coup d&#39;œil.</p>
+                </div>
+                <div class="olb-card">
+                    <h3 class="olb-heading-16">Eatself en bref</h3>
+                    <p>Eatself équipe des restaurants en France, en Suisse, au Luxembourg, en Belgique, au Maroc et en Afrique francophone. Il couvre le Click &amp; Collect, la livraison, le paiement à table par QR code, les bornes, la réservation, la fidélité, les campagnes SMS et les avis. HubRise l&#39;indique gratuit, avec des options jusqu&#39;à 79 € par mois.</p>
+                    <ul class="olb-custom-app-facts">
+                        <li>Vous voulez des bornes de commande dans votre établissement.</li><li>Vous voulez la réservation, des points de fidélité et la collecte d&#39;avis dans le même outil.</li><li>Vous voulez livrer avec vos propres livreurs, ou via Stuart ou Uber Direct.</li><li>Vous voulez commencer avec une offre gratuite.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. The questions of a store choosing between the 2, mirrored in FAQPage data. -->
+        <section class="olb-section" id="faq" aria-labelledby="faq-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Questions</p>
+                <h2 class="olb-title" id="faq-heading">Order&amp;Pay ou Eatself : vos questions</h2>
+            </div>
+            <div class="olb-faq">
+                <details>
+                    <summary>Les commandes Eatself envoient-elles les infos client à HubRise ?</summary>
+                    <p>Pas encore. HubRise indique que l&#39;envoi des informations client sera bientôt possible pour Eatself. Order&amp;Pay envoie avec chaque commande le nom, l&#39;e-mail et le téléphone saisis par le client, pour que Brevo Bridge et SMSMode Bridge puissent les utiliser.</p>
+                </details><details>
+                    <summary>Order&amp;Pay propose-t-il des bornes ?</summary>
+                    <p>Non. Order&amp;Pay fonctionne sur le téléphone de vos clients. Si vous avez besoin de bornes dans votre établissement, Eatself en propose.</p>
+                </details><details>
+                    <summary>Puis-je passer de Eatself à Order&amp;Pay sans changer de caisse ?</summary>
+                    <p>Oui, si votre caisse reçoit les commandes de HubRise. Order&amp;Pay se connecte au compte HubRise de votre commerce, et votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 6. The other comparison pages, and the way back to Order&Pay. -->
+        <section class="olb-band" data-tone="secondary" id="related" aria-labelledby="related-heading">
+            <div class="olb-custom-intro">
+                <h2 class="olb-heading-24" id="related-heading">Order&amp;Pay face aux autres applications</h2>
+            </div>
+            <ul class="olb-custom-pos-list" data-compact>
+                <li>
+                    <a href="/fr/applications/order-and-pay/vs/dood/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs DOOD</span>
+                        <span class="olb-custom-pos-markets">Commande en ligne pour les commerces alimentaires en France : Click &amp; Collect, livraison et commande à table.</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/order-and-pay/vs/gonnaorder/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs GonnaOrder</span>
+                        <span class="olb-custom-pos-markets">Commande et paiement en ligne pour les restaurants, avec un site à vos couleurs et des applications iOS et Android.</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/order-and-pay/vs/mynober/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs MynOber</span>
+                        <span class="olb-custom-pos-markets">Commande, bornes et caisse légère pour l&#39;hôtellerie-restauration en Europe, pas encore en France.</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/order-and-pay/vs/obypay/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs Obypay</span>
+                        <span class="olb-custom-pos-markets">Commande à table, Click &amp; Collect et livraison pour les restaurants en France, avec bornes et conciergerie pour les hôtels.</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/order-and-pay/vs/servier-bar/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs servier.bar</span>
+                        <span class="olb-custom-pos-markets">Un serveur numérique pour les restaurants et les hôtels en Allemagne et en Europe : commande à table, à emporter et paiement.</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/order-and-pay/vs/smartresto/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs SmartResto.Net</span>
+                        <span class="olb-custom-pos-markets">Menus numériques par QR code avec commande à table et Click &amp; Collect, pour les restaurants et les traiteurs en France.</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/order-and-pay/vs/smilein/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs smilein</span>
+                        <span class="olb-custom-pos-markets">Commande et paiement mobile pour les hôtels, les chaînes de restaurants et les food courts, avec gestion multisite.</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/order-and-pay/vs/sunday/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs sunday</span>
+                        <span class="olb-custom-pos-markets">Paiement et commande par QR code, avec son propre terminal de paiement, pour les restaurants en France, au Royaume-Uni et aux États-Unis.</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/order-and-pay/vs/tablati/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs Tablati</span>
+                        <span class="olb-custom-pos-markets">Commande et paiement à table par QR code au Maroc, avec partage de l&#39;addition, pourboire, avis Google et fidélité.</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/order-and-pay/vs/tastycloud/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay vs TastyCloud</span>
+                        <span class="olb-custom-pos-markets">Menus numériques, écrans d&#39;affichage et commande par QR code pour les restaurants et les hôtels en France.</span>
+                    </a>
+                </li>
+            </ul>
+            <p class="olb-custom-after"><a class="olb-custom-card-link" href="/fr/applications/order-and-pay/">Découvrir Order&amp;Pay <span class="olb-custom-arrow" aria-hidden="true"></span></a></p>
+        </section>
+
+        <!-- 7. The promise again, with the same action. -->
+        <section class="olb-section" id="contact" aria-labelledby="contact-heading">
+            <div class="olb-closing">
+                <h2 class="olb-title" id="contact-heading">Essayez Order&amp;Pay sur vos propres tables</h2>
+                <p class="olb-lede">Dites-nous comment fonctionnent vos tables et votre vente à emporter aujourd&#39;hui, et quelle application vous utilisez. Nous vous dirons comment Order&amp;Pay s&#39;adapte à votre commerce, et si votre caisse reçoit ses commandes.</p>
+                <div class="olb-action-row">
+                    <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                </div>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+                <p class="olb-meta">Écrire à <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="olb-footer">
+        <div class="olb-custom-footer-brand">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+            </a>
+            <p class="olb-caption">Des applications pour que les restaurants et les commerces prennent chaque commande et fassent revenir leurs clients, branchées sur la caisse qu&#39;ils utilisent déjà.</p>
+            <p class="olb-caption">De la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, l'automatisation des tâches pour les commerces de proximité.</p>
+        </div>
+
+        <nav class="olb-custom-footer-col" aria-label="Prendre les commandes">
+            <h2 class="olb-label">Prendre les commandes</h2>
+            <ul>
+                <li><a href="/fr/applications/order-and-pay/">Order&amp;Pay</a></li><li><a href="/fr/applications/orderpicker/">OrderPicker</a></li><li><a href="/fr/applications/orderpad/">OrderPad</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Faire revenir les clients">
+            <h2 class="olb-label">Faire revenir les clients</h2>
+            <ul>
+                <li><a href="/fr/applications/brevo-bridge/">Brevo Bridge</a></li><li><a href="/fr/applications/smsmode-bridge/">SMSMode Bridge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="olb-custom-footer-col" aria-label="Pied de page">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Intégrations</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/plateformes-de-livraison/">Plateformes de livraison</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
+            <h2 class="olb-label">Contact</h2>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+            </ul>
+        </div>
+
+        <div class="olb-custom-footer-legal">
+            <div class="olb-custom-footer-credit">
+                <p class="olb-meta">© 2026 OnyLab. Tous droits réservés.</p>
+                <p class="olb-meta">Fait avec amour au Canada et en France</p>
+            </div>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Mentions légales">
+                <ul>
+                    <li><a class="olb-meta" href="/fr/confidentialite/">Politique de confidentialité</a></li><li><a class="olb-meta" href="/fr/conditions/">Conditions d&#39;utilisation</a></li>
+                </ul>
+            </nav>
+            <div class="olb-custom-footer-end">
+                <div class="olb-custom-lang">
+                    <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Langue: Français">
+                        <span class="olb-custom-lang-name" aria-hidden="true">Français</span>
+                        <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="olb-custom-lang-menu" id="langMenu">
+                        <li>
+                            <a href="/apps/order-and-pay/vs/eatself/" lang="en" hreflang="en" data-lang="en">English</a>
+                        </li><li>
+                            <a href="/fr/applications/order-and-pay/vs/eatself/" lang="fr" hreflang="fr" data-lang="fr" aria-current="true">Français</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Thème : Système" data-label-light="Thème : Clair" data-label-dark="Thème : Sombre" aria-label="Thème : Système" title="Thème : Système">
+                    <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                    <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="/script.js?v=11" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  // Pin the chat button to the bottom right, whatever the dashboard says.
+  window.$crisp.push(['config', 'position:reverse', [false]]);
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
+</html>
