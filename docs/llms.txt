@@ -1,33 +1,33 @@
 # OnyLab
 
-> OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone and online, organise their preparation, and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns. They connect to the till and the delivery platforms a store already uses through HubRise.
+> OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone and online, organize their preparation, and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns. They connect to the POS and the delivery platforms a store already uses through HubRise.
 
-Every app reads from or writes to the store's HubRise account, where the till and the delivery platforms already send their orders. A store keeps its till, its payment terminal and its delivery accounts, and can start with 1 app and add the others later.
+Every app reads from or writes to the store's HubRise account, where the POS and the delivery platforms already send their orders. A store keeps its POS, its payment terminal and its delivery accounts, and can start with 1 app and add the others later.
 
-Contact: hello@onylab.com. Support: support@onylab.com. Customers sign in to their apps at https://apps.onylab.com/.
+Contact: hello@onylab.com. Customers sign in to their apps at https://apps.onylab.com/.
 
 Languages: this site is published in English at https://onylab.com/ and in French at https://onylab.com/fr/. Both versions carry the same content, and the English version is the source.
 
 ## Take orders
 
-- [OrderPad](https://onylab.com/#tour-orderpad): phone order taking on a tablet or a computer. The caller's customer profile comes up from HubRise, the order is built from the HubRise menu with options, comments and the service mode, and it is sent to the till through HubRise.
 - [Order&Pay](https://onylab.com/#tour-orderpay): online ordering. Customers pay in 1 tap, with no app to install and no account to create.
-- [OrderPicker](https://onylab.com/#tour-orderpicker): order preparation, with a step-by-step workflow that catches mistakes and speeds up each preparation.
+- [OrderPicker](https://onylab.com/#tour-orderpicker): OrderPicker is the kitchen display system (KDS) for restaurants and the order preparation screen for shops. A step-by-step workflow catches mistakes and speeds up each preparation.
+- [OrderPad](https://onylab.com/#tour-orderpad): phone order taking on a tablet or a computer. The caller's customer profile comes up from HubRise, the order is built from the HubRise menu with options, comments and the service mode, and it is sent to the POS through HubRise.
 
 ## Bring customers back
 
-- [Brevo Bridge](https://onylab.com/#tour-brevo): copies HubRise customers and orders into the store's Brevo account and sorts them by visits, average basket and last order, for email and SMS campaigns.
+- [Brevo Bridge](https://onylab.com/#tour-brevo): copies HubRise customers and orders into the store's Brevo account and sorts them by visits, average order value and last order, for email and SMS campaigns.
 - [SMSMode Bridge](https://onylab.com/#tour-smsmode): copies the same customers and orders into the store's smsmode account, for SMS and WhatsApp campaigns.
 
 ## How it fits
 
-- [How the apps share data](https://onylab.com/#ecosystem): the apps sit around the store's menu, orders and customers, kept in its HubRise account. OrderPad, Brevo Bridge and SMSMode Bridge are listed in HubRise's app directory (checked on 24 November 2026).
-- [Your till](https://onylab.com/#connections): tills connected to HubRise, and the delivery platforms Deliveroo, Uber Eats and Just Eat, connected to HubRise (checked on 24 November 2026).
-- [Questions](https://onylab.com/#faq): changing the till, what HubRise is, using 1 app only, customer data, delivery platforms, support, and signing in.
+- [How the apps share data](https://onylab.com/#ecosystem): the apps sit around the store's menu, orders and customers, kept in its HubRise account. OrderPad, Brevo Bridge and SMSMode Bridge are listed in HubRise's app directory.
+- [Your POS](https://onylab.com/#connections): POS systems connected to HubRise, and the delivery platforms Deliveroo, Uber Eats and Just Eat, connected to HubRise.
+- [Questions](https://onylab.com/#faq): changing the POS, what HubRise is, using 1 app only, customer data, delivery platforms, support, and signing in.
 
 ## About
 
-- [Who we are](https://onylab.com/#about): founded in 2020 in France by people who had run local restaurants and shops. Figures stated on the page: 5 apps live on apps.onylab.com on 24 November 2026, 20+ years running local restaurants and shops then building software for them, support 7 days a week.
+- [Who we are](https://onylab.com/#about): founded in 2020 in France by people who had run local restaurants and shops. Figures stated on the page: 5 apps live on apps.onylab.com, 20+ years running local restaurants and shops then building software for them, support 7 days a week.
 
 ## Also from the same team
 

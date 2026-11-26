@@ -5,7 +5,7 @@
 
    Light by default, dark when the reader's system asks for it: the
    tokens below are the light values, and the dark block after them swaps
-   them for the dark ones. The header's theme button can force either mode
+   them for the dark ones. The footer's theme button can force either mode
    by setting data-theme="light" or "dark" on <html>; without it, the
    system setting decides.
    3 grounds: the canvas, the secondary ground 1 step off it, and the
@@ -296,7 +296,7 @@ table { border-collapse: collapse; }
   gap: var(--olb-space-4);
 }
 
-/* A centred section introduction: optional label, heading, lede. */
+/* A centered section introduction: optional label, heading, lede. */
 .olb-custom-intro {
   max-width: 44rem;
   margin-inline: auto;
@@ -330,7 +330,7 @@ table { border-collapse: collapse; }
 
 .olb-identity { display: block; flex: none; }
 
-/* The wordmark exists twice, colour and white, and CSS shows the one that
+/* The wordmark exists twice, color and white, and CSS shows the one that
    matches the active scheme, so a forced theme never shows the wrong one. */
 .olb-custom-logo-dark { display: none; }
 @media (prefers-color-scheme: dark) {
@@ -376,8 +376,8 @@ table { border-collapse: collapse; }
 .olb-custom-signin:hover { color: var(--olb-text-primary); }
 .olb-nav .olb-custom-signin-item { display: none; }
 
-/* Theme switcher: 1 button cycling System, Light, Dark. Its icon shows the
-   current choice and its accessible name spells it out. */
+/* Theme switcher, in the footer's legal row: 1 button cycling System, Light,
+   Dark. Its icon shows the current choice and its accessible name spells it out. */
 .olb-custom-theme-toggle {
   display: inline-grid;
   place-items: center;
@@ -457,7 +457,7 @@ table { border-collapse: collapse; }
   color: var(--olb-text-primary);
   background: var(--olb-canvas);
 }
-/* The current language is marked by weight and ink, never by colour alone. */
+/* The current language is marked by weight and ink, never by color alone. */
 .olb-custom-lang-menu a[aria-current] {
   color: var(--olb-text-primary);
   font-weight: var(--olb-weight-medium);
@@ -537,7 +537,7 @@ p, li, td, th { color: inherit; }
 .olb-section p,
 .olb-band p { color: var(--olb-text-secondary); }
 
-/* Each ground uses its own secondary grey, never the other one. */
+/* Each ground uses its own secondary gray, never the other one. */
 .olb-band[data-tone="contrast"] :is(p, .olb-lede, .olb-label, .olb-caption, .olb-meta) {
   color: var(--olb-text-on-contrast-secondary);
 }
@@ -1574,17 +1574,19 @@ p, li, td, th { color: inherit; }
 }
 .olb-custom-footer-legal-nav a { transition: color var(--olb-transition); }
 .olb-custom-footer-legal-nav a:hover { color: var(--olb-text-primary); }
+/* The last group of the legal row: the credit line, then the theme button. */
+.olb-custom-footer-end {
+  display: flex;
+  align-items: center;
+  gap: var(--olb-space-3);
+}
 
 /* ── Tablet: 6 columns ───────────────────────────────────────────────────── */
 
-@media (max-width: 1060px) {
+@media (max-width: 1020px) {
   .olb-nav { gap: var(--olb-space-5); }
   .olb-custom-signin { display: none; }
   .olb-nav .olb-custom-signin-item { display: list-item; }
-  /* Tighter tools and the language as its code leave room for the theme button. */
-  .olb-custom-header-tools { gap: var(--olb-space-4); }
-  .olb-custom-lang-name { display: none; }
-  .olb-custom-lang-code { display: inline; }
 }
 
 @media (max-width: 900px) {

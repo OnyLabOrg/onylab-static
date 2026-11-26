@@ -39,7 +39,7 @@ if (navToggle && navMenu) {
 // Theme switcher. 1 button cycles System, Light, Dark. System is the default
 // and stores nothing, so the page keeps following the reader's setting; a
 // forced choice is stored and applied by the inline script in the head before
-// first paint. The browser chrome colour follows the forced choice too.
+// first paint. The browser chrome color follows the forced choice too.
 const themeToggle = document.getElementById('themeToggle');
 
 if (themeToggle) {
