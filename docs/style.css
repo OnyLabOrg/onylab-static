@@ -1374,9 +1374,10 @@ p, li, td, th { color: inherit; }
   transform: translateY(-3px) rotate(-45deg);
 }
 
-/* The comparison pages: each cell says yes, no or not stated with an icon and a
-   word, so the answer never rests on the icon alone. A "no" or "not stated"
-   reads in the secondary color; the flame stays on Order&Pay's column header. */
+/* The comparison pages: each cell says yes or no with an icon and a word, so the
+   answer never rests on the icon alone, and stays blank when the source does not
+   say. A "no" reads in the secondary color; the flame stays on Order&Pay's column
+   header. */
 .olb-custom-compare th:first-child { width: 40%; }
 .olb-custom-compare td { width: 30%; }
 .olb-custom-support {
@@ -1393,8 +1394,7 @@ p, li, td, th { color: inherit; }
   stroke-linejoin: round;
 }
 .olb-custom-support[data-support="yes"] { color: var(--olb-text-on-contrast); }
-.olb-custom-support[data-support="no"],
-.olb-custom-support[data-support="unknown"] { color: var(--olb-text-on-contrast-secondary); }
+.olb-custom-support[data-support="no"] { color: var(--olb-text-on-contrast-secondary); }
 .olb-custom-support-note {
   display: block;
   margin-top: var(--olb-space-1);
