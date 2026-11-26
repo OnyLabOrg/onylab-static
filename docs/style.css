@@ -400,8 +400,10 @@ table { border-collapse: collapse; }
 .olb-custom-theme-toggle[data-choice="light"] svg[data-icon="light"],
 .olb-custom-theme-toggle[data-choice="dark"] svg[data-icon="dark"] { display: block; }
 
-/* Language switcher: a disclosure button over the locales the site is written
-   in. Links, not commands, so it stays a plain list rather than an ARIA menu. */
+/* Language switcher, in the footer's legal row beside the theme button: a
+   disclosure button over the locales the site is written in. Links, not
+   commands, so it stays a plain list rather than an ARIA menu. The list opens
+   upward, since the switcher sits at the foot of the page. */
 .olb-custom-lang { position: relative; flex: none; }
 
 .olb-custom-lang-toggle {
@@ -414,23 +416,22 @@ table { border-collapse: collapse; }
   transition: color var(--olb-transition);
 }
 .olb-custom-lang-toggle:hover { color: var(--olb-text-primary); }
-.olb-custom-lang-code { display: none; }
 
 .olb-custom-lang-caret {
   width: 6px;
   height: 6px;
   border-right: 1.5px solid currentColor;
   border-bottom: 1.5px solid currentColor;
-  transform: translateY(-2px) rotate(45deg);
+  transform: translateY(1px) rotate(-135deg);
   transition: transform var(--olb-transition);
 }
 .olb-custom-lang-toggle[aria-expanded="true"] .olb-custom-lang-caret {
-  transform: translateY(1px) rotate(-135deg);
+  transform: translateY(-2px) rotate(45deg);
 }
 
 .olb-custom-lang-menu {
   position: absolute;
-  top: calc(100% + var(--olb-space-2));
+  bottom: calc(100% + var(--olb-space-2));
   right: 0;
   z-index: 60;
   display: none;
@@ -1615,6 +1616,25 @@ p, li, td, th { color: inherit; }
   transition: border-color var(--olb-transition);
 }
 .olb-custom-pos-list a:hover { border-color: var(--olb-border-default); }
+/* POS logos are drawn for a white ground, so the tile stays white in both modes. */
+.olb-custom-pos-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5.5rem;
+  margin-bottom: var(--olb-space-2);
+  padding: var(--olb-space-4) var(--olb-space-5);
+  background: #fff;
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius);
+}
+.olb-custom-pos-logo img {
+  width: auto;
+  height: auto;
+  max-width: min(100%, 10rem);
+  max-height: 100%;
+  object-fit: contain;
+}
 .olb-custom-pos-name {
   font-family: var(--olb-font-display);
   font-size: var(--olb-type-subsection);
@@ -1636,6 +1656,25 @@ p, li, td, th { color: inherit; }
 .olb-custom-pos-list[data-compact] { max-width: 1040px; margin-inline: auto; }
 .olb-custom-pos-list[data-compact] .olb-custom-pos-name { font-size: 1.0625rem; }
 .olb-custom-pos-caption { margin-top: var(--olb-space-6); text-align: center; }
+/* Platform logos sit on 1 white plate in both modes, in their original colors.
+   The name beside them stays the accessible label, so the image is decorative. */
+.olb-custom-platform-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  margin-bottom: var(--olb-space-2);
+  padding: var(--olb-space-3) var(--olb-space-4);
+  background: #fff;
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius);
+}
+.olb-custom-platform-logo img {
+  width: 100%;
+  max-width: 10rem;
+  height: 100%;
+  object-fit: contain;
+}
 
 /* Delivery platform pages: the channels feeding OrderPicker. The nodes are
    labels, not links, and the page's own platform is set apart by weight and a
@@ -1696,7 +1735,8 @@ p, li, td, th { color: inherit; }
 }
 .olb-custom-footer-legal-nav a { transition: color var(--olb-transition); }
 .olb-custom-footer-legal-nav a:hover { color: var(--olb-text-primary); }
-/* The last group of the legal row: the credit line, then the theme button. */
+/* The last group of the legal row: the credit line, then the language and
+   theme switchers. */
 .olb-custom-footer-end {
   display: flex;
   align-items: center;
@@ -1788,8 +1828,6 @@ p, li, td, th { color: inherit; }
     color: var(--olb-text-primary);
   }
 
-  .olb-custom-lang-name { display: none; }
-  .olb-custom-lang-code { display: inline; }
   .olb-custom-lang-toggle { min-height: 44px; padding-inline: var(--olb-space-2); }
   .olb-custom-theme-toggle { width: 44px; height: 44px; }
 
@@ -1867,7 +1905,6 @@ p, li, td, th { color: inherit; }
   .olb-display { font-size: clamp(1.875rem, 10vw, 2.75rem); }
   .olb-custom-pos-opening .olb-opening-claim { font-size: clamp(1.75rem, 8.5vw, 2.25rem); }
   .olb-title { font-size: clamp(1.625rem, 8vw, 1.875rem); }
-  .olb-custom-lang-toggle { padding-inline: var(--olb-space-1); }
 }
 
 /* ── Reduced motion ──────────────────────────────────────────────────────── */

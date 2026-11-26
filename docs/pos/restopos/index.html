@@ -52,14 +52,14 @@ const defaultLang = "en";
         }
       })();
     </script><title>restoPOS and OnyLab: bakery and cafe orders | OnyLab</title>
-    <meta name="description" content="Link restoPOS to HubRise and add phone orders, online ordering, a picking screen and campaigns for your restaurant, coffee shop or bakery.">
+    <meta name="description" content="Link restoPOS to HubRise and add phone orders, table and takeout ordering, a picking screen and campaigns for your restaurant, coffee shop or bakery.">
     
     <meta name="robots" content="index, follow">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
     <meta property="og:title" content="restoPOS and OnyLab: bakery and cafe orders | OnyLab">
-    <meta property="og:description" content="Link restoPOS to HubRise and add phone orders, online ordering, a picking screen and campaigns for your restaurant, coffee shop or bakery.">
+    <meta property="og:description" content="Link restoPOS to HubRise and add phone orders, table and takeout ordering, a picking screen and campaigns for your restaurant, coffee shop or bakery.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="OnyLab">
     <meta property="og:url" content="https://onylab.com/pos/restopos/">
@@ -74,7 +74,7 @@ const defaultLang = "en";
     <meta name="twitter:image" content="https://onylab.com/og.png">
     <meta name="twitter:image:alt" content="OnyLab. Take every order. Bring every customer back.">
     <meta name="twitter:title" content="restoPOS and OnyLab: bakery and cafe orders | OnyLab">
-    <meta name="twitter:description" content="Link restoPOS to HubRise and add phone orders, online ordering, a picking screen and campaigns for your restaurant, coffee shop or bakery.">
+    <meta name="twitter:description" content="Link restoPOS to HubRise and add phone orders, table and takeout ordering, a picking screen and campaigns for your restaurant, coffee shop or bakery.">
     <link rel="canonical" href="https://onylab.com/pos/restopos/">
     <link rel="alternate" hreflang="en" href="https://onylab.com/pos/restopos/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/restopos/">
     <link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/restopos/">
@@ -82,7 +82,7 @@ const defaultLang = "en";
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/style.css?v=24" rel="stylesheet">
+    <link href="/style.css?v=25" rel="stylesheet">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -93,7 +93,7 @@ const defaultLang = "en";
       "url": "https://onylab.com/pos/restopos/",
       "email": "hello@onylab.com",
       "foundingDate": "2020",
-      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and online (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
+      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and at the table or for takeout (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
@@ -105,7 +105,7 @@ const defaultLang = "en";
       },
       "knowsAbout": [
         "Phone ordering for restaurants",
-        "Online ordering and payment",
+        "Table and takeout ordering with payment",
         "Order preparation",
         "Kitchen display systems (KDS)",
         "Retail order picking",
@@ -147,7 +147,7 @@ const defaultLang = "en";
       "about": {
         "@id": "https://onylab.com/#organization"
       },
-      "description": "Link restoPOS to HubRise and add phone orders, online ordering, a picking screen and campaigns for your restaurant, coffee shop or bakery.",
+      "description": "Link restoPOS to HubRise and add phone orders, table and takeout ordering, a picking screen and campaigns for your restaurant, coffee shop or bakery.",
       "inLanguage": "en",
       "primaryImageOfPage": {
         "@type": "ImageObject",
@@ -201,7 +201,7 @@ const defaultLang = "en";
           "name": "Do orders from OrderPad and Order&Pay reach restoPOS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. restoPOS pulls orders from HubRise, including their status, so phone, online and delivery platform orders arrive on the POS."
+            "text": "Yes. restoPOS pulls orders from HubRise, including their status, so phone, table, takeout and delivery platform orders arrive on the POS."
           }
         },
         {
@@ -251,20 +251,6 @@ const defaultLang = "en";
                     <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Sign in</a></li>
                 </ul>
                 <div class="olb-custom-header-tools">
-                    <div class="olb-custom-lang">
-                        <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
-                            <span class="olb-custom-lang-name" aria-hidden="true">English</span>
-                            <span class="olb-custom-lang-code" aria-hidden="true">EN</span>
-                            <span class="olb-custom-lang-caret" aria-hidden="true"></span>
-                        </button>
-                        <ul class="olb-custom-lang-menu" id="langMenu">
-                            <li>
-                                <a href="/pos/restopos/" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a>
-                            </li><li>
-                                <a href="/fr/caisses/restopos/" lang="fr" hreflang="fr" data-lang="fr">Français</a>
-                            </li>
-                        </ul>
-                    </div>
                     <a class="olb-button-secondary olb-button-compact olb-custom-signin" href="https://apps.onylab.com/">Sign in</a>
                     <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Chat with us</a>
                     <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
@@ -288,8 +274,8 @@ const defaultLang = "en";
                 </ol>
             </nav>
             <p class="olb-pill olb-opening-pill">POS integration</p>
-            <h1 class="olb-display olb-opening-claim" id="pos-heading">restoPOS bakeries and cafes take phone and online orders</h1>
-            <p class="olb-lede olb-opening-proof">Bakeries, coffee shops and restaurants on restoPOS can add online orders and a phone line without a second system. Everything arrives through HubRise, and restoPOS keeps sending its menu so prices stay in 1 place.</p>
+            <h1 class="olb-display olb-opening-claim" id="pos-heading">restoPOS bakeries and cafes take phone, table and takeout orders</h1>
+            <p class="olb-lede olb-opening-proof">Bakeries, coffee shops and restaurants on restoPOS can add table and takeout orders and a phone line without a second system. Everything arrives through HubRise, and restoPOS keeps sending its menu so prices stay in 1 place.</p>
             <div class="olb-action-row">
                 <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Chat with us about your store</a>
                 <a class="olb-button-secondary" href="#apps">See the 5 apps <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
@@ -368,7 +354,7 @@ const defaultLang = "en";
                 <h3 class="olb-heading-24 olb-custom-pos-step">Take orders</h3>
                 <ul class="olb-card-grid" style="--olb-custom-count: 3">
                     <li class="olb-app-card" id="app-orderpay">
-                        <p class="olb-app-step">Online ordering</p>
+                        <p class="olb-app-step">Table and takeout ordering</p>
                         <h4 class="olb-heading-20">Order&amp;Pay</h4>
                         <p>Customers order and pay in 1 tap, with no app and no account. Because restoPOS sends its catalog, with variants, to HubRise, they see your items and prices. Each order is pulled into restoPOS through HubRise, so it appears next to the ones rung up at the counter.</p>
                         <ul class="olb-custom-pos-notes">
@@ -415,7 +401,7 @@ const defaultLang = "en";
                     </li><li class="olb-app-card" id="app-smsmode">
                         <p class="olb-app-step">SMS and WhatsApp campaigns</p>
                         <h4 class="olb-heading-20">SMSMode Bridge</h4>
-                        <p>SMSMode Bridge copies the same customers and orders into your own smsmode account, sorted the same way, for SMS and WhatsApp campaigns. It sees phone, online and delivery orders that pass through HubRise. Sales rung up at the restoPOS counter are not part of it.</p>
+                        <p>SMSMode Bridge copies the same customers and orders into your own smsmode account, sorted the same way, for SMS and WhatsApp campaigns. It sees phone, table, takeout and delivery orders that pass through HubRise. Sales rung up at the restoPOS counter are not part of it.</p>
                         <ul class="olb-custom-pos-notes">
                             <li>Counter sales: they stay in restoPOS. Only the orders that pass through HubRise are included.</li>
                         </ul>
@@ -463,7 +449,7 @@ const defaultLang = "en";
             <div class="olb-faq">
                 <details>
                     <summary>Do orders from OrderPad and Order&amp;Pay reach restoPOS?</summary>
-                    <p>Yes. restoPOS pulls orders from HubRise, including their status, so phone, online and delivery platform orders arrive on the POS.</p>
+                    <p>Yes. restoPOS pulls orders from HubRise, including their status, so phone, table, takeout and delivery platform orders arrive on the POS.</p>
                 </details><details>
                     <summary>How do I connect restoPOS to HubRise?</summary>
                     <p>From the restoPOS back office, with an existing restoPOS account.</p>
@@ -578,6 +564,19 @@ const defaultLang = "en";
             </nav>
             <div class="olb-custom-footer-end">
                 <p class="olb-meta">Made with love in Canada and France</p>
+                <div class="olb-custom-lang">
+                    <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
+                        <span class="olb-custom-lang-name" aria-hidden="true">English</span>
+                        <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="olb-custom-lang-menu" id="langMenu">
+                        <li>
+                            <a href="/pos/restopos/" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a>
+                        </li><li>
+                            <a href="/fr/caisses/restopos/" lang="fr" hreflang="fr" data-lang="fr">Français</a>
+                        </li>
+                    </ul>
+                </div>
                 <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Theme: System" data-label-light="Theme: Light" data-label-dark="Theme: Dark" aria-label="Theme: System" title="Theme: System">
                     <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
                     <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>

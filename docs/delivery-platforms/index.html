@@ -82,7 +82,7 @@ const defaultLang = "en";
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/style.css?v=24" rel="stylesheet">
+    <link href="/style.css?v=25" rel="stylesheet">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -93,7 +93,7 @@ const defaultLang = "en";
       "url": "https://onylab.com/delivery-platforms/",
       "email": "hello@onylab.com",
       "foundingDate": "2020",
-      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and online (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
+      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and at the table or for takeout (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
@@ -105,7 +105,7 @@ const defaultLang = "en";
       },
       "knowsAbout": [
         "Phone ordering for restaurants",
-        "Online ordering and payment",
+        "Table and takeout ordering with payment",
         "Order preparation",
         "Kitchen display systems (KDS)",
         "Retail order picking",
@@ -199,20 +199,6 @@ const defaultLang = "en";
                     <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Sign in</a></li>
                 </ul>
                 <div class="olb-custom-header-tools">
-                    <div class="olb-custom-lang">
-                        <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
-                            <span class="olb-custom-lang-name" aria-hidden="true">English</span>
-                            <span class="olb-custom-lang-code" aria-hidden="true">EN</span>
-                            <span class="olb-custom-lang-caret" aria-hidden="true"></span>
-                        </button>
-                        <ul class="olb-custom-lang-menu" id="langMenu">
-                            <li>
-                                <a href="/delivery-platforms/" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a>
-                            </li><li>
-                                <a href="/fr/plateformes-de-livraison/" lang="fr" hreflang="fr" data-lang="fr">Français</a>
-                            </li>
-                        </ul>
-                    </div>
                     <a class="olb-button-secondary olb-button-compact olb-custom-signin" href="https://apps.onylab.com/">Sign in</a>
                     <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Chat with us</a>
                     <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
@@ -243,60 +229,70 @@ const defaultLang = "en";
             <ul class="olb-custom-pos-list">
                 <li>
                     <a href="/delivery-platforms/bolt-food/">
+                        <span class="olb-custom-platform-logo"><img src="/logos/platforms/bolt-food.svg" alt="" width="266" height="64" loading="lazy" decoding="async"></span>
                         <span class="olb-custom-pos-name">Bolt Food</span>
                         <span class="olb-custom-pos-summary">Bolt&#39;s food and grocery delivery; menu, stock and delivery details in sync.</span>
                         <span class="olb-custom-pos-markets">Many countries in Europe</span>
                     </a>
                 </li><li>
                     <a href="/delivery-platforms/delicity/">
+                        <span class="olb-custom-platform-logo"><img src="/logos/platforms/delicity.png" alt="" width="132" height="160" loading="lazy" decoding="async"></span>
                         <span class="olb-custom-pos-name">Delicity</span>
                         <span class="olb-custom-pos-summary">French platform with a fixed fee per order; menu, stock and delivery time in sync.</span>
                         <span class="olb-custom-pos-markets">France, in several major cities</span>
                     </a>
                 </li><li>
                     <a href="/delivery-platforms/deliveroo/">
+                        <span class="olb-custom-platform-logo"><img src="/logos/platforms/deliveroo.png" alt="" width="480" height="128" loading="lazy" decoding="async"></span>
                         <span class="olb-custom-pos-name">Deliveroo</span>
                         <span class="olb-custom-pos-summary">Restaurants and convenience stores; menu and stock published from HubRise.</span>
                         <span class="olb-custom-pos-markets">13 countries in Europe, Asia and Oceania</span>
                     </a>
                 </li><li>
                     <a href="/delivery-platforms/foodpanda/">
+                        <span class="olb-custom-platform-logo"><img src="/logos/platforms/foodpanda.png" alt="" width="250" height="130" loading="lazy" decoding="async"></span>
                         <span class="olb-custom-pos-name">foodpanda</span>
                         <span class="olb-custom-pos-summary">Delivery Hero group platform; orders and delivery details, menu kept in foodpanda.</span>
                         <span class="olb-custom-pos-markets">Several countries in Asia, plus Bulgaria and Romania</span>
                     </a>
                 </li><li>
                     <a href="/delivery-platforms/glovo/">
+                        <span class="olb-custom-platform-logo"><img src="/logos/platforms/glovo.svg" alt="" width="2515" height="833" loading="lazy" decoding="async"></span>
                         <span class="olb-custom-pos-name">Glovo</span>
                         <span class="olb-custom-pos-summary">Restaurants and convenience stores; orders, customers, menu and stock.</span>
                         <span class="olb-custom-pos-markets">25 countries in Europe, Western Asia and Africa</span>
                     </a>
                 </li><li>
                     <a href="/delivery-platforms/hop-delivery/">
+                        <span class="olb-custom-platform-logo"><img src="/logos/platforms/hop-delivery.png" alt="" width="82" height="130" loading="lazy" decoding="async"></span>
                         <span class="olb-custom-pos-name">Hop Delivery</span>
                         <span class="olb-custom-pos-summary">Home delivery in Geneva; orders and customer details.</span>
                         <span class="olb-custom-pos-markets">Geneva, Switzerland</span>
                     </a>
                 </li><li>
                     <a href="/delivery-platforms/just-eat/">
+                        <span class="olb-custom-platform-logo"><img src="/logos/platforms/just-eat.png" alt="" width="141" height="115" loading="lazy" decoding="async"></span>
                         <span class="olb-custom-pos-name">Just Eat</span>
                         <span class="olb-custom-pos-summary">Every Just Eat Takeaway.com brand; orders, customers, menu and stock.</span>
                         <span class="olb-custom-pos-markets">15 countries in Europe and the Americas</span>
                     </a>
                 </li><li>
                     <a href="/delivery-platforms/uber-eats/">
+                        <span class="olb-custom-platform-logo"><img src="/logos/platforms/uber-eats.svg" alt="" width="146" height="24" loading="lazy" decoding="async"></span>
                         <span class="olb-custom-pos-name">Uber Eats</span>
                         <span class="olb-custom-pos-summary">Orders without the tablet; menu both ways, stock and the courier&#39;s position.</span>
                         <span class="olb-custom-pos-markets">More than 30 countries</span>
                     </a>
                 </li><li>
                     <a href="/delivery-platforms/wedely/">
+                        <span class="olb-custom-platform-logo"><img src="/logos/platforms/wedely.png" alt="" width="374" height="105" loading="lazy" decoding="async"></span>
                         <span class="olb-custom-pos-name">WeDely</span>
                         <span class="olb-custom-pos-summary">Luxembourg delivery platform; its menu, stock and delivery details reach HubRise.</span>
                         <span class="olb-custom-pos-markets">Luxembourg</span>
                     </a>
                 </li><li>
                     <a href="/delivery-platforms/wolt/">
+                        <span class="olb-custom-platform-logo"><img src="/logos/platforms/wolt.png" alt="" width="389" height="144" loading="lazy" decoding="async"></span>
                         <span class="olb-custom-pos-name">Wolt</span>
                         <span class="olb-custom-pos-summary">Delivery and pickup; menu both ways, stock and final delivery time.</span>
                         <span class="olb-custom-pos-markets">Around 30 countries in Europe, Asia and the Middle East</span>
@@ -365,6 +361,19 @@ const defaultLang = "en";
             </nav>
             <div class="olb-custom-footer-end">
                 <p class="olb-meta">Made with love in Canada and France</p>
+                <div class="olb-custom-lang">
+                    <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
+                        <span class="olb-custom-lang-name" aria-hidden="true">English</span>
+                        <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="olb-custom-lang-menu" id="langMenu">
+                        <li>
+                            <a href="/delivery-platforms/" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a>
+                        </li><li>
+                            <a href="/fr/plateformes-de-livraison/" lang="fr" hreflang="fr" data-lang="fr">Français</a>
+                        </li>
+                    </ul>
+                </div>
                 <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Theme: System" data-label-light="Theme: Light" data-label-dark="Theme: Dark" aria-label="Theme: System" title="Theme: System">
                     <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
                     <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>

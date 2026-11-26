@@ -1,6 +1,6 @@
 # OnyLab
 
-> OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone and online, organize their preparation, and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns. They connect to the POS and the delivery platforms a store already uses through HubRise.
+> OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone, at the table and for takeout, organize their preparation, and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns. They connect to the POS and the delivery platforms a store already uses through HubRise.
 
 Every app reads from or writes to the store's HubRise account, where the POS and the delivery platforms already send their orders. A store keeps its POS, its payment terminal and its delivery accounts, and can start with 1 app and add the others later.
 
@@ -10,7 +10,7 @@ Languages: this site is published in English at https://onylab.com/ and in Frenc
 
 ## Take orders
 
-- [Order&Pay](https://onylab.com/#tour-orderpay): online ordering. Customers pay in 1 tap, with no app to install and no account to create.
+- [Order&Pay](https://onylab.com/#tour-orderpay): table and takeout ordering. Customers order at the table or for takeout and pay in 1 tap, with no app to install and no account to create.
 - [OrderPicker](https://onylab.com/#tour-orderpicker): OrderPicker is the kitchen display system (KDS) for restaurants and the order preparation screen for shops. A step-by-step workflow catches mistakes and speeds up each preparation.
 - [OrderPad](https://onylab.com/#tour-orderpad): phone order taking on a tablet or a computer. The caller's customer profile comes up from HubRise, the order is built from the HubRise menu with options, comments and the service mode, and it is sent to the POS through HubRise.
 

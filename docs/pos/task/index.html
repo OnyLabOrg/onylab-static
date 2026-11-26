@@ -82,7 +82,7 @@ const defaultLang = "en";
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/style.css?v=24" rel="stylesheet">
+    <link href="/style.css?v=25" rel="stylesheet">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -93,7 +93,7 @@ const defaultLang = "en";
       "url": "https://onylab.com/pos/task/",
       "email": "hello@onylab.com",
       "foundingDate": "2020",
-      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and online (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
+      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and at the table or for takeout (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
@@ -105,7 +105,7 @@ const defaultLang = "en";
       },
       "knowsAbout": [
         "Phone ordering for restaurants",
-        "Online ordering and payment",
+        "Table and takeout ordering with payment",
         "Order preparation",
         "Kitchen display systems (KDS)",
         "Retail order picking",
@@ -198,7 +198,7 @@ const defaultLang = "en";
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Can I take phone or online orders in OrderPad and Order&Pay and send them to TASK?",
+          "name": "Can I take phone, table or takeout orders in OrderPad and Order&Pay and send them to TASK?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "No. TASK does not receive orders from HubRise, so orders taken in OrderPad or Order&Pay cannot reach a TASK POS through HubRise."
@@ -251,20 +251,6 @@ const defaultLang = "en";
                     <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Sign in</a></li>
                 </ul>
                 <div class="olb-custom-header-tools">
-                    <div class="olb-custom-lang">
-                        <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
-                            <span class="olb-custom-lang-name" aria-hidden="true">English</span>
-                            <span class="olb-custom-lang-code" aria-hidden="true">EN</span>
-                            <span class="olb-custom-lang-caret" aria-hidden="true"></span>
-                        </button>
-                        <ul class="olb-custom-lang-menu" id="langMenu">
-                            <li>
-                                <a href="/pos/task/" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a>
-                            </li><li>
-                                <a href="/fr/caisses/task/" lang="fr" hreflang="fr" data-lang="fr">Français</a>
-                            </li>
-                        </ul>
-                    </div>
                     <a class="olb-button-secondary olb-button-compact olb-custom-signin" href="https://apps.onylab.com/">Sign in</a>
                     <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Chat with us</a>
                     <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
@@ -368,9 +354,9 @@ const defaultLang = "en";
                 <h3 class="olb-heading-24 olb-custom-pos-step">Take orders</h3>
                 <ul class="olb-card-grid" style="--olb-custom-count: 3">
                     <li class="olb-app-card" id="app-orderpay">
-                        <p class="olb-app-step">Online ordering</p>
+                        <p class="olb-app-step">Table and takeout ordering</p>
                         <h4 class="olb-heading-20">Order&amp;Pay</h4>
-                        <p>Order&amp;Pay delivers its orders to the POS through HubRise, and TASK does not receive orders from HubRise. Online orders taken in Order&amp;Pay would therefore not reach your TASK POS. If you want online ordering, it has to come from TASK&#39;s own ordering tools, not from Order&amp;Pay.</p>
+                        <p>Order&amp;Pay delivers its orders to the POS through HubRise, and TASK does not receive orders from HubRise. Table and takeout orders taken in Order&amp;Pay would therefore not reach your TASK POS. If you want table or takeout ordering, it has to come from TASK&#39;s own ordering tools, not from Order&amp;Pay.</p>
                         <ul class="olb-custom-pos-notes">
                             <li>TASK does not receive orders from HubRise, so this app cannot deliver orders to it.</li><li>Menu: TASK sends it to HubRise, so the items and prices match the POS.</li>
                         </ul>
@@ -462,7 +448,7 @@ const defaultLang = "en";
             </div>
             <div class="olb-faq">
                 <details>
-                    <summary>Can I take phone or online orders in OrderPad and Order&amp;Pay and send them to TASK?</summary>
+                    <summary>Can I take phone, table or takeout orders in OrderPad and Order&amp;Pay and send them to TASK?</summary>
                     <p>No. TASK does not receive orders from HubRise, so orders taken in OrderPad or Order&amp;Pay cannot reach a TASK POS through HubRise.</p>
                 </details><details>
                     <summary>What does TASK send to HubRise?</summary>
@@ -578,6 +564,19 @@ const defaultLang = "en";
             </nav>
             <div class="olb-custom-footer-end">
                 <p class="olb-meta">Made with love in Canada and France</p>
+                <div class="olb-custom-lang">
+                    <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
+                        <span class="olb-custom-lang-name" aria-hidden="true">English</span>
+                        <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="olb-custom-lang-menu" id="langMenu">
+                        <li>
+                            <a href="/pos/task/" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a>
+                        </li><li>
+                            <a href="/fr/caisses/task/" lang="fr" hreflang="fr" data-lang="fr">Français</a>
+                        </li>
+                    </ul>
+                </div>
                 <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Theme: System" data-label-light="Theme: Light" data-label-dark="Theme: Dark" aria-label="Theme: System" title="Theme: System">
                     <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
                     <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
