@@ -1191,7 +1191,7 @@ p, li, td, th { color: inherit; }
   height: 4.5rem;
   margin-bottom: var(--olb-space-2);
 }
-.olb-app-card .olb-custom-app-logo img { max-width: min(100%, 9rem); }
+.olb-app-card .olb-custom-app-logo img { max-width: min(100%, 11rem); }
 
 .olb-custom-card-top {
   display: flex;
