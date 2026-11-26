@@ -93,7 +93,7 @@ const defaultLang = "en";
       "url": "https://onylab.com/apps/orderpad/",
       "email": "hello@onylab.com",
       "foundingDate": "2020",
-      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and at the table or for takeout (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
+      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and at the table or for takeout (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email and SMS campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
@@ -286,6 +286,10 @@ const defaultLang = "en";
                     <li aria-current="page">OrderPad</li>
                 </ol>
             </nav>
+            <!-- The name follows in the breadcrumb and the label, so the logo is decorative. -->
+            <span class="olb-custom-pos-logo">
+                <img src="https://cdn.onylab.com/image/apps/logo/orderpad.svg" alt="" width="380" height="120" decoding="async">
+            </span>
             <p class="olb-pill olb-opening-pill">OrderPad · Phone orders</p>
             <h1 class="olb-display olb-opening-claim" id="app-heading">Take phone orders without typing them twice</h1>
             <p class="olb-lede olb-opening-proof">Type the caller&#39;s number and their details come up from HubRise. Build the order from your menu, choose delivery, takeout or eat-in, and send it to your POS through HubRise.</p>
@@ -479,7 +483,7 @@ const defaultLang = "en";
                 </li><li>
                     <a href="/apps/smsmode-bridge/">
                         <span class="olb-custom-pos-name">SMSMode Bridge</span>
-                        <span class="olb-custom-pos-markets">SMS and WhatsApp campaigns</span>
+                        <span class="olb-custom-pos-markets">SMS campaigns</span>
                     </a>
                 </li>
             </ul>

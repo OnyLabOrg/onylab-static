@@ -60,7 +60,7 @@
       "url": "https://onylab.com/apps/smsmode-bridge/",
       "email": "hello@onylab.com",
       "foundingDate": "2020",
-      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et à table ou à emporter (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et à table ou à emporter (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail et SMS (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
@@ -253,7 +253,11 @@
                     <li aria-current="page">SMSMode Bridge</li>
                 </ol>
             </nav>
-            <p class="olb-pill olb-opening-pill">SMSMode Bridge · Campagnes SMS et WhatsApp</p>
+            <!-- The name follows in the breadcrumb and the label, so the logo is decorative. -->
+            <span class="olb-custom-pos-logo">
+                <img src="https://cdn.onylab.com/image/apps/logo/smsmode.svg" alt="" width="223" height="57" decoding="async">
+            </span>
+            <p class="olb-pill olb-opening-pill">SMSMode Bridge · Campagnes SMS</p>
             <h1 class="olb-display olb-opening-claim" id="app-heading">Faites revenir vos clients par SMS</h1>
             <p class="olb-lede olb-opening-proof">Chaque nouvelle commande qui arrive dans HubRise est enregistrée dans votre compte smsmode avec son client, trié dans les groupes que vous définissez. Vous envoyez vos campagnes SMS depuis smsmode, à des clients déjà triés.</p>
             <div class="olb-action-row">
@@ -291,14 +295,14 @@
                 <p><span class="olb-custom-ui-big">21</span> <span class="olb-custom-ui-muted">clients</span></p>
             </li><li class="olb-custom-ui-tile">
                 <p class="olb-custom-ui-strong">Inactifs</p>
-                <p class="olb-custom-ui-muted">Aucune commande depuis 60 jours</p>
+                <p class="olb-custom-ui-muted">Dernière commande il y a plus de 2 mois</p>
                 <p><span class="olb-custom-ui-big">48</span> <span class="olb-custom-ui-muted">clients</span></p>
             </li>
         </ul>
         <div class="olb-custom-panel-foot">
             <p class="olb-custom-modes">
-                <span class="olb-custom-ui-label">Canaux</span>
-                <span class="olb-custom-ui-chip">SMS</span><span class="olb-custom-ui-chip">WhatsApp</span>
+                <span class="olb-custom-ui-label">Canal</span>
+                <span class="olb-custom-ui-chip">SMS</span>
             </p>
             <span class="olb-custom-ui-ok">Synchronisé automatiquement depuis HubRise</span>
         </div>

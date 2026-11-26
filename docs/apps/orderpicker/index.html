@@ -93,7 +93,7 @@ const defaultLang = "en";
       "url": "https://onylab.com/apps/orderpicker/",
       "email": "hello@onylab.com",
       "foundingDate": "2020",
-      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and at the table or for takeout (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
+      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and at the table or for takeout (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email and SMS campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
@@ -286,6 +286,10 @@ const defaultLang = "en";
                     <li aria-current="page">OrderPicker</li>
                 </ol>
             </nav>
+            <!-- The name follows in the breadcrumb and the label, so the logo is decorative. -->
+            <span class="olb-custom-pos-logo">
+                <img src="https://cdn.onylab.com/image/apps/logo/orderpicker.svg" alt="" width="550" height="120" decoding="async">
+            </span>
             <p class="olb-pill olb-opening-pill">OrderPicker · Kitchen display and picking screen</p>
             <h1 class="olb-display olb-opening-claim" id="app-heading">Prepare every order without a missing item</h1>
             <p class="olb-lede olb-opening-proof">OrderPicker puts your table, takeout, phone and delivery orders on 1 screen. Staff check each item as it is prepared, and the order is ready when the last one is checked.</p>
@@ -348,7 +352,7 @@ const defaultLang = "en";
             <div class="olb-custom-progress" aria-hidden="true"><span style="width: 66.67%"></span></div>
             <div class="olb-custom-ui-actions">
                 <p class="olb-custom-ui-muted">2 of 3 items checked</p>
-                <span class="olb-custom-ui-btn">Mark as ready</span>
+                <span class="olb-custom-ui-btn">Pause</span>
             </div>
         </div>
     </div>
@@ -477,7 +481,7 @@ const defaultLang = "en";
                 </li><li>
                     <a href="/apps/smsmode-bridge/">
                         <span class="olb-custom-pos-name">SMSMode Bridge</span>
-                        <span class="olb-custom-pos-markets">SMS and WhatsApp campaigns</span>
+                        <span class="olb-custom-pos-markets">SMS campaigns</span>
                     </a>
                 </li>
             </ul>

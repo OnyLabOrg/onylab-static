@@ -60,7 +60,7 @@
       "url": "https://onylab.com/apps/brevo-bridge/",
       "email": "hello@onylab.com",
       "foundingDate": "2020",
-      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et à table ou à emporter (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et à table ou à emporter (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail et SMS (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
@@ -253,6 +253,10 @@
                     <li aria-current="page">Brevo Bridge</li>
                 </ol>
             </nav>
+            <!-- The name follows in the breadcrumb and the label, so the logo is decorative. -->
+            <span class="olb-custom-pos-logo">
+                <img src="https://cdn.onylab.com/image/apps/logo/brevo.svg" alt="" width="82" height="24" decoding="async">
+            </span>
             <p class="olb-pill olb-opening-pill">Brevo Bridge · Campagnes e-mail et SMS</p>
             <h1 class="olb-display olb-opening-claim" id="app-heading">Faites revenir vos clients par e-mail et SMS</h1>
             <p class="olb-lede olb-opening-proof">Chaque nouvelle commande qui arrive dans HubRise est enregistrée dans votre compte Brevo avec son client, trié dans les groupes que vous définissez. Vous rédigez vos campagnes dans Brevo, pour des clients déjà triés.</p>
@@ -283,18 +287,18 @@
             <table class="olb-custom-sync-table">
                 <thead>
                     <tr>
-                        <th scope="col">Client</th><th scope="col" class="olb-numeric" data-wide>Visites</th><th scope="col" class="olb-numeric">Panier moyen</th><th scope="col" data-wide>Dernière commande</th><th scope="col">Segment</th>
+                        <th scope="col">Client</th><th scope="col" class="olb-numeric" data-wide>Commandes</th><th scope="col" class="olb-numeric">Total dépensé</th><th scope="col" data-wide>Dernière commande</th><th scope="col">Groupe</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row" class="olb-custom-ui-strong">Camille Martin</th><td class="olb-numeric" data-wide>8</td><td class="olb-numeric">31,20 €</td><td data-wide>Aujourd&#39;hui</td><td><span class="olb-custom-ui-chip">VIP</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Camille Martin</th><td class="olb-numeric" data-wide>8</td><td class="olb-numeric">249,60 €</td><td data-wide>Aujourd&#39;hui</td><td><span class="olb-custom-ui-chip">vip</span></td>
                     </tr><tr>
-                        <th scope="row" class="olb-custom-ui-strong">Hugo Durand</th><td class="olb-numeric" data-wide>1</td><td class="olb-numeric">24,00 €</td><td data-wide>Hier</td><td><span class="olb-custom-ui-chip">Nouveau</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Hugo Durand</th><td class="olb-numeric" data-wide>1</td><td class="olb-numeric">24,00 €</td><td data-wide>Hier</td><td><span class="olb-custom-ui-chip">nouveaux</span></td>
                     </tr><tr>
-                        <th scope="row" class="olb-custom-ui-strong">Léa Bernard</th><td class="olb-numeric" data-wide>5</td><td class="olb-numeric">27,80 €</td><td data-wide>Il y a 74 jours</td><td><span class="olb-custom-ui-chip">Inactif</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Léa Bernard</th><td class="olb-numeric" data-wide>5</td><td class="olb-numeric">139,00 €</td><td data-wide>Il y a 74 jours</td><td><span class="olb-custom-ui-chip">inactifs</span></td>
                     </tr><tr>
-                        <th scope="row" class="olb-custom-ui-strong">Nadia Roux</th><td class="olb-numeric" data-wide>12</td><td class="olb-numeric">35,60 €</td><td data-wide>Il y a 3 jours</td><td><span class="olb-custom-ui-chip">VIP</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Nadia Roux</th><td class="olb-numeric" data-wide>12</td><td class="olb-numeric">427,20 €</td><td data-wide>Il y a 3 jours</td><td><span class="olb-custom-ui-chip">vip</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -427,7 +431,7 @@
                 </li><li>
                     <a href="/fr/applications/smsmode-bridge/">
                         <span class="olb-custom-pos-name">SMSMode Bridge</span>
-                        <span class="olb-custom-pos-markets">Campagnes SMS et WhatsApp</span>
+                        <span class="olb-custom-pos-markets">Campagnes SMS</span>
                     </a>
                 </li>
             </ul>

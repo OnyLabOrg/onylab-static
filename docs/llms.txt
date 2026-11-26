@@ -1,6 +1,6 @@
 # OnyLab
 
-> OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone, at the table and for takeout, organize their preparation, and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns. They connect to the POS and the delivery platforms a store already uses through HubRise.
+> OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone, at the table and for takeout, organize their preparation, and copy customers and orders into Brevo and smsmode for email and SMS campaigns. They connect to the POS and the delivery platforms a store already uses through HubRise.
 
 Every app reads from or writes to the store's HubRise account, where the POS and the delivery platforms already send their orders. A store keeps its POS, its payment terminal and its delivery accounts, and can start with 1 app and add the others later.
 
@@ -18,8 +18,8 @@ Each app below has its own page, with what it does, how it works and what it sha
 
 ## Bring customers back
 
-- [Brevo Bridge](https://onylab.com/apps/brevo-bridge/): copies HubRise customers and orders into the store's Brevo account and sorts them by visits, average order value and last order, for email and SMS campaigns.
-- [SMSMode Bridge](https://onylab.com/apps/smsmode-bridge/): copies the same customers and orders into the store's smsmode account, for SMS and WhatsApp campaigns.
+- [Brevo Bridge](https://onylab.com/apps/brevo-bridge/): copies HubRise customers and orders into the store's Brevo account and sorts them by number of orders, total spent and order dates, for email and SMS campaigns.
+- [SMSMode Bridge](https://onylab.com/apps/smsmode-bridge/): copies the same customers and orders into the store's smsmode account, for SMS campaigns.
 
 ## How it fits
 

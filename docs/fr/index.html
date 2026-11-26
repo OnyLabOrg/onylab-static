@@ -60,7 +60,7 @@
       "url": "https://onylab.com/",
       "email": "hello@onylab.com",
       "foundingDate": "2020",
-      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et à table ou à emporter (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et à table ou à emporter (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail et SMS (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
@@ -191,7 +191,7 @@
           "item": {
             "@type": "SoftwareApplication",
             "name": "Brevo Bridge",
-            "description": "Chaque client et chaque commande de HubRise sont copiés dans Brevo et triés selon les visites, le panier moyen et la dernière commande, prêts pour une campagne e-mail ou SMS.",
+            "description": "Chaque client et chaque commande de HubRise sont copiés dans Brevo et triés selon le nombre de commandes, le total dépensé et les dates de commande, prêts pour une campagne e-mail ou SMS.",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web",
             "url": "https://onylab.com/fr/#tour-brevo",
@@ -206,7 +206,7 @@
           "item": {
             "@type": "SoftwareApplication",
             "name": "SMSMode Bridge",
-            "description": "Les mêmes clients et les mêmes commandes, copiés dans smsmode et triés de la même façon, pour des campagnes SMS et WhatsApp.",
+            "description": "Les mêmes clients et les mêmes commandes, copiés dans smsmode et triés de la même façon, pour des campagnes SMS.",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web",
             "url": "https://onylab.com/fr/#tour-smsmode",
@@ -353,7 +353,7 @@
                     <span class="olb-custom-tab-job">Campagnes e-mail et SMS</span>
                 </button><button class="olb-tab" type="button" role="tab" id="tab-smsmode" aria-controls="tour-smsmode" aria-selected="false" tabindex="-1" data-app="smsmode">
                     <span class="olb-custom-tab-name">SMSMode Bridge</span>
-                    <span class="olb-custom-tab-job">Campagnes SMS et WhatsApp</span>
+                    <span class="olb-custom-tab-job">Campagnes SMS</span>
                 </button>
             </div>
 
@@ -437,7 +437,7 @@
             <div class="olb-custom-progress" aria-hidden="true"><span style="width: 66.67%"></span></div>
             <div class="olb-custom-ui-actions">
                 <p class="olb-custom-ui-muted">2 articles vérifiés sur 3</p>
-                <span class="olb-custom-ui-btn">Marquer comme prête</span>
+                <span class="olb-custom-ui-btn">Pause</span>
             </div>
         </div>
     </div>
@@ -513,18 +513,18 @@
             <table class="olb-custom-sync-table">
                 <thead>
                     <tr>
-                        <th scope="col">Client</th><th scope="col" class="olb-numeric" data-wide>Visites</th><th scope="col" class="olb-numeric">Panier moyen</th><th scope="col" data-wide>Dernière commande</th><th scope="col">Segment</th>
+                        <th scope="col">Client</th><th scope="col" class="olb-numeric" data-wide>Commandes</th><th scope="col" class="olb-numeric">Total dépensé</th><th scope="col" data-wide>Dernière commande</th><th scope="col">Groupe</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row" class="olb-custom-ui-strong">Camille Martin</th><td class="olb-numeric" data-wide>8</td><td class="olb-numeric">31,20 €</td><td data-wide>Aujourd&#39;hui</td><td><span class="olb-custom-ui-chip">VIP</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Camille Martin</th><td class="olb-numeric" data-wide>8</td><td class="olb-numeric">249,60 €</td><td data-wide>Aujourd&#39;hui</td><td><span class="olb-custom-ui-chip">vip</span></td>
                     </tr><tr>
-                        <th scope="row" class="olb-custom-ui-strong">Hugo Durand</th><td class="olb-numeric" data-wide>1</td><td class="olb-numeric">24,00 €</td><td data-wide>Hier</td><td><span class="olb-custom-ui-chip">Nouveau</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Hugo Durand</th><td class="olb-numeric" data-wide>1</td><td class="olb-numeric">24,00 €</td><td data-wide>Hier</td><td><span class="olb-custom-ui-chip">nouveaux</span></td>
                     </tr><tr>
-                        <th scope="row" class="olb-custom-ui-strong">Léa Bernard</th><td class="olb-numeric" data-wide>5</td><td class="olb-numeric">27,80 €</td><td data-wide>Il y a 74 jours</td><td><span class="olb-custom-ui-chip">Inactif</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Léa Bernard</th><td class="olb-numeric" data-wide>5</td><td class="olb-numeric">139,00 €</td><td data-wide>Il y a 74 jours</td><td><span class="olb-custom-ui-chip">inactifs</span></td>
                     </tr><tr>
-                        <th scope="row" class="olb-custom-ui-strong">Nadia Roux</th><td class="olb-numeric" data-wide>12</td><td class="olb-numeric">35,60 €</td><td data-wide>Il y a 3 jours</td><td><span class="olb-custom-ui-chip">VIP</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Nadia Roux</th><td class="olb-numeric" data-wide>12</td><td class="olb-numeric">427,20 €</td><td data-wide>Il y a 3 jours</td><td><span class="olb-custom-ui-chip">vip</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -557,14 +557,14 @@
                 <p><span class="olb-custom-ui-big">21</span> <span class="olb-custom-ui-muted">clients</span></p>
             </li><li class="olb-custom-ui-tile">
                 <p class="olb-custom-ui-strong">Inactifs</p>
-                <p class="olb-custom-ui-muted">Aucune commande depuis 60 jours</p>
+                <p class="olb-custom-ui-muted">Dernière commande il y a plus de 2 mois</p>
                 <p><span class="olb-custom-ui-big">48</span> <span class="olb-custom-ui-muted">clients</span></p>
             </li>
         </ul>
         <div class="olb-custom-panel-foot">
             <p class="olb-custom-modes">
-                <span class="olb-custom-ui-label">Canaux</span>
-                <span class="olb-custom-ui-chip">SMS</span><span class="olb-custom-ui-chip">WhatsApp</span>
+                <span class="olb-custom-ui-label">Canal</span>
+                <span class="olb-custom-ui-chip">SMS</span>
             </p>
             <span class="olb-custom-ui-ok">Synchronisé automatiquement depuis HubRise</span>
         </div>
@@ -628,7 +628,7 @@
                             </li><li>
                                 <a class="olb-ecosystem-node" href="#tour-smsmode" data-app="smsmode">
                                     <span class="olb-custom-node-name">SMSMode Bridge</span>
-                                    <span class="olb-custom-node-job">Campagnes SMS et WhatsApp</span>
+                                    <span class="olb-custom-node-job">Campagnes SMS</span>
                                 </a>
                             </li>
                         </ul>
@@ -672,6 +672,10 @@
                 </div>
                 <ul class="olb-card-grid" style="--olb-custom-count: 3">
                     <li class="olb-app-card">
+                        <!-- The name follows as the card heading, so the logo is decorative. -->
+                        <span class="olb-custom-pos-logo olb-custom-app-logo">
+                            <img src="https://cdn.onylab.com/image/apps/logo/orderpay.svg" alt="" width="512" height="512" loading="lazy" decoding="async">
+                        </span>
                         <div class="olb-custom-card-top">
                             <p class="olb-app-step">Commande à table et à emporter</p>
                             <p class="olb-app-status">Disponible</p>
@@ -687,6 +691,10 @@
                             <a class="olb-custom-card-link" href="#tour-orderpay" data-app="orderpay">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
                         </p>
                     </li><li class="olb-app-card">
+                        <!-- The name follows as the card heading, so the logo is decorative. -->
+                        <span class="olb-custom-pos-logo olb-custom-app-logo">
+                            <img src="https://cdn.onylab.com/image/apps/logo/orderpicker.svg" alt="" width="550" height="120" loading="lazy" decoding="async">
+                        </span>
                         <div class="olb-custom-card-top">
                             <p class="olb-app-step">Écran cuisine et écran de préparation</p>
                             <p class="olb-app-status">Disponible</p>
@@ -702,6 +710,10 @@
                             <a class="olb-custom-card-link" href="#tour-orderpicker" data-app="orderpicker">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
                         </p>
                     </li><li class="olb-app-card">
+                        <!-- The name follows as the card heading, so the logo is decorative. -->
+                        <span class="olb-custom-pos-logo olb-custom-app-logo">
+                            <img src="https://cdn.onylab.com/image/apps/logo/orderpad.svg" alt="" width="380" height="120" loading="lazy" decoding="async">
+                        </span>
                         <div class="olb-custom-card-top">
                             <p class="olb-app-step">Commandes par téléphone</p>
                             <p class="olb-app-status">Disponible</p>
@@ -725,12 +737,16 @@
                 </div>
                 <ul class="olb-card-grid" style="--olb-custom-count: 2">
                     <li class="olb-app-card">
+                        <!-- The name follows as the card heading, so the logo is decorative. -->
+                        <span class="olb-custom-pos-logo olb-custom-app-logo">
+                            <img src="https://cdn.onylab.com/image/apps/logo/brevo.svg" alt="" width="82" height="24" loading="lazy" decoding="async">
+                        </span>
                         <div class="olb-custom-card-top">
                             <p class="olb-app-step">Campagnes e-mail et SMS</p>
                             <p class="olb-app-status">Disponible</p>
                         </div>
                         <h4 class="olb-heading-20">Brevo Bridge</h4>
-                        <p>Chaque client et chaque commande de HubRise sont copiés dans Brevo et triés selon les visites, le panier moyen et la dernière commande, prêts pour une campagne e-mail ou SMS.</p>
+                        <p>Chaque client et chaque commande de HubRise sont copiés dans Brevo et triés selon le nombre de commandes, le total dépensé et les dates de commande, prêts pour une campagne e-mail ou SMS.</p>
                         <ol class="olb-custom-snippet" aria-label="Brevo Bridge">
                             <li>Nouvelle commande</li><li>Camille Martin</li><li>Segment VIP</li>
                         </ol>
@@ -740,14 +756,18 @@
                             <a class="olb-custom-card-link" href="#tour-brevo" data-app="brevo">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
                         </p>
                     </li><li class="olb-app-card">
+                        <!-- The name follows as the card heading, so the logo is decorative. -->
+                        <span class="olb-custom-pos-logo olb-custom-app-logo">
+                            <img src="https://cdn.onylab.com/image/apps/logo/smsmode.svg" alt="" width="223" height="57" loading="lazy" decoding="async">
+                        </span>
                         <div class="olb-custom-card-top">
-                            <p class="olb-app-step">Campagnes SMS et WhatsApp</p>
+                            <p class="olb-app-step">Campagnes SMS</p>
                             <p class="olb-app-status">Disponible</p>
                         </div>
                         <h4 class="olb-heading-20">SMSMode Bridge</h4>
-                        <p>Les mêmes clients et les mêmes commandes, copiés dans smsmode et triés de la même façon, pour des campagnes SMS et WhatsApp.</p>
+                        <p>Les mêmes clients et les mêmes commandes, copiés dans smsmode et triés de la même façon, pour des campagnes SMS.</p>
                         <ol class="olb-custom-snippet" aria-label="SMSMode Bridge">
-                            <li>Inactifs depuis 60 jours</li><li>48 clients</li><li>SMS, WhatsApp</li>
+                            <li>Inactifs depuis 2 mois</li><li>48 clients</li><li>SMS</li>
                         </ol>
                         <p class="olb-custom-works"><span>Avec les autres applications.</span> Lit les clients et les commandes que les autres applications envoient à HubRise.</p>
                         <p class="olb-app-links">
@@ -785,7 +805,7 @@
                         <p class="olb-meta"><a class="olb-custom-link" href="/fr/plateformes-de-livraison/">Plateformes de livraison</a></p>
                     </div><div class="olb-integration-group">
                         <h3 class="olb-heading-16">Outils marketing</h3>
-                        <p class="olb-meta">Reçoivent vos clients et leurs commandes, triés selon les visites, le panier moyen et la dernière commande.</p>
+                        <p class="olb-meta">Reçoivent vos clients et leurs commandes, triés selon le nombre de commandes, le total dépensé et les dates de commande.</p>
                         <ul>
                             <li class="olb-integration">Brevo, via Brevo Bridge</li><li class="olb-integration">smsmode, via SMSMode Bridge</li>
                         </ul>
@@ -877,7 +897,7 @@
                             <td>Exportée à la main, quand quelqu&#39;un a le temps</td>
                         </tr><tr>
                             <th scope="row">Segments de campagne</th>
-                            <td data-onylab><span class="olb-custom-mark">Triés selon les visites, le panier moyen et la dernière commande</span></td>
+                            <td data-onylab><span class="olb-custom-mark">Triés selon le nombre de commandes, le total dépensé et les dates de commande</span></td>
                             <td>Construits à la main dans un tableur</td>
                         </tr>
                     </tbody>

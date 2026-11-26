@@ -1186,6 +1186,13 @@ p, li, td, th { color: inherit; }
 .olb-card > * + *,
 .olb-app-card > * + * { margin-top: var(--olb-space-3); }
 
+/* The app's logo opens its card, on the same white plate as the POS logos. */
+.olb-app-card .olb-custom-app-logo {
+  height: 4.5rem;
+  margin-bottom: var(--olb-space-2);
+}
+.olb-app-card .olb-custom-app-logo img { max-width: min(100%, 9rem); }
+
 .olb-custom-card-top {
   display: flex;
   align-items: center;

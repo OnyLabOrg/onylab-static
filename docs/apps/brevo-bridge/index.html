@@ -93,7 +93,7 @@ const defaultLang = "en";
       "url": "https://onylab.com/apps/brevo-bridge/",
       "email": "hello@onylab.com",
       "foundingDate": "2020",
-      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and at the table or for takeout (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
+      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and at the table or for takeout (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email and SMS campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
       "logo": {
         "@type": "ImageObject",
         "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
@@ -286,6 +286,10 @@ const defaultLang = "en";
                     <li aria-current="page">Brevo Bridge</li>
                 </ol>
             </nav>
+            <!-- The name follows in the breadcrumb and the label, so the logo is decorative. -->
+            <span class="olb-custom-pos-logo">
+                <img src="https://cdn.onylab.com/image/apps/logo/brevo.svg" alt="" width="82" height="24" decoding="async">
+            </span>
             <p class="olb-pill olb-opening-pill">Brevo Bridge · Email and SMS campaigns</p>
             <h1 class="olb-display olb-opening-claim" id="app-heading">Bring customers back by email and SMS</h1>
             <p class="olb-lede olb-opening-proof">Each new order that reaches HubRise is saved in your Brevo account with its customer, sorted into the groups you define. You write your campaigns in Brevo, for customers who are already sorted.</p>
@@ -316,18 +320,18 @@ const defaultLang = "en";
             <table class="olb-custom-sync-table">
                 <thead>
                     <tr>
-                        <th scope="col">Customer</th><th scope="col" class="olb-numeric" data-wide>Visits</th><th scope="col" class="olb-numeric">Average order</th><th scope="col" data-wide>Last order</th><th scope="col">Segment</th>
+                        <th scope="col">Customer</th><th scope="col" class="olb-numeric" data-wide>Orders</th><th scope="col" class="olb-numeric">Total spent</th><th scope="col" data-wide>Last order</th><th scope="col">Group</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row" class="olb-custom-ui-strong">Camille Martin</th><td class="olb-numeric" data-wide>8</td><td class="olb-numeric">€31.20</td><td data-wide>Today</td><td><span class="olb-custom-ui-chip">VIP</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Camille Martin</th><td class="olb-numeric" data-wide>8</td><td class="olb-numeric">€249.60</td><td data-wide>Today</td><td><span class="olb-custom-ui-chip">vip</span></td>
                     </tr><tr>
-                        <th scope="row" class="olb-custom-ui-strong">Hugo Durand</th><td class="olb-numeric" data-wide>1</td><td class="olb-numeric">€24.00</td><td data-wide>Yesterday</td><td><span class="olb-custom-ui-chip">New</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Hugo Durand</th><td class="olb-numeric" data-wide>1</td><td class="olb-numeric">€24.00</td><td data-wide>Yesterday</td><td><span class="olb-custom-ui-chip">new</span></td>
                     </tr><tr>
-                        <th scope="row" class="olb-custom-ui-strong">Léa Bernard</th><td class="olb-numeric" data-wide>5</td><td class="olb-numeric">€27.80</td><td data-wide>74 days ago</td><td><span class="olb-custom-ui-chip">Inactive</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Léa Bernard</th><td class="olb-numeric" data-wide>5</td><td class="olb-numeric">€139.00</td><td data-wide>74 days ago</td><td><span class="olb-custom-ui-chip">inactive</span></td>
                     </tr><tr>
-                        <th scope="row" class="olb-custom-ui-strong">Nadia Roux</th><td class="olb-numeric" data-wide>12</td><td class="olb-numeric">€35.60</td><td data-wide>3 days ago</td><td><span class="olb-custom-ui-chip">VIP</span></td>
+                        <th scope="row" class="olb-custom-ui-strong">Nadia Roux</th><td class="olb-numeric" data-wide>12</td><td class="olb-numeric">€427.20</td><td data-wide>3 days ago</td><td><span class="olb-custom-ui-chip">vip</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -460,7 +464,7 @@ const defaultLang = "en";
                 </li><li>
                     <a href="/apps/smsmode-bridge/">
                         <span class="olb-custom-pos-name">SMSMode Bridge</span>
-                        <span class="olb-custom-pos-markets">SMS and WhatsApp campaigns</span>
+                        <span class="olb-custom-pos-markets">SMS campaigns</span>
                     </a>
                 </li>
             </ul>
