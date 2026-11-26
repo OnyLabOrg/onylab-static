@@ -4,8 +4,10 @@
    .claude/skills/onylab-brand-guidelines/SKILL.md
 
    Light by default, dark when the reader's system asks for it: the
-   tokens below are the light values, and the prefers-color-scheme block
-   after them swaps them for the dark ones. There is no switcher.
+   tokens below are the light values, and the dark block after them swaps
+   them for the dark ones. The header's theme button can force either mode
+   by setting data-theme="light" or "dark" on <html>; without it, the
+   system setting decides.
    3 grounds: the canvas, the secondary ground 1 step off it, and the
    inversion (data-tone="contrast"), ink in light mode and paper in dark
    mode. No gradients and no glows. Backdrop blur appears only on the
@@ -135,8 +137,10 @@
   --olb-inset: max(var(--olb-space-6), (100% - 1200px) / 2);
 }
 
+/* Dark tokens, from the system setting unless the reader forced light. Keep
+   this block and the forced-dark one below identical. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --olb-canvas:            #0c0c0e;
     --olb-surface-secondary: #161618;
     --olb-surface-contrast:  #f4f3f0;
@@ -169,6 +173,42 @@
     --olb-chart-6: #7cb1ff;
   }
 }
+
+:root[data-theme="dark"] {
+  --olb-canvas:            #0c0c0e;
+  --olb-surface-secondary: #161618;
+  --olb-surface-contrast:  #f4f3f0;
+
+  --olb-text-primary:               #f4f4f2;
+  --olb-text-secondary:             #a1a1a6;
+  --olb-text-on-contrast:           #0c0c0e;
+  --olb-text-on-contrast-secondary: #666c78;
+
+  --olb-accent:             var(--olb-flame);
+  --olb-accent-on-contrast: var(--olb-flame-dark);
+
+  --olb-border-subtle:      rgba(255, 255, 255, 0.08);
+  --olb-border-default:     rgba(255, 255, 255, 0.14);
+  --olb-border-strong:      rgba(255, 255, 255, 0.28);
+  --olb-border-on-contrast: rgba(12, 12, 14, 0.12);
+  --olb-color-success:      #4cc38a;
+  --olb-color-warning:      #f5b544;
+  --olb-color-error:        #ff7a6b;
+  --olb-color-info:         #7cb1ff;
+
+  --olb-header-ground: rgba(12, 12, 14, 0.85);
+  --olb-frame-shadow:  0 24px 60px -24px rgba(0, 0, 0, 0.7);
+
+  --olb-chart-1: #f4f4f2;
+  --olb-chart-2: #a1a1a6;
+  --olb-chart-3: #66666e;
+  --olb-chart-4: #ffa07a;
+  --olb-chart-5: #f34605;
+  --olb-chart-6: #7cb1ff;
+}
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 /* ── Reset ───────────────────────────────────────────────────────────────── */
 
@@ -289,6 +329,16 @@ table { border-collapse: collapse; }
 }
 
 .olb-identity { display: block; flex: none; }
+
+/* The wordmark exists twice, colour and white, and CSS shows the one that
+   matches the active scheme, so a forced theme never shows the wrong one. */
+.olb-custom-logo-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .olb-custom-logo-light { display: none; }
+  :root:not([data-theme="light"]) .olb-custom-logo-dark { display: block; }
+}
+:root[data-theme="dark"] .olb-custom-logo-light { display: none; }
+:root[data-theme="dark"] .olb-custom-logo-dark { display: block; }
 .olb-wordmark { height: 28px; width: auto; }
 
 .olb-document-meta {
@@ -325,6 +375,34 @@ table { border-collapse: collapse; }
 }
 .olb-custom-signin:hover { color: var(--olb-text-primary); }
 .olb-nav .olb-custom-signin-item { display: none; }
+
+/* Theme switcher: 1 button cycling System, Light, Dark. Its icon shows the
+   current choice and its accessible name spells it out. */
+.olb-custom-theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--olb-radius-pill);
+  color: var(--olb-text-secondary);
+  transition: color var(--olb-transition), background-color var(--olb-transition);
+}
+.olb-custom-theme-toggle:hover {
+  color: var(--olb-text-primary);
+  background: var(--olb-surface-secondary);
+}
+.olb-custom-theme-toggle svg {
+  display: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.olb-custom-theme-toggle[data-choice="system"] svg[data-icon="system"],
+.olb-custom-theme-toggle[data-choice="light"] svg[data-icon="light"],
+.olb-custom-theme-toggle[data-choice="dark"] svg[data-icon="dark"] { display: block; }
 
 /* Language switcher: a disclosure button over the locales the site is written
    in. Links, not commands, so it stays a plain list rather than an ARIA menu. */
@@ -1499,10 +1577,14 @@ p, li, td, th { color: inherit; }
 
 /* ── Tablet: 6 columns ───────────────────────────────────────────────────── */
 
-@media (max-width: 1020px) {
+@media (max-width: 1060px) {
   .olb-nav { gap: var(--olb-space-5); }
   .olb-custom-signin { display: none; }
   .olb-nav .olb-custom-signin-item { display: list-item; }
+  /* Tighter tools and the language as its code leave room for the theme button. */
+  .olb-custom-header-tools { gap: var(--olb-space-4); }
+  .olb-custom-lang-name { display: none; }
+  .olb-custom-lang-code { display: inline; }
 }
 
 @media (max-width: 900px) {
@@ -1583,6 +1665,7 @@ p, li, td, th { color: inherit; }
   .olb-custom-lang-name { display: none; }
   .olb-custom-lang-code { display: inline; }
   .olb-custom-lang-toggle { min-height: 44px; padding-inline: var(--olb-space-2); }
+  .olb-custom-theme-toggle { width: 44px; height: 44px; }
 
   .olb-nav-toggle {
     display: grid;

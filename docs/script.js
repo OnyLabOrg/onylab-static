@@ -36,6 +36,58 @@ if (navToggle && navMenu) {
   });
 }
 
+// Theme switcher. 1 button cycles System, Light, Dark. System is the default
+// and stores nothing, so the page keeps following the reader's setting; a
+// forced choice is stored and applied by the inline script in the head before
+// first paint. The browser chrome colour follows the forced choice too.
+const themeToggle = document.getElementById('themeToggle');
+
+if (themeToggle) {
+  const root = document.documentElement;
+  const order = ['system', 'light', 'dark'];
+  const themeMetas = Array.from(document.querySelectorAll('meta[name="theme-color"]'));
+  const metaColors = {};
+  themeMetas.forEach((meta) => {
+    const scheme = (meta.media || '').includes('dark') ? 'dark' : 'light';
+    metaColors[scheme] = meta.content;
+    meta.dataset.scheme = scheme;
+  });
+
+  const readTheme = () => {
+    try {
+      const stored = localStorage.getItem('olb-theme');
+      return order.includes(stored) ? stored : 'system';
+    } catch (error) {
+      return root.dataset.theme || 'system';
+    }
+  };
+
+  const applyTheme = (choice) => {
+    if (choice === 'system') root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', choice);
+    themeMetas.forEach((meta) => {
+      meta.content = metaColors[choice === 'system' ? meta.dataset.scheme : choice];
+    });
+    const label = themeToggle.dataset[`label${choice[0].toUpperCase()}${choice.slice(1)}`];
+    themeToggle.dataset.choice = choice;
+    themeToggle.setAttribute('aria-label', label);
+    themeToggle.title = label;
+  };
+
+  applyTheme(readTheme());
+
+  themeToggle.addEventListener('click', () => {
+    const next = order[(order.indexOf(themeToggle.dataset.choice) + 1) % order.length];
+    try {
+      if (next === 'system') localStorage.removeItem('olb-theme');
+      else localStorage.setItem('olb-theme', next);
+    } catch (error) {
+      /* Without storage the choice lasts until the reader leaves the page. */
+    }
+    applyTheme(next);
+  });
+}
+
 // Language switcher. A disclosure button over a short list of links. Picking a
 // language stores the choice, so the English root stops guessing from the
 // browser setting on the next visit.

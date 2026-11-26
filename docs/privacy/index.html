@@ -4,7 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Privacy Policy | OnyLab</title>
+    <script>
+      // A theme picked with the header button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>Privacy Policy | OnyLab</title>
     <meta name="description" content="How OnyLab collects, uses, shares, and protects personal information on its website and in its applications, under Canadian and Quebec privacy law.">
     
     <meta name="robots" content="index, follow">
@@ -34,7 +48,7 @@
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/style.css?v=19" rel="stylesheet">
+    <link href="/style.css?v=20" rel="stylesheet">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -110,10 +124,8 @@
     <header class="olb-header" id="header">
         <div class="olb-masthead">
             <a class="olb-identity" href="/" aria-label="OnyLab home">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg">
-                    <img class="olb-wordmark" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
-                </picture>
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
             </a>
             <nav class="olb-document-meta" aria-label="Primary">
                 <ul class="olb-nav" id="navMenu">
@@ -125,6 +137,11 @@
                 </ul>
                 <div class="olb-custom-header-tools">
                     <a class="olb-custom-signin" href="https://apps.onylab.com/">Sign in</a>
+                    <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Theme: System" data-label-light="Theme: Light" data-label-dark="Theme: Dark" aria-label="Theme: System" title="Theme: System">
+                        <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                        <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                        <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
                     <div class="olb-custom-lang">
                         <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
                             <span class="olb-custom-lang-name" aria-hidden="true">English</span>
@@ -216,10 +233,8 @@
     <footer class="olb-footer">
         <div class="olb-custom-footer-brand">
             <a class="olb-identity" href="/" aria-label="OnyLab home">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg">
-                    <img class="olb-logo" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26">
-                </picture>
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26">
             </a>
             <p class="olb-caption">Apps for restaurants and shops to take every order and bring customers back, connected to the till they already run.</p>
             <p class="olb-caption">Also from the same team: <a href="https://agentiumlab.com/">Agentium Lab</a>, task automation for local businesses.</p>
@@ -264,5 +279,5 @@
     </footer>
 
 </div>
-<script src="/script.js?v=9" type="text/javascript"></script></body>
+<script src="/script.js?v=10" type="text/javascript"></script></body>
 </html>
