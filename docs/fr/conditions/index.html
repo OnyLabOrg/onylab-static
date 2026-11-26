@@ -45,10 +45,11 @@
     <link rel="canonical" href="https://onylab.com/fr/conditions/">
     <link rel="alternate" hreflang="en" href="https://onylab.com/terms/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/conditions/">
     <link rel="alternate" hreflang="x-default" href="https://onylab.com/terms/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/style.css?v=21" rel="stylesheet">
+    <link href="/style.css?v=22" rel="stylesheet">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -114,7 +115,35 @@
         "@id": "https://onylab.com/#organization"
       },
       "description": "Les conditions qui régissent l'utilisation du site et des applications OnyLab, en vertu des lois du Québec et du Canada.",
-      "inLanguage": "fr"
+      "inLanguage": "fr",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Prenez chaque commande. Faites revenir chaque client."
+      },
+      "dateModified": "2026-10-26",
+      "breadcrumb": {
+        "@id": "https://onylab.com/fr/conditions/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/fr/conditions/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Conditions d'utilisation"
+        }
+      ]
     }
   ]
 }</script></head>
@@ -226,8 +255,8 @@
     <footer class="olb-footer">
         <div class="olb-custom-footer-brand">
             <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
-                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26">
-                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
             </a>
             <p class="olb-caption">Des applications pour que les restaurants et les commerces prennent chaque commande et fassent revenir leurs clients, branchées sur la caisse qu&#39;ils utilisent déjà.</p>
             <p class="olb-caption">De la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, l'automatisation des tâches pour les commerces de proximité.</p>
@@ -248,7 +277,7 @@
         <nav class="olb-custom-footer-col" aria-label="Pied de page">
             <h2 class="olb-label">OnyLab</h2>
             <ul>
-                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Votre caisse</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Votre caisse</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
             </ul>
         </nav>
 
@@ -278,5 +307,19 @@
     </footer>
 
 </div>
-<script src="/script.js?v=10" type="text/javascript"></script></body>
+<script src="/script.js?v=10" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
 </html>

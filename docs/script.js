@@ -110,7 +110,7 @@ if (langToggle && langMenu) {
     try {
       localStorage.setItem('olb-lang', link.dataset.lang);
     } catch (error) {
-      /* Without storage the root page keeps following the browser setting. */
+      /* Without storage the English pages keep following the browser setting. */
     }
     setLangOpen(false);
   });

@@ -3,25 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
+    <script>(function(){const localeRedirects = {"fr":"/fr/"};
+const defaultLang = "en";
+
       // The site is static, so the reader's language can only be honored in the
-      // browser. This runs on the English root only: a reader who asked for /fr/
-      // or for any other page explicitly is never sent elsewhere, and a stored
-      // choice always beats the browser setting.
+      // browser. This runs on English pages only, which are the default: a
+      // reader who opened a translated URL is never sent elsewhere. A choice
+      // stored by the language switcher beats the browser setting; otherwise
+      // the first browser language the site speaks wins, and English stays
+      // when there is none.
       (function () {
+        var stored = null;
         try {
-          var stored = localStorage.getItem('olb-lang');
-          if (stored) {
-            if (stored !== 'en') location.replace('/' + stored + '/');
-            return;
-          }
-          var preferred = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-          if (preferred.toLowerCase().indexOf('fr') === 0) location.replace('/fr/');
+          stored = localStorage.getItem('olb-lang');
         } catch (error) {
-          /* Private mode or a blocked storage API leaves the reader on English. */
+          /* Private mode or a blocked storage API falls back to the browser setting. */
         }
+        var target = null;
+        if (stored === defaultLang) return;
+        if (stored && localeRedirects[stored]) {
+          target = localeRedirects[stored];
+        } else {
+          var preferred = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+          for (var i = 0; i < preferred.length; i++) {
+            var code = String(preferred[i]).toLowerCase().split('-')[0];
+            if (code === defaultLang) return;
+            if (localeRedirects[code]) {
+              target = localeRedirects[code];
+              break;
+            }
+          }
+        }
+        if (target) location.replace(target + location.search + location.hash);
       })();
-    </script>
+    })();</script>
     <script>
       // A theme picked with the footer button is applied before first paint, so
       // the page never flashes the other scheme. No stored choice, or "system",
@@ -37,14 +52,14 @@
         }
       })();
     </script><title>OnyLab | Ordering and customer apps for restaurants and shops</title>
-    <meta name="description" content="5 apps for restaurants and shops: take phone and online orders, prepare them without mistakes, and bring customers back by email and SMS. Each one connects to the POS you already run, through HubRise.">
+    <meta name="description" content="5 apps for restaurants and shops: phone and online orders, preparation without mistakes, email and SMS campaigns. Each one connects to your POS through HubRise.">
     <meta name="keywords" content="OnyLab, OrderPad, Order&amp;Pay, OrderPicker, Brevo Bridge, SMSMode Bridge, HubRise, restaurant phone orders, online ordering, kitchen display system, KDS, retail order picking, restaurant SMS marketing">
     <meta name="robots" content="index, follow">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
     <meta property="og:title" content="OnyLab | Ordering and customer apps for restaurants and shops">
-    <meta property="og:description" content="5 apps for restaurants and shops: take phone and online orders, prepare them without mistakes, and bring customers back by email and SMS. Each one connects to the POS you already run, through HubRise.">
+    <meta property="og:description" content="5 apps for restaurants and shops: phone and online orders, preparation without mistakes, email and SMS campaigns. Each one connects to your POS through HubRise.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="OnyLab">
     <meta property="og:url" content="https://onylab.com/">
@@ -59,14 +74,15 @@
     <meta name="twitter:image" content="https://onylab.com/og.png">
     <meta name="twitter:image:alt" content="OnyLab. Take every order. Bring every customer back.">
     <meta name="twitter:title" content="OnyLab | Ordering and customer apps for restaurants and shops">
-    <meta name="twitter:description" content="5 apps for restaurants and shops: take phone and online orders, prepare them without mistakes, and bring customers back by email and SMS. Each one connects to the POS you already run, through HubRise.">
+    <meta name="twitter:description" content="5 apps for restaurants and shops: phone and online orders, preparation without mistakes, email and SMS campaigns. Each one connects to your POS through HubRise.">
     <link rel="canonical" href="https://onylab.com/">
     <link rel="alternate" hreflang="en" href="https://onylab.com/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/">
     <link rel="alternate" hreflang="x-default" href="https://onylab.com/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/style.css?v=21" rel="stylesheet">
+    <link href="/style.css?v=22" rel="stylesheet">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -131,8 +147,15 @@
       "about": {
         "@id": "https://onylab.com/#organization"
       },
-      "description": "5 apps for restaurants and shops: take phone and online orders, prepare them without mistakes, and bring customers back by email and SMS. Each one connects to the POS you already run, through HubRise.",
+      "description": "5 apps for restaurants and shops: phone and online orders, preparation without mistakes, email and SMS campaigns. Each one connects to your POS through HubRise.",
       "inLanguage": "en",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Take every order. Bring every customer back."
+      },
       "mainEntity": {
         "@id": "https://onylab.com/#organization"
       },
@@ -784,7 +807,7 @@
                         <ul>
                             <li class="olb-integration">Every POS connected to HubRise</li>
                         </ul>
-                        <p class="olb-meta"><a class="olb-custom-link" href="https://www.hubrise.com/apps">See the list on hubrise.com</a></p>
+                        <p class="olb-meta"><a class="olb-custom-link" href="/pos/">See every POS, 1 page each</a></p>
                     </div><div class="olb-integration-group">
                         <h3 class="olb-heading-16">Delivery platforms</h3>
                         <ul>
@@ -972,8 +995,8 @@
     <footer class="olb-footer">
         <div class="olb-custom-footer-brand">
             <a class="olb-identity" href="/" aria-label="OnyLab home">
-                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26">
-                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
             </a>
             <p class="olb-caption">Apps for restaurants and shops to take every order and bring customers back, connected to the POS they already run.</p>
             <p class="olb-caption">Also from the same team: <a href="https://agentiumlab.com/">Agentium Lab</a>, task automation for local businesses.</p>
@@ -994,7 +1017,7 @@
         <nav class="olb-custom-footer-col" aria-label="Footer">
             <h2 class="olb-label">OnyLab</h2>
             <ul>
-                <li><a href="#ecosystem">How it fits</a></li><li><a href="#connections">Your POS</a></li><li><a href="#start">Where to start</a></li><li><a href="#about">Who we are</a></li><li><a href="#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Sign in to your apps</a></li>
+                <li><a href="#ecosystem">How it fits</a></li><li><a href="#connections">Your POS</a></li><li><a href="/pos/">POS integrations</a></li><li><a href="#start">Where to start</a></li><li><a href="#about">Who we are</a></li><li><a href="#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Sign in to your apps</a></li>
             </ul>
         </nav>
 
@@ -1024,5 +1047,19 @@
     </footer>
 
 </div>
-<script src="/script.js?v=10" type="text/javascript"></script></body>
+<script src="/script.js?v=10" type="text/javascript"></script><script>(function(){const crispLocale = "en";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
 </html>

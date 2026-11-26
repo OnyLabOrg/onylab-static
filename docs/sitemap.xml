@@ -55,4 +55,798 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <!-- POS pages -->
+  <url>
+    <loc>https://onylab.com/pos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/adixon-caisse/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/adixon-caisse/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/adixon-caisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/adixon-caisse/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/adixon-caisse/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/adixon-caisse/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/adixon-caisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/adixon-caisse/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/akk-epos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/akk-epos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/akk-epos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/akk-epos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/akk-epos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/akk-epos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/akk-epos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/akk-epos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/alfimanagement/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/alfimanagement/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/alfimanagement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/alfimanagement/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/alfimanagement/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/alfimanagement/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/alfimanagement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/alfimanagement/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/bonappio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/bonappio/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/bonappio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/bonappio/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/bonappio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/bonappio/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/bonappio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/bonappio/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/carrepos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/carrepos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/carrepos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/carrepos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/carrepos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/carrepos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/carrepos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/carrepos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/clyo-systems/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/clyo-systems/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/clyo-systems/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/clyo-systems/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/clyo-systems/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/clyo-systems/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/clyo-systems/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/clyo-systems/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/csy-vector-epos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/csy-vector-epos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/csy-vector-epos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/csy-vector-epos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/csy-vector-epos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/csy-vector-epos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/csy-vector-epos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/csy-vector-epos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/drive-eat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/drive-eat/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/drive-eat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/drive-eat/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/drive-eat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/drive-eat/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/drive-eat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/drive-eat/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/eatstek/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/eatstek/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/eatstek/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/eatstek/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/eatstek/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/eatstek/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/eatstek/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/eatstek/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/epos-technologies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/epos-technologies/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/epos-technologies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/epos-technologies/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/epos-technologies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/epos-technologies/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/epos-technologies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/epos-technologies/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/etakeaway-max/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/etakeaway-max/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/etakeaway-max/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/etakeaway-max/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/etakeaway-max/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/etakeaway-max/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/etakeaway-max/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/etakeaway-max/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/french-caisse/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/french-caisse/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/french-caisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/french-caisse/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/french-caisse/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/french-caisse/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/french-caisse/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/french-caisse/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/jalia/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/jalia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/jalia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/jalia/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/jalia/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/jalia/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/jalia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/jalia/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/kezia-ii/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/kezia-ii/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/kezia-ii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/kezia-ii/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/kezia-ii/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/kezia-ii/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/kezia-ii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/kezia-ii/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/leo2/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/leo2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/leo2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/leo2/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/leo2/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/leo2/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/leo2/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/leo2/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/lightspeed-restaurant/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/lightspeed-restaurant/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/lightspeed-restaurant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/lightspeed-restaurant/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/lightspeed-restaurant/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/lightspeed-restaurant/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/lightspeed-restaurant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/lightspeed-restaurant/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/mealenium/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/mealenium/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/mealenium/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/mealenium/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/mealenium/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/mealenium/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/mealenium/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/mealenium/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/miipos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/miipos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/miipos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/miipos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/miipos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/miipos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/miipos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/miipos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/myfoodfast/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/myfoodfast/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/myfoodfast/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/myfoodfast/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/myfoodfast/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/myfoodfast/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/myfoodfast/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/myfoodfast/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/nestor/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/nestor/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/nestor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/nestor/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/nestor/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/nestor/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/nestor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/nestor/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/netfood/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/netfood/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/netfood/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/netfood/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/netfood/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/netfood/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/netfood/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/netfood/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/next-order/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/next-order/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/next-order/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/next-order/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/next-order/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/next-order/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/next-order/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/next-order/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/onetouch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/onetouch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/onetouch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/onetouch/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/onetouch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/onetouch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/onetouch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/onetouch/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/orderlord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/orderlord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/orderlord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/orderlord/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/orderlord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/orderlord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/orderlord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/orderlord/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/orderwire/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/orderwire/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/orderwire/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/orderwire/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/orderwire/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/orderwire/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/orderwire/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/orderwire/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/panda-epos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/panda-epos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/panda-epos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/panda-epos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/panda-epos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/panda-epos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/panda-epos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/panda-epos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/par-pixelpoint/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/par-pixelpoint/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/par-pixelpoint/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/par-pixelpoint/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/par-pixelpoint/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/par-pixelpoint/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/par-pixelpoint/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/par-pixelpoint/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/popina/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/popina/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/popina/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/popina/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/popina/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/popina/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/popina/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/popina/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/pos-helper/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/pos-helper/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/pos-helper/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/pos-helper/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/pos-helper/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/pos-helper/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/pos-helper/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/pos-helper/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/presto-express/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/presto-express/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/presto-express/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/presto-express/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/presto-express/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/presto-express/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/presto-express/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/presto-express/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/quantum/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/quantum/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/quantum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/quantum/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/quantum/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/quantum/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/quantum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/quantum/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/restomax/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/restomax/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/restomax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/restomax/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/restomax/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/restomax/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/restomax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/restomax/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/restopos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/restopos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/restopos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/restopos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/restopos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/restopos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/restopos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/restopos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/swoopos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/swoopos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/swoopos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/swoopos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/swoopos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/swoopos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/swoopos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/swoopos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/synapsy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/synapsy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/synapsy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/synapsy/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/synapsy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/synapsy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/synapsy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/synapsy/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/talc-delivery-system/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/talc-delivery-system/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/talc-delivery-system/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/talc-delivery-system/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/talc-delivery-system/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/talc-delivery-system/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/talc-delivery-system/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/talc-delivery-system/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/task/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/task/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/task/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/task/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/task/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/task/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/task/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/task/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/tickeat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/tickeat/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/tickeat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/tickeat/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/tickeat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/tickeat/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/tickeat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/tickeat/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/toporder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/toporder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/toporder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/toporder/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/toporder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/toporder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/toporder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/toporder/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/ultimapos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/ultimapos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/ultimapos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/ultimapos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/ultimapos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/ultimapos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/ultimapos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/ultimapos/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/vectron/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/vectron/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/vectron/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/vectron/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/vectron/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/vectron/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/vectron/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/vectron/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/yuze/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/yuze/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/yuze/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/yuze/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/yuze/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/yuze/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/yuze/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/yuze/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/pos/zelty/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/zelty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/zelty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/zelty/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onylab.com/fr/caisses/zelty/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onylab.com/pos/zelty/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/zelty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/zelty/"/>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- /POS pages -->
 </urlset>

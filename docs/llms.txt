@@ -25,6 +25,53 @@ Languages: this site is published in English at https://onylab.com/ and in Frenc
 - [Your POS](https://onylab.com/#connections): POS systems connected to HubRise, and the delivery platforms Deliveroo, Uber Eats and Just Eat, connected to HubRise.
 - [Questions](https://onylab.com/#faq): changing the POS, what HubRise is, using 1 app only, customer data, delivery platforms, support, and signing in.
 
+## POS integrations
+
+- [POS integrations](https://onylab.com/pos/): the POS systems listed in HubRise's app directory, checked on November 25, 2026, 1 page each. Each page says what the POS's HubRise connection carries (orders, customers, menu) and what each of the 5 apps does with that POS. In French at https://onylab.com/fr/caisses/.
+- [Adixon Caisse](https://onylab.com/pos/adixon-caisse/): Table-service and quick-service restaurants; orders in, menu and customers out.
+- [AKK EPOS](https://onylab.com/pos/akk-epos/): Softtech POS for Thai restaurants, in English and Thai, UK and Thailand.
+- [AlFiManagement](https://onylab.com/pos/alfimanagement/): Web-based POS for German cafes and shops; it sends its menu to HubRise.
+- [BonAppio](https://onylab.com/pos/bonappio/): Dutch hospitality POS that sends its menu to HubRise, without images.
+- [CarréPOS](https://onylab.com/pos/carrepos/): Bakers and food shops; the connection works in both directions.
+- [Clyo Systems](https://onylab.com/pos/clyo-systems/): Restaurants and retail in several French-speaking countries; HubRise orders in, menu out.
+- [CSY Vector EPOS](https://onylab.com/pos/csy-vector-epos/): Hospitality and grocery stores; menu to HubRise, orders and customers back.
+- [Delivery System](https://onylab.com/pos/talc-delivery-system/): Windows POS for takeout and delivery that sends its orders and customers to HubRise.
+- [Drive Eat](https://onylab.com/pos/drive-eat/): Snack bars, bakeries and restaurants; 1 menu, orders in, variants not yet supported.
+- [EatsTek](https://onylab.com/pos/eatstek/): UK retail and hospitality stores; EatsTek loads a menu kept in HubRise.
+- [EPOS Technologies](https://onylab.com/pos/epos-technologies/): Hospitality and retail in 4 countries; sends its menu to HubRise.
+- [eTakeaway Max](https://onylab.com/pos/etakeaway-max/): UK stores with online ordering; receives orders and customers, menu set in Catalog Manager.
+- [French Caisse](https://onylab.com/pos/french-caisse/): Restaurants, bakeries, grocers and salons in France and Switzerland; orders in only.
+- [Jalia](https://onylab.com/pos/jalia/): iPad POS from JDC for restaurants; HubRise orders in, menu out.
+- [Kezia II](https://onylab.com/pos/kezia-ii/): Specialized retail and quick-service food; the connection works in both directions.
+- [LEO2](https://onylab.com/pos/leo2/): Bakeries, restaurants and salons worldwide; orders, customers and menu flow both ways.
+- [Lightspeed Restaurant](https://onylab.com/pos/lightspeed-restaurant/): iPad and cloud POS for restaurants and hoteliers, linked by a HubRise-built bridge.
+- [Mealenium](https://onylab.com/pos/mealenium/): Restaurants on any device; menu with variants out, HubRise orders in.
+- [MiiPos](https://onylab.com/pos/miipos/): Bars, bakeries, food trucks and shops on any system; orders in, no menu yet.
+- [MyFoodFast](https://onylab.com/pos/myfoodfast/): Restaurants in the UK; sends its menu to HubRise, receives orders and customers.
+- [Nestor](https://onylab.com/pos/nestor/): Delivery and takeout restaurants; orders in, menu and delivery time out.
+- [NetFood](https://onylab.com/pos/netfood/): Italian food and beverage POS; it sends its menu to HubRise.
+- [Next Order](https://onylab.com/pos/next-order/): UK, Australia and New Zealand restaurants; counter orders and menu go to HubRise.
+- [OneTouch](https://onylab.com/pos/onetouch/): Versatile POS for restaurants and venues, set up from its own back office.
+- [OrderLord](https://onylab.com/pos/orderlord/): POS for delivery and online orders; HubRise says it is not available in France.
+- [OrderWire](https://onylab.com/pos/orderwire/): Web POS for delivery-first kitchens in Ireland, the UK and Thailand.
+- [Panda EPOS](https://onylab.com/pos/panda-epos/): Restaurants with 1 or more locations; menu, orders and customers travel both ways.
+- [PAR PixelPoint](https://onylab.com/pos/par-pixelpoint/): POS with 2 HubRise integrations: Bridge receives only, Windows API also sends the menu.
+- [Popina](https://onylab.com/pos/popina/): iPad POS for bakeries, bars and hotels that sends its menu to HubRise.
+- [POS HELPER](https://onylab.com/pos/pos-helper/): Cloud POS for restaurants. The menu is set up in HubRise's Catalog Manager.
+- [Presto Express](https://onylab.com/pos/presto-express/): Restaurants and franchises in the UK; pushes its menu to HubRise, receives orders.
+- [Quantum](https://onylab.com/pos/quantum/): Retail and hospitality stores in the UK; catalog pushed to HubRise, orders received.
+- [Restomax](https://onylab.com/pos/restomax/): Belgian POS for table-service and quick-service restaurants that sends its menu to HubRise.
+- [restoPOS](https://onylab.com/pos/restopos/): Cloud POS for restaurants, coffee shops and bakeries; it sends its menu to HubRise.
+- [SwooPOS](https://onylab.com/pos/swoopos/): Mobile POS for hospitality and retail in the UK; menu to HubRise, orders back.
+- [Synapsy](https://onylab.com/pos/synapsy/): French POS for caterers and retailers. Orders and customers arrive through HubRise.
+- [TASK](https://onylab.com/pos/task/): Enterprise POS for Australia, New Zealand, USA; sends orders and menu only.
+- [Tick'Eat](https://onylab.com/pos/tickeat/): Restaurant POS with its own delivery dispatch that sends its menu to HubRise.
+- [Toporder](https://onylab.com/pos/toporder/): iPad POS for bakeries, butchers and wine shops that receives HubRise orders.
+- [UltimaPOS](https://onylab.com/pos/ultimapos/): Retail and food POS from UltimaSOFT that sends its orders and menu to HubRise.
+- [Vectron](https://onylab.com/pos/vectron/): Configurable POS from Shift4, sold by local resellers, that receives HubRise orders.
+- [Yuze](https://onylab.com/pos/yuze/): UK hospitality; payments-first POS that pushes its menu to HubRise and receives orders.
+- [Zelty](https://onylab.com/pos/zelty/): Zelty Bridge, by HubRise, passes orders and customers both ways.
+
 ## About
 
 - [Who we are](https://onylab.com/#about): founded in 2020 in France by people who had run local restaurants and shops. Figures stated on the page: 5 apps live on apps.onylab.com, 20+ years running local restaurants and shops then building software for them, support 7 days a week.

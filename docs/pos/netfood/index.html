@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){const localeRedirects = {"fr":"/fr/caisses/netfood/"};
+const defaultLang = "en";
+
+      // The site is static, so the reader's language can only be honored in the
+      // browser. This runs on English pages only, which are the default: a
+      // reader who opened a translated URL is never sent elsewhere. A choice
+      // stored by the language switcher beats the browser setting; otherwise
+      // the first browser language the site speaks wins, and English stays
+      // when there is none.
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem('olb-lang');
+        } catch (error) {
+          /* Private mode or a blocked storage API falls back to the browser setting. */
+        }
+        var target = null;
+        if (stored === defaultLang) return;
+        if (stored && localeRedirects[stored]) {
+          target = localeRedirects[stored];
+        } else {
+          var preferred = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+          for (var i = 0; i < preferred.length; i++) {
+            var code = String(preferred[i]).toLowerCase().split('-')[0];
+            if (code === defaultLang) return;
+            if (localeRedirects[code]) {
+              target = localeRedirects[code];
+              break;
+            }
+          }
+        }
+        if (target) location.replace(target + location.search + location.hash);
+      })();
+    })();</script>
+    <script>
+      // A theme picked with the footer button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>NetFood and OnyLab: phone, online and campaigns | OnyLab</title>
+    <meta name="description" content="Link NetFood to HubRise and take phone and online orders on your Italian food and beverage POS, with a picking screen and customer campaigns.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="NetFood and OnyLab: phone, online and campaigns | OnyLab">
+    <meta property="og:description" content="Link NetFood to HubRise and take phone and online orders on your Italian food and beverage POS, with a picking screen and customer campaigns.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OnyLab">
+    <meta property="og:url" content="https://onylab.com/pos/netfood/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:image" content="https://onylab.com/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OnyLab. Take every order. Bring every customer back.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://onylab.com/og.png">
+    <meta name="twitter:image:alt" content="OnyLab. Take every order. Bring every customer back.">
+    <meta name="twitter:title" content="NetFood and OnyLab: phone, online and campaigns | OnyLab">
+    <meta name="twitter:description" content="Link NetFood to HubRise and take phone and online orders on your Italian food and beverage POS, with a picking screen and customer campaigns.">
+    <link rel="canonical" href="https://onylab.com/pos/netfood/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/pos/netfood/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/netfood/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/netfood/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=22" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/pos/netfood/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab is a software company that builds apps for independent restaurants and shops. It is based in France and was founded in 2020 by people who had run local restaurants and shops themselves. Its 5 apps take orders by phone (OrderPad) and online (Order&Pay), organize their preparation on a kitchen display system (KDS) in a restaurant or a preparation screen in a shop (OrderPicker), and copy customers and orders into Brevo and smsmode for email, SMS and WhatsApp campaigns (Brevo Bridge and SMSMode Bridge). They connect to the POS and the delivery platforms a store already uses through HubRise. OnyLab can be reached at hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Phone ordering for restaurants",
+        "Online ordering and payment",
+        "Order preparation",
+        "Kitchen display systems (KDS)",
+        "Retail order picking",
+        "Customer segmentation for email and SMS campaigns",
+        "HubRise integrations",
+        "Point-of-sale integrations"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/pos/netfood/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/pos/netfood/#webpage",
+      "url": "https://onylab.com/pos/netfood/",
+      "name": "NetFood and OnyLab: phone, online and campaigns | OnyLab",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "Link NetFood to HubRise and take phone and online orders on your Italian food and beverage POS, with a picking screen and customer campaigns.",
+      "inLanguage": "en",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Take every order. Bring every customer back."
+      },
+      "dateModified": "2026-11-25",
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "NetFood",
+          "applicationCategory": "BusinessApplication"
+        }
+      ],
+      "breadcrumb": {
+        "@id": "https://onylab.com/pos/netfood/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/pos/netfood/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "POS integrations",
+          "item": "https://onylab.com/pos/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "NetFood"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onylab.com/pos/netfood/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is NetFood connected to HubRise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Through the NetFood support line, on an existing NetFood installation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does NetFood use the same menu as OrderPad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NetFood sends its product catalog, with variants, to HubRise, so OrderPad and Order&Pay sell the same items and prices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the SMS and email campaigns include customers who paid at the counter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not through HubRise. NetFood does not send counter sales or customers, so the bridges only see orders that pass through HubRise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a HubRise account to connect NetFood?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The OnyLab apps reach NetFood through your store's HubRise account. HubRise has its own subscription, billed by HubRise."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body class="olb-page">
+<div class="olb-shell">
+
+    <a class="olb-skip-link" href="#main">Skip to content</a>
+
+    <header class="olb-header" id="header">
+        <div class="olb-masthead">
+            <a class="olb-identity" href="/" aria-label="OnyLab home">
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
+            </a>
+            <nav class="olb-document-meta" aria-label="Primary">
+                <ul class="olb-nav" id="navMenu">
+                    <li><a href="/#apps">Apps</a></li>
+                    <li><a href="/#ecosystem">How it fits</a></li>
+                    <li><a href="/#connections">Your POS</a></li>
+                    <li><a href="/#faq">Questions</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Sign in</a></li>
+                </ul>
+                <div class="olb-custom-header-tools">
+                    <a class="olb-custom-signin" href="https://apps.onylab.com/">Sign in</a>
+                    <div class="olb-custom-lang">
+                        <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
+                            <span class="olb-custom-lang-name" aria-hidden="true">English</span>
+                            <span class="olb-custom-lang-code" aria-hidden="true">EN</span>
+                            <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                        </button>
+                        <ul class="olb-custom-lang-menu" id="langMenu">
+                            <li>
+                                <a href="/pos/netfood/" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a>
+                            </li><li>
+                                <a href="/fr/caisses/netfood/" lang="fr" hreflang="fr" data-lang="fr">Français</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact">Email us</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+<main id="main">
+
+        <!-- 1. The outcome for a store on this POS, and the action. -->
+        <section class="olb-section olb-opening olb-custom-pos-opening" aria-labelledby="pos-heading">
+            <nav class="olb-custom-crumbs" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/">OnyLab</a></li>
+                    <li><a href="/pos/">POS integrations</a></li>
+                    <li aria-current="page">NetFood</li>
+                </ol>
+            </nav>
+            <p class="olb-pill olb-opening-pill">POS integration</p>
+            <h1 class="olb-display olb-opening-claim" id="pos-heading">NetFood gets your phone and online orders through HubRise</h1>
+            <p class="olb-lede olb-opening-proof">NetFood already gathers orders from kiosks, apps and delivery platforms. OrderPad and Order&amp;Pay add 2 more sources through HubRise, and the menu you keep in NetFood is the one they sell.</p>
+            <div class="olb-action-row">
+                <a class="olb-button" href="mailto:hello@onylab.com">Email us about your store</a>
+                <a class="olb-button-secondary" href="#apps">See the 5 apps <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
+            </div>
+            <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
+        </section>
+
+        <!-- 2. The POS, and what its HubRise connection carries, from its
+             page on hubrise.com. -->
+        <section class="olb-band" data-tone="secondary" id="facts" aria-labelledby="facts-heading">
+            <div class="olb-grid olb-custom-pos-facts">
+                <div>
+                    <p class="olb-label">NetFood</p>
+                    <h2 class="olb-title" id="facts-heading">NetFood at a glance</h2>
+                    <p class="olb-lede">NetFood, from .Net Informatica, is a POS for the food and beverage sector in Italy. It runs on desktop, tablet and smartphone, and covers table management, order tracking, sales reports and a kitchen display. Its HubRise connection is arranged through the NetFood support line.</p>
+                </div>
+                <div class="olb-card">
+                    <dl class="olb-custom-pos-meta">
+                        <div><dt>Made by</dt><dd>.Net Informatica</dd></div>
+                        <div><dt>Markets</dt><dd>Italy</dd></div>
+                        <div><dt>Linked to HubRise</dt><dd>Through NetFood support</dd></div>
+                    </dl>
+                    <h3 class="olb-heading-16">What the HubRise connection carries</h3>
+                    <ul class="olb-custom-caps">
+                        <li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Receives orders from HubRise</span>
+                            <span class="olb-custom-caps-value">Yes</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Receives customer details from HubRise</span>
+                            <span class="olb-custom-caps-value">No</span>
+                        </li><li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Sends its menu to HubRise</span>
+                            <span class="olb-custom-caps-value">Yes</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Loads a menu kept in HubRise</span>
+                            <span class="olb-custom-caps-value">No</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Sends its counter orders to HubRise</span>
+                            <span class="olb-custom-caps-value">No</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Sends its customer file to HubRise</span>
+                            <span class="olb-custom-caps-value">No</span>
+                        </li>
+                    </ul>
+                    <p class="olb-caption">Source: the NetFood page on hubrise.com, checked on November 25, 2026. <a class="olb-custom-link" href="https://www.hubrise.com/apps/netfood" hreflang="en">Read it on hubrise.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The 5 apps, by step of the business, each with what it uses
+             from this POS. -->
+        <section class="olb-section" id="apps" aria-labelledby="apps-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">The 5 apps</p>
+                <h2 class="olb-title" id="apps-heading">What each OnyLab app does with NetFood</h2>
+            </div>
+            <div class="olb-custom-app-group">
+                <h3 class="olb-heading-24 olb-custom-pos-step">Take orders</h3>
+                <ul class="olb-card-grid" style="--olb-custom-count: 3">
+                    <li class="olb-app-card" id="app-orderpay">
+                        <p class="olb-app-step">Online ordering</p>
+                        <h4 class="olb-heading-20">Order&amp;Pay</h4>
+                        <p>Customers order and pay in 1 tap, with no app to install and no account to create. NetFood sends its catalog to HubRise, so they see your items and prices, and the order is delivered to NetFood through HubRise.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Menu: NetFood sends it to HubRise, so the items and prices match the POS.</li><li>Orders: sent to NetFood through HubRise.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/#tour-orderpay">See it on the sample store <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li><li class="olb-app-card" id="app-orderpicker">
+                        <p class="olb-app-step">Kitchen display and picking</p>
+                        <h4 class="olb-heading-20">OrderPicker</h4>
+                        <p>OrderPicker prepares the orders that reach you through HubRise, as a kitchen display or, in a shop, a picking screen. Staff check each item, then mark the order ready. NetFood does not send its own counter sales to HubRise, so only orders passing through HubRise appear.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Counter sales: they stay in NetFood. Only the orders that pass through HubRise are included.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/#tour-orderpicker">See it on the sample store <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li><li class="olb-app-card" id="app-orderpad">
+                        <p class="olb-app-step">Phone orders</p>
+                        <h4 class="olb-heading-20">OrderPad</h4>
+                        <p>A phone order for an Italian restaurant is built from the menu NetFood sends to HubRise, with options, comments and the service mode, delivery or takeout. It then reaches NetFood through HubRise. The caller&#39;s profile comes up from HubRise before you take the order.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Menu: NetFood sends it to HubRise, so the items and prices match the POS.</li><li>Orders: sent to NetFood through HubRise.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/#tour-orderpad">See it on the sample store <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li>
+                </ul>
+            </div><div class="olb-custom-app-group">
+                <h3 class="olb-heading-24 olb-custom-pos-step">Bring customers back</h3>
+                <ul class="olb-card-grid" style="--olb-custom-count: 2">
+                    <li class="olb-app-card" id="app-brevo">
+                        <p class="olb-app-step">Email and SMS campaigns</p>
+                        <h4 class="olb-heading-20">Brevo Bridge</h4>
+                        <p>Brevo Bridge copies HubRise customers and orders into your own Brevo account, sorted by visits, average order value and last order, for email and SMS campaigns. NetFood doesn&#39;t send its customer file or counter sales, so the segments come from orders that pass through HubRise.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Counter sales: they stay in NetFood. Only the orders that pass through HubRise are included.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/#tour-brevo">See it on the sample store <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li><li class="olb-app-card" id="app-smsmode">
+                        <p class="olb-app-step">SMS and WhatsApp campaigns</p>
+                        <h4 class="olb-heading-20">SMSMode Bridge</h4>
+                        <p>SMSMode Bridge copies the same customers and orders into your own smsmode account, sorted the same way, for SMS and WhatsApp campaigns. What it sees depends on HubRise: phone, online and delivery orders count, but sales rung up at the NetFood counter do not.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Counter sales: they stay in NetFood. Only the orders that pass through HubRise are included.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/#tour-smsmode">See it on the sample store <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. How the store connects it, then the action again. -->
+        <section class="olb-band" data-tone="secondary" id="start" aria-labelledby="start-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Getting started</p>
+                <h2 class="olb-title" id="start-heading">Connect NetFood in 3 steps</h2>
+            </div>
+            <ol class="olb-steps">
+                <li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Step</span> 1</p>
+                    <h3 class="olb-heading-20">Link NetFood to HubRise</h3>
+                    <p>NetFood support makes the link for your store.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Step</span> 2</p>
+                    <h3 class="olb-heading-20">Connect the OnyLab app</h3>
+                    <p>The app is connected to your store&#39;s HubRise account, which links it to NetFood and to your delivery platforms.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Step</span> 3</p>
+                    <h3 class="olb-heading-20">Add the next app when it pays</h3>
+                    <p>The other apps read the same orders and customers, so you add the next one when the first has proved itself.</p>
+                </li>
+            </ol>
+            <div class="olb-custom-after">
+                <a class="olb-button" href="mailto:hello@onylab.com">Email us about your store</a>
+                <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
+            </div>
+        </section>
+
+        <!-- 5. The questions of a store on this POS, mirrored in FAQPage data. -->
+        <section class="olb-section" id="faq" aria-labelledby="faq-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Questions</p>
+                <h2 class="olb-title" id="faq-heading">Questions about NetFood and OnyLab</h2>
+            </div>
+            <div class="olb-faq">
+                <details>
+                    <summary>How is NetFood connected to HubRise?</summary>
+                    <p>Through the NetFood support line, on an existing NetFood installation.</p>
+                </details><details>
+                    <summary>Does NetFood use the same menu as OrderPad?</summary>
+                    <p>Yes. NetFood sends its product catalog, with variants, to HubRise, so OrderPad and Order&amp;Pay sell the same items and prices.</p>
+                </details><details>
+                    <summary>Will the SMS and email campaigns include customers who paid at the counter?</summary>
+                    <p>Not through HubRise. NetFood does not send counter sales or customers, so the bridges only see orders that pass through HubRise.</p>
+                </details><details>
+                    <summary>Do I need a HubRise account to connect NetFood?</summary>
+                    <p>Yes. The OnyLab apps reach NetFood through your store&#39;s HubRise account. HubRise has its own subscription, billed by HubRise.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 6. The neighboring POS pages. -->
+        <section class="olb-band" data-tone="secondary" id="related" aria-labelledby="related-heading">
+            <div class="olb-custom-intro">
+                <h2 class="olb-heading-24" id="related-heading">Other POS systems connected to OnyLab</h2>
+            </div>
+            <ul class="olb-custom-pos-list" data-compact>
+                <li>
+                    <a href="/pos/restopos/">
+                        <span class="olb-custom-pos-name">restoPOS</span>
+                        <span class="olb-custom-pos-markets">Türkiye, Austria, France, Italy, Netherlands, Portugal, United Kingdom</span>
+                    </a>
+                </li><li>
+                    <a href="/pos/next-order/">
+                        <span class="olb-custom-pos-name">Next Order</span>
+                        <span class="olb-custom-pos-markets">United Kingdom, Australia, New Zealand</span>
+                    </a>
+                </li><li>
+                    <a href="/pos/onetouch/">
+                        <span class="olb-custom-pos-name">OneTouch</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/pos/orderlord/">
+                        <span class="olb-custom-pos-name">OrderLord</span>
+                        <span class="olb-custom-pos-markets">Worldwide</span>
+                    </a>
+                </li><li>
+                    <a href="/pos/orderwire/">
+                        <span class="olb-custom-pos-name">OrderWire</span>
+                        <span class="olb-custom-pos-markets">Ireland, United Kingdom, Thailand</span>
+                    </a>
+                </li><li>
+                    <a href="/pos/panda-epos/">
+                        <span class="olb-custom-pos-name">Panda EPOS</span>
+                        <span class="olb-custom-pos-markets">United Kingdom</span>
+                    </a>
+                </li>
+            </ul>
+            <p class="olb-custom-after"><a class="olb-custom-card-link" href="/pos/">See every POS <span class="olb-custom-arrow" aria-hidden="true"></span></a></p>
+        </section>
+
+        <!-- 7. The promise again, with the same action. -->
+        <section class="olb-section" id="contact" aria-labelledby="contact-heading">
+            <div class="olb-closing">
+                <h2 class="olb-title" id="contact-heading">Start with the app your NetFood store needs most</h2>
+                <p class="olb-lede">Tell us which part of your day costs the most. We will tell you which app to start with, and how it reaches NetFood.</p>
+                <div class="olb-action-row">
+                    <a class="olb-button" href="mailto:hello@onylab.com">Email us about your store</a>
+                </div>
+                <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
+                <p class="olb-meta">Write to <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="olb-footer">
+        <div class="olb-custom-footer-brand">
+            <a class="olb-identity" href="/" aria-label="OnyLab home">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+            </a>
+            <p class="olb-caption">Apps for restaurants and shops to take every order and bring customers back, connected to the POS they already run.</p>
+            <p class="olb-caption">Also from the same team: <a href="https://agentiumlab.com/">Agentium Lab</a>, task automation for local businesses.</p>
+        </div>
+
+        <nav class="olb-custom-footer-col" aria-label="Take orders">
+            <h2 class="olb-label">Take orders</h2>
+            <ul>
+                <li><a href="/#tour-orderpay">Order&amp;Pay</a></li><li><a href="/#tour-orderpicker">OrderPicker</a></li><li><a href="/#tour-orderpad">OrderPad</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Bring customers back">
+            <h2 class="olb-label">Bring customers back</h2>
+            <ul>
+                <li><a href="/#tour-brevo">Brevo Bridge</a></li><li><a href="/#tour-smsmode">SMSMode Bridge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="olb-custom-footer-col" aria-label="Footer">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/#ecosystem">How it fits</a></li><li><a href="/#connections">Your POS</a></li><li><a href="/pos/">POS integrations</a></li><li><a href="/#start">Where to start</a></li><li><a href="/#about">Who we are</a></li><li><a href="/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Sign in to your apps</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
+            <h2 class="olb-label">Contact</h2>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+            </ul>
+        </div>
+
+        <div class="olb-custom-footer-legal">
+            <p class="olb-meta">© 2026 OnyLab. All rights reserved.</p>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Legal">
+                <ul>
+                    <li><a class="olb-meta" href="/privacy/">Privacy Policy</a></li><li><a class="olb-meta" href="/terms/">Terms of Use</a></li>
+                </ul>
+            </nav>
+            <div class="olb-custom-footer-end">
+                <p class="olb-meta">Made with love in Canada and France</p>
+                <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Theme: System" data-label-light="Theme: Light" data-label-dark="Theme: Dark" aria-label="Theme: System" title="Theme: System">
+                    <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                    <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="/script.js?v=10" type="text/javascript"></script><script>(function(){const crispLocale = "en";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
+</html>

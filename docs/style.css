@@ -1527,6 +1527,124 @@ p, li, td, th { color: inherit; }
 .olb-custom-legal-body li + li { margin-top: var(--olb-space-2); }
 .olb-custom-legal-index { color: var(--olb-text-secondary); }
 
+/* ── POS pages: the list of POS systems, and 1 page per POS ──────────────── */
+
+.olb-custom-pos-opening .olb-opening-claim {
+  max-width: 22ch;
+  font-size: clamp(2.25rem, 4.8vw, 3.5rem);
+}
+.olb-custom-crumbs > ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--olb-space-2);
+  margin-bottom: var(--olb-space-6);
+  font-size: var(--olb-type-metadata);
+  color: var(--olb-text-secondary);
+}
+.olb-custom-crumbs li + li::before {
+  content: '/';
+  margin-right: var(--olb-space-2);
+  color: var(--olb-border-strong);
+}
+.olb-custom-crumbs a { transition: color var(--olb-transition); }
+.olb-custom-crumbs a:hover { color: var(--olb-text-primary); text-decoration: underline; text-underline-offset: 3px; }
+.olb-custom-crumbs [aria-current] { color: var(--olb-text-primary); }
+
+.olb-custom-pos-facts { align-items: start; }
+.olb-custom-pos-facts > :first-child { grid-column: 1 / span 5; }
+.olb-custom-pos-facts > :first-child > * + * { margin-top: var(--olb-space-4); }
+.olb-custom-pos-facts > .olb-card { grid-column: 7 / span 6; }
+.olb-custom-pos-facts > .olb-card > .olb-heading-16 { margin-top: var(--olb-space-6); }
+.olb-custom-pos-facts > .olb-card > .olb-caption { margin-top: var(--olb-space-5); }
+
+.olb-custom-pos-meta > div {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--olb-space-4);
+  padding-block: var(--olb-space-3);
+  border-bottom: 1px solid var(--olb-border-subtle);
+  font-size: var(--olb-type-compact);
+}
+.olb-custom-pos-meta > div:first-child { padding-top: 0; }
+.olb-custom-pos-meta dt { font-weight: var(--olb-weight-medium); color: var(--olb-text-primary); }
+.olb-custom-pos-meta dd { color: var(--olb-text-secondary); }
+
+.olb-custom-caps { margin-top: var(--olb-space-3); }
+.olb-custom-caps > li {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--olb-space-3);
+  padding-block: var(--olb-space-2);
+  font-size: var(--olb-type-compact);
+  color: var(--olb-text-primary);
+}
+.olb-custom-caps svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.olb-custom-caps > li[data-on="true"] svg { color: var(--olb-color-success); }
+.olb-custom-caps > li[data-on="false"] { color: var(--olb-text-secondary); }
+.olb-custom-caps-value { font-size: var(--olb-type-metadata); color: var(--olb-text-secondary); }
+
+.olb-custom-pos-step { margin-bottom: var(--olb-space-5); }
+.olb-section .olb-app-card { background: var(--olb-surface-secondary); }
+.olb-custom-pos-notes {
+  padding: var(--olb-space-3);
+  background: var(--olb-canvas);
+  border-radius: var(--olb-radius);
+}
+.olb-custom-pos-notes > li {
+  font-size: var(--olb-type-metadata);
+  line-height: var(--olb-leading-caption);
+  color: var(--olb-text-primary);
+}
+.olb-custom-pos-notes > li + li { margin-top: var(--olb-space-2); }
+
+.olb-custom-pos-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--olb-space-3);
+}
+.olb-custom-pos-list > li { min-width: 0; }
+.olb-custom-pos-list a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--olb-space-2);
+  height: 100%;
+  padding: var(--olb-space-5);
+  background: var(--olb-canvas);
+  border: 1px solid var(--olb-border-subtle);
+  border-radius: var(--olb-radius-large);
+  transition: border-color var(--olb-transition);
+}
+.olb-custom-pos-list a:hover { border-color: var(--olb-border-default); }
+.olb-custom-pos-name {
+  font-family: var(--olb-font-display);
+  font-size: var(--olb-type-subsection);
+  font-weight: var(--olb-weight-semibold);
+  line-height: var(--olb-leading-subsection);
+  letter-spacing: -0.01em;
+  color: var(--olb-text-primary);
+}
+.olb-custom-pos-summary {
+  font-size: var(--olb-type-compact);
+  line-height: var(--olb-leading-caption);
+  color: var(--olb-text-secondary);
+}
+.olb-custom-pos-markets {
+  margin-top: auto;
+  font-size: var(--olb-type-metadata);
+  color: var(--olb-text-secondary);
+}
+.olb-custom-pos-list[data-compact] { max-width: 1040px; margin-inline: auto; }
+.olb-custom-pos-list[data-compact] .olb-custom-pos-name { font-size: 1.0625rem; }
+.olb-custom-pos-caption { margin-top: var(--olb-space-6); text-align: center; }
+
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 
 .olb-footer {
@@ -1598,7 +1716,9 @@ p, li, td, th { color: inherit; }
   .olb-custom-connections > :first-child,
   .olb-integrations,
   .olb-custom-about > :first-child,
-  .olb-custom-about > .olb-stat-strip { grid-column: 1 / -1; }
+  .olb-custom-about > .olb-stat-strip,
+  .olb-custom-pos-facts > :first-child,
+  .olb-custom-pos-facts > .olb-card { grid-column: 1 / -1; }
 
   .olb-custom-eco-steps { grid-template-columns: minmax(0, 1fr); }
   .olb-ecosystem-step::after,
@@ -1741,6 +1861,7 @@ p, li, td, th { color: inherit; }
    still fits, rather than breaking inside a word. */
 @media (max-width: 420px) {
   .olb-display { font-size: clamp(1.875rem, 10vw, 2.75rem); }
+  .olb-custom-pos-opening .olb-opening-claim { font-size: clamp(1.75rem, 8.5vw, 2.25rem); }
   .olb-title { font-size: clamp(1.625rem, 8vw, 1.875rem); }
   .olb-custom-lang-toggle { padding-inline: var(--olb-space-1); }
 }

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+      // A theme picked with the footer button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>Intégrations caisse des applications OnyLab, via HubRise | OnyLab</title>
+    <meta name="description" content="Les caisses connectées à HubRise, 1 page chacune : ce que OrderPad, Order&amp;Pay, OrderPicker, Brevo Bridge et SMSMode Bridge font avec votre caisse.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="Intégrations caisse des applications OnyLab, via HubRise | OnyLab">
+    <meta property="og:description" content="Les caisses connectées à HubRise, 1 page chacune : ce que OrderPad, Order&amp;Pay, OrderPicker, Brevo Bridge et SMSMode Bridge font avec votre caisse.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OnyLab">
+    <meta property="og:url" content="https://onylab.com/fr/caisses/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://onylab.com/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://onylab.com/og.png">
+    <meta name="twitter:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:title" content="Intégrations caisse des applications OnyLab, via HubRise | OnyLab">
+    <meta name="twitter:description" content="Les caisses connectées à HubRise, 1 page chacune : ce que OrderPad, Order&amp;Pay, OrderPicker, Brevo Bridge et SMSMode Bridge font avec votre caisse.">
+    <link rel="canonical" href="https://onylab.com/fr/caisses/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/pos/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=22" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/pos/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et en ligne (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Prise de commande par téléphone pour restaurants",
+        "Commande et paiement en ligne",
+        "Préparation des commandes",
+        "Écrans de cuisine (KDS)",
+        "Préparation de commandes en magasin",
+        "Segmentation clients pour les campagnes e-mail et SMS",
+        "Intégrations HubRise",
+        "Intégrations de caisse"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/pos/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/fr/caisses/#webpage",
+      "url": "https://onylab.com/fr/caisses/",
+      "name": "Intégrations caisse des applications OnyLab, via HubRise | OnyLab",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "Les caisses connectées à HubRise, 1 page chacune : ce que OrderPad, Order&Pay, OrderPicker, Brevo Bridge et SMSMode Bridge font avec votre caisse.",
+      "inLanguage": "fr",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Prenez chaque commande. Faites revenir chaque client."
+      },
+      "dateModified": "2026-11-25",
+      "breadcrumb": {
+        "@id": "https://onylab.com/fr/caisses/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/fr/caisses/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Intégrations caisse"
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body class="olb-page">
+<div class="olb-shell">
+
+    <a class="olb-skip-link" href="#main">Aller au contenu</a>
+
+    <header class="olb-header" id="header">
+        <div class="olb-masthead">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
+            </a>
+            <nav class="olb-document-meta" aria-label="Navigation principale">
+                <ul class="olb-nav" id="navMenu">
+                    <li><a href="/fr/#apps">Applications</a></li>
+                    <li><a href="/fr/#ecosystem">Comment ça marche</a></li>
+                    <li><a href="/fr/#connections">Votre caisse</a></li>
+                    <li><a href="/fr/#faq">Questions</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Connexion</a></li>
+                </ul>
+                <div class="olb-custom-header-tools">
+                    <a class="olb-custom-signin" href="https://apps.onylab.com/">Connexion</a>
+                    <div class="olb-custom-lang">
+                        <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Langue: Français">
+                            <span class="olb-custom-lang-name" aria-hidden="true">Français</span>
+                            <span class="olb-custom-lang-code" aria-hidden="true">FR</span>
+                            <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                        </button>
+                        <ul class="olb-custom-lang-menu" id="langMenu">
+                            <li>
+                                <a href="/pos/" lang="en" hreflang="en" data-lang="en">English</a>
+                            </li><li>
+                                <a href="/fr/caisses/" lang="fr" hreflang="fr" data-lang="fr" aria-current="true">Français</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact">Nous écrire</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+<main id="main">
+
+        <section class="olb-section olb-opening olb-custom-pos-opening" aria-labelledby="pos-index-heading">
+            <nav class="olb-custom-crumbs" aria-label="Fil d'Ariane">
+                <ol>
+                    <li><a href="/fr/">OnyLab</a></li>
+                    <li aria-current="page">Intégrations caisse</li>
+                </ol>
+            </nav>
+            <h1 class="olb-display olb-opening-claim" id="pos-index-heading">Votre caisse, connectée aux 5 applications OnyLab</h1>
+            <p class="olb-lede olb-opening-proof">Chaque caisse de cette page est connectée à HubRise. Choisissez la vôtre pour voir ce que chaque application OnyLab fait avec elle, et ce que sa connexion transmet.</p>
+        </section>
+
+        <!-- Every POS page, in alphabetical order. -->
+        <section class="olb-band" data-tone="secondary" aria-labelledby="pos-list-heading">
+            <h2 class="olb-visually-hidden" id="pos-list-heading">Caisses</h2>
+            <ul class="olb-custom-pos-list">
+                <li>
+                    <a href="/fr/caisses/adixon-caisse/">
+                        <span class="olb-custom-pos-name">Adixon Caisse</span>
+                        <span class="olb-custom-pos-summary">Restaurants en salle et en rapide ; commandes en entrée, menu et clients en sortie.</span>
+                        <span class="olb-custom-pos-markets">France, Turquie, Maroc, Luxembourg</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/akk-epos/">
+                        <span class="olb-custom-pos-name">AKK EPOS</span>
+                        <span class="olb-custom-pos-summary">Caisse Softtech pour restaurants thaïs, en anglais et thaï, Royaume-Uni et Thaïlande.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni, Thaïlande</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/alfimanagement/">
+                        <span class="olb-custom-pos-name">AlFiManagement</span>
+                        <span class="olb-custom-pos-summary">Caisse web pour cafés et commerces allemands ; elle envoie sa carte à HubRise.</span>
+                        <span class="olb-custom-pos-markets">Allemagne</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/bonappio/">
+                        <span class="olb-custom-pos-name">BonAppio</span>
+                        <span class="olb-custom-pos-summary">Caisse néerlandaise pour la restauration ; elle envoie sa carte à HubRise, sans images.</span>
+                        <span class="olb-custom-pos-markets">Pays-Bas</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/carrepos/">
+                        <span class="olb-custom-pos-name">CarréPOS</span>
+                        <span class="olb-custom-pos-summary">Boulangers et commerces de bouche ; la connexion fonctionne dans les 2 sens.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/clyo-systems/">
+                        <span class="olb-custom-pos-name">Clyo Systems</span>
+                        <span class="olb-custom-pos-summary">Restaurants et commerces francophones ; commandes HubRise en entrée, menu en sortie.</span>
+                        <span class="olb-custom-pos-markets">France, Suisse, Luxembourg, Belgique, Maroc, Algérie</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/csy-vector-epos/">
+                        <span class="olb-custom-pos-name">CSY Vector EPOS</span>
+                        <span class="olb-custom-pos-summary">Hôtellerie-restauration et épiceries ; menu vers HubRise, commandes et clients en retour.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/talc-delivery-system/">
+                        <span class="olb-custom-pos-name">Delivery System</span>
+                        <span class="olb-custom-pos-summary">Caisse Windows pour emporter et livraison, qui envoie commandes et clients à HubRise.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/drive-eat/">
+                        <span class="olb-custom-pos-name">Drive Eat</span>
+                        <span class="olb-custom-pos-summary">Snacks et boulangeries ; 1 menu, commandes en entrée, variantes pas encore gérées.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/eatstek/">
+                        <span class="olb-custom-pos-name">EatsTek</span>
+                        <span class="olb-custom-pos-summary">Commerces et restauration au Royaume-Uni ; EatsTek charge un menu tenu dans HubRise.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/epos-technologies/">
+                        <span class="olb-custom-pos-name">EPOS Technologies</span>
+                        <span class="olb-custom-pos-summary">Restauration et commerce dans 4 pays ; envoie son menu à HubRise.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni, France, Turquie, États-Unis</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/etakeaway-max/">
+                        <span class="olb-custom-pos-name">eTakeaway Max</span>
+                        <span class="olb-custom-pos-summary">Commerces britanniques avec commande en ligne ; reçoit commandes et clients, menu dans Catalog Manager.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/french-caisse/">
+                        <span class="olb-custom-pos-name">French Caisse</span>
+                        <span class="olb-custom-pos-summary">Restaurants, boulangeries, épiceries ; commandes en entrée seulement.</span>
+                        <span class="olb-custom-pos-markets">France, Suisse</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/jalia/">
+                        <span class="olb-custom-pos-name">Jalia</span>
+                        <span class="olb-custom-pos-summary">Caisse iPad de JDC pour restaurants ; commandes HubRise en entrée, menu en sortie.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/kezia-ii/">
+                        <span class="olb-custom-pos-name">Kezia II</span>
+                        <span class="olb-custom-pos-summary">Commerce spécialisé et restauration rapide ; la connexion fonctionne dans les 2 sens.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/leo2/">
+                        <span class="olb-custom-pos-name">LEO2</span>
+                        <span class="olb-custom-pos-summary">Boulangeries, restaurants, salons ; commandes, clients et menu dans les 2 sens.</span>
+                        <span class="olb-custom-pos-markets">Monde entier</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/lightspeed-restaurant/">
+                        <span class="olb-custom-pos-name">Lightspeed Restaurant</span>
+                        <span class="olb-custom-pos-summary">Caisse iPad et cloud pour restaurants et hôtels, reliée par une passerelle HubRise.</span>
+                        <span class="olb-custom-pos-markets">Monde entier</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/mealenium/">
+                        <span class="olb-custom-pos-name">Mealenium</span>
+                        <span class="olb-custom-pos-summary">Restaurants sur tout appareil ; menu avec variantes en sortie, commandes HubRise en entrée.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/miipos/">
+                        <span class="olb-custom-pos-name">MiiPos</span>
+                        <span class="olb-custom-pos-summary">Bars, boulangeries, food trucks ; commandes en entrée, pas encore de menu.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/myfoodfast/">
+                        <span class="olb-custom-pos-name">MyFoodFast</span>
+                        <span class="olb-custom-pos-summary">Restaurants au Royaume-Uni ; envoie son menu à HubRise, reçoit commandes et clients.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/nestor/">
+                        <span class="olb-custom-pos-name">Nestor</span>
+                        <span class="olb-custom-pos-summary">Livraison et vente à emporter ; commandes en entrée, menu et délai en sortie.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/netfood/">
+                        <span class="olb-custom-pos-name">NetFood</span>
+                        <span class="olb-custom-pos-summary">Caisse italienne pour la restauration ; elle envoie sa carte à HubRise.</span>
+                        <span class="olb-custom-pos-markets">Italie</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/next-order/">
+                        <span class="olb-custom-pos-name">Next Order</span>
+                        <span class="olb-custom-pos-summary">Restaurants au Royaume-Uni, en Australie et en Nouvelle-Zélande ; commandes du comptoir et menu vers HubRise.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni, Australie, Nouvelle-Zélande</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/onetouch/">
+                        <span class="olb-custom-pos-name">OneTouch</span>
+                        <span class="olb-custom-pos-summary">Caisse polyvalente pour restaurants et lieux de loisirs, activée depuis son back-office.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/orderlord/">
+                        <span class="olb-custom-pos-name">OrderLord</span>
+                        <span class="olb-custom-pos-summary">Caisse pour commandes de livraison et en ligne ; indisponible en France selon HubRise.</span>
+                        <span class="olb-custom-pos-markets">Monde entier</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/orderwire/">
+                        <span class="olb-custom-pos-name">OrderWire</span>
+                        <span class="olb-custom-pos-summary">Caisse web pour cuisines orientées livraison en Irlande, au Royaume-Uni et en Thaïlande.</span>
+                        <span class="olb-custom-pos-markets">Irlande, Royaume-Uni, Thaïlande</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/panda-epos/">
+                        <span class="olb-custom-pos-name">Panda EPOS</span>
+                        <span class="olb-custom-pos-summary">Restaurants avec 1 ou plusieurs sites ; menu, commandes et clients circulent dans les 2 sens.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/par-pixelpoint/">
+                        <span class="olb-custom-pos-name">PAR PixelPoint</span>
+                        <span class="olb-custom-pos-summary">2 intégrations HubRise : le Bridge reçoit, la Windows API envoie aussi la carte.</span>
+                        <span class="olb-custom-pos-markets">Monde entier</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/popina/">
+                        <span class="olb-custom-pos-name">Popina</span>
+                        <span class="olb-custom-pos-summary">Caisse iPad pour boulangeries, bars et hôtels, qui envoie sa carte à HubRise.</span>
+                        <span class="olb-custom-pos-markets">France, Suisse, Espagne</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/pos-helper/">
+                        <span class="olb-custom-pos-name">POS HELPER</span>
+                        <span class="olb-custom-pos-summary">Caisse cloud pour restaurants. La carte se crée dans le Catalog Manager de HubRise.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/presto-express/">
+                        <span class="olb-custom-pos-name">Presto Express</span>
+                        <span class="olb-custom-pos-summary">Restaurants et franchises au Royaume-Uni ; envoie son menu à HubRise, reçoit les commandes.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/quantum/">
+                        <span class="olb-custom-pos-name">Quantum</span>
+                        <span class="olb-custom-pos-summary">Commerces et restauration au Royaume-Uni ; catalogue vers HubRise, commandes reçues.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/restomax/">
+                        <span class="olb-custom-pos-name">Restomax</span>
+                        <span class="olb-custom-pos-summary">Caisse belge pour restaurants et restauration rapide, qui envoie sa carte à HubRise.</span>
+                        <span class="olb-custom-pos-markets">Belgique, France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/restopos/">
+                        <span class="olb-custom-pos-name">restoPOS</span>
+                        <span class="olb-custom-pos-summary">Caisse cloud pour restaurants, coffee shops et boulangeries ; envoie sa carte.</span>
+                        <span class="olb-custom-pos-markets">Turquie, Autriche, France, Italie, Pays-Bas, Portugal, Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/swoopos/">
+                        <span class="olb-custom-pos-name">SwooPOS</span>
+                        <span class="olb-custom-pos-summary">Caisse mobile pour restauration et commerce au Royaume-Uni ; menu vers HubRise, commandes en retour.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/synapsy/">
+                        <span class="olb-custom-pos-name">Synapsy</span>
+                        <span class="olb-custom-pos-summary">Caisse française pour traiteurs et commerçants. Commandes et clients arrivent via HubRise.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/task/">
+                        <span class="olb-custom-pos-name">TASK</span>
+                        <span class="olb-custom-pos-summary">Caisse pour grandes enseignes en Australie, Nouvelle-Zélande, USA ; envoie commandes et carte seulement.</span>
+                        <span class="olb-custom-pos-markets">Australie, Nouvelle-Zélande, États-Unis</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/tickeat/">
+                        <span class="olb-custom-pos-name">Tick&#39;Eat</span>
+                        <span class="olb-custom-pos-summary">Caisse de restaurant avec attribution des livreurs, qui envoie sa carte à HubRise.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/toporder/">
+                        <span class="olb-custom-pos-name">Toporder</span>
+                        <span class="olb-custom-pos-summary">Caisse iPad pour boulangeries, boucheries et caves, qui reçoit les commandes HubRise.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/ultimapos/">
+                        <span class="olb-custom-pos-name">UltimaPOS</span>
+                        <span class="olb-custom-pos-summary">Caisse pour commerces et restauration d&#39;UltimaSOFT, qui envoie commandes et carte à HubRise.</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/vectron/">
+                        <span class="olb-custom-pos-name">Vectron</span>
+                        <span class="olb-custom-pos-summary">Caisse configurable de Shift4, vendue par des revendeurs locaux, qui reçoit les commandes HubRise.</span>
+                        <span class="olb-custom-pos-markets">Autriche, Belgique, France, Allemagne, Luxembourg, Pays-Bas, Espagne, Suisse</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/yuze/">
+                        <span class="olb-custom-pos-name">Yuze</span>
+                        <span class="olb-custom-pos-summary">Hôtellerie-restauration britannique ; caisse axée paiements, envoie son menu à HubRise et reçoit les commandes.</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/zelty/">
+                        <span class="olb-custom-pos-name">Zelty</span>
+                        <span class="olb-custom-pos-summary">Zelty Bridge, par HubRise, fait circuler commandes et clients dans les 2 sens.</span>
+                        <span class="olb-custom-pos-markets">France, Belgique</span>
+                    </a>
+                </li>
+            </ul>
+            <p class="olb-caption olb-custom-pos-caption">Les caisses listées dans l&#39;annuaire d&#39;applications de HubRise, vérifié le 25 novembre 2026. Une caisse dont l&#39;intégration HubRise est encore en cours n&#39;est pas encore listée.</p>
+        </section>
+
+        <section class="olb-section" id="contact" aria-labelledby="contact-heading">
+            <div class="olb-closing">
+                <h2 class="olb-title" id="contact-heading">Prenez la prochaine commande sans la saisir 2 fois</h2>
+                <p class="olb-lede">Votre caisse n&#39;est pas dans la liste ? Écrivez-nous son nom, et nous vous dirons si elle peut se connecter.</p>
+                <div class="olb-action-row">
+                    <a class="olb-button" href="mailto:hello@onylab.com">Écrivez-nous au sujet de votre commerce</a>
+                </div>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+                <p class="olb-meta">Écrire à <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="olb-footer">
+        <div class="olb-custom-footer-brand">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+            </a>
+            <p class="olb-caption">Des applications pour que les restaurants et les commerces prennent chaque commande et fassent revenir leurs clients, branchées sur la caisse qu&#39;ils utilisent déjà.</p>
+            <p class="olb-caption">De la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, l'automatisation des tâches pour les commerces de proximité.</p>
+        </div>
+
+        <nav class="olb-custom-footer-col" aria-label="Prendre les commandes">
+            <h2 class="olb-label">Prendre les commandes</h2>
+            <ul>
+                <li><a href="/fr/#tour-orderpay">Order&amp;Pay</a></li><li><a href="/fr/#tour-orderpicker">OrderPicker</a></li><li><a href="/fr/#tour-orderpad">OrderPad</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Faire revenir les clients">
+            <h2 class="olb-label">Faire revenir les clients</h2>
+            <ul>
+                <li><a href="/fr/#tour-brevo">Brevo Bridge</a></li><li><a href="/fr/#tour-smsmode">SMSMode Bridge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="olb-custom-footer-col" aria-label="Pied de page">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Votre caisse</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
+            <h2 class="olb-label">Contact</h2>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+            </ul>
+        </div>
+
+        <div class="olb-custom-footer-legal">
+            <p class="olb-meta">© 2026 OnyLab. Tous droits réservés.</p>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Mentions légales">
+                <ul>
+                    <li><a class="olb-meta" href="/fr/confidentialite/">Politique de confidentialité</a></li><li><a class="olb-meta" href="/fr/conditions/">Conditions d&#39;utilisation</a></li>
+                </ul>
+            </nav>
+            <div class="olb-custom-footer-end">
+                <p class="olb-meta">Fait avec amour au Canada et en France</p>
+                <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Thème : Système" data-label-light="Thème : Clair" data-label-dark="Thème : Sombre" aria-label="Thème : Système" title="Thème : Système">
+                    <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                    <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="/script.js?v=10" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+      // A theme picked with the footer button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>LEO2 et OnyLab : commandes, clients, menu multisite | OnyLab</title>
+    <meta name="description" content="Les commerces sous LEO2 échangent commandes, clients et menu avec HubRise : les campagnes touchent les clients du comptoir, les commandes en ligne arrivent.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="LEO2 et OnyLab : commandes, clients, menu multisite | OnyLab">
+    <meta property="og:description" content="Les commerces sous LEO2 échangent commandes, clients et menu avec HubRise : les campagnes touchent les clients du comptoir, les commandes en ligne arrivent.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OnyLab">
+    <meta property="og:url" content="https://onylab.com/fr/caisses/leo2/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://onylab.com/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://onylab.com/og.png">
+    <meta name="twitter:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:title" content="LEO2 et OnyLab : commandes, clients, menu multisite | OnyLab">
+    <meta name="twitter:description" content="Les commerces sous LEO2 échangent commandes, clients et menu avec HubRise : les campagnes touchent les clients du comptoir, les commandes en ligne arrivent.">
+    <link rel="canonical" href="https://onylab.com/fr/caisses/leo2/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/pos/leo2/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/leo2/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/leo2/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=22" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/pos/leo2/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et en ligne (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Prise de commande par téléphone pour restaurants",
+        "Commande et paiement en ligne",
+        "Préparation des commandes",
+        "Écrans de cuisine (KDS)",
+        "Préparation de commandes en magasin",
+        "Segmentation clients pour les campagnes e-mail et SMS",
+        "Intégrations HubRise",
+        "Intégrations de caisse"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/pos/leo2/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/fr/caisses/leo2/#webpage",
+      "url": "https://onylab.com/fr/caisses/leo2/",
+      "name": "LEO2 et OnyLab : commandes, clients, menu multisite | OnyLab",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "Les commerces sous LEO2 échangent commandes, clients et menu avec HubRise : les campagnes touchent les clients du comptoir, les commandes en ligne arrivent.",
+      "inLanguage": "fr",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Prenez chaque commande. Faites revenir chaque client."
+      },
+      "dateModified": "2026-11-25",
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "LEO2",
+          "applicationCategory": "BusinessApplication"
+        }
+      ],
+      "breadcrumb": {
+        "@id": "https://onylab.com/fr/caisses/leo2/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/fr/caisses/leo2/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Intégrations caisse",
+          "item": "https://onylab.com/fr/caisses/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "LEO2"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onylab.com/fr/caisses/leo2/#faq",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "De quoi LEO2 a-t-il besoin pour se connecter à HubRise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "D'une licence LEO2 et du module Vente Externe. Vous vous connectez ensuite depuis le back-office de LEO2."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mes ventes au comptoir arrivent-elles dans HubRise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. HubRise indique que LEO2 envoie les commandes, les clients et son catalogue à HubRise, donc les passerelles et OrderPicker peuvent voir les commandes du comptoir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "LEO2 fonctionne-t-il hors de France ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HubRise indique que LEO2 est disponible dans le monde entier, et le logiciel existe en français et en anglais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il un compte HubRise pour connecter LEO2 ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Les applications OnyLab rejoignent LEO2 via le compte HubRise de votre commerce. HubRise a son propre abonnement, facturé par HubRise."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body class="olb-page">
+<div class="olb-shell">
+
+    <a class="olb-skip-link" href="#main">Aller au contenu</a>
+
+    <header class="olb-header" id="header">
+        <div class="olb-masthead">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
+            </a>
+            <nav class="olb-document-meta" aria-label="Navigation principale">
+                <ul class="olb-nav" id="navMenu">
+                    <li><a href="/fr/#apps">Applications</a></li>
+                    <li><a href="/fr/#ecosystem">Comment ça marche</a></li>
+                    <li><a href="/fr/#connections">Votre caisse</a></li>
+                    <li><a href="/fr/#faq">Questions</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Connexion</a></li>
+                </ul>
+                <div class="olb-custom-header-tools">
+                    <a class="olb-custom-signin" href="https://apps.onylab.com/">Connexion</a>
+                    <div class="olb-custom-lang">
+                        <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Langue: Français">
+                            <span class="olb-custom-lang-name" aria-hidden="true">Français</span>
+                            <span class="olb-custom-lang-code" aria-hidden="true">FR</span>
+                            <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                        </button>
+                        <ul class="olb-custom-lang-menu" id="langMenu">
+                            <li>
+                                <a href="/pos/leo2/" lang="en" hreflang="en" data-lang="en">English</a>
+                            </li><li>
+                                <a href="/fr/caisses/leo2/" lang="fr" hreflang="fr" data-lang="fr" aria-current="true">Français</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact">Nous écrire</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+<main id="main">
+
+        <!-- 1. The outcome for a store on this POS, and the action. -->
+        <section class="olb-section olb-opening olb-custom-pos-opening" aria-labelledby="pos-heading">
+            <nav class="olb-custom-crumbs" aria-label="Fil d'Ariane">
+                <ol>
+                    <li><a href="/fr/">OnyLab</a></li>
+                    <li><a href="/fr/caisses/">Intégrations caisse</a></li>
+                    <li aria-current="page">LEO2</li>
+                </ol>
+            </nav>
+            <p class="olb-pill olb-opening-pill">Intégration caisse</p>
+            <h1 class="olb-display olb-opening-claim" id="pos-heading">Connectez chaque site LEO2 aux commandes téléphone et web</h1>
+            <p class="olb-lede olb-opening-proof">Brevo Bridge et SMSMode Bridge travaillent à partir de ce que LEO2 envoie à HubRise : commandes du comptoir, clients et menu. OrderPad et Order&amp;Pay renvoient ensuite les commandes téléphone et web vers LEO2.</p>
+            <div class="olb-action-row">
+                <a class="olb-button" href="mailto:hello@onylab.com">Écrivez-nous au sujet de votre commerce</a>
+                <a class="olb-button-secondary" href="#apps">Voir les 5 applications <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
+            </div>
+            <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+        </section>
+
+        <!-- 2. The POS, and what its HubRise connection carries, from its
+             page on hubrise.com. -->
+        <section class="olb-band" data-tone="secondary" id="facts" aria-labelledby="facts-heading">
+            <div class="olb-grid olb-custom-pos-facts">
+                <div>
+                    <p class="olb-label">LEO2</p>
+                    <h2 class="olb-title" id="facts-heading">LEO2 en bref</h2>
+                    <p class="olb-lede">LEO2 est un logiciel de caisse Windows développé par Atoo, disponible en français et en anglais, et certifié NF525. HubRise cite parmi ses utilisateurs des restaurants, des boulangeries et des salons de coiffure, avec gestion multisite et prise en charge de balances, de monnayeurs et d&#39;écrans de production.</p>
+                </div>
+                <div class="olb-card">
+                    <dl class="olb-custom-pos-meta">
+                        <div><dt>Éditeur</dt><dd>Atoo</dd></div>
+                        <div><dt>Pays</dt><dd>Monde entier</dd></div>
+                        <div><dt>Liaison avec HubRise</dt><dd>Depuis le back-office de LEO2</dd></div>
+                    </dl>
+                    <h3 class="olb-heading-16">Ce que transmet la connexion HubRise</h3>
+                    <ul class="olb-custom-caps">
+                        <li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Reçoit les commandes de HubRise</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li><li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Reçoit les informations clients de HubRise</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li><li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Envoie son menu à HubRise</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Charge un menu tenu dans HubRise</span>
+                            <span class="olb-custom-caps-value">Non</span>
+                        </li><li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Envoie ses commandes de caisse à HubRise</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li><li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Envoie son fichier clients à HubRise</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li>
+                    </ul>
+                    <p class="olb-caption">Source : la page LEO2 sur hubrise.com, vérifiée le 25 novembre 2026. <a class="olb-custom-link" href="https://www.hubrise.com/apps/leo2" hreflang="en">La lire sur hubrise.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The 5 apps, by step of the business, each with what it uses
+             from this POS. -->
+        <section class="olb-section" id="apps" aria-labelledby="apps-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Les 5 applications</p>
+                <h2 class="olb-title" id="apps-heading">Ce que chaque application OnyLab fait avec LEO2</h2>
+            </div>
+            <div class="olb-custom-app-group">
+                <h3 class="olb-heading-24 olb-custom-pos-step">Prendre les commandes</h3>
+                <ul class="olb-card-grid" style="--olb-custom-count: 3">
+                    <li class="olb-app-card" id="app-orderpay">
+                        <p class="olb-app-step">Commande en ligne</p>
+                        <h4 class="olb-heading-20">Order&amp;Pay</h4>
+                        <p>Vos clients commandent et paient en 1 geste, sans application à installer ni compte à créer. Comme LEO2 envoie son menu à HubRise, les articles et les prix en ligne correspondent à votre caisse, et chaque commande arrive dans LEO2 via HubRise.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Menu : LEO2 l&#39;envoie à HubRise, donc les articles et les prix sont ceux de la caisse.</li><li>Commandes : envoyées à LEO2 via HubRise.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/fr/#tour-orderpay">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li><li class="olb-app-card" id="app-orderpicker">
+                        <p class="olb-app-step">Écran cuisine et préparation</p>
+                        <h4 class="olb-heading-20">OrderPicker</h4>
+                        <p>LEO2 peut fonctionner avec des écrans de production. OrderPicker ajoute un écran pas à pas, article par article, pour une cuisine de restaurant ou un commerce qui prépare des commandes. LEO2 envoie ses commandes du comptoir à HubRise, elles peuvent donc y apparaître à côté des commandes téléphone, en ligne et des plateformes de livraison.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Ventes en caisse : LEO2 les envoie à HubRise, elles sont donc incluses.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/fr/#tour-orderpicker">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li><li class="olb-app-card" id="app-orderpad">
+                        <p class="olb-app-step">Commandes par téléphone</p>
+                        <h4 class="olb-heading-20">OrderPad</h4>
+                        <p>Votre équipe qui prend les commandes téléphoniques d&#39;un site LEO2 compose chaque commande sur tablette ou ordinateur à partir du menu que LEO2 envoie à HubRise. Le profil de l&#39;appelant s&#39;affiche, et la commande arrive dans la caisse LEO2 via HubRise, avec ses options, ses commentaires et son mode de service.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Menu : LEO2 l&#39;envoie à HubRise, donc les articles et les prix sont ceux de la caisse.</li><li>Commandes : envoyées à LEO2 via HubRise.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/fr/#tour-orderpad">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li>
+                </ul>
+            </div><div class="olb-custom-app-group">
+                <h3 class="olb-heading-24 olb-custom-pos-step">Faire revenir les clients</h3>
+                <ul class="olb-card-grid" style="--olb-custom-count: 2">
+                    <li class="olb-app-card" id="app-brevo">
+                        <p class="olb-app-step">Campagnes e-mail et SMS</p>
+                        <h4 class="olb-heading-20">Brevo Bridge</h4>
+                        <p>Brevo Bridge copie les clients et les commandes HubRise dans votre compte Brevo, triés par visites, panier moyen et dernière commande. LEO2 envoie à HubRise ses commandes du comptoir et ses clients : les segments comme nouveaux, VIP et inactifs couvrent donc aussi les clients du magasin.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Ventes en caisse : LEO2 les envoie à HubRise, elles sont donc incluses.</li><li>Fichier clients : LEO2 l&#39;envoie à HubRise, il est donc inclus.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/fr/#tour-brevo">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li><li class="olb-app-card" id="app-smsmode">
+                        <p class="olb-app-step">Campagnes SMS et WhatsApp</p>
+                        <h4 class="olb-heading-20">SMSMode Bridge</h4>
+                        <p>SMSMode Bridge copie les mêmes clients et commandes dans votre compte smsmode, triés de la même façon, pour vos campagnes SMS et WhatsApp. Le fichier clients et les ventes au comptoir de LEO2 arrivent dans HubRise : une campagne peut donc viser quelqu&#39;un qui ne vient qu&#39;au comptoir.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Ventes en caisse : LEO2 les envoie à HubRise, elles sont donc incluses.</li><li>Fichier clients : LEO2 l&#39;envoie à HubRise, il est donc inclus.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/fr/#tour-smsmode">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. How the store connects it, then the action again. -->
+        <section class="olb-band" data-tone="secondary" id="start" aria-labelledby="start-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Pour commencer</p>
+                <h2 class="olb-title" id="start-heading">Connectez LEO2 en 3 étapes</h2>
+            </div>
+            <ol class="olb-steps">
+                <li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 1</p>
+                    <h3 class="olb-heading-20">Reliez LEO2 à HubRise</h3>
+                    <p>Votre commerce fait la liaison depuis le back-office de LEO2.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 2</p>
+                    <h3 class="olb-heading-20">Connectez l&#39;application OnyLab</h3>
+                    <p>L&#39;application est connectée au compte HubRise de votre commerce, qui la relie à LEO2 et à vos plateformes de livraison.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 3</p>
+                    <h3 class="olb-heading-20">Ajoutez la suivante quand elle est rentable</h3>
+                    <p>Les autres applications lisent les mêmes commandes et les mêmes clients : vous ajoutez la suivante quand la première a fait ses preuves.</p>
+                </li>
+            </ol>
+            <div class="olb-custom-after">
+                <a class="olb-button" href="mailto:hello@onylab.com">Écrivez-nous au sujet de votre commerce</a>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+            </div>
+        </section>
+
+        <!-- 5. The questions of a store on this POS, mirrored in FAQPage data. -->
+        <section class="olb-section" id="faq" aria-labelledby="faq-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Questions</p>
+                <h2 class="olb-title" id="faq-heading">Questions sur LEO2 et OnyLab</h2>
+            </div>
+            <div class="olb-faq">
+                <details>
+                    <summary>De quoi LEO2 a-t-il besoin pour se connecter à HubRise ?</summary>
+                    <p>D&#39;une licence LEO2 et du module Vente Externe. Vous vous connectez ensuite depuis le back-office de LEO2.</p>
+                </details><details>
+                    <summary>Mes ventes au comptoir arrivent-elles dans HubRise ?</summary>
+                    <p>Oui. HubRise indique que LEO2 envoie les commandes, les clients et son catalogue à HubRise, donc les passerelles et OrderPicker peuvent voir les commandes du comptoir.</p>
+                </details><details>
+                    <summary>LEO2 fonctionne-t-il hors de France ?</summary>
+                    <p>HubRise indique que LEO2 est disponible dans le monde entier, et le logiciel existe en français et en anglais.</p>
+                </details><details>
+                    <summary>Faut-il un compte HubRise pour connecter LEO2 ?</summary>
+                    <p>Oui. Les applications OnyLab rejoignent LEO2 via le compte HubRise de votre commerce. HubRise a son propre abonnement, facturé par HubRise.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 6. The neighboring POS pages. -->
+        <section class="olb-band" data-tone="secondary" id="related" aria-labelledby="related-heading">
+            <div class="olb-custom-intro">
+                <h2 class="olb-heading-24" id="related-heading">Autres caisses connectées à OnyLab</h2>
+            </div>
+            <ul class="olb-custom-pos-list" data-compact>
+                <li>
+                    <a href="/fr/caisses/lightspeed-restaurant/">
+                        <span class="olb-custom-pos-name">Lightspeed Restaurant</span>
+                        <span class="olb-custom-pos-markets">Monde entier</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/orderlord/">
+                        <span class="olb-custom-pos-name">OrderLord</span>
+                        <span class="olb-custom-pos-markets">Monde entier</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/par-pixelpoint/">
+                        <span class="olb-custom-pos-name">PAR PixelPoint</span>
+                        <span class="olb-custom-pos-markets">Monde entier</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/mealenium/">
+                        <span class="olb-custom-pos-name">Mealenium</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/miipos/">
+                        <span class="olb-custom-pos-name">MiiPos</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/myfoodfast/">
+                        <span class="olb-custom-pos-name">MyFoodFast</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li>
+            </ul>
+            <p class="olb-custom-after"><a class="olb-custom-card-link" href="/fr/caisses/">Voir toutes les caisses <span class="olb-custom-arrow" aria-hidden="true"></span></a></p>
+        </section>
+
+        <!-- 7. The promise again, with the same action. -->
+        <section class="olb-section" id="contact" aria-labelledby="contact-heading">
+            <div class="olb-closing">
+                <h2 class="olb-title" id="contact-heading">Commencez par l&#39;application dont votre commerce sous LEO2 a le plus besoin</h2>
+                <p class="olb-lede">Dites-nous quelle partie de votre journée vous coûte le plus. Nous vous dirons par quelle application commencer, et comment elle rejoint LEO2.</p>
+                <div class="olb-action-row">
+                    <a class="olb-button" href="mailto:hello@onylab.com">Écrivez-nous au sujet de votre commerce</a>
+                </div>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+                <p class="olb-meta">Écrire à <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="olb-footer">
+        <div class="olb-custom-footer-brand">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+            </a>
+            <p class="olb-caption">Des applications pour que les restaurants et les commerces prennent chaque commande et fassent revenir leurs clients, branchées sur la caisse qu&#39;ils utilisent déjà.</p>
+            <p class="olb-caption">De la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, l'automatisation des tâches pour les commerces de proximité.</p>
+        </div>
+
+        <nav class="olb-custom-footer-col" aria-label="Prendre les commandes">
+            <h2 class="olb-label">Prendre les commandes</h2>
+            <ul>
+                <li><a href="/fr/#tour-orderpay">Order&amp;Pay</a></li><li><a href="/fr/#tour-orderpicker">OrderPicker</a></li><li><a href="/fr/#tour-orderpad">OrderPad</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Faire revenir les clients">
+            <h2 class="olb-label">Faire revenir les clients</h2>
+            <ul>
+                <li><a href="/fr/#tour-brevo">Brevo Bridge</a></li><li><a href="/fr/#tour-smsmode">SMSMode Bridge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="olb-custom-footer-col" aria-label="Pied de page">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Votre caisse</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
+            <h2 class="olb-label">Contact</h2>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+            </ul>
+        </div>
+
+        <div class="olb-custom-footer-legal">
+            <p class="olb-meta">© 2026 OnyLab. Tous droits réservés.</p>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Mentions légales">
+                <ul>
+                    <li><a class="olb-meta" href="/fr/confidentialite/">Politique de confidentialité</a></li><li><a class="olb-meta" href="/fr/conditions/">Conditions d&#39;utilisation</a></li>
+                </ul>
+            </nav>
+            <div class="olb-custom-footer-end">
+                <p class="olb-meta">Fait avec amour au Canada et en France</p>
+                <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Thème : Système" data-label-light="Thème : Clair" data-label-dark="Thème : Sombre" aria-label="Thème : Système" title="Thème : Système">
+                    <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                    <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="/script.js?v=10" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
+</html>

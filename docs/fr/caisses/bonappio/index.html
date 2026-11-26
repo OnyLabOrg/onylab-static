@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+      // A theme picked with the footer button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>Caisse BonAppio : commandes en ligne et HubRise | OnyLab</title>
+    <meta name="description" content="Utilisez BonAppio avec HubRise pour prendre des commandes par téléphone et en ligne, les afficher en cuisine et alimenter Brevo ou smsmode. Sans images.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="Caisse BonAppio : commandes en ligne et HubRise | OnyLab">
+    <meta property="og:description" content="Utilisez BonAppio avec HubRise pour prendre des commandes par téléphone et en ligne, les afficher en cuisine et alimenter Brevo ou smsmode. Sans images.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OnyLab">
+    <meta property="og:url" content="https://onylab.com/fr/caisses/bonappio/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://onylab.com/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://onylab.com/og.png">
+    <meta name="twitter:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:title" content="Caisse BonAppio : commandes en ligne et HubRise | OnyLab">
+    <meta name="twitter:description" content="Utilisez BonAppio avec HubRise pour prendre des commandes par téléphone et en ligne, les afficher en cuisine et alimenter Brevo ou smsmode. Sans images.">
+    <link rel="canonical" href="https://onylab.com/fr/caisses/bonappio/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/pos/bonappio/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/caisses/bonappio/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/pos/bonappio/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=22" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/pos/bonappio/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et en ligne (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Prise de commande par téléphone pour restaurants",
+        "Commande et paiement en ligne",
+        "Préparation des commandes",
+        "Écrans de cuisine (KDS)",
+        "Préparation de commandes en magasin",
+        "Segmentation clients pour les campagnes e-mail et SMS",
+        "Intégrations HubRise",
+        "Intégrations de caisse"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/pos/bonappio/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/fr/caisses/bonappio/#webpage",
+      "url": "https://onylab.com/fr/caisses/bonappio/",
+      "name": "Caisse BonAppio : commandes en ligne et HubRise | OnyLab",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "Utilisez BonAppio avec HubRise pour prendre des commandes par téléphone et en ligne, les afficher en cuisine et alimenter Brevo ou smsmode. Sans images.",
+      "inLanguage": "fr",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Prenez chaque commande. Faites revenir chaque client."
+      },
+      "dateModified": "2026-11-25",
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "BonAppio",
+          "applicationCategory": "BusinessApplication"
+        }
+      ],
+      "breadcrumb": {
+        "@id": "https://onylab.com/fr/caisses/bonappio/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/fr/caisses/bonappio/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Intégrations caisse",
+          "item": "https://onylab.com/fr/caisses/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "BonAppio"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onylab.com/fr/caisses/bonappio/#faq",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Pourquoi mon menu en ligne n'a-t-il pas d'images ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HubRise précise que BonAppio n'inclut pas les images lorsqu'il envoie son catalogue, et indique que la prise en charge des images est prévue dans une prochaine mise à jour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment connecter BonAppio à HubRise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depuis le back-office de BonAppio, avec un compte BonAppio existant. HubRise indique que la documentation complète de l'intégration arrive bientôt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Les commandes téléphoniques d'OrderPad arrivent-elles dans BonAppio ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. BonAppio reçoit les commandes de HubRise, statut compris : les commandes d'OrderPad et d'Order&Pay arrivent donc sur la caisse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il un compte HubRise pour connecter BonAppio ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Les applications OnyLab rejoignent BonAppio via le compte HubRise de votre commerce. HubRise a son propre abonnement, facturé par HubRise."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body class="olb-page">
+<div class="olb-shell">
+
+    <a class="olb-skip-link" href="#main">Aller au contenu</a>
+
+    <header class="olb-header" id="header">
+        <div class="olb-masthead">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
+            </a>
+            <nav class="olb-document-meta" aria-label="Navigation principale">
+                <ul class="olb-nav" id="navMenu">
+                    <li><a href="/fr/#apps">Applications</a></li>
+                    <li><a href="/fr/#ecosystem">Comment ça marche</a></li>
+                    <li><a href="/fr/#connections">Votre caisse</a></li>
+                    <li><a href="/fr/#faq">Questions</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Connexion</a></li>
+                </ul>
+                <div class="olb-custom-header-tools">
+                    <a class="olb-custom-signin" href="https://apps.onylab.com/">Connexion</a>
+                    <div class="olb-custom-lang">
+                        <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Langue: Français">
+                            <span class="olb-custom-lang-name" aria-hidden="true">Français</span>
+                            <span class="olb-custom-lang-code" aria-hidden="true">FR</span>
+                            <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                        </button>
+                        <ul class="olb-custom-lang-menu" id="langMenu">
+                            <li>
+                                <a href="/pos/bonappio/" lang="en" hreflang="en" data-lang="en">English</a>
+                            </li><li>
+                                <a href="/fr/caisses/bonappio/" lang="fr" hreflang="fr" data-lang="fr" aria-current="true">Français</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact">Nous écrire</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+<main id="main">
+
+        <!-- 1. The outcome for a store on this POS, and the action. -->
+        <section class="olb-section olb-opening olb-custom-pos-opening" aria-labelledby="pos-heading">
+            <nav class="olb-custom-crumbs" aria-label="Fil d'Ariane">
+                <ol>
+                    <li><a href="/fr/">OnyLab</a></li>
+                    <li><a href="/fr/caisses/">Intégrations caisse</a></li>
+                    <li aria-current="page">BonAppio</li>
+                </ol>
+            </nav>
+            <p class="olb-pill olb-opening-pill">Intégration caisse</p>
+            <h1 class="olb-display olb-opening-claim" id="pos-heading">BonAppio reçoit vos commandes téléphone et en ligne via HubRise</h1>
+            <p class="olb-lede olb-opening-proof">Les établissements néerlandais sous BonAppio peuvent prendre des commandes téléphoniques dans OrderPad et en ligne dans Order&amp;Pay, toutes livrées via HubRise. À savoir d&#39;abord : la carte envoyée par BonAppio ne contient pas d&#39;images.</p>
+            <div class="olb-action-row">
+                <a class="olb-button" href="mailto:hello@onylab.com">Écrivez-nous au sujet de votre commerce</a>
+                <a class="olb-button-secondary" href="#apps">Voir les 5 applications <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
+            </div>
+            <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+        </section>
+
+        <!-- 2. The POS, and what its HubRise connection carries, from its
+             page on hubrise.com. -->
+        <section class="olb-band" data-tone="secondary" id="facts" aria-labelledby="facts-heading">
+            <div class="olb-grid olb-custom-pos-facts">
+                <div>
+                    <p class="olb-label">BonAppio</p>
+                    <h2 class="olb-title" id="facts-heading">BonAppio en bref</h2>
+                    <p class="olb-lede">BonAppio est une caisse pour le secteur de l&#39;hôtellerie-restauration, listée pour les Pays-Bas. HubRise décrit des modules de gestion des commandes, commande en ligne, bornes, commande par QR code, écrans cuisine, planning, stocks et réservations. Vous la connectez depuis le back-office de BonAppio.</p>
+                </div>
+                <div class="olb-card">
+                    <dl class="olb-custom-pos-meta">
+                        
+                        <div><dt>Pays</dt><dd>Pays-Bas</dd></div>
+                        <div><dt>Liaison avec HubRise</dt><dd>Depuis le back-office de BonAppio</dd></div>
+                    </dl>
+                    <h3 class="olb-heading-16">Ce que transmet la connexion HubRise</h3>
+                    <ul class="olb-custom-caps">
+                        <li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Reçoit les commandes de HubRise</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Reçoit les informations clients de HubRise</span>
+                            <span class="olb-custom-caps-value">Non</span>
+                        </li><li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Envoie son menu à HubRise</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Charge un menu tenu dans HubRise</span>
+                            <span class="olb-custom-caps-value">Non</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Envoie ses commandes de caisse à HubRise</span>
+                            <span class="olb-custom-caps-value">Non</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Envoie son fichier clients à HubRise</span>
+                            <span class="olb-custom-caps-value">Non</span>
+                        </li>
+                    </ul>
+                    <p class="olb-caption">Source : la page BonAppio sur hubrise.com, vérifiée le 25 novembre 2026. <a class="olb-custom-link" href="https://www.hubrise.com/apps/bonappio" hreflang="en">La lire sur hubrise.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The 5 apps, by step of the business, each with what it uses
+             from this POS. -->
+        <section class="olb-section" id="apps" aria-labelledby="apps-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Les 5 applications</p>
+                <h2 class="olb-title" id="apps-heading">Ce que chaque application OnyLab fait avec BonAppio</h2>
+            </div>
+            <div class="olb-custom-app-group">
+                <h3 class="olb-heading-24 olb-custom-pos-step">Prendre les commandes</h3>
+                <ul class="olb-card-grid" style="--olb-custom-count: 3">
+                    <li class="olb-app-card" id="app-orderpay">
+                        <p class="olb-app-step">Commande en ligne</p>
+                        <h4 class="olb-heading-20">Order&amp;Pay</h4>
+                        <p>Vos clients commandent et paient en 1 geste, sans application ni compte. Articles et prix viennent de votre carte BonAppio, mais HubRise précise que les images ne sont pas incluses quand BonAppio envoie son catalogue : vérifiez le rendu de votre carte. Les commandes arrivent dans BonAppio via HubRise.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Menu : BonAppio l&#39;envoie à HubRise, donc les articles et les prix sont ceux de la caisse.</li><li>Commandes : envoyées à BonAppio via HubRise.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/fr/#tour-orderpay">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li><li class="olb-app-card" id="app-orderpicker">
+                        <p class="olb-app-step">Écran cuisine et préparation</p>
+                        <h4 class="olb-heading-20">OrderPicker</h4>
+                        <p>Si votre cuisine veut un écran dédié aux commandes HubRise, OrderPicker fait office d&#39;écran cuisine (KDS) pour les commandes par téléphone, en ligne et des plateformes de livraison. L&#39;équipe avance article par article, puis marque la commande comme prête. Les ventes encaissées dans BonAppio ne sont pas envoyées à HubRise : elles n&#39;y figurent pas.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Ventes en caisse : elles restent dans BonAppio. Seules les commandes qui passent par HubRise sont incluses.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/fr/#tour-orderpicker">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li><li class="olb-app-card" id="app-orderpad">
+                        <p class="olb-app-step">Commandes par téléphone</p>
+                        <h4 class="olb-heading-20">OrderPad</h4>
+                        <p>Une commande téléphonique est composée à partir de la carte que BonAppio envoie à HubRise, avec options, commentaires et livraison ou à emporter, puis arrive dans BonAppio via HubRise comme toute autre commande. La fiche de l&#39;appelant remonte depuis HubRise : un client habituel se reconnaît facilement.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Menu : BonAppio l&#39;envoie à HubRise, donc les articles et les prix sont ceux de la caisse.</li><li>Commandes : envoyées à BonAppio via HubRise.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/fr/#tour-orderpad">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li>
+                </ul>
+            </div><div class="olb-custom-app-group">
+                <h3 class="olb-heading-24 olb-custom-pos-step">Faire revenir les clients</h3>
+                <ul class="olb-card-grid" style="--olb-custom-count: 2">
+                    <li class="olb-app-card" id="app-brevo">
+                        <p class="olb-app-step">Campagnes e-mail et SMS</p>
+                        <h4 class="olb-heading-20">Brevo Bridge</h4>
+                        <p>Brevo Bridge copie les clients et les commandes de HubRise dans votre propre compte Brevo et les trie par visites, panier moyen et dernière commande, en segments comme nouveaux, VIP et inactifs. BonAppio n&#39;envoie ni ses clients ni ses ventes au comptoir : cela couvre les commandes qui passent par HubRise.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Ventes en caisse : elles restent dans BonAppio. Seules les commandes qui passent par HubRise sont incluses.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/fr/#tour-brevo">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li><li class="olb-app-card" id="app-smsmode">
+                        <p class="olb-app-step">Campagnes SMS et WhatsApp</p>
+                        <h4 class="olb-heading-20">SMSMode Bridge</h4>
+                        <p>SMSMode Bridge place les mêmes clients et commandes dans votre propre compte smsmode, triés de la même façon, pour vos campagnes SMS et WhatsApp. Il s&#39;appuie sur les commandes qui passent par HubRise, comme les commandes téléphoniques et en ligne. Les ventes encaissées dans BonAppio n&#39;en font pas partie.</p>
+                        <ul class="olb-custom-pos-notes">
+                            <li>Ventes en caisse : elles restent dans BonAppio. Seules les commandes qui passent par HubRise sont incluses.</li>
+                        </ul>
+                        <p class="olb-app-links">
+                            <a class="olb-custom-card-link" href="/fr/#tour-smsmode">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. How the store connects it, then the action again. -->
+        <section class="olb-band" data-tone="secondary" id="start" aria-labelledby="start-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Pour commencer</p>
+                <h2 class="olb-title" id="start-heading">Connectez BonAppio en 3 étapes</h2>
+            </div>
+            <ol class="olb-steps">
+                <li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 1</p>
+                    <h3 class="olb-heading-20">Reliez BonAppio à HubRise</h3>
+                    <p>Votre commerce fait la liaison depuis le back-office de BonAppio.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 2</p>
+                    <h3 class="olb-heading-20">Connectez l&#39;application OnyLab</h3>
+                    <p>L&#39;application est connectée au compte HubRise de votre commerce, qui la relie à BonAppio et à vos plateformes de livraison.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 3</p>
+                    <h3 class="olb-heading-20">Ajoutez la suivante quand elle est rentable</h3>
+                    <p>Les autres applications lisent les mêmes commandes et les mêmes clients : vous ajoutez la suivante quand la première a fait ses preuves.</p>
+                </li>
+            </ol>
+            <div class="olb-custom-after">
+                <a class="olb-button" href="mailto:hello@onylab.com">Écrivez-nous au sujet de votre commerce</a>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+            </div>
+        </section>
+
+        <!-- 5. The questions of a store on this POS, mirrored in FAQPage data. -->
+        <section class="olb-section" id="faq" aria-labelledby="faq-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Questions</p>
+                <h2 class="olb-title" id="faq-heading">Questions sur BonAppio et OnyLab</h2>
+            </div>
+            <div class="olb-faq">
+                <details>
+                    <summary>Pourquoi mon menu en ligne n&#39;a-t-il pas d&#39;images ?</summary>
+                    <p>HubRise précise que BonAppio n&#39;inclut pas les images lorsqu&#39;il envoie son catalogue, et indique que la prise en charge des images est prévue dans une prochaine mise à jour.</p>
+                </details><details>
+                    <summary>Comment connecter BonAppio à HubRise ?</summary>
+                    <p>Depuis le back-office de BonAppio, avec un compte BonAppio existant. HubRise indique que la documentation complète de l&#39;intégration arrive bientôt.</p>
+                </details><details>
+                    <summary>Les commandes téléphoniques d&#39;OrderPad arrivent-elles dans BonAppio ?</summary>
+                    <p>Oui. BonAppio reçoit les commandes de HubRise, statut compris : les commandes d&#39;OrderPad et d&#39;Order&amp;Pay arrivent donc sur la caisse.</p>
+                </details><details>
+                    <summary>Faut-il un compte HubRise pour connecter BonAppio ?</summary>
+                    <p>Oui. Les applications OnyLab rejoignent BonAppio via le compte HubRise de votre commerce. HubRise a son propre abonnement, facturé par HubRise.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 6. The neighboring POS pages. -->
+        <section class="olb-band" data-tone="secondary" id="related" aria-labelledby="related-heading">
+            <div class="olb-custom-intro">
+                <h2 class="olb-heading-24" id="related-heading">Autres caisses connectées à OnyLab</h2>
+            </div>
+            <ul class="olb-custom-pos-list" data-compact>
+                <li>
+                    <a href="/fr/caisses/restopos/">
+                        <span class="olb-custom-pos-name">restoPOS</span>
+                        <span class="olb-custom-pos-markets">Turquie, Autriche, France, Italie, Pays-Bas, Portugal, Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/vectron/">
+                        <span class="olb-custom-pos-name">Vectron</span>
+                        <span class="olb-custom-pos-markets">Autriche, Belgique, France, Allemagne, Luxembourg, Pays-Bas, Espagne, Suisse</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/carrepos/">
+                        <span class="olb-custom-pos-name">CarréPOS</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/clyo-systems/">
+                        <span class="olb-custom-pos-name">Clyo Systems</span>
+                        <span class="olb-custom-pos-markets">France, Suisse, Luxembourg, Belgique, Maroc, Algérie</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/csy-vector-epos/">
+                        <span class="olb-custom-pos-name">CSY Vector EPOS</span>
+                        <span class="olb-custom-pos-markets">Royaume-Uni</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/caisses/talc-delivery-system/">
+                        <span class="olb-custom-pos-name">Delivery System</span>
+                        <span class="olb-custom-pos-markets">France</span>
+                    </a>
+                </li>
+            </ul>
+            <p class="olb-custom-after"><a class="olb-custom-card-link" href="/fr/caisses/">Voir toutes les caisses <span class="olb-custom-arrow" aria-hidden="true"></span></a></p>
+        </section>
+
+        <!-- 7. The promise again, with the same action. -->
+        <section class="olb-section" id="contact" aria-labelledby="contact-heading">
+            <div class="olb-closing">
+                <h2 class="olb-title" id="contact-heading">Commencez par l&#39;application dont votre commerce sous BonAppio a le plus besoin</h2>
+                <p class="olb-lede">Dites-nous quelle partie de votre journée vous coûte le plus. Nous vous dirons par quelle application commencer, et comment elle rejoint BonAppio.</p>
+                <div class="olb-action-row">
+                    <a class="olb-button" href="mailto:hello@onylab.com">Écrivez-nous au sujet de votre commerce</a>
+                </div>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+                <p class="olb-meta">Écrire à <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="olb-footer">
+        <div class="olb-custom-footer-brand">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+            </a>
+            <p class="olb-caption">Des applications pour que les restaurants et les commerces prennent chaque commande et fassent revenir leurs clients, branchées sur la caisse qu&#39;ils utilisent déjà.</p>
+            <p class="olb-caption">De la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, l'automatisation des tâches pour les commerces de proximité.</p>
+        </div>
+
+        <nav class="olb-custom-footer-col" aria-label="Prendre les commandes">
+            <h2 class="olb-label">Prendre les commandes</h2>
+            <ul>
+                <li><a href="/fr/#tour-orderpay">Order&amp;Pay</a></li><li><a href="/fr/#tour-orderpicker">OrderPicker</a></li><li><a href="/fr/#tour-orderpad">OrderPad</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Faire revenir les clients">
+            <h2 class="olb-label">Faire revenir les clients</h2>
+            <ul>
+                <li><a href="/fr/#tour-brevo">Brevo Bridge</a></li><li><a href="/fr/#tour-smsmode">SMSMode Bridge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="olb-custom-footer-col" aria-label="Pied de page">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Votre caisse</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
+            <h2 class="olb-label">Contact</h2>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+            </ul>
+        </div>
+
+        <div class="olb-custom-footer-legal">
+            <p class="olb-meta">© 2026 OnyLab. Tous droits réservés.</p>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Mentions légales">
+                <ul>
+                    <li><a class="olb-meta" href="/fr/confidentialite/">Politique de confidentialité</a></li><li><a class="olb-meta" href="/fr/conditions/">Conditions d&#39;utilisation</a></li>
+                </ul>
+            </nav>
+            <div class="olb-custom-footer-end">
+                <p class="olb-meta">Fait avec amour au Canada et en France</p>
+                <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Thème : Système" data-label-light="Thème : Clair" data-label-dark="Thème : Sombre" aria-label="Thème : Système" title="Thème : Système">
+                    <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                    <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="/script.js?v=10" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
+</html>

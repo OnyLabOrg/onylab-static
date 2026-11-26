@@ -3,7 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <script>(function(){const localeRedirects = {"fr":"/fr/confidentialite/"};
+const defaultLang = "en";
+
+      // The site is static, so the reader's language can only be honored in the
+      // browser. This runs on English pages only, which are the default: a
+      // reader who opened a translated URL is never sent elsewhere. A choice
+      // stored by the language switcher beats the browser setting; otherwise
+      // the first browser language the site speaks wins, and English stays
+      // when there is none.
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem('olb-lang');
+        } catch (error) {
+          /* Private mode or a blocked storage API falls back to the browser setting. */
+        }
+        var target = null;
+        if (stored === defaultLang) return;
+        if (stored && localeRedirects[stored]) {
+          target = localeRedirects[stored];
+        } else {
+          var preferred = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+          for (var i = 0; i < preferred.length; i++) {
+            var code = String(preferred[i]).toLowerCase().split('-')[0];
+            if (code === defaultLang) return;
+            if (localeRedirects[code]) {
+              target = localeRedirects[code];
+              break;
+            }
+          }
+        }
+        if (target) location.replace(target + location.search + location.hash);
+      })();
+    })();</script>
     <script>
       // A theme picked with the footer button is applied before first paint, so
       // the page never flashes the other scheme. No stored choice, or "system",
@@ -45,10 +78,11 @@
     <link rel="canonical" href="https://onylab.com/privacy/">
     <link rel="alternate" hreflang="en" href="https://onylab.com/privacy/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/confidentialite/">
     <link rel="alternate" hreflang="x-default" href="https://onylab.com/privacy/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
     <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
     <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/style.css?v=21" rel="stylesheet">
+    <link href="/style.css?v=22" rel="stylesheet">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -114,7 +148,35 @@
         "@id": "https://onylab.com/#organization"
       },
       "description": "How OnyLab collects, uses, shares, and protects personal information on its website and in its applications, under Canadian and Quebec privacy law.",
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Take every order. Bring every customer back."
+      },
+      "dateModified": "2026-11-25",
+      "breadcrumb": {
+        "@id": "https://onylab.com/privacy/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/privacy/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacy Policy"
+        }
+      ]
     }
   ]
 }</script></head>
@@ -168,7 +230,7 @@
         <article class="olb-section olb-custom-legal" aria-labelledby="legal-title">
             <header class="olb-custom-legal-head">
                 <h1 class="olb-title" id="legal-title">Privacy Policy</h1>
-                <p class="olb-meta">Last updated: <time datetime="2026-10-26">October 26, 2026</time></p>
+                <p class="olb-meta">Last updated: <time datetime="2026-11-25">November 25, 2026</time></p>
                 <p>This policy explains how OnyLab collects, uses, discloses, and protects personal information when you visit onylab.com or use our applications and integrations, together the Services. It follows the Personal Information Protection and Electronic Documents Act (PIPEDA) and Quebec's Act respecting the protection of personal information in the private sector.</p>
             </header>
 
@@ -188,8 +250,8 @@
                 </section><section id="collection" aria-labelledby="collection-heading">
                     <h2 class="olb-heading-20" id="collection-heading"><span class="olb-custom-legal-index">2.</span> What we collect</h2>
                     <ul>
-                        <li>Account and contact details of store owners and staff: name, business name, email address, phone number, and billing details.</li><li>Order and customer details processed for a store: name, contact details, order history, and the consent to receive messages where the store collects it.</li><li>Technical details: device and browser type, IP address, logs, and the settings needed to run the Services.</li><li>The content of the emails and support requests you send us.</li>
-                    </ul><p>On onylab.com, the only thing stored in your browser is your language choice. The website sets no advertising or analytics cookies. Our applications may use cookies and similar technologies that are needed to sign you in, keep your session secure, and remember your settings.</p>
+                        <li>Account and contact details of store owners and staff: name, business name, email address, phone number, and billing details.</li><li>Order and customer details processed for a store: name, contact details, order history, and the consent to receive messages where the store collects it.</li><li>Technical details: device and browser type, IP address, logs, and the settings needed to run the Services.</li><li>The content of the emails, chat messages, and support requests you send us.</li>
+                    </ul><p>On onylab.com, your browser stores your language and theme choices. The website sets no advertising or analytics cookies. The chat window on the website is run by Crisp, a French company that acts as our service provider. It stores a cookie in your browser to keep your conversation from one page to the next, and receives the messages you write, any email address you give, and technical details such as your IP address, your browser, and the page you are viewing. Our applications may use cookies and similar technologies that are needed to sign you in, keep your session secure, and remember your settings.</p>
                 </section><section id="use" aria-labelledby="use-heading">
                     <h2 class="olb-heading-20" id="use-heading"><span class="olb-custom-legal-index">3.</span> How we use it</h2>
                     <ul>
@@ -230,8 +292,8 @@
     <footer class="olb-footer">
         <div class="olb-custom-footer-brand">
             <a class="olb-identity" href="/" aria-label="OnyLab home">
-                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26">
-                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
             </a>
             <p class="olb-caption">Apps for restaurants and shops to take every order and bring customers back, connected to the POS they already run.</p>
             <p class="olb-caption">Also from the same team: <a href="https://agentiumlab.com/">Agentium Lab</a>, task automation for local businesses.</p>
@@ -252,7 +314,7 @@
         <nav class="olb-custom-footer-col" aria-label="Footer">
             <h2 class="olb-label">OnyLab</h2>
             <ul>
-                <li><a href="/#ecosystem">How it fits</a></li><li><a href="/#connections">Your POS</a></li><li><a href="/#start">Where to start</a></li><li><a href="/#about">Who we are</a></li><li><a href="/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Sign in to your apps</a></li>
+                <li><a href="/#ecosystem">How it fits</a></li><li><a href="/#connections">Your POS</a></li><li><a href="/pos/">POS integrations</a></li><li><a href="/#start">Where to start</a></li><li><a href="/#about">Who we are</a></li><li><a href="/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Sign in to your apps</a></li>
             </ul>
         </nav>
 
@@ -282,5 +344,19 @@
     </footer>
 
 </div>
-<script src="/script.js?v=10" type="text/javascript"></script></body>
+<script src="/script.js?v=10" type="text/javascript"></script><script>(function(){const crispLocale = "en";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
 </html>
