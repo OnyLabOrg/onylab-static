@@ -72,6 +72,20 @@ Languages: this site is published in English at https://onylab.com/ and in Frenc
 - [Yuze](https://onylab.com/pos/yuze/): UK hospitality; payments-first POS that pushes its menu to HubRise and receives orders.
 - [Zelty](https://onylab.com/pos/zelty/): Zelty Bridge, by HubRise, passes orders and customers both ways.
 
+## Delivery platforms
+
+- [Delivery platforms](https://onylab.com/delivery-platforms/): the food ordering platforms listed in HubRise's app directory, checked on November 25, 2026, 1 page each. Each page explains how OrderPicker shows the platform's orders in 1 queue with the orders placed at the table or for takeout with Order&Pay, and the phone orders taken with OrderPad. Orders rung up on the POS appear too when the POS sends them to HubRise. It also says what the platform's HubRise connection carries. In French at https://onylab.com/fr/plateformes-de-livraison/.
+- [Bolt Food](https://onylab.com/delivery-platforms/bolt-food/): Bolt's food and grocery delivery; menu, stock and delivery details in sync.
+- [Delicity](https://onylab.com/delivery-platforms/delicity/): French platform with a fixed fee per order; menu, stock and delivery time in sync.
+- [Deliveroo](https://onylab.com/delivery-platforms/deliveroo/): Restaurants and convenience stores; menu and stock published from HubRise.
+- [foodpanda](https://onylab.com/delivery-platforms/foodpanda/): Delivery Hero group platform; orders and delivery details, menu kept in foodpanda.
+- [Glovo](https://onylab.com/delivery-platforms/glovo/): Restaurants and convenience stores; orders, customers, menu and stock.
+- [Hop Delivery](https://onylab.com/delivery-platforms/hop-delivery/): Home delivery in Geneva; orders and customer details.
+- [Just Eat](https://onylab.com/delivery-platforms/just-eat/): Every Just Eat Takeaway.com brand; orders, customers, menu and stock.
+- [Uber Eats](https://onylab.com/delivery-platforms/uber-eats/): Orders without the tablet; menu both ways, stock and the courier's position.
+- [WeDely](https://onylab.com/delivery-platforms/wedely/): Luxembourg delivery platform; its menu, stock and delivery details reach HubRise.
+- [Wolt](https://onylab.com/delivery-platforms/wolt/): Delivery and pickup; menu both ways, stock and final delivery time.
+
 ## About
 
 - [Who we are](https://onylab.com/#about): founded in 2020 in France by people who had run local restaurants and shops. Figures stated on the page: 5 apps live on apps.onylab.com, 20+ years running local restaurants and shops then building software for them, support 7 days a week.

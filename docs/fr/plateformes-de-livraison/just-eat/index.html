@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+      // A theme picked with the footer button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>Les commandes Just Eat dans OrderPicker, avec toutes les autres</title>
+    <meta name="description" content="Les commandes Just Eat arrivent dans OrderPicker via HubRise, dans 1 seule file avec vos autres canaux. Toutes les marques de Just Eat Takeaway.com sont couvertes, menu et stock synchronisés.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="Les commandes Just Eat dans OrderPicker, avec toutes les autres">
+    <meta property="og:description" content="Les commandes Just Eat arrivent dans OrderPicker via HubRise, dans 1 seule file avec vos autres canaux. Toutes les marques de Just Eat Takeaway.com sont couvertes, menu et stock synchronisés.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OnyLab">
+    <meta property="og:url" content="https://onylab.com/fr/plateformes-de-livraison/just-eat/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://onylab.com/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://onylab.com/og.png">
+    <meta name="twitter:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:title" content="Les commandes Just Eat dans OrderPicker, avec toutes les autres">
+    <meta name="twitter:description" content="Les commandes Just Eat arrivent dans OrderPicker via HubRise, dans 1 seule file avec vos autres canaux. Toutes les marques de Just Eat Takeaway.com sont couvertes, menu et stock synchronisés.">
+    <link rel="canonical" href="https://onylab.com/fr/plateformes-de-livraison/just-eat/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/delivery-platforms/just-eat/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/plateformes-de-livraison/just-eat/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/delivery-platforms/just-eat/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=24" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/delivery-platforms/just-eat/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et en ligne (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Prise de commande par téléphone pour restaurants",
+        "Commande et paiement en ligne",
+        "Préparation des commandes",
+        "Écrans de cuisine (KDS)",
+        "Préparation de commandes en magasin",
+        "Segmentation clients pour les campagnes e-mail et SMS",
+        "Intégrations HubRise",
+        "Intégrations de caisse"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/delivery-platforms/just-eat/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/fr/plateformes-de-livraison/just-eat/#webpage",
+      "url": "https://onylab.com/fr/plateformes-de-livraison/just-eat/",
+      "name": "Les commandes Just Eat dans OrderPicker, avec toutes les autres",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "Les commandes Just Eat arrivent dans OrderPicker via HubRise, dans 1 seule file avec vos autres canaux. Toutes les marques de Just Eat Takeaway.com sont couvertes, menu et stock synchronisés.",
+      "inLanguage": "fr",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Prenez chaque commande. Faites revenir chaque client."
+      },
+      "dateModified": "2026-11-25",
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "Just Eat"
+        }
+      ],
+      "breadcrumb": {
+        "@id": "https://onylab.com/fr/plateformes-de-livraison/just-eat/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/fr/plateformes-de-livraison/just-eat/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Plateformes de livraison",
+          "item": "https://onylab.com/fr/plateformes-de-livraison/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Just Eat"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onylab.com/fr/plateformes-de-livraison/just-eat/#faq",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Dois-je laisser la tablette Just Eat allumée ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Selon HubRise, la tablette Just Eat, que Just Eat appelle OrderPad, doit rester allumée pour recevoir les commandes dans HubRise. Dans certains pays, les commandes peuvent être acceptées automatiquement. C'est un autre appareil que l'application OrderPad d'OnyLab, qui sert à prendre les commandes par téléphone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles marques de Just Eat sont couvertes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Toutes les marques de Just Eat Takeaway.com, dont Just Eat, Takeaway.com, Lieferando, Pyszne.pl, SkipTheDishes et Thuisbezorgd.nl."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il un compte HubRise pour connecter Just Eat ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Just Eat envoie ses commandes au compte HubRise de votre commerce, et OrderPicker les y lit. HubRise a son propre abonnement, facturé par HubRise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce que je garde mon compte Just Eat ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Votre compte Just Eat reste tel quel. OrderPicker affiche seulement les commandes que Just Eat envoie à HubRise, à côté de vos autres commandes."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body class="olb-page">
+<div class="olb-shell">
+
+    <a class="olb-skip-link" href="#main">Aller au contenu</a>
+
+    <header class="olb-header" id="header">
+        <div class="olb-masthead">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
+            </a>
+            <nav class="olb-document-meta" aria-label="Navigation principale">
+                <ul class="olb-nav" id="navMenu">
+                    <li><a href="/fr/#apps">Applications</a></li>
+                    <li><a href="/fr/#ecosystem">Comment ça marche</a></li>
+                    <li><a href="/fr/#connections">Intégrations</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Connexion</a></li>
+                </ul>
+                <div class="olb-custom-header-tools">
+                    <div class="olb-custom-lang">
+                        <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Langue: Français">
+                            <span class="olb-custom-lang-name" aria-hidden="true">Français</span>
+                            <span class="olb-custom-lang-code" aria-hidden="true">FR</span>
+                            <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                        </button>
+                        <ul class="olb-custom-lang-menu" id="langMenu">
+                            <li>
+                                <a href="/delivery-platforms/just-eat/" lang="en" hreflang="en" data-lang="en">English</a>
+                            </li><li>
+                                <a href="/fr/plateformes-de-livraison/just-eat/" lang="fr" hreflang="fr" data-lang="fr" aria-current="true">Français</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="olb-button-secondary olb-button-compact olb-custom-signin" href="https://apps.onylab.com/">Connexion</a>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Discuter avec nous</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+<main id="main">
+
+        <!-- 1. The outcome for a store on this platform, and the action. -->
+        <section class="olb-section olb-opening olb-custom-pos-opening" aria-labelledby="platform-heading">
+            <nav class="olb-custom-crumbs" aria-label="Fil d'Ariane">
+                <ol>
+                    <li><a href="/fr/">OnyLab</a></li>
+                    <li><a href="/fr/plateformes-de-livraison/">Plateformes de livraison</a></li>
+                    <li aria-current="page">Just Eat</li>
+                </ol>
+            </nav>
+            <p class="olb-pill olb-opening-pill">Intégration plateforme de livraison</p>
+            <h1 class="olb-display olb-opening-claim" id="platform-heading">Préparez les commandes Just Eat sur le même écran que toutes les autres</h1>
+            <p class="olb-lede olb-opening-proof">Just Eat envoie ses commandes à HubRise, avec leur statut, pour chacune de ses marques. OrderPicker les affiche dans 1 seule file avec les commandes passées à table ou à emporter avec Order&amp;Pay, et celles prises par téléphone avec OrderPad.</p>
+            <div class="olb-action-row">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                <a class="olb-button-secondary" href="#channels">Voir comment ça marche <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
+            </div>
+            <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+        </section>
+
+        <!-- 2. Every channel feeding 1 OrderPicker queue through HubRise. -->
+        <section class="olb-section" id="channels" aria-labelledby="channels-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Toutes les commandes, 1 écran</p>
+                <h2 class="olb-title" id="channels-heading">Les commandes Just Eat rejoignent la même file que toutes les autres</h2>
+                <p class="olb-lede">OrderPicker affiche chaque commande qui arrive dans votre compte HubRise. Just Eat y envoie ses commandes, tout comme Order&amp;Pay, pour les commandes passées à table ou à emporter, et OrderPad, pour les commandes par téléphone.</p>
+            </div>
+
+            <figure class="olb-ecosystem">
+                <div class="olb-ecosystem-step">
+                    <h3 class="olb-heading-16">D&#39;où viennent les commandes</h3>
+                    <ul style="--olb-custom-count: 4">
+                        <li>
+                            <div class="olb-ecosystem-node olb-custom-channel" data-current="true">
+                                <span class="olb-custom-node-name">Just Eat</span>
+                                <span class="olb-custom-node-job">Plateforme de livraison</span>
+                            </div>
+                        </li><li>
+                            <div class="olb-ecosystem-node olb-custom-channel">
+                                <span class="olb-custom-node-name">À table</span>
+                                <span class="olb-custom-node-job">Order&amp;Pay</span>
+                            </div>
+                        </li><li>
+                            <div class="olb-ecosystem-node olb-custom-channel">
+                                <span class="olb-custom-node-name">À emporter</span>
+                                <span class="olb-custom-node-job">Order&amp;Pay, sur votre site</span>
+                            </div>
+                        </li><li>
+                            <div class="olb-ecosystem-node olb-custom-channel">
+                                <span class="olb-custom-node-name">Le téléphone</span>
+                                <span class="olb-custom-node-job">OrderPad</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="olb-custom-eco-link"><span>via HubRise</span></div>
+                <div class="olb-ecosystem-core">
+                    <p>OrderPicker</p>
+                    <p>1 seule file pour préparer chaque commande</p>
+                </div>
+                <figcaption class="olb-caption">
+                    Les commandes saisies sur votre caisse s&#39;affichent aussi quand elle les envoie à HubRise. Toutes ne le font pas, et la page de chaque caisse indique si la vôtre le fait. <a class="olb-custom-link" href="/fr/caisses/">Vérifier votre caisse</a>
+                </figcaption>
+            </figure>
+
+            <div class="olb-custom-channel-body">
+                <p class="olb-lede">Dans un restaurant, OrderPicker est l&#39;écran de cuisine (KDS). Dans un commerce, c&#39;est l&#39;écran où l&#39;équipe prépare chaque commande. Une commande Just Eat est vérifiée article par article, comme une commande passée à table ou par téléphone, puis marquée comme prête.</p>
+                <p><a class="olb-custom-card-link" href="/fr/#tour-orderpicker">Voir sur le commerce d&#39;exemple <span class="olb-custom-arrow" aria-hidden="true"></span></a></p>
+            </div>
+        </section>
+
+        <!-- 3. The platform, and what its HubRise connection carries, from its
+             page on hubrise.com. -->
+        <section class="olb-band" data-tone="secondary" id="facts" aria-labelledby="facts-heading">
+            <div class="olb-grid olb-custom-pos-facts">
+                <div>
+                    <p class="olb-label">Just Eat</p>
+                    <h2 class="olb-title" id="facts-heading">Just Eat en bref</h2>
+                    <p class="olb-lede">Just Eat est une plateforme britannique de commande et de livraison pour les restaurants et les commerces de proximité, présente dans 15 pays en Europe et en Amérique. Just Eat Flyt Bridge connecte à HubRise toutes les marques de Just Eat Takeaway.com : Just Eat, Takeaway.com, Lieferando, Pyszne.pl, SkipTheDishes et Thuisbezorgd.nl.</p>
+                </div>
+                <div class="olb-card">
+                    <dl class="olb-custom-pos-meta">
+                        <div><dt>Pays</dt><dd>15 pays en Europe et en Amérique</dd></div>
+                        <div><dt>Liaison avec HubRise</dt><dd>Depuis le back-office de HubRise</dd></div>
+                    </dl>
+                    <h3 class="olb-heading-16">Ce que transmet la connexion HubRise</h3>
+                    <ul class="olb-custom-caps">
+                        <li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Envoie ses commandes à HubRise, avec leur statut</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li><li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Envoie les informations clients, pour les commandes que vous livrez</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li><li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Publie un menu tenu dans HubRise</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Envoie son propre menu à HubRise</span>
+                            <span class="olb-custom-caps-value">Non</span>
+                        </li><li data-on="true">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M3 8.5l3 3 7-7"></path>
+                            </svg>
+                            <span>Synchronise les articles indisponibles avec HubRise</span>
+                            <span class="olb-custom-caps-value">Oui</span>
+                        </li><li data-on="false">
+                            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8"></path>
+                            </svg>
+                            <span>Envoie les informations de livraison à HubRise</span>
+                            <span class="olb-custom-caps-value">Non</span>
+                        </li>
+                    </ul>
+                    <p class="olb-caption">Source : la page Just Eat sur hubrise.com, vérifiée le 25 novembre 2026. <a class="olb-custom-link" href="https://www.hubrise.com/apps/just-eat-flyt" hreflang="en">La lire sur hubrise.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. How the store connects it, then the action again. -->
+        <section class="olb-section" id="start" aria-labelledby="start-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Pour commencer</p>
+                <h2 class="olb-title" id="start-heading">Affichez les commandes Just Eat dans OrderPicker en 3 étapes</h2>
+            </div>
+            <ol class="olb-steps">
+                <li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 1</p>
+                    <h3 class="olb-heading-20">Reliez Just Eat à HubRise</h3>
+                    <p>Votre commerce fait la liaison depuis le back-office de HubRise.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 2</p>
+                    <h3 class="olb-heading-20">Connectez OrderPicker</h3>
+                    <p>OrderPicker est connecté au même compte HubRise. Dès lors, chaque commande Just Eat apparaît dans sa file.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 3</p>
+                    <h3 class="olb-heading-20">Ajoutez vos propres canaux</h3>
+                    <p>Order&amp;Pay pour les commandes à table et à emporter et OrderPad pour le téléphone envoient leurs commandes au même compte : elles rejoignent la même file que celles de Just Eat.</p>
+                </li>
+            </ol>
+            <div class="olb-custom-after">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+            </div>
+        </section>
+
+        <!-- 5. The questions of a store on this platform, mirrored in FAQPage
+             data. -->
+        <section class="olb-band" data-tone="secondary" id="faq" aria-labelledby="faq-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Questions</p>
+                <h2 class="olb-title" id="faq-heading">Questions sur Just Eat et OrderPicker</h2>
+            </div>
+            <div class="olb-faq">
+                <details>
+                    <summary>Dois-je laisser la tablette Just Eat allumée ?</summary>
+                    <p>Oui. Selon HubRise, la tablette Just Eat, que Just Eat appelle OrderPad, doit rester allumée pour recevoir les commandes dans HubRise. Dans certains pays, les commandes peuvent être acceptées automatiquement. C&#39;est un autre appareil que l&#39;application OrderPad d&#39;OnyLab, qui sert à prendre les commandes par téléphone.</p>
+                </details><details>
+                    <summary>Quelles marques de Just Eat sont couvertes ?</summary>
+                    <p>Toutes les marques de Just Eat Takeaway.com, dont Just Eat, Takeaway.com, Lieferando, Pyszne.pl, SkipTheDishes et Thuisbezorgd.nl.</p>
+                </details><details>
+                    <summary>Faut-il un compte HubRise pour connecter Just Eat ?</summary>
+                    <p>Oui. Just Eat envoie ses commandes au compte HubRise de votre commerce, et OrderPicker les y lit. HubRise a son propre abonnement, facturé par HubRise.</p>
+                </details><details>
+                    <summary>Est-ce que je garde mon compte Just Eat ?</summary>
+                    <p>Oui. Votre compte Just Eat reste tel quel. OrderPicker affiche seulement les commandes que Just Eat envoie à HubRise, à côté de vos autres commandes.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 6. The neighboring platform pages. -->
+        <section class="olb-section" id="related" aria-labelledby="related-heading">
+            <div class="olb-custom-intro">
+                <h2 class="olb-heading-24" id="related-heading">Autres plateformes de livraison connectées à OnyLab</h2>
+            </div>
+            <ul class="olb-custom-pos-list" data-compact>
+                <li>
+                    <a href="/fr/plateformes-de-livraison/uber-eats/">
+                        <span class="olb-custom-pos-name">Uber Eats</span>
+                        <span class="olb-custom-pos-markets">Plus de 30 pays</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/plateformes-de-livraison/wedely/">
+                        <span class="olb-custom-pos-name">WeDely</span>
+                        <span class="olb-custom-pos-markets">Luxembourg</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/plateformes-de-livraison/wolt/">
+                        <span class="olb-custom-pos-name">Wolt</span>
+                        <span class="olb-custom-pos-markets">Environ 30 pays en Europe, en Asie et au Moyen-Orient</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/plateformes-de-livraison/bolt-food/">
+                        <span class="olb-custom-pos-name">Bolt Food</span>
+                        <span class="olb-custom-pos-markets">De nombreux pays d&#39;Europe</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/plateformes-de-livraison/delicity/">
+                        <span class="olb-custom-pos-name">Delicity</span>
+                        <span class="olb-custom-pos-markets">France, dans plusieurs grandes villes</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/plateformes-de-livraison/deliveroo/">
+                        <span class="olb-custom-pos-name">Deliveroo</span>
+                        <span class="olb-custom-pos-markets">13 pays en Europe, en Asie et en Océanie</span>
+                    </a>
+                </li>
+            </ul>
+            <p class="olb-custom-after"><a class="olb-custom-card-link" href="/fr/plateformes-de-livraison/">Voir toutes les plateformes <span class="olb-custom-arrow" aria-hidden="true"></span></a></p>
+        </section>
+
+        <!-- 7. The promise again, with the same action. -->
+        <section class="olb-band" data-tone="secondary" id="contact" aria-labelledby="contact-heading">
+            <div class="olb-closing">
+                <h2 class="olb-title" id="contact-heading">Mettez les commandes Just Eat sur le même écran que les autres</h2>
+                <p class="olb-lede">Dites-nous d&#39;où viennent vos commandes aujourd&#39;hui. Nous vous dirons comment OrderPicker les réunit dans 1 seule file, en commençant par Just Eat.</p>
+                <div class="olb-action-row">
+                    <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                </div>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+                <p class="olb-meta">Écrire à <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="olb-footer">
+        <div class="olb-custom-footer-brand">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+            </a>
+            <p class="olb-caption">Des applications pour que les restaurants et les commerces prennent chaque commande et fassent revenir leurs clients, branchées sur la caisse qu&#39;ils utilisent déjà.</p>
+            <p class="olb-caption">De la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, l'automatisation des tâches pour les commerces de proximité.</p>
+        </div>
+
+        <nav class="olb-custom-footer-col" aria-label="Prendre les commandes">
+            <h2 class="olb-label">Prendre les commandes</h2>
+            <ul>
+                <li><a href="/fr/#tour-orderpay">Order&amp;Pay</a></li><li><a href="/fr/#tour-orderpicker">OrderPicker</a></li><li><a href="/fr/#tour-orderpad">OrderPad</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Faire revenir les clients">
+            <h2 class="olb-label">Faire revenir les clients</h2>
+            <ul>
+                <li><a href="/fr/#tour-brevo">Brevo Bridge</a></li><li><a href="/fr/#tour-smsmode">SMSMode Bridge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="olb-custom-footer-col" aria-label="Pied de page">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Intégrations</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/plateformes-de-livraison/">Plateformes de livraison</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
+            <h2 class="olb-label">Contact</h2>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+            </ul>
+        </div>
+
+        <div class="olb-custom-footer-legal">
+            <p class="olb-meta">© 2026 OnyLab. Tous droits réservés.</p>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Mentions légales">
+                <ul>
+                    <li><a class="olb-meta" href="/fr/confidentialite/">Politique de confidentialité</a></li><li><a class="olb-meta" href="/fr/conditions/">Conditions d&#39;utilisation</a></li>
+                </ul>
+            </nav>
+            <div class="olb-custom-footer-end">
+                <p class="olb-meta">Fait avec amour au Canada et en France</p>
+                <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Thème : Système" data-label-light="Thème : Clair" data-label-dark="Thème : Sombre" aria-label="Thème : Système" title="Thème : Système">
+                    <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                    <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="/script.js?v=11" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  // Pin the chat button to the bottom right, whatever the dashboard says.
+  window.$crisp.push(['config', 'position:reverse', [false]]);
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
+</html>

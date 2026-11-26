@@ -368,12 +368,8 @@ table { border-collapse: collapse; }
   gap: var(--olb-space-5);
 }
 
-.olb-custom-signin {
-  font-size: var(--olb-type-label);
-  color: var(--olb-text-secondary);
-  transition: color var(--olb-transition);
-}
-.olb-custom-signin:hover { color: var(--olb-text-primary); }
+/* Sign in is a compact secondary button on wide screens. Below 1020px it moves
+   into the navigation as a plain link. */
 .olb-nav .olb-custom-signin-item { display: none; }
 
 /* Theme switcher, in the footer's legal row: 1 button cycling System, Light,
@@ -586,13 +582,6 @@ p, li, td, th { color: inherit; }
 .olb-button:hover { background: var(--olb-text-primary); color: var(--olb-canvas); }
 .olb-band[data-tone="contrast"] .olb-button:hover { background: var(--olb-canvas); color: var(--olb-text-primary); }
 
-.olb-button-compact {
-  white-space: nowrap;
-  min-height: 40px;
-  padding: var(--olb-space-2) var(--olb-space-4);
-  font-size: var(--olb-type-label);
-}
-
 .olb-button-secondary {
   display: inline-flex;
   align-items: center;
@@ -611,6 +600,14 @@ p, li, td, th { color: inherit; }
 .olb-button-secondary:hover {
   border-color: var(--olb-border-strong);
   background: var(--olb-surface-secondary);
+}
+
+/* After both button rules, so the compact size wins over either of them. */
+.olb-button-compact {
+  white-space: nowrap;
+  min-height: 40px;
+  padding: var(--olb-space-2) var(--olb-space-4);
+  font-size: var(--olb-type-label);
 }
 
 /* A down or right arrow drawn in CSS, sized to the text. */
@@ -1639,6 +1636,18 @@ p, li, td, th { color: inherit; }
 .olb-custom-pos-list[data-compact] { max-width: 1040px; margin-inline: auto; }
 .olb-custom-pos-list[data-compact] .olb-custom-pos-name { font-size: 1.0625rem; }
 .olb-custom-pos-caption { margin-top: var(--olb-space-6); text-align: center; }
+
+/* Delivery platform pages: the channels feeding OrderPicker. The nodes are
+   labels, not links, and the page's own platform is set apart by weight and a
+   stronger border, leaving the flame to the OrderPicker core. */
+.olb-custom-channel:hover { border-color: var(--olb-border-default); }
+.olb-custom-channel[data-current] { border-color: var(--olb-border-strong); border-width: 1.5px; }
+.olb-custom-channel-body {
+  max-width: 44rem;
+  margin: var(--olb-space-8) auto 0;
+  text-align: center;
+}
+.olb-custom-channel-body > * + * { margin-top: var(--olb-space-4); }
 
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 
