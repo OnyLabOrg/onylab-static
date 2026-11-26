@@ -723,11 +723,6 @@ p, li, td, th { color: inherit; }
   box-shadow: var(--olb-frame-shadow);
   overflow: hidden;
 }
-.olb-product-caption {
-  margin-top: var(--olb-space-4);
-  text-align: center;
-}
-
 .olb-custom-panel + .olb-custom-panel { border-top: 1px solid var(--olb-border-subtle); }
 .olb-custom-tour.is-enhanced .olb-custom-panel + .olb-custom-panel { border-top: 0; }
 .olb-custom-panel[hidden] { display: none; }

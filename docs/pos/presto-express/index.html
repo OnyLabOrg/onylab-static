@@ -247,8 +247,7 @@ const defaultLang = "en";
                 <ul class="olb-nav" id="navMenu">
                     <li><a href="/#apps">Apps</a></li>
                     <li><a href="/#ecosystem">How it fits</a></li>
-                    <li><a href="/#connections">Your POS</a></li>
-                    <li><a href="/#faq">Questions</a></li>
+                    <li><a href="/#connections">Integrations</a></li>
                     <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Sign in</a></li>
                 </ul>
                 <div class="olb-custom-header-tools">
@@ -267,7 +266,7 @@ const defaultLang = "en";
                             </li>
                         </ul>
                     </div>
-                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact">Email us</a>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Chat with us</a>
                     <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
                         <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
                         <span class="olb-visually-hidden">Menu</span>
@@ -292,7 +291,7 @@ const defaultLang = "en";
             <h1 class="olb-display olb-opening-claim" id="pos-heading">More ways to order from your Presto Express restaurant</h1>
             <p class="olb-lede olb-opening-proof">OrderPad and Order&amp;Pay send phone and online orders to your Presto Express POS through HubRise, and OrderPicker walks your kitchen through each one.</p>
             <div class="olb-action-row">
-                <a class="olb-button" href="mailto:hello@onylab.com">Email us about your store</a>
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Chat with us about your store</a>
                 <a class="olb-button-secondary" href="#apps">See the 5 apps <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
             </div>
             <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
@@ -450,7 +449,7 @@ const defaultLang = "en";
                 </li>
             </ol>
             <div class="olb-custom-after">
-                <a class="olb-button" href="mailto:hello@onylab.com">Email us about your store</a>
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Chat with us about your store</a>
                 <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
             </div>
         </section>
@@ -525,7 +524,7 @@ const defaultLang = "en";
                 <h2 class="olb-title" id="contact-heading">Start with the app your Presto Express store needs most</h2>
                 <p class="olb-lede">Tell us which part of your day costs the most. We will tell you which app to start with, and how it reaches Presto Express.</p>
                 <div class="olb-action-row">
-                    <a class="olb-button" href="mailto:hello@onylab.com">Email us about your store</a>
+                    <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Chat with us about your store</a>
                 </div>
                 <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
                 <p class="olb-meta">Write to <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
@@ -559,7 +558,7 @@ const defaultLang = "en";
         <nav class="olb-custom-footer-col" aria-label="Footer">
             <h2 class="olb-label">OnyLab</h2>
             <ul>
-                <li><a href="/#ecosystem">How it fits</a></li><li><a href="/#connections">Your POS</a></li><li><a href="/pos/">POS integrations</a></li><li><a href="/#start">Where to start</a></li><li><a href="/#about">Who we are</a></li><li><a href="/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Sign in to your apps</a></li>
+                <li><a href="/#ecosystem">How it fits</a></li><li><a href="/#connections">Integrations</a></li><li><a href="/pos/">POS integrations</a></li><li><a href="/#start">Where to start</a></li><li><a href="/#about">Who we are</a></li><li><a href="/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Sign in to your apps</a></li>
             </ul>
         </nav>
 
@@ -589,12 +588,14 @@ const defaultLang = "en";
     </footer>
 
 </div>
-<script src="/script.js?v=10" type="text/javascript"></script><script>(function(){const crispLocale = "en";
+<script src="/script.js?v=11" type="text/javascript"></script><script>(function(){const crispLocale = "en";
 
   // Crisp live chat, so a visitor can reach us from any page. The widget
   // speaks the page's language rather than guessing from the browser, and
   // loads async after the page so it never delays the first paint.
   window.$crisp = [];
+  // Pin the chat button to the bottom right, whatever the dashboard says.
+  window.$crisp.push(['config', 'position:reverse', [false]]);
   window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
   window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
   (function () {

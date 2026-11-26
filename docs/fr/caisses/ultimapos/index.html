@@ -214,8 +214,7 @@
                 <ul class="olb-nav" id="navMenu">
                     <li><a href="/fr/#apps">Applications</a></li>
                     <li><a href="/fr/#ecosystem">Comment ça marche</a></li>
-                    <li><a href="/fr/#connections">Votre caisse</a></li>
-                    <li><a href="/fr/#faq">Questions</a></li>
+                    <li><a href="/fr/#connections">Intégrations</a></li>
                     <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Connexion</a></li>
                 </ul>
                 <div class="olb-custom-header-tools">
@@ -234,7 +233,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact">Nous écrire</a>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Discuter avec nous</a>
                     <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
                         <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
                         <span class="olb-visually-hidden">Menu</span>
@@ -259,7 +258,7 @@
             <h1 class="olb-display olb-opening-claim" id="pos-heading">Connectez UltimaPOS aux commandes par téléphone et en ligne</h1>
             <p class="olb-lede olb-opening-proof">UltimaPOS sert les commerces alimentaires, boulangeries, boucheries et restaurants, mais aussi les coiffeurs, instituts de beauté et pressings. HubRise lui envoie les commandes par téléphone et en ligne, et vos commandes UltimaPOS font le chemin inverse.</p>
             <div class="olb-action-row">
-                <a class="olb-button" href="mailto:hello@onylab.com">Écrivez-nous au sujet de votre commerce</a>
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
                 <a class="olb-button-secondary" href="#apps">Voir les 5 applications <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
             </div>
             <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
@@ -417,7 +416,7 @@
                 </li>
             </ol>
             <div class="olb-custom-after">
-                <a class="olb-button" href="mailto:hello@onylab.com">Écrivez-nous au sujet de votre commerce</a>
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
                 <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
             </div>
         </section>
@@ -492,7 +491,7 @@
                 <h2 class="olb-title" id="contact-heading">Commencez par l&#39;application dont votre commerce sous UltimaPOS a le plus besoin</h2>
                 <p class="olb-lede">Dites-nous quelle partie de votre journée vous coûte le plus. Nous vous dirons par quelle application commencer, et comment elle rejoint UltimaPOS.</p>
                 <div class="olb-action-row">
-                    <a class="olb-button" href="mailto:hello@onylab.com">Écrivez-nous au sujet de votre commerce</a>
+                    <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
                 </div>
                 <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
                 <p class="olb-meta">Écrire à <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
@@ -526,7 +525,7 @@
         <nav class="olb-custom-footer-col" aria-label="Pied de page">
             <h2 class="olb-label">OnyLab</h2>
             <ul>
-                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Votre caisse</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Intégrations</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
             </ul>
         </nav>
 
@@ -556,12 +555,14 @@
     </footer>
 
 </div>
-<script src="/script.js?v=10" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
+<script src="/script.js?v=11" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
 
   // Crisp live chat, so a visitor can reach us from any page. The widget
   // speaks the page's language rather than guessing from the browser, and
   // loads async after the page so it never delays the first paint.
   window.$crisp = [];
+  // Pin the chat button to the bottom right, whatever the dashboard says.
+  window.$crisp.push(['config', 'position:reverse', [false]]);
   window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
   window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
   (function () {

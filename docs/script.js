@@ -185,3 +185,16 @@ if (tour) {
     tour.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
 }
+
+// "Chat with us" buttons open the Crisp chat. They keep their mailto: href, so
+// a reader whose browser blocks Crisp, or who clicks before it has loaded,
+// still reaches us by email. Crisp replaces the $crisp array with its own
+// object once loaded, and only that object has is().
+document.addEventListener('click', (e) => {
+  const button = e.target.closest('[data-chat]');
+  const crisp = window.$crisp;
+  if (!button || !crisp || typeof crisp.is !== 'function') return;
+  e.preventDefault();
+  crisp.push(['do', 'chat:show']);
+  crisp.push(['do', 'chat:open']);
+});

@@ -338,8 +338,7 @@ const defaultLang = "en";
                 <ul class="olb-nav" id="navMenu">
                     <li><a href="#apps">Apps</a></li>
                     <li><a href="#ecosystem">How it fits</a></li>
-                    <li><a href="#connections">Your POS</a></li>
-                    <li><a href="#faq">Questions</a></li>
+                    <li><a href="#connections">Integrations</a></li>
                     <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Sign in</a></li>
                 </ul>
                 <div class="olb-custom-header-tools">
@@ -358,7 +357,7 @@ const defaultLang = "en";
                             </li>
                         </ul>
                     </div>
-                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact">Email us</a>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Chat with us</a>
                     <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
                         <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
                         <span class="olb-visually-hidden">Menu</span>
@@ -376,7 +375,7 @@ const defaultLang = "en";
             <h1 class="olb-display olb-opening-claim" id="opening-heading">Take every order. Bring every customer back.</h1>
             <p class="olb-lede olb-opening-proof">Phone orders, online orders and their preparation in 1 flow, then your customers turned into email and SMS campaigns. Every app plugs into the POS you already run, through HubRise, so nothing is typed twice.</p>
             <div class="olb-action-row">
-                <a class="olb-button" href="mailto:hello@onylab.com">Email us about your store</a>
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Chat with us about your store</a>
                 <a class="olb-button-secondary" href="#tour">See the 5 apps <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
             </div>
             <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
@@ -608,7 +607,6 @@ const defaultLang = "en";
                     </section>
 
                 </div>
-                <figcaption class="olb-caption olb-product-caption">Illustration with sample data from Pizzeria Il Forno, a fictional store. The real screens may differ.</figcaption>
             </figure>
         </section>
 
@@ -796,26 +794,29 @@ const defaultLang = "en";
         <section class="olb-section" id="connections" aria-labelledby="connections-heading">
             <div class="olb-grid olb-custom-connections">
                 <div>
-                    <p class="olb-label">Your POS</p>
-                    <h2 class="olb-title" id="connections-heading">Your POS stays. So do your delivery accounts.</h2>
-                    <p class="olb-lede">The apps connect through HubRise, a hub that POS systems, delivery platforms and marketing tools already use to pass orders, menus and customers between them. If your store has a HubRise account, OnyLab apps are connected from its back office.</p>
-                    <p>Your POS is not on the list? Write to us with its name, and we will tell you whether it can connect. <a class="olb-custom-link" href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+                    <p class="olb-label">Integrations</p>
+                    <h2 class="olb-title" id="connections-heading">Connected to the systems your store already runs</h2>
+                    <p class="olb-lede">OnyLab apps connect through HubRise, a hub that POS systems, delivery platforms and marketing tools already use to pass orders, menus and customers between them. Each app connects once, to your store&#39;s HubRise account, and from there works with every system connected to it. If your store has a HubRise account, the apps are connected from its back office.</p>
+                    <p>Using a system that is not on the list? Write to us with its name, and we will tell you whether it can connect. <a class="olb-custom-link" href="mailto:hello@onylab.com">hello@onylab.com</a></p>
                 </div>
                 <div class="olb-integrations">
                     <div class="olb-integration-group">
                         <h3 class="olb-heading-16">POS systems</h3>
+                        <p class="olb-meta">Receives the orders taken in OrderPad and Order&amp;Pay, with their options and comments.</p>
                         <ul>
                             <li class="olb-integration">Every POS connected to HubRise</li>
                         </ul>
-                        <p class="olb-meta"><a class="olb-custom-link" href="/pos/">See every POS, 1 page each</a></p>
+                        <p class="olb-meta"><a class="olb-custom-link" href="/pos/">POS integrations</a></p>
                     </div><div class="olb-integration-group">
                         <h3 class="olb-heading-16">Delivery platforms</h3>
+                        <p class="olb-meta">Their orders reach your POS through HubRise, and OrderPicker prepares them with the rest.</p>
                         <ul>
                             <li class="olb-integration">Deliveroo</li><li class="olb-integration">Uber Eats</li><li class="olb-integration">Just Eat</li>
                         </ul>
                         
                     </div><div class="olb-integration-group">
                         <h3 class="olb-heading-16">Marketing tools</h3>
+                        <p class="olb-meta">Receive your customers and their orders, sorted by visits, average order value and last order.</p>
                         <ul>
                             <li class="olb-integration">Brevo, through Brevo Bridge</li><li class="olb-integration">smsmode, through SMSMode Bridge</li>
                         </ul>
@@ -835,7 +836,7 @@ const defaultLang = "en";
                 <li class="olb-card olb-step">
                     <p class="olb-custom-step-index"><span class="olb-visually-hidden">Step</span> 1</p>
                     <h3 class="olb-heading-20">Tell us where it hurts</h3>
-                    <p>Email us the part of your day that costs the most: phone orders, online orders, preparation mistakes, or customers who do not come back.</p>
+                    <p>Open the chat and tell us the part of your day that costs the most: phone orders, online orders, preparation mistakes, or customers who do not come back.</p>
                 </li><li class="olb-card olb-step">
                     <p class="olb-custom-step-index"><span class="olb-visually-hidden">Step</span> 2</p>
                     <h3 class="olb-heading-20">Connect it to your POS</h3>
@@ -847,7 +848,7 @@ const defaultLang = "en";
                 </li>
             </ol>
             <div class="olb-custom-after">
-                <a class="olb-button" href="mailto:hello@onylab.com">Email us about your store</a>
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Chat with us about your store</a>
                 <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
             </div>
         </section>
@@ -983,7 +984,7 @@ const defaultLang = "en";
                 <h2 class="olb-title" id="contact-heading">Take the next order without typing it twice</h2>
                 <p class="olb-lede">Tell us which part of your day costs the most. We will tell you which app to start with, and whether it works with your POS.</p>
                 <div class="olb-action-row">
-                    <a class="olb-button" href="mailto:hello@onylab.com">Email us about your store</a>
+                    <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Chat with us about your store</a>
                 </div>
                 <p class="olb-risk">Start with 1 app. Your POS, your terminal and your delivery accounts stay as they are.</p>
                 <p class="olb-meta">Write to <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
@@ -1017,7 +1018,7 @@ const defaultLang = "en";
         <nav class="olb-custom-footer-col" aria-label="Footer">
             <h2 class="olb-label">OnyLab</h2>
             <ul>
-                <li><a href="#ecosystem">How it fits</a></li><li><a href="#connections">Your POS</a></li><li><a href="/pos/">POS integrations</a></li><li><a href="#start">Where to start</a></li><li><a href="#about">Who we are</a></li><li><a href="#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Sign in to your apps</a></li>
+                <li><a href="#ecosystem">How it fits</a></li><li><a href="#connections">Integrations</a></li><li><a href="/pos/">POS integrations</a></li><li><a href="#start">Where to start</a></li><li><a href="#about">Who we are</a></li><li><a href="#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Sign in to your apps</a></li>
             </ul>
         </nav>
 
@@ -1047,12 +1048,14 @@ const defaultLang = "en";
     </footer>
 
 </div>
-<script src="/script.js?v=10" type="text/javascript"></script><script>(function(){const crispLocale = "en";
+<script src="/script.js?v=11" type="text/javascript"></script><script>(function(){const crispLocale = "en";
 
   // Crisp live chat, so a visitor can reach us from any page. The widget
   // speaks the page's language rather than guessing from the browser, and
   // loads async after the page so it never delays the first paint.
   window.$crisp = [];
+  // Pin the chat button to the bottom right, whatever the dashboard says.
+  window.$crisp.push(['config', 'position:reverse', [false]]);
   window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
   window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
   (function () {
