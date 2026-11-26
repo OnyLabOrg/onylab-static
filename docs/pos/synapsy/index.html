@@ -273,6 +273,10 @@ const defaultLang = "en";
                     <li aria-current="page">Synapsy</li>
                 </ol>
             </nav>
+            <!-- The name follows in the breadcrumb and the heading, so the logo is decorative. -->
+            <span class="olb-custom-pos-logo">
+                <img src="/logos/pos/synapsy.webp" alt="" width="248" height="72" decoding="async">
+            </span>
             <p class="olb-pill olb-opening-pill">POS integration</p>
             <h1 class="olb-display olb-opening-claim" id="pos-heading">Your Synapsy POS, ready for phone, table and takeout orders</h1>
             <p class="olb-lede olb-opening-proof">Synapsy, founded in 2005, serves food caterers and retail stores of every size. Connect it to HubRise from its back office and orders reach your POS with the menu you already keep in Synapsy.</p>
@@ -364,7 +368,7 @@ const defaultLang = "en";
                             <a class="olb-custom-card-link" href="/#tour-orderpay">See it on the sample store <span class="olb-custom-arrow" aria-hidden="true"></span></a>
                         </p>
                     </li><li class="olb-app-card" id="app-orderpicker">
-                        <p class="olb-app-step">Kitchen display and picking</p>
+                        <p class="olb-app-step">Kitchen display and picking screen</p>
                         <h4 class="olb-heading-20">OrderPicker</h4>
                         <p>For a caterer, OrderPicker works as a kitchen display. For a retail store, it is the picking screen where staff prepare each order item by item. Mistakes get caught before the order is marked ready. It handles orders that reach you through HubRise, not Synapsy counter sales.</p>
                         <ul class="olb-custom-pos-notes">
@@ -556,14 +560,16 @@ const defaultLang = "en";
         </div>
 
         <div class="olb-custom-footer-legal">
-            <p class="olb-meta">© 2026 OnyLab. All rights reserved.</p>
+            <div class="olb-custom-footer-credit">
+                <p class="olb-meta">© 2026 OnyLab. All rights reserved.</p>
+                <p class="olb-meta">Made with love in Canada and France</p>
+            </div>
             <nav class="olb-custom-footer-legal-nav" aria-label="Legal">
                 <ul>
                     <li><a class="olb-meta" href="/privacy/">Privacy Policy</a></li><li><a class="olb-meta" href="/terms/">Terms of Use</a></li>
                 </ul>
             </nav>
             <div class="olb-custom-footer-end">
-                <p class="olb-meta">Made with love in Canada and France</p>
                 <div class="olb-custom-lang">
                     <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
                         <span class="olb-custom-lang-name" aria-hidden="true">English</span>

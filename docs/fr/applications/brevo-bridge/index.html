@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+      // A theme picked with the footer button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>Brevo Bridge : vos clients et commandes HubRise dans Brevo | OnyLab</title>
+    <meta name="description" content="Brevo Bridge enregistre chaque nouvelle commande HubRise et son client dans votre compte Brevo, triés en groupes selon les commandes, les dépenses et les dates, pour vos campagnes e-mail et SMS.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="Brevo Bridge : vos clients et commandes HubRise dans Brevo | OnyLab">
+    <meta property="og:description" content="Brevo Bridge enregistre chaque nouvelle commande HubRise et son client dans votre compte Brevo, triés en groupes selon les commandes, les dépenses et les dates, pour vos campagnes e-mail et SMS.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OnyLab">
+    <meta property="og:url" content="https://onylab.com/fr/applications/brevo-bridge/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://onylab.com/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://onylab.com/og.png">
+    <meta name="twitter:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:title" content="Brevo Bridge : vos clients et commandes HubRise dans Brevo | OnyLab">
+    <meta name="twitter:description" content="Brevo Bridge enregistre chaque nouvelle commande HubRise et son client dans votre compte Brevo, triés en groupes selon les commandes, les dépenses et les dates, pour vos campagnes e-mail et SMS.">
+    <link rel="canonical" href="https://onylab.com/fr/applications/brevo-bridge/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/apps/brevo-bridge/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/brevo-bridge/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/brevo-bridge/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=25" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/apps/brevo-bridge/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et à table ou à emporter (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Prise de commande par téléphone pour restaurants",
+        "Commande à table et à emporter avec paiement",
+        "Préparation des commandes",
+        "Écrans de cuisine (KDS)",
+        "Préparation de commandes en magasin",
+        "Segmentation clients pour les campagnes e-mail et SMS",
+        "Intégrations HubRise",
+        "Intégrations de caisse"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/apps/brevo-bridge/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/fr/applications/brevo-bridge/#webpage",
+      "url": "https://onylab.com/fr/applications/brevo-bridge/",
+      "name": "Brevo Bridge : vos clients et commandes HubRise dans Brevo | OnyLab",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "Brevo Bridge enregistre chaque nouvelle commande HubRise et son client dans votre compte Brevo, triés en groupes selon les commandes, les dépenses et les dates, pour vos campagnes e-mail et SMS.",
+      "inLanguage": "fr",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Prenez chaque commande. Faites revenir chaque client."
+      },
+      "dateModified": "2026-11-26",
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Brevo Bridge",
+          "description": "Brevo Bridge enregistre chaque nouvelle commande HubRise et son client dans votre compte Brevo, triés en groupes selon les commandes, les dépenses et les dates, pour vos campagnes e-mail et SMS.",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "publisher": {
+            "@id": "https://onylab.com/#organization"
+          }
+        }
+      ],
+      "breadcrumb": {
+        "@id": "https://onylab.com/fr/applications/brevo-bridge/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/fr/applications/brevo-bridge/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Faire revenir les clients",
+          "item": "https://onylab.com/fr/#bring-back"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Brevo Bridge"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onylab.com/fr/applications/brevo-bridge/#faq",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Faut-il un compte Brevo ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. La passerelle enregistre les clients et les commandes dans votre propre compte Brevo, connecté par une clé API que vous créez dans Brevo. Brevo a ses propres offres, facturées par Brevo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quand la passerelle commence-t-elle à enregistrer les clients ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dès que vous l'activez. À partir de là, chaque nouvelle commande qui arrive dans HubRise est enregistrée dans Brevo avec son client."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment les clients sont-ils triés en groupes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Selon les règles que vous fixez pour chaque groupe : nombre de commandes, total dépensé, points de fidélité, dates de la première et de la dernière commande, mode de service de la dernière commande, code postal et consentement marketing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qui envoie les campagnes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vous, depuis Brevo. La passerelle tient vos clients et vos groupes à jour, et les outils de Brevo rédigent et envoient les campagnes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il un compte HubRise pour utiliser Brevo Bridge ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Brevo Bridge se connecte au compte HubRise de votre commerce, là où votre caisse et vos plateformes de livraison envoient déjà leurs commandes. HubRise a son propre abonnement, facturé par HubRise."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body class="olb-page">
+<div class="olb-shell">
+
+    <a class="olb-skip-link" href="#main">Aller au contenu</a>
+
+    <header class="olb-header" id="header">
+        <div class="olb-masthead">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
+            </a>
+            <nav class="olb-document-meta" aria-label="Navigation principale">
+                <ul class="olb-nav" id="navMenu">
+                    <li><a href="/fr/#apps">Applications</a></li>
+                    <li><a href="/fr/#ecosystem">Comment ça marche</a></li>
+                    <li><a href="/fr/#connections">Intégrations</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Connexion</a></li>
+                </ul>
+                <div class="olb-custom-header-tools">
+                    <a class="olb-button-secondary olb-button-compact olb-custom-signin" href="https://apps.onylab.com/">Connexion</a>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Discuter avec nous</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+<main id="main">
+
+        <!-- 1. What the app changes for the store, and the action. -->
+        <section class="olb-section olb-opening olb-custom-pos-opening" aria-labelledby="app-heading">
+            <nav class="olb-custom-crumbs" aria-label="Fil d'Ariane">
+                <ol>
+                    <li><a href="/fr/">OnyLab</a></li>
+                    <li><a href="/fr/#bring-back">Faire revenir les clients</a></li>
+                    <li aria-current="page">Brevo Bridge</li>
+                </ol>
+            </nav>
+            <p class="olb-pill olb-opening-pill">Brevo Bridge · Campagnes e-mail et SMS</p>
+            <h1 class="olb-display olb-opening-claim" id="app-heading">Faites revenir vos clients par e-mail et SMS</h1>
+            <p class="olb-lede olb-opening-proof">Chaque nouvelle commande qui arrive dans HubRise est enregistrée dans votre compte Brevo avec son client, trié dans les groupes que vous définissez. Vous rédigez vos campagnes dans Brevo, pour des clients déjà triés.</p>
+            <div class="olb-action-row">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                <a class="olb-button-secondary" href="#view">Voir l&#39;application <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
+            </div>
+            <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+        </section>
+
+        <!-- 2. The app itself, on the sample store the home page tour uses. -->
+        <section class="olb-section olb-custom-app-view" id="view" aria-labelledby="view-heading">
+            <h2 class="olb-visually-hidden" id="view-heading">Brevo Bridge sur un commerce d&#39;exemple</h2>
+            <figure>
+                <div class="olb-product">
+                    <section class="olb-custom-panel">
+    <div class="olb-product-chrome">
+        <span class="olb-custom-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="olb-mono">Brevo Bridge</span>
+        <span class="olb-custom-chrome-tag">Données d&#39;exemple</span>
+    </div>
+    
+    
+    
+    <div class="olb-product-body">
+        <div class="olb-custom-ui-tile">
+            <p class="olb-custom-ui-strong">Clients synchronisés avec Brevo</p>
+            <table class="olb-custom-sync-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Client</th><th scope="col" class="olb-numeric" data-wide>Visites</th><th scope="col" class="olb-numeric">Panier moyen</th><th scope="col" data-wide>Dernière commande</th><th scope="col">Segment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="olb-custom-ui-strong">Camille Martin</th><td class="olb-numeric" data-wide>8</td><td class="olb-numeric">31,20 €</td><td data-wide>Aujourd&#39;hui</td><td><span class="olb-custom-ui-chip">VIP</span></td>
+                    </tr><tr>
+                        <th scope="row" class="olb-custom-ui-strong">Hugo Durand</th><td class="olb-numeric" data-wide>1</td><td class="olb-numeric">24,00 €</td><td data-wide>Hier</td><td><span class="olb-custom-ui-chip">Nouveau</span></td>
+                    </tr><tr>
+                        <th scope="row" class="olb-custom-ui-strong">Léa Bernard</th><td class="olb-numeric" data-wide>5</td><td class="olb-numeric">27,80 €</td><td data-wide>Il y a 74 jours</td><td><span class="olb-custom-ui-chip">Inactif</span></td>
+                    </tr><tr>
+                        <th scope="row" class="olb-custom-ui-strong">Nadia Roux</th><td class="olb-numeric" data-wide>12</td><td class="olb-numeric">35,60 €</td><td data-wide>Il y a 3 jours</td><td><span class="olb-custom-ui-chip">VIP</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="olb-custom-panel-foot">
+            <span class="olb-custom-ui-ok">Synchronisé automatiquement depuis HubRise</span>
+        </div>
+    </div>
+    
+</section>
+                </div>
+            </figure>
+        </section>
+
+        <!-- 3. The part of the day the app answers. -->
+        <section class="olb-band" data-tone="secondary" id="problem" aria-labelledby="problem-heading">
+            <div class="olb-grid olb-custom-problem">
+                <div>
+                    <p class="olb-label">Le problème</p>
+                    <h2 class="olb-title" id="problem-heading">Vos clients sont dans vos commandes, pas dans vos campagnes</h2>
+                </div>
+                <ul>
+                    <li>Chaque commande contient un nom, un numéro et un e-mail, et rien n&#39;arrive dans votre outil d&#39;e-mailing.</li><li>L&#39;export des clients à la main attend un jour calme qui n&#39;arrive jamais.</li><li>Une newsletter part à tout le monde, à l&#39;habitué de 5 ans comme au client d&#39;1 soir.</li><li>Les clients qui ne commandent plus sont repérés des mois plus tard, quand ils le sont.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. What the app does, 1 card per feature. -->
+        <section class="olb-section" id="features" aria-labelledby="features-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Ce que fait l&#39;application</p>
+                <h2 class="olb-title" id="features-heading">Vos clients dans Brevo, déjà triés</h2>
+            </div>
+            <ul class="olb-card-grid" style="--olb-custom-count: 3">
+                <li class="olb-card">
+                    <h3 class="olb-heading-20">Enregistré à chaque nouvelle commande</h3>
+                    <p>Une fois la passerelle activée, chaque nouvelle commande HubRise et son client sont enregistrés dans votre compte Brevo. Il n&#39;y a rien à exporter.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Jusqu&#39;à 10 groupes de clients</h3>
+                    <p>Créez un groupe pour chaque public à toucher, comme les nouveaux clients, les habitués, ou ceux qui n&#39;ont pas commandé depuis un moment.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Des règles réglées au curseur</h3>
+                    <p>Triez les clients selon le nombre de commandes, le total dépensé, les points de fidélité et les dates de leur première et de leur dernière commande, puis selon le mode de service de leur dernière commande et le code postal.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Le consentement dans les règles</h3>
+                    <p>Un groupe peut aussi être trié selon le consentement marketing, pour l&#39;e-mail et pour le SMS, tel que les clients l&#39;ont donné en commandant.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Seulement les commandes choisies</h3>
+                    <p>Toutes les commandes sont synchronisées par défaut. Vous pouvez ne garder que certains modes de service, comme la vente à emporter, ou certains canaux, comme les vôtres.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Des campagnes envoyées depuis Brevo</h3>
+                    <p>Rédigez et envoyez vos e-mails et vos SMS dans Brevo. Le menu de la passerelle mène directement aux pages e-mail, SMS, contacts et commandes de Brevo.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 5. How it runs, step by step, then the action again. -->
+        <section class="olb-band" data-tone="secondary" id="how" aria-labelledby="how-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Comment ça marche</p>
+                <h2 class="olb-title" id="how-heading">Connecté en 4 étapes</h2>
+            </div>
+            <ol class="olb-steps" style="--olb-custom-count: 4">
+                <li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 1</p>
+                    <h3 class="olb-heading-20">Définir vos groupes</h3>
+                    <p>Nommez chaque groupe et fixez ses règles.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 2</p>
+                    <h3 class="olb-heading-20">Choisir les commandes</h3>
+                    <p>Toutes, ou seulement les modes de service et les canaux que vous choisissez.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 3</p>
+                    <h3 class="olb-heading-20">Ajouter votre clé API Brevo</h3>
+                    <p>Vous la créez dans Brevo. Si Brevo bloque les adresses IP inconnues, la configuration vous montre comment autoriser la passerelle.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 4</p>
+                    <h3 class="olb-heading-20">Activer la passerelle</h3>
+                    <p>Dès lors, chaque nouvelle commande et son client sont enregistrés dans Brevo.</p>
+                </li>
+            </ol>
+            <div class="olb-custom-after">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+            </div>
+        </section>
+
+        <!-- 6. What it reads from the shared data, what it feeds, what it
+             depends on, and the apps it leads to. -->
+        <section class="olb-section" id="works" aria-labelledby="works-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Avec les autres applications</p>
+                <h2 class="olb-title" id="works-heading">Ce que Brevo Bridge partage avec les autres applications</h2>
+            </div>
+            <div class="olb-card-grid olb-custom-app-flow" style="--olb-custom-count: 2">
+                <div class="olb-card">
+                    <h3 class="olb-heading-16">Ce qu&#39;elle utilise</h3>
+                    <ul class="olb-custom-app-facts">
+                        <li>Chaque nouvelle commande qui arrive dans HubRise, avec son client : celles d&#39;Order&amp;Pay, d&#39;OrderPad et des plateformes de livraison, et celles de votre caisse si elle les envoie.</li>
+                    </ul>
+                </div>
+                <div class="olb-card">
+                    <h3 class="olb-heading-16">Ce qu&#39;elle alimente</h3>
+                    <ul class="olb-custom-app-facts">
+                        <li>Votre propre compte Brevo : vos clients triés en groupes, et leurs commandes.</li><li>Les campagnes e-mail et SMS que vous envoyez depuis Brevo.</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="olb-custom-app-fits">
+                Les ventes au comptoir sont incluses si votre caisse envoie ses commandes à HubRise. Chaque page caisse indique si la vôtre le fait.
+                 <a class="olb-custom-link" href="/fr/caisses/">Vérifier votre caisse</a>
+            </p>
+            <h3 class="olb-heading-24 olb-custom-app-others">Les autres applications OnyLab</h3>
+            <ul class="olb-custom-pos-list" data-compact>
+                <li>
+                    <a href="/fr/applications/order-and-pay/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay</span>
+                        <span class="olb-custom-pos-markets">Commande à table et à emporter</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/orderpicker/">
+                        <span class="olb-custom-pos-name">OrderPicker</span>
+                        <span class="olb-custom-pos-markets">Écran cuisine et écran de préparation</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/orderpad/">
+                        <span class="olb-custom-pos-name">OrderPad</span>
+                        <span class="olb-custom-pos-markets">Commandes par téléphone</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/smsmode-bridge/">
+                        <span class="olb-custom-pos-name">SMSMode Bridge</span>
+                        <span class="olb-custom-pos-markets">Campagnes SMS et WhatsApp</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 7. The questions about this app, mirrored in FAQPage data. -->
+        <section class="olb-band" data-tone="secondary" id="faq" aria-labelledby="faq-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Questions</p>
+                <h2 class="olb-title" id="faq-heading">Questions sur Brevo Bridge</h2>
+            </div>
+            <div class="olb-faq">
+                <details>
+                    <summary>Faut-il un compte Brevo ?</summary>
+                    <p>Oui. La passerelle enregistre les clients et les commandes dans votre propre compte Brevo, connecté par une clé API que vous créez dans Brevo. Brevo a ses propres offres, facturées par Brevo.</p>
+                </details><details>
+                    <summary>Quand la passerelle commence-t-elle à enregistrer les clients ?</summary>
+                    <p>Dès que vous l&#39;activez. À partir de là, chaque nouvelle commande qui arrive dans HubRise est enregistrée dans Brevo avec son client.</p>
+                </details><details>
+                    <summary>Comment les clients sont-ils triés en groupes ?</summary>
+                    <p>Selon les règles que vous fixez pour chaque groupe : nombre de commandes, total dépensé, points de fidélité, dates de la première et de la dernière commande, mode de service de la dernière commande, code postal et consentement marketing.</p>
+                </details><details>
+                    <summary>Qui envoie les campagnes ?</summary>
+                    <p>Vous, depuis Brevo. La passerelle tient vos clients et vos groupes à jour, et les outils de Brevo rédigent et envoient les campagnes.</p>
+                </details><details>
+                    <summary>Faut-il un compte HubRise pour utiliser Brevo Bridge ?</summary>
+                    <p>Oui. Brevo Bridge se connecte au compte HubRise de votre commerce, là où votre caisse et vos plateformes de livraison envoient déjà leurs commandes. HubRise a son propre abonnement, facturé par HubRise.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 8. The promise again, with the same action. -->
+        <section class="olb-section" id="contact" aria-labelledby="contact-heading">
+            <div class="olb-closing">
+                <h2 class="olb-title" id="contact-heading">Écrivez aux clients qui vous connaissent déjà</h2>
+                <p class="olb-lede">Dites-nous comment vous joignez vos clients aujourd&#39;hui. Nous vous dirons comment Brevo Bridge remplit votre compte Brevo, et quelles commandes il peut lire.</p>
+                <div class="olb-action-row">
+                    <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                </div>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+                <p class="olb-meta">Écrire à <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="olb-footer">
+        <div class="olb-custom-footer-brand">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+            </a>
+            <p class="olb-caption">Des applications pour que les restaurants et les commerces prennent chaque commande et fassent revenir leurs clients, branchées sur la caisse qu&#39;ils utilisent déjà.</p>
+            <p class="olb-caption">De la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, l'automatisation des tâches pour les commerces de proximité.</p>
+        </div>
+
+        <nav class="olb-custom-footer-col" aria-label="Prendre les commandes">
+            <h2 class="olb-label">Prendre les commandes</h2>
+            <ul>
+                <li><a href="/fr/#tour-orderpay">Order&amp;Pay</a></li><li><a href="/fr/#tour-orderpicker">OrderPicker</a></li><li><a href="/fr/#tour-orderpad">OrderPad</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Faire revenir les clients">
+            <h2 class="olb-label">Faire revenir les clients</h2>
+            <ul>
+                <li><a href="/fr/#tour-brevo">Brevo Bridge</a></li><li><a href="/fr/#tour-smsmode">SMSMode Bridge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="olb-custom-footer-col" aria-label="Pied de page">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Intégrations</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/plateformes-de-livraison/">Plateformes de livraison</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
+            <h2 class="olb-label">Contact</h2>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+            </ul>
+        </div>
+
+        <div class="olb-custom-footer-legal">
+            <div class="olb-custom-footer-credit">
+                <p class="olb-meta">© 2026 OnyLab. Tous droits réservés.</p>
+                <p class="olb-meta">Fait avec amour au Canada et en France</p>
+            </div>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Mentions légales">
+                <ul>
+                    <li><a class="olb-meta" href="/fr/confidentialite/">Politique de confidentialité</a></li><li><a class="olb-meta" href="/fr/conditions/">Conditions d&#39;utilisation</a></li>
+                </ul>
+            </nav>
+            <div class="olb-custom-footer-end">
+                <div class="olb-custom-lang">
+                    <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Langue: Français">
+                        <span class="olb-custom-lang-name" aria-hidden="true">Français</span>
+                        <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="olb-custom-lang-menu" id="langMenu">
+                        <li>
+                            <a href="/apps/brevo-bridge/" lang="en" hreflang="en" data-lang="en">English</a>
+                        </li><li>
+                            <a href="/fr/applications/brevo-bridge/" lang="fr" hreflang="fr" data-lang="fr" aria-current="true">Français</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Thème : Système" data-label-light="Thème : Clair" data-label-dark="Thème : Sombre" aria-label="Thème : Système" title="Thème : Système">
+                    <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                    <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="/script.js?v=11" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  // Pin the chat button to the bottom right, whatever the dashboard says.
+  window.$crisp.push(['config', 'position:reverse', [false]]);
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
+</html>

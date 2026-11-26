@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+      // A theme picked with the footer button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>Order&amp;Pay : commande à table et à emporter avec paiement en ligne | OnyLab</title>
+    <meta name="description" content="Avec Order&amp;Pay, vos clients commandent depuis un QR code à table ou à emporter, et paient par carte, Apple Pay ou Google Pay, sans application ni compte. Les commandes vont dans HubRise.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="Order&amp;Pay : commande à table et à emporter avec paiement en ligne | OnyLab">
+    <meta property="og:description" content="Avec Order&amp;Pay, vos clients commandent depuis un QR code à table ou à emporter, et paient par carte, Apple Pay ou Google Pay, sans application ni compte. Les commandes vont dans HubRise.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OnyLab">
+    <meta property="og:url" content="https://onylab.com/fr/applications/order-and-pay/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://onylab.com/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://onylab.com/og.png">
+    <meta name="twitter:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:title" content="Order&amp;Pay : commande à table et à emporter avec paiement en ligne | OnyLab">
+    <meta name="twitter:description" content="Avec Order&amp;Pay, vos clients commandent depuis un QR code à table ou à emporter, et paient par carte, Apple Pay ou Google Pay, sans application ni compte. Les commandes vont dans HubRise.">
+    <link rel="canonical" href="https://onylab.com/fr/applications/order-and-pay/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/apps/order-and-pay/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/order-and-pay/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/order-and-pay/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=25" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/apps/order-and-pay/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et à table ou à emporter (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Prise de commande par téléphone pour restaurants",
+        "Commande à table et à emporter avec paiement",
+        "Préparation des commandes",
+        "Écrans de cuisine (KDS)",
+        "Préparation de commandes en magasin",
+        "Segmentation clients pour les campagnes e-mail et SMS",
+        "Intégrations HubRise",
+        "Intégrations de caisse"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/apps/order-and-pay/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/fr/applications/order-and-pay/#webpage",
+      "url": "https://onylab.com/fr/applications/order-and-pay/",
+      "name": "Order&Pay : commande à table et à emporter avec paiement en ligne | OnyLab",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "Avec Order&Pay, vos clients commandent depuis un QR code à table ou à emporter, et paient par carte, Apple Pay ou Google Pay, sans application ni compte. Les commandes vont dans HubRise.",
+      "inLanguage": "fr",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Prenez chaque commande. Faites revenir chaque client."
+      },
+      "dateModified": "2026-11-26",
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Order&Pay",
+          "description": "Avec Order&Pay, vos clients commandent depuis un QR code à table ou à emporter, et paient par carte, Apple Pay ou Google Pay, sans application ni compte. Les commandes vont dans HubRise.",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "publisher": {
+            "@id": "https://onylab.com/#organization"
+          }
+        }
+      ],
+      "breadcrumb": {
+        "@id": "https://onylab.com/fr/applications/order-and-pay/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/fr/applications/order-and-pay/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prendre les commandes",
+          "item": "https://onylab.com/fr/#take-orders"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Order&Pay"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onylab.com/fr/applications/order-and-pay/#faq",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mes clients doivent-ils installer une application ou créer un compte ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Ils scannent un QR code ou ouvrent votre lien, puis commandent et paient dans le navigateur de leur téléphone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment suis-je payé ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les paiements en ligne arrivent sur votre propre compte Stripe, par carte, Apple Pay ou Google Pay. Vous pouvez aussi autoriser le paiement au comptoir, pour les commandes passées depuis un QR code de table ou votre lien de vente à emporter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Order&Pay prend-il les commandes en livraison ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Order&Pay sert aux commandes consommées à table et à la vente à emporter. Pour les commandes en livraison prises par téléphone, utilisez OrderPad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je ralentir ou arrêter les commandes pendant un rush ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Passez en mode affluence pour ajouter du temps à l'heure de retrait affichée, ou mettez les nouvelles commandes en pause, avec une date de retour à la normale si vous le souhaitez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il un compte HubRise pour utiliser Order&Pay ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Order&Pay se connecte au compte HubRise de votre commerce, là où votre caisse et vos plateformes de livraison envoient déjà leurs commandes. HubRise a son propre abonnement, facturé par HubRise."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body class="olb-page">
+<div class="olb-shell">
+
+    <a class="olb-skip-link" href="#main">Aller au contenu</a>
+
+    <header class="olb-header" id="header">
+        <div class="olb-masthead">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
+            </a>
+            <nav class="olb-document-meta" aria-label="Navigation principale">
+                <ul class="olb-nav" id="navMenu">
+                    <li><a href="/fr/#apps">Applications</a></li>
+                    <li><a href="/fr/#ecosystem">Comment ça marche</a></li>
+                    <li><a href="/fr/#connections">Intégrations</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Connexion</a></li>
+                </ul>
+                <div class="olb-custom-header-tools">
+                    <a class="olb-button-secondary olb-button-compact olb-custom-signin" href="https://apps.onylab.com/">Connexion</a>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Discuter avec nous</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+<main id="main">
+
+        <!-- 1. What the app changes for the store, and the action. -->
+        <section class="olb-section olb-opening olb-custom-pos-opening" aria-labelledby="app-heading">
+            <nav class="olb-custom-crumbs" aria-label="Fil d'Ariane">
+                <ol>
+                    <li><a href="/fr/">OnyLab</a></li>
+                    <li><a href="/fr/#take-orders">Prendre les commandes</a></li>
+                    <li aria-current="page">Order&amp;Pay</li>
+                </ol>
+            </nav>
+            <p class="olb-pill olb-opening-pill">Order&amp;Pay · Commande à table et à emporter</p>
+            <h1 class="olb-display olb-opening-claim" id="app-heading">Vos clients commandent et paient depuis leur téléphone</h1>
+            <p class="olb-lede olb-opening-proof">Vos clients scannent un QR code à table, ou ouvrent votre lien de vente à emporter, et commandent depuis votre carte HubRise. Ils paient par carte, Apple Pay ou Google Pay sur votre propre compte Stripe, ou au comptoir, et la commande part dans HubRise.</p>
+            <div class="olb-action-row">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                <a class="olb-button-secondary" href="#view">Voir l&#39;application <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
+            </div>
+            <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+        </section>
+
+        <!-- 2. The app itself, on the sample store the home page tour uses. -->
+        <section class="olb-section olb-custom-app-view" id="view" aria-labelledby="view-heading">
+            <h2 class="olb-visually-hidden" id="view-heading">Order&amp;Pay sur un commerce d&#39;exemple</h2>
+            <figure>
+                <div class="olb-product">
+                    <section class="olb-custom-panel">
+    <div class="olb-product-chrome">
+        <span class="olb-custom-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="olb-mono">Order&amp;Pay</span>
+        <span class="olb-custom-chrome-tag">Données d&#39;exemple</span>
+    </div>
+    
+    <div class="olb-product-body olb-custom-pay">
+        <div class="olb-custom-phone">
+            <p class="olb-custom-phone-store">Pizzeria Il Forno</p>
+            <p class="olb-custom-ui-label">Votre commande</p>
+            <ul class="olb-custom-ui-rows">
+                <li>
+                    <span class="olb-custom-ui-muted">1</span>
+                    <span class="olb-custom-ui-grow olb-custom-ui-strong">Regina</span>
+                    <span class="olb-numeric">13,00 €</span>
+                </li><li>
+                    <span class="olb-custom-ui-muted">1</span>
+                    <span class="olb-custom-ui-grow olb-custom-ui-strong">Tiramisu</span>
+                    <span class="olb-numeric">5,50 €</span>
+                </li>
+            </ul>
+            <p class="olb-custom-ui-total"><span>Total</span><span class="olb-numeric">18,50 €</span></p>
+            <span class="olb-custom-ui-btn">Payer 18,50 €</span>
+            <p class="olb-custom-phone-note">Aucune application à installer, aucun compte à créer</p>
+        </div>
+    </div>
+    
+    
+    
+</section>
+                </div>
+            </figure>
+        </section>
+
+        <!-- 3. The part of the day the app answers. -->
+        <section class="olb-band" data-tone="secondary" id="problem" aria-labelledby="problem-heading">
+            <div class="olb-grid olb-custom-problem">
+                <div>
+                    <p class="olb-label">Le problème</p>
+                    <h2 class="olb-title" id="problem-heading">Les clients attendent pour commander, puis pour payer</h2>
+                </div>
+                <ul>
+                    <li>En plein service, les clients attendent que quelqu&#39;un prenne leur commande.</li><li>À la fin du repas, ils attendent encore l&#39;addition et le terminal de paiement.</li><li>Les commandes à emporter arrivent par téléphone, 1 par 1, pendant que le comptoir se remplit.</li><li>Une carte imprimée ne peut pas dire qu&#39;un article est épuisé.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. What the app does, 1 card per feature. -->
+        <section class="olb-section" id="features" aria-labelledby="features-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Ce que fait l&#39;application</p>
+                <h2 class="olb-title" id="features-heading">Une page de commande pour votre commerce, construite à partir de votre carte</h2>
+            </div>
+            <ul class="olb-card-grid" style="--olb-custom-count: 3">
+                <li class="olb-card">
+                    <h3 class="olb-heading-20">Un QR code sur chaque table</h3>
+                    <p>Ajoutez vos tables, puis téléchargez ou imprimez un QR code pour chacune. Le client qui le scanne commande pour cette table, sans application à installer ni compte à créer.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">La vente à emporter depuis votre propre lien</h3>
+                    <p>Activez la vente à emporter, et Order&amp;Pay vous donne un lien et son QR code. Vos clients commandent à l&#39;avance, voient quand leur commande sera prête et la récupèrent au comptoir.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Encaissé sur votre compte Stripe</h3>
+                    <p>Vos clients paient par carte, Apple Pay ou Google Pay, via votre propre compte Stripe. Vous pouvez aussi les laisser payer au comptoir, pour les commandes passées depuis un QR code de table ou votre lien de vente à emporter.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Votre carte HubRise, à votre façon</h3>
+                    <p>Choisissez la carte HubRise et une variante de prix pour chaque mode de service, puis les catégories affichées, leur ordre, et les jours et heures où elles apparaissent. Les articles marqués épuisés dans la carte s&#39;affichent comme épuisés.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Des heures de retrait fiables</h3>
+                    <p>Fixez un temps de préparation, passez en mode affluence pour ajouter des minutes, ou mettez les nouvelles commandes en pause. La page de commande indique au client quand sa commande sera prête, ou quand vous rouvrez.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Vos couleurs, vos questions</h3>
+                    <p>Ajoutez votre logo, une bannière et votre couleur principale. Pour chaque mode de service, choisissez les informations demandées : nom, téléphone, e-mail et note de commande, chacune masquée, facultative ou obligatoire.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 5. How it runs, step by step, then the action again. -->
+        <section class="olb-band" data-tone="secondary" id="how" aria-labelledby="how-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Comment ça marche</p>
+                <h2 class="olb-title" id="how-heading">Du QR code à la cuisine en 4 étapes</h2>
+            </div>
+            <ol class="olb-steps" style="--olb-custom-count: 4">
+                <li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 1</p>
+                    <h3 class="olb-heading-20">Scanner ou ouvrir le lien</h3>
+                    <p>Un QR code de table connaît déjà la table. Sinon, le client choisit entre sur place et à emporter.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 2</p>
+                    <h3 class="olb-heading-20">Choisir dans la carte</h3>
+                    <p>Catégories, recherche, articles populaires, options et notes, en français ou en anglais.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 3</p>
+                    <h3 class="olb-heading-20">Payer</h3>
+                    <p>Par carte, Apple Pay ou Google Pay, ou au comptoir si vous l&#39;autorisez. Les codes promo de HubRise s&#39;appliquent au paiement.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 4</p>
+                    <h3 class="olb-heading-20">Suivre la commande</h3>
+                    <p>La commande part dans HubRise, et le client la suit sur son téléphone, de reçue à prête. À table, il peut ajouter des articles à la même commande et payer ce qui reste.</p>
+                </li>
+            </ol>
+            <div class="olb-custom-after">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+            </div>
+        </section>
+
+        <!-- 6. What it reads from the shared data, what it feeds, what it
+             depends on, and the apps it leads to. -->
+        <section class="olb-section" id="works" aria-labelledby="works-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Avec les autres applications</p>
+                <h2 class="olb-title" id="works-heading">Ce que Order&amp;Pay partage avec les autres applications</h2>
+            </div>
+            <div class="olb-card-grid olb-custom-app-flow" style="--olb-custom-count: 2">
+                <div class="olb-card">
+                    <h3 class="olb-heading-16">Ce qu&#39;elle utilise</h3>
+                    <ul class="olb-custom-app-facts">
+                        <li>La carte tenue dans HubRise, avec ses options, ses formules et ses variantes de prix.</li><li>Les codes promo tenus dans HubRise.</li><li>Vos horaires d&#39;ouverture et votre temps de préparation.</li>
+                    </ul>
+                </div>
+                <div class="olb-card">
+                    <h3 class="olb-heading-16">Ce qu&#39;elle alimente</h3>
+                    <ul class="olb-custom-app-facts">
+                        <li>Chaque commande, vers HubRise et de là vers votre caisse.</li><li>Chaque commande, vers OrderPicker pour sa préparation.</li><li>Chaque commande et son client, vers Brevo Bridge et SMSMode Bridge pour vos campagnes.</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="olb-custom-app-fits">
+                Les commandes Order&amp;Pay arrivent dans votre caisse si elle reçoit les commandes de HubRise. Toutes ne le font pas, et chaque page caisse indique si la vôtre le fait.
+                 <a class="olb-custom-link" href="/fr/caisses/">Vérifier votre caisse</a>
+            </p>
+            <h3 class="olb-heading-24 olb-custom-app-others">Les autres applications OnyLab</h3>
+            <ul class="olb-custom-pos-list" data-compact>
+                <li>
+                    <a href="/fr/applications/orderpicker/">
+                        <span class="olb-custom-pos-name">OrderPicker</span>
+                        <span class="olb-custom-pos-markets">Écran cuisine et écran de préparation</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/orderpad/">
+                        <span class="olb-custom-pos-name">OrderPad</span>
+                        <span class="olb-custom-pos-markets">Commandes par téléphone</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/brevo-bridge/">
+                        <span class="olb-custom-pos-name">Brevo Bridge</span>
+                        <span class="olb-custom-pos-markets">Campagnes e-mail et SMS</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/smsmode-bridge/">
+                        <span class="olb-custom-pos-name">SMSMode Bridge</span>
+                        <span class="olb-custom-pos-markets">Campagnes SMS et WhatsApp</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 7. The questions about this app, mirrored in FAQPage data. -->
+        <section class="olb-band" data-tone="secondary" id="faq" aria-labelledby="faq-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Questions</p>
+                <h2 class="olb-title" id="faq-heading">Questions sur Order&amp;Pay</h2>
+            </div>
+            <div class="olb-faq">
+                <details>
+                    <summary>Mes clients doivent-ils installer une application ou créer un compte ?</summary>
+                    <p>Non. Ils scannent un QR code ou ouvrent votre lien, puis commandent et paient dans le navigateur de leur téléphone.</p>
+                </details><details>
+                    <summary>Comment suis-je payé ?</summary>
+                    <p>Les paiements en ligne arrivent sur votre propre compte Stripe, par carte, Apple Pay ou Google Pay. Vous pouvez aussi autoriser le paiement au comptoir, pour les commandes passées depuis un QR code de table ou votre lien de vente à emporter.</p>
+                </details><details>
+                    <summary>Order&amp;Pay prend-il les commandes en livraison ?</summary>
+                    <p>Non. Order&amp;Pay sert aux commandes consommées à table et à la vente à emporter. Pour les commandes en livraison prises par téléphone, utilisez OrderPad.</p>
+                </details><details>
+                    <summary>Puis-je ralentir ou arrêter les commandes pendant un rush ?</summary>
+                    <p>Oui. Passez en mode affluence pour ajouter du temps à l&#39;heure de retrait affichée, ou mettez les nouvelles commandes en pause, avec une date de retour à la normale si vous le souhaitez.</p>
+                </details><details>
+                    <summary>Faut-il un compte HubRise pour utiliser Order&amp;Pay ?</summary>
+                    <p>Oui. Order&amp;Pay se connecte au compte HubRise de votre commerce, là où votre caisse et vos plateformes de livraison envoient déjà leurs commandes. HubRise a son propre abonnement, facturé par HubRise.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 8. The promise again, with the same action. -->
+        <section class="olb-section" id="contact" aria-labelledby="contact-heading">
+            <div class="olb-closing">
+                <h2 class="olb-title" id="contact-heading">Vos clients commandent pendant que votre équipe sert</h2>
+                <p class="olb-lede">Dites-nous comment fonctionnent vos tables et votre vente à emporter aujourd&#39;hui. Nous vous dirons comment Order&amp;Pay s&#39;adapte à votre commerce, et si votre caisse reçoit ses commandes.</p>
+                <div class="olb-action-row">
+                    <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                </div>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+                <p class="olb-meta">Écrire à <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="olb-footer">
+        <div class="olb-custom-footer-brand">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+            </a>
+            <p class="olb-caption">Des applications pour que les restaurants et les commerces prennent chaque commande et fassent revenir leurs clients, branchées sur la caisse qu&#39;ils utilisent déjà.</p>
+            <p class="olb-caption">De la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, l'automatisation des tâches pour les commerces de proximité.</p>
+        </div>
+
+        <nav class="olb-custom-footer-col" aria-label="Prendre les commandes">
+            <h2 class="olb-label">Prendre les commandes</h2>
+            <ul>
+                <li><a href="/fr/#tour-orderpay">Order&amp;Pay</a></li><li><a href="/fr/#tour-orderpicker">OrderPicker</a></li><li><a href="/fr/#tour-orderpad">OrderPad</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Faire revenir les clients">
+            <h2 class="olb-label">Faire revenir les clients</h2>
+            <ul>
+                <li><a href="/fr/#tour-brevo">Brevo Bridge</a></li><li><a href="/fr/#tour-smsmode">SMSMode Bridge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="olb-custom-footer-col" aria-label="Pied de page">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Intégrations</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/plateformes-de-livraison/">Plateformes de livraison</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
+            <h2 class="olb-label">Contact</h2>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+            </ul>
+        </div>
+
+        <div class="olb-custom-footer-legal">
+            <div class="olb-custom-footer-credit">
+                <p class="olb-meta">© 2026 OnyLab. Tous droits réservés.</p>
+                <p class="olb-meta">Fait avec amour au Canada et en France</p>
+            </div>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Mentions légales">
+                <ul>
+                    <li><a class="olb-meta" href="/fr/confidentialite/">Politique de confidentialité</a></li><li><a class="olb-meta" href="/fr/conditions/">Conditions d&#39;utilisation</a></li>
+                </ul>
+            </nav>
+            <div class="olb-custom-footer-end">
+                <div class="olb-custom-lang">
+                    <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Langue: Français">
+                        <span class="olb-custom-lang-name" aria-hidden="true">Français</span>
+                        <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="olb-custom-lang-menu" id="langMenu">
+                        <li>
+                            <a href="/apps/order-and-pay/" lang="en" hreflang="en" data-lang="en">English</a>
+                        </li><li>
+                            <a href="/fr/applications/order-and-pay/" lang="fr" hreflang="fr" data-lang="fr" aria-current="true">Français</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Thème : Système" data-label-light="Thème : Clair" data-label-dark="Thème : Sombre" aria-label="Thème : Système" title="Thème : Système">
+                    <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                    <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="/script.js?v=11" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  // Pin the chat button to the bottom right, whatever the dashboard says.
+  window.$crisp.push(['config', 'position:reverse', [false]]);
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
+</html>

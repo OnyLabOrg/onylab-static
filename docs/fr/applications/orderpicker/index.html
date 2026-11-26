@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+      // A theme picked with the footer button is applied before first paint, so
+      // the page never flashes the other scheme. No stored choice, or "system",
+      // leaves the reader's system setting in charge.
+      (function () {
+        try {
+          var theme = localStorage.getItem('olb-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+          }
+        } catch (error) {
+          /* Without storage the page follows the system setting. */
+        }
+      })();
+    </script><title>OrderPicker : écran cuisine et écran de préparation des commandes | OnyLab</title>
+    <meta name="description" content="OrderPicker affiche les commandes qui arrivent dans HubRise sur 1 seul écran, par poste, avec un compte à rebours, et vérifie chaque article avant que la commande soit prête. Pour restaurants et magasins.">
+    
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="OrderPicker : écran cuisine et écran de préparation des commandes | OnyLab">
+    <meta property="og:description" content="OrderPicker affiche les commandes qui arrivent dans HubRise sur 1 seul écran, par poste, avec un compte à rebours, et vérifie chaque article avant que la commande soit prête. Pour restaurants et magasins.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OnyLab">
+    <meta property="og:url" content="https://onylab.com/fr/applications/orderpicker/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://onylab.com/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://onylab.com/og.png">
+    <meta name="twitter:image:alt" content="OnyLab. Prenez chaque commande. Faites revenir chaque client.">
+    <meta name="twitter:title" content="OrderPicker : écran cuisine et écran de préparation des commandes | OnyLab">
+    <meta name="twitter:description" content="OrderPicker affiche les commandes qui arrivent dans HubRise sur 1 seul écran, par poste, avec un compte à rebours, et vérifie chaque article avant que la commande soit prête. Pour restaurants et magasins.">
+    <link rel="canonical" href="https://onylab.com/fr/applications/orderpicker/">
+    <link rel="alternate" hreflang="en" href="https://onylab.com/apps/orderpicker/"><link rel="alternate" hreflang="fr" href="https://onylab.com/fr/applications/orderpicker/">
+    <link rel="alternate" hreflang="x-default" href="https://onylab.com/apps/orderpicker/">
+    <link rel="preconnect" href="https://cdn.onylab.com">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.onylab.com/image/logo/icon/svg/color/logo.svg">
+    <link rel="preload" href="/fonts/syne-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-latin-opsz-wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/style.css?v=25" rel="stylesheet">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://onylab.com/#organization",
+      "name": "OnyLab",
+      "url": "https://onylab.com/apps/orderpicker/",
+      "email": "hello@onylab.com",
+      "foundingDate": "2020",
+      "description": "OnyLab est une entreprise logicielle qui conçoit des applications pour les restaurants et les commerces indépendants. Elle est basée en France et a été fondée en 2020 par des personnes qui avaient elles-mêmes tenu des restaurants et des commerces de proximité. Ses 5 applications prennent les commandes par téléphone (OrderPad) et à table ou à emporter (Order&Pay), organisent leur préparation sur un écran de cuisine (KDS) au restaurant ou sur un écran de préparation en magasin (OrderPicker) et copient les clients et les commandes dans Brevo et smsmode pour des campagnes par e-mail, SMS et WhatsApp (Brevo Bridge et SMSMode Bridge). Elles se branchent sur la caisse et les plateformes de livraison déjà utilisées par le commerce, via HubRise. OnyLab est joignable à hello@onylab.com.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg",
+        "caption": "OnyLab"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Prise de commande par téléphone pour restaurants",
+        "Commande à table et à emporter avec paiement",
+        "Préparation des commandes",
+        "Écrans de cuisine (KDS)",
+        "Préparation de commandes en magasin",
+        "Segmentation clients pour les campagnes e-mail et SMS",
+        "Intégrations HubRise",
+        "Intégrations de caisse"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@onylab.com",
+        "contactType": "sales",
+        "availableLanguage": [
+          "en",
+          "fr"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://onylab.com/#website",
+      "url": "https://onylab.com/apps/orderpicker/",
+      "name": "OnyLab",
+      "inLanguage": [
+        "en",
+        "fr"
+      ],
+      "publisher": {
+        "@id": "https://onylab.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://onylab.com/fr/applications/orderpicker/#webpage",
+      "url": "https://onylab.com/fr/applications/orderpicker/",
+      "name": "OrderPicker : écran cuisine et écran de préparation des commandes | OnyLab",
+      "isPartOf": {
+        "@id": "https://onylab.com/#website"
+      },
+      "about": {
+        "@id": "https://onylab.com/#organization"
+      },
+      "description": "OrderPicker affiche les commandes qui arrivent dans HubRise sur 1 seul écran, par poste, avec un compte à rebours, et vérifie chaque article avant que la commande soit prête. Pour restaurants et magasins.",
+      "inLanguage": "fr",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://onylab.com/og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "OnyLab. Prenez chaque commande. Faites revenir chaque client."
+      },
+      "dateModified": "2026-11-26",
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "OrderPicker",
+          "description": "OrderPicker affiche les commandes qui arrivent dans HubRise sur 1 seul écran, par poste, avec un compte à rebours, et vérifie chaque article avant que la commande soit prête. Pour restaurants et magasins.",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "publisher": {
+            "@id": "https://onylab.com/#organization"
+          }
+        }
+      ],
+      "breadcrumb": {
+        "@id": "https://onylab.com/fr/applications/orderpicker/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://onylab.com/fr/applications/orderpicker/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OnyLab",
+          "item": "https://onylab.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prendre les commandes",
+          "item": "https://onylab.com/fr/#take-orders"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "OrderPicker"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onylab.com/fr/applications/orderpicker/#faq",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quelles commandes OrderPicker affiche-t-il ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chaque commande qui arrive dans votre compte HubRise : les commandes Order&Pay et OrderPad, celles des plateformes de livraison, et celles saisies en caisse si votre caisse les envoie à HubRise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Chaque poste peut-il ne voir que ses articles ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Vous affectez les articles aux postes par catégorie ou par produit, et chaque écran choisit son poste. Les articles sans poste s'affichent sur tous les postes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fonctionne-t-il en magasin comme au restaurant ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Au restaurant, OrderPicker est l'écran de cuisine (KDS). En magasin, c'est l'écran sur lequel l'équipe prépare chaque commande, article par article."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je mettre une commande de côté ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Pause la place avec les commandes en pause, sous la file, et Reprendre la ramène."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il un compte HubRise pour utiliser OrderPicker ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. OrderPicker se connecte au compte HubRise de votre commerce, là où votre caisse et vos plateformes de livraison envoient déjà leurs commandes. HubRise a son propre abonnement, facturé par HubRise."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body class="olb-page">
+<div class="olb-shell">
+
+    <a class="olb-skip-link" href="#main">Aller au contenu</a>
+
+    <header class="olb-header" id="header">
+        <div class="olb-masthead">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-wordmark olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="84" height="28">
+                <img class="olb-wordmark olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="84" height="28">
+            </a>
+            <nav class="olb-document-meta" aria-label="Navigation principale">
+                <ul class="olb-nav" id="navMenu">
+                    <li><a href="/fr/#apps">Applications</a></li>
+                    <li><a href="/fr/#ecosystem">Comment ça marche</a></li>
+                    <li><a href="/fr/#connections">Intégrations</a></li>
+                    <li class="olb-custom-signin-item"><a href="https://apps.onylab.com/">Connexion</a></li>
+                </ul>
+                <div class="olb-custom-header-tools">
+                    <a class="olb-button-secondary olb-button-compact olb-custom-signin" href="https://apps.onylab.com/">Connexion</a>
+                    <a href="mailto:hello@onylab.com" class="olb-button olb-button-compact" data-chat>Discuter avec nous</a>
+                    <button class="olb-nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu">
+                        <span class="olb-nav-toggle-bar" aria-hidden="true"></span>
+                        <span class="olb-visually-hidden">Menu</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+<main id="main">
+
+        <!-- 1. What the app changes for the store, and the action. -->
+        <section class="olb-section olb-opening olb-custom-pos-opening" aria-labelledby="app-heading">
+            <nav class="olb-custom-crumbs" aria-label="Fil d'Ariane">
+                <ol>
+                    <li><a href="/fr/">OnyLab</a></li>
+                    <li><a href="/fr/#take-orders">Prendre les commandes</a></li>
+                    <li aria-current="page">OrderPicker</li>
+                </ol>
+            </nav>
+            <p class="olb-pill olb-opening-pill">OrderPicker · Écran cuisine et écran de préparation</p>
+            <h1 class="olb-display olb-opening-claim" id="app-heading">Préparez chaque commande sans oublier un article</h1>
+            <p class="olb-lede olb-opening-proof">OrderPicker réunit vos commandes à table, à emporter, par téléphone et en livraison sur 1 seul écran. L&#39;équipe coche chaque article une fois préparé, et la commande est prête quand le dernier est coché.</p>
+            <div class="olb-action-row">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                <a class="olb-button-secondary" href="#view">Voir l&#39;application <span class="olb-custom-arrow" data-dir="down" aria-hidden="true"></span></a>
+            </div>
+            <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+        </section>
+
+        <!-- 2. The app itself, on the sample store the home page tour uses. -->
+        <section class="olb-section olb-custom-app-view" id="view" aria-labelledby="view-heading">
+            <h2 class="olb-visually-hidden" id="view-heading">OrderPicker sur un commerce d&#39;exemple</h2>
+            <figure>
+                <div class="olb-product">
+                    <section class="olb-custom-panel">
+    <div class="olb-product-chrome">
+        <span class="olb-custom-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="olb-mono">OrderPicker</span>
+        <span class="olb-custom-chrome-tag">Données d&#39;exemple</span>
+    </div>
+    
+    
+    <div class="olb-product-body olb-custom-picker">
+        <div class="olb-custom-ui-tile">
+            <p class="olb-custom-ui-label">À préparer</p>
+            <ul class="olb-custom-ui-rows olb-custom-queue">
+                <li data-active="true">
+                    <span class="olb-mono">#1042</span>
+                    <span class="olb-custom-ui-grow olb-custom-ui-strong">Camille M.</span>
+                    <span class="olb-custom-ui-chip">En cours</span>
+                </li><li data-active="false">
+                    <span class="olb-mono">#1043</span>
+                    <span class="olb-custom-ui-grow olb-custom-ui-strong">Hugo D.</span>
+                    <span class="olb-custom-ui-chip">En attente</span>
+                </li><li data-active="false">
+                    <span class="olb-mono">#1044</span>
+                    <span class="olb-custom-ui-grow olb-custom-ui-strong">Léa B.</span>
+                    <span class="olb-custom-ui-chip">En attente</span>
+                </li>
+            </ul>
+        </div>
+        <div class="olb-custom-ui-tile">
+            <p class="olb-custom-ui-strong">Commande #1042, Camille M.</p>
+            <ul class="olb-custom-checklist">
+                <li data-done="true">
+                    <span class="olb-custom-box" aria-hidden="true"></span>
+                    <span class="olb-custom-ui-grow">1 Margherita, basilic en plus</span>
+                    <span class="olb-visually-hidden">Vérifié</span>
+                </li><li data-done="true">
+                    <span class="olb-custom-box" aria-hidden="true"></span>
+                    <span class="olb-custom-ui-grow">1 Regina</span>
+                    <span class="olb-visually-hidden">Vérifié</span>
+                </li><li data-done="false">
+                    <span class="olb-custom-box" aria-hidden="true"></span>
+                    <span class="olb-custom-ui-grow">2 Tiramisu</span>
+                    <span class="olb-visually-hidden">À vérifier</span>
+                </li>
+            </ul>
+            <div class="olb-custom-progress" aria-hidden="true"><span style="width: 66.67%"></span></div>
+            <div class="olb-custom-ui-actions">
+                <p class="olb-custom-ui-muted">2 articles vérifiés sur 3</p>
+                <span class="olb-custom-ui-btn">Marquer comme prête</span>
+            </div>
+        </div>
+    </div>
+    
+    
+</section>
+                </div>
+            </figure>
+        </section>
+
+        <!-- 3. The part of the day the app answers. -->
+        <section class="olb-band" data-tone="secondary" id="problem" aria-labelledby="problem-heading">
+            <div class="olb-grid olb-custom-problem">
+                <div>
+                    <p class="olb-label">Le problème</p>
+                    <h2 class="olb-title" id="problem-heading">Le ticket annonce 3 articles, le sac en contient 2</h2>
+                </div>
+                <ul>
+                    <li>Les commandes arrivent sur plusieurs écrans et sur des tickets papier, sans ordre clair.</li><li>Une boisson oubliée ou une option manquée arrive chez le client avant que quelqu&#39;un s&#39;en aperçoive.</li><li>Le grill et le bar lisent le même ticket, et chacun y cherche sa part.</li><li>Personne ne voit quelles commandes sont en retard avant que le client ne le demande.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. What the app does, 1 card per feature. -->
+        <section class="olb-section" id="features" aria-labelledby="features-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Ce que fait l&#39;application</p>
+                <h2 class="olb-title" id="features-heading">1 seule file, vérifiée article par article</h2>
+            </div>
+            <ul class="olb-card-grid" style="--olb-custom-count: 3">
+                <li class="olb-card">
+                    <h3 class="olb-heading-20">Toutes les commandes dans 1 seule file</h3>
+                    <p>Les commandes qui arrivent dans HubRise s&#39;affichent en cartes, et un bip retentit à chaque nouvelle commande. La file se met à jour toutes les 15 secondes, et les commandes en pause attendent en dessous.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Vérifié article par article</h3>
+                    <p>Dans la vue de préparation, chaque article a sa ligne, avec ses options et ses notes. Un appui le marque préparé, et quand tous les articles sont cochés, la commande est prête pour le retrait ou la livraison.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">1 écran par poste</h3>
+                    <p>Affectez les articles de votre carte à des postes, comme le grill ou le bar, par catégorie ou par produit. Chaque écran affiche les articles d&#39;1 poste, ou ceux de tous les postes.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Un compte à rebours sur chaque commande</h3>
+                    <p>Chaque carte décompte le temps jusqu&#39;à l&#39;heure prévue de la commande, et passe au rouge quand elle est en retard.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Accepter, refuser ou mettre en pause</h3>
+                    <p>Acceptez ou refusez les nouvelles commandes, lancez leur préparation, mettez-la en pause et reprenez plus tard. Un poste réglé sur à la demande attend que l&#39;équipe lance ses articles à la main.</p>
+                </li><li class="olb-card">
+                    <h3 class="olb-heading-20">Votre préparation, en chiffres</h3>
+                    <p>Un tableau de bord affiche les commandes, les articles préparés, le temps moyen de préparation par commande et par article, et le retard moyen par rapport à l&#39;heure demandée, avec vos produits les plus préparés et les plus lents.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 5. How it runs, step by step, then the action again. -->
+        <section class="olb-band" data-tone="secondary" id="how" aria-labelledby="how-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Comment ça marche</p>
+                <h2 class="olb-title" id="how-heading">De la nouvelle commande à prête en 4 étapes</h2>
+            </div>
+            <ol class="olb-steps" style="--olb-custom-count: 4">
+                <li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 1</p>
+                    <h3 class="olb-heading-20">La commande arrive</h3>
+                    <p>Un bip retentit, et la commande affiche son mode de service, sa table ou son numéro, et son compte à rebours.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 2</p>
+                    <h3 class="olb-heading-20">Accepter et lancer</h3>
+                    <p>L&#39;équipe accepte la commande, puis lance sa préparation.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 3</p>
+                    <h3 class="olb-heading-20">Cocher chaque article</h3>
+                    <p>Chaque ligne est cochée une fois préparée, avec ses options et ses notes sous les yeux.</p>
+                </li><li class="olb-card olb-step">
+                    <p class="olb-custom-step-index"><span class="olb-visually-hidden">Étape</span> 4</p>
+                    <h3 class="olb-heading-20">Prête</h3>
+                    <p>Quand le dernier article est coché, la commande est prête au retrait ou à l&#39;expédition. Chaque changement de statut est synchronisé avec HubRise.</p>
+                </li>
+            </ol>
+            <div class="olb-custom-after">
+                <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+            </div>
+        </section>
+
+        <!-- 6. What it reads from the shared data, what it feeds, what it
+             depends on, and the apps it leads to. -->
+        <section class="olb-section" id="works" aria-labelledby="works-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Avec les autres applications</p>
+                <h2 class="olb-title" id="works-heading">Ce que OrderPicker partage avec les autres applications</h2>
+            </div>
+            <div class="olb-card-grid olb-custom-app-flow" style="--olb-custom-count: 2">
+                <div class="olb-card">
+                    <h3 class="olb-heading-16">Ce qu&#39;elle utilise</h3>
+                    <ul class="olb-custom-app-facts">
+                        <li>Chaque commande qui arrive dans HubRise : celles d&#39;Order&amp;Pay, d&#39;OrderPad et des plateformes de livraison, et celles de votre caisse si elle les envoie.</li><li>La carte tenue dans HubRise, pour affecter ses articles aux postes.</li>
+                    </ul>
+                </div>
+                <div class="olb-card">
+                    <h3 class="olb-heading-16">Ce qu&#39;elle alimente</h3>
+                    <ul class="olb-custom-app-facts">
+                        <li>Le statut de chaque commande, renvoyé à HubRise.</li><li>Les chiffres de préparation, dans son propre tableau de bord.</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="olb-custom-app-fits">
+                Les plateformes de livraison connectées à HubRise envoient leurs commandes dans la même file. Les commandes saisies en caisse apparaissent aussi si votre caisse les envoie à HubRise.
+                 <a class="olb-custom-link" href="/fr/plateformes-de-livraison/">Voir les plateformes de livraison</a> <a class="olb-custom-link" href="/fr/caisses/">Vérifier votre caisse</a>
+            </p>
+            <h3 class="olb-heading-24 olb-custom-app-others">Les autres applications OnyLab</h3>
+            <ul class="olb-custom-pos-list" data-compact>
+                <li>
+                    <a href="/fr/applications/order-and-pay/">
+                        <span class="olb-custom-pos-name">Order&amp;Pay</span>
+                        <span class="olb-custom-pos-markets">Commande à table et à emporter</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/orderpad/">
+                        <span class="olb-custom-pos-name">OrderPad</span>
+                        <span class="olb-custom-pos-markets">Commandes par téléphone</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/brevo-bridge/">
+                        <span class="olb-custom-pos-name">Brevo Bridge</span>
+                        <span class="olb-custom-pos-markets">Campagnes e-mail et SMS</span>
+                    </a>
+                </li><li>
+                    <a href="/fr/applications/smsmode-bridge/">
+                        <span class="olb-custom-pos-name">SMSMode Bridge</span>
+                        <span class="olb-custom-pos-markets">Campagnes SMS et WhatsApp</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 7. The questions about this app, mirrored in FAQPage data. -->
+        <section class="olb-band" data-tone="secondary" id="faq" aria-labelledby="faq-heading">
+            <div class="olb-custom-intro">
+                <p class="olb-label">Questions</p>
+                <h2 class="olb-title" id="faq-heading">Questions sur OrderPicker</h2>
+            </div>
+            <div class="olb-faq">
+                <details>
+                    <summary>Quelles commandes OrderPicker affiche-t-il ?</summary>
+                    <p>Chaque commande qui arrive dans votre compte HubRise : les commandes Order&amp;Pay et OrderPad, celles des plateformes de livraison, et celles saisies en caisse si votre caisse les envoie à HubRise.</p>
+                </details><details>
+                    <summary>Chaque poste peut-il ne voir que ses articles ?</summary>
+                    <p>Oui. Vous affectez les articles aux postes par catégorie ou par produit, et chaque écran choisit son poste. Les articles sans poste s&#39;affichent sur tous les postes.</p>
+                </details><details>
+                    <summary>Fonctionne-t-il en magasin comme au restaurant ?</summary>
+                    <p>Oui. Au restaurant, OrderPicker est l&#39;écran de cuisine (KDS). En magasin, c&#39;est l&#39;écran sur lequel l&#39;équipe prépare chaque commande, article par article.</p>
+                </details><details>
+                    <summary>Puis-je mettre une commande de côté ?</summary>
+                    <p>Oui. Pause la place avec les commandes en pause, sous la file, et Reprendre la ramène.</p>
+                </details><details>
+                    <summary>Faut-il un compte HubRise pour utiliser OrderPicker ?</summary>
+                    <p>Oui. OrderPicker se connecte au compte HubRise de votre commerce, là où votre caisse et vos plateformes de livraison envoient déjà leurs commandes. HubRise a son propre abonnement, facturé par HubRise.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 8. The promise again, with the same action. -->
+        <section class="olb-section" id="contact" aria-labelledby="contact-heading">
+            <div class="olb-closing">
+                <h2 class="olb-title" id="contact-heading">Que chaque commande parte complète</h2>
+                <p class="olb-lede">Dites-nous d&#39;où viennent vos commandes et combien de postes vous faites tourner. Nous vous dirons comment OrderPicker s&#39;adapte à votre cuisine ou à votre magasin.</p>
+                <div class="olb-action-row">
+                    <a class="olb-button" href="mailto:hello@onylab.com" data-chat>Discutez avec nous de votre commerce</a>
+                </div>
+                <p class="olb-risk">Commencez par 1 application. Votre caisse, votre terminal de paiement et vos comptes de livraison restent en place.</p>
+                <p class="olb-meta">Écrire à <a href="mailto:hello@onylab.com">hello@onylab.com</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="olb-footer">
+        <div class="olb-custom-footer-brand">
+            <a class="olb-identity" href="/fr/" aria-label="Accueil OnyLab">
+                <img class="olb-logo olb-custom-logo-light" src="https://cdn.onylab.com/image/logo/rectangle/svg/color/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+                <img class="olb-logo olb-custom-logo-dark" src="https://cdn.onylab.com/image/logo/rectangle/svg/white/logo.svg" alt="OnyLab" width="78" height="26" loading="lazy" decoding="async">
+            </a>
+            <p class="olb-caption">Des applications pour que les restaurants et les commerces prennent chaque commande et fassent revenir leurs clients, branchées sur la caisse qu&#39;ils utilisent déjà.</p>
+            <p class="olb-caption">De la même équipe : <a href="https://agentiumlab.com/">Agentium Lab</a>, l'automatisation des tâches pour les commerces de proximité.</p>
+        </div>
+
+        <nav class="olb-custom-footer-col" aria-label="Prendre les commandes">
+            <h2 class="olb-label">Prendre les commandes</h2>
+            <ul>
+                <li><a href="/fr/#tour-orderpay">Order&amp;Pay</a></li><li><a href="/fr/#tour-orderpicker">OrderPicker</a></li><li><a href="/fr/#tour-orderpad">OrderPad</a></li>
+            </ul>
+        </nav><nav class="olb-custom-footer-col" aria-label="Faire revenir les clients">
+            <h2 class="olb-label">Faire revenir les clients</h2>
+            <ul>
+                <li><a href="/fr/#tour-brevo">Brevo Bridge</a></li><li><a href="/fr/#tour-smsmode">SMSMode Bridge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="olb-custom-footer-col" aria-label="Pied de page">
+            <h2 class="olb-label">OnyLab</h2>
+            <ul>
+                <li><a href="/fr/#ecosystem">Comment ça marche</a></li><li><a href="/fr/#connections">Intégrations</a></li><li><a href="/fr/caisses/">Intégrations caisse</a></li><li><a href="/fr/plateformes-de-livraison/">Plateformes de livraison</a></li><li><a href="/fr/#start">Par où commencer</a></li><li><a href="/fr/#about">Qui sommes-nous</a></li><li><a href="/fr/#faq">Questions</a></li><li><a href="https://apps.onylab.com/">Se connecter aux applications</a></li>
+            </ul>
+        </nav>
+
+        <div class="olb-custom-footer-col olb-custom-footer-contact">
+            <h2 class="olb-label">Contact</h2>
+            <ul>
+                <li><a href="mailto:hello@onylab.com">hello@onylab.com</a></li>
+            </ul>
+        </div>
+
+        <div class="olb-custom-footer-legal">
+            <div class="olb-custom-footer-credit">
+                <p class="olb-meta">© 2026 OnyLab. Tous droits réservés.</p>
+                <p class="olb-meta">Fait avec amour au Canada et en France</p>
+            </div>
+            <nav class="olb-custom-footer-legal-nav" aria-label="Mentions légales">
+                <ul>
+                    <li><a class="olb-meta" href="/fr/confidentialite/">Politique de confidentialité</a></li><li><a class="olb-meta" href="/fr/conditions/">Conditions d&#39;utilisation</a></li>
+                </ul>
+            </nav>
+            <div class="olb-custom-footer-end">
+                <div class="olb-custom-lang">
+                    <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Langue: Français">
+                        <span class="olb-custom-lang-name" aria-hidden="true">Français</span>
+                        <span class="olb-custom-lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="olb-custom-lang-menu" id="langMenu">
+                        <li>
+                            <a href="/apps/orderpicker/" lang="en" hreflang="en" data-lang="en">English</a>
+                        </li><li>
+                            <a href="/fr/applications/orderpicker/" lang="fr" hreflang="fr" data-lang="fr" aria-current="true">Français</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="olb-custom-theme-toggle" id="themeToggle" type="button" data-choice="system" data-label-system="Thème : Système" data-label-light="Thème : Clair" data-label-dark="Thème : Sombre" aria-label="Thème : Système" title="Thème : Système">
+                    <svg data-icon="system" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+                    <svg data-icon="light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+                    <svg data-icon="dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="/script.js?v=11" type="text/javascript"></script><script>(function(){const crispLocale = "fr";
+
+  // Crisp live chat, so a visitor can reach us from any page. The widget
+  // speaks the page's language rather than guessing from the browser, and
+  // loads async after the page so it never delays the first paint.
+  window.$crisp = [];
+  // Pin the chat button to the bottom right, whatever the dashboard says.
+  window.$crisp.push(['config', 'position:reverse', [false]]);
+  window.CRISP_WEBSITE_ID = 'c7e0f9b9-9980-4698-a597-c22fa800593f';
+  window.CRISP_RUNTIME_CONFIG = { locale: crispLocale };
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://client.crisp.chat/l.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+})();</script></body>
+</html>

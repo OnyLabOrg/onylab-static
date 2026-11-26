@@ -1544,6 +1544,15 @@ p, li, td, th { color: inherit; }
 .olb-custom-crumbs a:hover { color: var(--olb-text-primary); text-decoration: underline; text-underline-offset: 3px; }
 .olb-custom-crumbs [aria-current] { color: var(--olb-text-primary); }
 
+/* On the POS's own page the logo plate opens the hero, above the label. */
+.olb-custom-pos-opening .olb-custom-pos-logo {
+  width: 15rem;
+  max-width: 100%;
+  height: 6.5rem;
+  margin-bottom: var(--olb-space-6);
+}
+.olb-custom-pos-opening .olb-custom-pos-logo img { max-width: min(100%, 11rem); }
+
 .olb-custom-pos-facts { align-items: start; }
 .olb-custom-pos-facts > :first-child { grid-column: 1 / span 5; }
 .olb-custom-pos-facts > :first-child > * + * { margin-top: var(--olb-space-4); }
@@ -1675,6 +1684,16 @@ p, li, td, th { color: inherit; }
   height: 100%;
   object-fit: contain;
 }
+/* On the platform's own page the plate heads the facts column, sized to the
+   logo rather than stretched across the column. */
+.olb-custom-platform-logo[data-size="large"] {
+  width: 15rem;
+  max-width: 100%;
+  height: 6.5rem;
+  margin-bottom: 0;
+  padding: var(--olb-space-4) var(--olb-space-5);
+}
+.olb-custom-platform-logo[data-size="large"] img { max-width: 12rem; }
 
 /* Delivery platform pages: the channels feeding OrderPicker. The nodes are
    labels, not links, and the page's own platform is set apart by weight and a
@@ -1735,8 +1754,14 @@ p, li, td, th { color: inherit; }
 }
 .olb-custom-footer-legal-nav a { transition: color var(--olb-transition); }
 .olb-custom-footer-legal-nav a:hover { color: var(--olb-text-primary); }
-/* The last group of the legal row: the credit line, then the language and
-   theme switchers. */
+/* The first group of the legal row: the copyright, with the credit line on
+   its own line beneath it. */
+.olb-custom-footer-credit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--olb-space-1);
+}
+/* The last group of the legal row: the language and theme switchers. */
 .olb-custom-footer-end {
   display: flex;
   align-items: center;

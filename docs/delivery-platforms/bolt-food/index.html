@@ -338,6 +338,8 @@ const defaultLang = "en";
         <section class="olb-band" data-tone="secondary" id="facts" aria-labelledby="facts-heading">
             <div class="olb-grid olb-custom-pos-facts">
                 <div>
+                    <!-- The name follows as text, so the logo is decorative. -->
+                    <span class="olb-custom-platform-logo" data-size="large"><img src="/logos/platforms/bolt-food.svg" alt="" width="266" height="64" decoding="async"></span>
                     <p class="olb-label">Bolt Food</p>
                     <h2 class="olb-title" id="facts-heading">Bolt Food at a glance</h2>
                     <p class="olb-lede">Bolt Food is the food and grocery delivery service of Bolt, the mobility company founded in Tallinn, Estonia, in 2013. Customers order in the app or on the website, and a Bolt courier or the store&#39;s own fleet delivers. Pickup orders are supported too.</p>
@@ -536,14 +538,16 @@ const defaultLang = "en";
         </div>
 
         <div class="olb-custom-footer-legal">
-            <p class="olb-meta">© 2026 OnyLab. All rights reserved.</p>
+            <div class="olb-custom-footer-credit">
+                <p class="olb-meta">© 2026 OnyLab. All rights reserved.</p>
+                <p class="olb-meta">Made with love in Canada and France</p>
+            </div>
             <nav class="olb-custom-footer-legal-nav" aria-label="Legal">
                 <ul>
                     <li><a class="olb-meta" href="/privacy/">Privacy Policy</a></li><li><a class="olb-meta" href="/terms/">Terms of Use</a></li>
                 </ul>
             </nav>
             <div class="olb-custom-footer-end">
-                <p class="olb-meta">Made with love in Canada and France</p>
                 <div class="olb-custom-lang">
                     <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
                         <span class="olb-custom-lang-name" aria-hidden="true">English</span>

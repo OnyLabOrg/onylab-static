@@ -273,6 +273,10 @@ const defaultLang = "en";
                     <li aria-current="page">PAR PixelPoint</li>
                 </ol>
             </nav>
+            <!-- The name follows in the breadcrumb and the heading, so the logo is decorative. -->
+            <span class="olb-custom-pos-logo">
+                <img src="/logos/pos/par-pixelpoint.webp" alt="" width="206" height="99" decoding="async">
+            </span>
             <p class="olb-pill olb-opening-pill">POS integration</p>
             <h1 class="olb-display olb-opening-claim" id="pos-heading">PAR PixelPoint with HubRise: which of the 2 integrations fits</h1>
             <p class="olb-lede olb-opening-proof">PixelPoint connects to HubRise in 2 ways, and they are not the same. The Bridge only receives orders and customers. The Windows API also sends your menu. Choose by whether PixelPoint or HubRise should hold the menu.</p>
@@ -364,7 +368,7 @@ const defaultLang = "en";
                             <a class="olb-custom-card-link" href="/#tour-orderpay">See it on the sample store <span class="olb-custom-arrow" aria-hidden="true"></span></a>
                         </p>
                     </li><li class="olb-app-card" id="app-orderpicker">
-                        <p class="olb-app-step">Kitchen display and picking</p>
+                        <p class="olb-app-step">Kitchen display and picking screen</p>
                         <h4 class="olb-heading-20">OrderPicker</h4>
                         <p>OrderPicker prepares the orders that reach the store through HubRise, as a KDS or a picking screen. Neither integration sends the orders rung up on PixelPoint back to HubRise, so only phone, table, takeout and delivery platform orders appear. Staff go item by item, then mark the order ready.</p>
                         <ul class="olb-custom-pos-notes">
@@ -556,14 +560,16 @@ const defaultLang = "en";
         </div>
 
         <div class="olb-custom-footer-legal">
-            <p class="olb-meta">© 2026 OnyLab. All rights reserved.</p>
+            <div class="olb-custom-footer-credit">
+                <p class="olb-meta">© 2026 OnyLab. All rights reserved.</p>
+                <p class="olb-meta">Made with love in Canada and France</p>
+            </div>
             <nav class="olb-custom-footer-legal-nav" aria-label="Legal">
                 <ul>
                     <li><a class="olb-meta" href="/privacy/">Privacy Policy</a></li><li><a class="olb-meta" href="/terms/">Terms of Use</a></li>
                 </ul>
             </nav>
             <div class="olb-custom-footer-end">
-                <p class="olb-meta">Made with love in Canada and France</p>
                 <div class="olb-custom-lang">
                     <button class="olb-custom-lang-toggle" id="langToggle" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="Language: English">
                         <span class="olb-custom-lang-name" aria-hidden="true">English</span>
