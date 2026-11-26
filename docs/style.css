@@ -1378,6 +1378,31 @@ p, li, td, th { color: inherit; }
    answer never rests on the icon alone, and stays blank when the source does not
    say. A "no" reads in the secondary color; the flame stays on Order&Pay's column
    header. */
+/* What sets Order&Pay apart, under the lede: a check in the accent and the
+   claim in the primary text color. */
+.olb-custom-compare-edge {
+  display: grid;
+  gap: var(--olb-space-3);
+  max-width: 40rem;
+  margin-top: var(--olb-space-6);
+}
+.olb-custom-compare-edge > li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--olb-space-3);
+  text-align: left;
+  font-weight: var(--olb-weight-medium);
+  color: var(--olb-text-primary);
+}
+.olb-custom-compare-edge svg {
+  flex: none;
+  margin-top: 0.35em;
+  fill: none;
+  stroke: var(--olb-accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .olb-custom-compare th:first-child { width: 40%; }
 .olb-custom-compare td { width: 30%; }
 .olb-custom-support {
