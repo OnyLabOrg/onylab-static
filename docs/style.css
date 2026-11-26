@@ -1235,6 +1235,9 @@ p, li, td, th { color: inherit; }
 .olb-custom-snippet > li:last-child { color: var(--olb-color-success); }
 
 .olb-app-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--olb-space-2) var(--olb-space-5);
   margin-top: auto !important;
   padding-top: var(--olb-space-4);
 }
@@ -1707,6 +1710,35 @@ p, li, td, th { color: inherit; }
 }
 .olb-custom-channel-body > * + * { margin-top: var(--olb-space-4); }
 
+/* ── App pages ───────────────────────────────────────────────────────────── */
+
+/* The product view sits right under the hero, as in the home page tour. */
+.olb-custom-app-view { padding-top: 0; }
+.olb-custom-app-view figure { max-width: 1040px; margin-inline: auto; }
+
+/* 4 steps from the first action to the result, in 1 row on desktop. */
+.olb-custom-app-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* What the app uses and feeds: short facts, each under a small rule. */
+.olb-custom-app-facts { margin-top: var(--olb-space-4); }
+.olb-custom-app-facts > li {
+  padding-block: var(--olb-space-3);
+  border-top: 1px solid var(--olb-border-subtle);
+}
+.olb-custom-app-facts > li:last-child { padding-bottom: 0; }
+.olb-custom-app-fits {
+  max-width: 44rem;
+  margin: var(--olb-space-6) auto 0;
+  text-align: center;
+  font-size: var(--olb-type-metadata);
+  line-height: var(--olb-leading-caption);
+}
+.olb-custom-app-others {
+  margin-top: var(--olb-space-10);
+  margin-bottom: var(--olb-space-5);
+  text-align: center;
+}
+
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 
 .olb-footer {
@@ -1796,6 +1828,7 @@ p, li, td, th { color: inherit; }
   .olb-custom-eco-link[data-bus]::before { margin-top: 0; }
   .olb-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .olb-steps { grid-template-columns: minmax(0, 1fr); }
+  .olb-custom-app-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .olb-custom-app-group-head { grid-template-columns: minmax(0, 1fr); }
   .olb-custom-about > .olb-stat-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
@@ -1901,6 +1934,7 @@ p, li, td, th { color: inherit; }
   .olb-custom-queue > li:not([data-active="true"]) { display: none; }
 
   .olb-card-grid { grid-template-columns: minmax(0, 1fr); }
+  .olb-custom-app-steps { grid-template-columns: minmax(0, 1fr); }
   .olb-card,
   .olb-app-card,
   .olb-ecosystem-step,

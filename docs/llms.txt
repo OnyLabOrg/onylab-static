@@ -10,14 +10,16 @@ Languages: this site is published in English at https://onylab.com/ and in Frenc
 
 ## Take orders
 
-- [Order&Pay](https://onylab.com/#tour-orderpay): table and takeout ordering. Customers order at the table or for takeout and pay in 1 tap, with no app to install and no account to create.
-- [OrderPicker](https://onylab.com/#tour-orderpicker): OrderPicker is the kitchen display system (KDS) for restaurants and the order preparation screen for shops. A step-by-step workflow catches mistakes and speeds up each preparation.
-- [OrderPad](https://onylab.com/#tour-orderpad): phone order taking on a tablet or a computer. The caller's customer profile comes up from HubRise, the order is built from the HubRise menu with options, comments and the service mode, and it is sent to the POS through HubRise.
+Each app below has its own page, with what it does, how it works and what it shares with the other apps. The French pages are under https://onylab.com/fr/applications/.
+
+- [Order&Pay](https://onylab.com/apps/order-and-pay/): table and takeout ordering. Customers order at the table or for takeout and pay in 1 tap, with no app to install and no account to create.
+- [OrderPicker](https://onylab.com/apps/orderpicker/): OrderPicker is the kitchen display system (KDS) for restaurants and the order preparation screen for shops. A step-by-step workflow catches mistakes and speeds up each preparation.
+- [OrderPad](https://onylab.com/apps/orderpad/): phone order taking on a tablet or a computer. The caller's customer profile comes up from HubRise, the order is built from the HubRise menu with options, comments and the service mode, and it is sent to the POS through HubRise.
 
 ## Bring customers back
 
-- [Brevo Bridge](https://onylab.com/#tour-brevo): copies HubRise customers and orders into the store's Brevo account and sorts them by visits, average order value and last order, for email and SMS campaigns.
-- [SMSMode Bridge](https://onylab.com/#tour-smsmode): copies the same customers and orders into the store's smsmode account, for SMS and WhatsApp campaigns.
+- [Brevo Bridge](https://onylab.com/apps/brevo-bridge/): copies HubRise customers and orders into the store's Brevo account and sorts them by visits, average order value and last order, for email and SMS campaigns.
+- [SMSMode Bridge](https://onylab.com/apps/smsmode-bridge/): copies the same customers and orders into the store's smsmode account, for SMS and WhatsApp campaigns.
 
 ## How it fits
 
